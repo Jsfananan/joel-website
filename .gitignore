@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Screenshots (optional - you may want to remove these from git)
+Screenshot*.png
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
