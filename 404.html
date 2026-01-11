@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - Joel Salinas</title>
+    <meta name="robots" content="noindex, follow">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1E3A5F 0%, #2a4a6f 100%);
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+        }
+
+        h1 {
+            font-size: 6rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: #F4C4B0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        a {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: #F4C4B0;
+            color: #1E3A5F;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            background: #FFFFFF;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(244, 196, 176, 0.4);
+        }
+
+        .home-link {
+            background: rgba(255, 255, 255, 0.1);
+            color: #FFFFFF;
+            border: 2px solid #F4C4B0;
+        }
+
+        .home-link:hover {
+            background: #F4C4B0;
+            color: #1E3A5F;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 4rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>404</h1>
+        <h2>Page Not Found</h2>
+        <p>Sorry, the page you're looking for doesn't exist. It may have been moved or the link might be incorrect.</p>
+        <div class="buttons">
+            <a href="/" class="home-link">Go to Homepage</a>
+            <a href="/#contact">Contact Me</a>
+        </div>
+    </div>
+</body>
+</html>
