@@ -1772,17 +1772,7 @@
             to { transform: rotate(360deg); }
         }
 
-        .form-group input:required:invalid:not(:focus):not(:placeholder-shown),
-        .form-group textarea:required:invalid:not(:focus):not(:placeholder-shown) {
-            border-color: #ff6b6b;
-            background: rgba(255, 107, 107, 0.05);
-        }
-
-        .form-group input:required:valid,
-        .form-group textarea:required:valid {
-            border-color: #51cf66;
-            background: rgba(81, 207, 102, 0.05);
-        }
+        /* Removed automatic validation colors - only show on error state */
 
         .form-success-message {
             background: linear-gradient(135deg, var(--navy) 0%, #2a4a6f 50%, var(--coral) 100%);
@@ -2365,6 +2355,11 @@
             .tier-features li {
                 font-size: 0.8rem;
                 padding: 0.4rem 0;
+                padding-left: 1.75rem;
+            }
+
+            .tier-features li::before {
+                left: 0.25rem;
             }
 
             .tier-button {
