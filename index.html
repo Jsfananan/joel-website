@@ -3008,22 +3008,30 @@
         }
 
         .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .service-card {
-            background: var(--white);
-            border: 1px solid var(--border);
+            background: #f5f5f7;
+            border: 2px solid var(--border);
             border-radius: 12px;
+            margin-bottom: 1.5rem;
             overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--coral);
+            transform: translateY(-2px);
         }
 
         .service-card summary {
             list-style: none;
-            padding: 1.5rem;
+            padding: 1.5rem 2rem;
             cursor: pointer;
+            display: flex;
+            flex-direction: column;
         }
 
         .service-card summary .service-features {
@@ -3036,24 +3044,40 @@
 
         .service-header {
             display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-header .accordion-icon-wrapper {
+            flex-shrink: 0;
+        }
+
+        .service-header-content {
+            flex: 1;
+            display: flex;
             align-items: baseline;
             justify-content: space-between;
             gap: 1rem;
         }
 
         .service-header h4 {
-            font-size: 1.1rem;
+            font-size: 1.5rem;
             margin: 0;
+            color: var(--dark-text);
+            font-weight: 600;
         }
 
         .service-price {
             font-weight: 700;
             color: var(--navy);
+            font-size: 1.1rem;
         }
 
         .service-tagline {
             color: var(--light-text);
-            margin: 0.5rem 0 1rem;
+            margin: 0.3rem 0 0 0;
+            font-size: 0.95rem;
         }
 
         .service-features {
@@ -3092,13 +3116,18 @@
             align-items: center;
             gap: 0.5rem;
             font-weight: 600;
+            color: var(--coral);
+            font-size: 0.9rem;
+        }
+
+        .service-card[open] .service-toggle {
             color: var(--navy);
         }
 
         .service-details {
-            padding: 0 1.5rem 1.5rem 1.5rem;
+            padding: 0 2rem 2rem 2rem;
             border-top: 1px solid var(--border);
-            background: rgba(244, 196, 176, 0.05);
+            background: transparent;
         }
 
         .callout-box {
@@ -3209,36 +3238,52 @@
         }
 
         .faq-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1rem;
-            margin-top: 2rem;
+            max-width: 900px;
+            margin: 2rem auto 0;
         }
 
         .faq-item {
-            background: var(--white);
-            border: 1px solid var(--border);
+            background: #f5f5f7;
+            border: 2px solid var(--border);
             border-radius: 12px;
-            padding: 0;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--coral);
         }
 
         .faq-item summary {
             list-style: none;
             cursor: pointer;
-            padding: 1.25rem;
+            padding: 1.5rem 2rem;
             display: flex;
             justify-content: space-between;
-            gap: 1rem;
+            align-items: center;
             font-weight: 600;
+            color: var(--dark-text);
         }
 
         .faq-item summary::-webkit-details-marker {
             display: none;
         }
 
+        .faq-item summary .problem-toggle {
+            color: var(--coral);
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .faq-item[open] summary .problem-toggle {
+            transform: rotate(180deg);
+        }
+
         .faq-item .faq-body {
-            padding: 0 1.25rem 1.25rem 1.25rem;
+            padding: 0 2rem 2rem 2rem;
             color: var(--light-text);
+            line-height: 1.7;
         }
 
         .trust-section {
@@ -3346,17 +3391,9 @@
     <section class="hero" id="main-content">
         <div class="hero-content">
             <h1>AI Strategy Consultant for Nonprofits, Small Businesses & Creators</h1>
-            <ul class="hero-specializations">
-                <li><span class="spec-icon">✓</span>AI Strategy & Opportunity Audits</li>
-                <li><span class="spec-icon">✓</span>AI Change Management & Adoption</li>
-                <li><span class="spec-icon">✓</span>Nonprofit AI Implementation, 25% off all services</li>
-                <li><span class="spec-icon">✓</span>Creator Systems & Second Brain Builds</li>
-                <li><span class="spec-icon">✓</span>Ethics Reviews & Risk Mitigation</li>
-            </ul>
-            <div class="hero-stats">3,500+ Newsletter Subscribers | 10+ Years Marketing Leadership | 3 AI Businesses Built</div>
-            <div class="hero-cta-group">
+            <div class="hero-stats" style="margin: 1.5rem 0 2.5rem 0; font-size: 0.95rem; color: var(--light-text);">3,500+ Newsletter Subscribers | 10+ Years Marketing Leadership | 3 AI Businesses Built</div>
+            <div class="hero-cta-group" style="margin-bottom: 2rem;">
                 <a href="https://calendly.com/leadershipinchangellc/30min" target="_blank" rel="noopener noreferrer" class="hero-cta primary ripple"><span>Book Free Strategy Call</span></a>
-                <a href="#process" class="hero-cta secondary">View My Process</a>
             </div>
         </div>
         <div class="hero-image">
@@ -3383,55 +3420,75 @@
 
     <!-- Who I Help -->
     <section class="who-help-section fade-in" id="who-i-help">
-        <h2>Who I Help with AI Strategy & Implementation</h2>
-        <p class="section-intro">I specialize in three types of clients. Which one are you?</p>
-        <div class="who-help-grid">
-            <div class="who-help-card">
-                <div class="accordion-icon-wrapper">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M4 20h16"/>
-                        <path d="M7 16l10-10 3 3-10 10H7z"/>
-                    </svg>
+        <h2>Who I Help</h2>
+        <div class="accordion-container" style="max-width: 900px;">
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <div class="accordion-title">
+                        <div class="accordion-icon-wrapper">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M4 20h16"/>
+                                <path d="M7 16l10-10 3 3-10 10H7z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Creators & Solo Entrepreneurs</h3>
+                            <p class="accordion-subtitle">Second brain systems, content workflows, AI research & writing assistants</p>
+                        </div>
+                    </div>
+                    <span class="accordion-icon">▼</span>
                 </div>
-                <h3>Creators & Solo Entrepreneurs</h3>
-                <ul>
-                    <li>Second brain systems</li>
-                    <li>Content workflows</li>
-                    <li>AI research & writing assistants</li>
-                </ul>
-                <div class="card-examples">Examples: Writers, coaches, consultants</div>
-                <a href="#creator-services" class="card-button">Creator Solutions →</a>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <p>Examples: Writers, coaches, consultants, course creators</p>
+                        <a href="#creator-services" class="discovery-button ripple">View Creator Solutions →</a>
+                    </div>
+                </div>
             </div>
-            <div class="who-help-card">
-                <div class="accordion-icon-wrapper">
-                    <svg viewBox="0 0 24 24">
-                        <rect x="3" y="3" width="8" height="18"/>
-                        <rect x="13" y="7" width="8" height="14"/>
-                    </svg>
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <div class="accordion-title">
+                        <div class="accordion-icon-wrapper">
+                            <svg viewBox="0 0 24 24">
+                                <rect x="3" y="3" width="8" height="18"/>
+                                <rect x="13" y="7" width="8" height="14"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Small Businesses (1-50 Employees)</h3>
+                            <p class="accordion-subtitle">Process audits, team AI training, marketing & customer automation</p>
+                        </div>
+                    </div>
+                    <span class="accordion-icon">▼</span>
                 </div>
-                <h3>Small Businesses (1-50 Employees)</h3>
-                <ul>
-                    <li>Process audits & optimization</li>
-                    <li>Team AI training & adoption</li>
-                    <li>Marketing & customer automation</li>
-                </ul>
-                <div class="card-examples">Examples: Professional services, agencies</div>
-                <a href="#business-services" class="card-button">Small Business Services →</a>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <p>Examples: Professional services, agencies, B2B companies</p>
+                        <a href="#business-services" class="discovery-button ripple">View Business Services →</a>
+                    </div>
+                </div>
             </div>
-            <div class="who-help-card">
-                <div class="badge">25% OFF ALL SERVICES</div>
-                <div class="accordion-icon-wrapper">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 21s-7-4.5-9-8.5S4.5 4 8 4c2 0 3.5 1.2 4 2.5C12.5 5.2 14 4 16 4c3.5 0 5 4.5 3 8.5S12 21 12 21z"/>
-                    </svg>
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <div class="accordion-title">
+                        <div class="accordion-icon-wrapper">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 21s-7-4.5-9-8.5S4.5 4 8 4c2 0 3.5 1.2 4 2.5C12.5 5.2 14 4 16 4c3.5 0 5 4.5 3 8.5S12 21 12 21z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Nonprofits & Churches</h3>
+                            <p class="accordion-subtitle">Mission-aligned AI strategy, donor communications, ethical adoption</p>
+                        </div>
+                    </div>
+                    <span class="accordion-icon">▼</span>
                 </div>
-                <h3>Nonprofits & Churches</h3>
-                <ul>
-                    <li>Mission-aligned AI strategy</li>
-                    <li>Donor communications</li>
-                    <li>Ethical, values-centered adoption</li>
-                </ul>
-                <a href="#nonprofit-services" class="card-button">Nonprofit Consulting →</a>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <p><strong>25% off all services for 501(c)(3) organizations and churches.</strong></p>
+                        <a href="#nonprofit-services" class="discovery-button ripple">View Nonprofit Services →</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -3449,58 +3506,6 @@
         </ul>
     </section>
 
-    <!-- My Process -->
-    <section class="process-section fade-in" id="process">
-        <h2>How We Work Together</h2>
-        <p class="section-intro">Transparent, collaborative, no surprises. Here's exactly what to expect.</p>
-        <div class="process-timeline">
-            <div class="process-step">
-                <h3>1. Free Strategy Call</h3>
-                <div class="process-meta">30 minutes</div>
-                <ul>
-                    <li>Clarify goals and constraints</li>
-                    <li>Get fast, practical next steps</li>
-                </ul>
-                <p><strong>Deliverable:</strong> Clear next steps.</p>
-            </div>
-            <div class="process-step">
-                <h3>2. Scope Agreement</h3>
-                <div class="process-meta">Within 48 hours</div>
-                <ul>
-                    <li>Scope, deliverables, milestones</li>
-                    <li>Transparent pricing and metrics</li>
-                </ul>
-                <p><strong>Next step:</strong> You approve or revise.</p>
-            </div>
-            <div class="process-step">
-                <h3>3. Discovery & Audit</h3>
-                <div class="process-meta">1-2 weeks</div>
-                <ul>
-                    <li>Workflow audit and mapping</li>
-                    <li>Tech stack analysis</li>
-                </ul>
-                <p><strong>Your involvement:</strong> 3 to 5 hours.</p>
-            </div>
-            <div class="process-step">
-                <h3>4. Strategy & Implementation</h3>
-                <div class="process-meta">2-6 weeks</div>
-                <ul>
-                    <li>Prioritized roadmap and SOPs</li>
-                    <li>Tool setup and team training</li>
-                </ul>
-                <p><strong>Your involvement:</strong> Weekly check-ins.</p>
-            </div>
-            <div class="process-step">
-                <h3>5. Ongoing Support (Optional)</h3>
-                <div class="process-meta">As needed</div>
-                <ul>
-                    <li>Monthly strategy calls</li>
-                    <li>Troubleshooting and optimization</li>
-                </ul>
-                <p><strong>Investment:</strong> Custom retainer.</p>
-            </div>
-        </div>
-    </section>
 
     <!-- Services Overview -->
     <section id="services" class="services-overview fade-in">
@@ -3516,30 +3521,26 @@
                 <details class="service-card">
                     <summary>
                         <div class="service-header">
-                            <h4>Second Brain Build</h4>
-                            <div class="service-price">$600</div>
+                            <div class="accordion-icon-wrapper">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9.5 2A7.5 7.5 0 0 0 2 9.5c0 2.5 1.5 4.5 3 5.5l1.5 2c.5 1 1.5 1 2 0l1.5-2c1.5-1 3-3 3-5.5A7.5 7.5 0 0 0 9.5 2z"/>
+                                    <circle cx="9.5" cy="9.5" r="1.5"/>
+                                    <circle cx="14.5" cy="9.5" r="1.5"/>
+                                    <path d="M9.5 12.5c1.5 0 2.5 1 2.5 2.5"/>
+                                </svg>
+                            </div>
+                            <div class="service-header-content">
+                                <h4>Second Brain Build</h4>
+                                <div class="service-price">$600</div>
+                            </div>
                         </div>
                         <div class="service-tagline">Personal AI knowledge management system</div>
-                        <ul class="service-features">
-                            <li>Custom Claude Projects setup</li>
-                            <li>Knowledge capture workflows</li>
-                            <li>Tool selection and training</li>
-                        </ul>
-                        <div class="service-meta">Timeline: 2 to 3 weeks</div>
-                        <div class="service-toggle">Learn More</div>
+                        <div class="service-toggle">Learn More ▼</div>
                     </summary>
                     <div class="service-details">
                         <p><strong>Build a personalized AI-powered knowledge management system that captures your insights, organizes your thinking, and makes your expertise instantly accessible.</strong></p>
-                        <p><strong>What's included:</strong></p>
-                        <ul>
-                            <li>Custom AI workflow design tailored to your work style</li>
-                            <li>Claude Projects setup with custom instructions</li>
-                            <li>Knowledge management system configuration</li>
-                            <li>Tool selection and integration</li>
-                            <li>Personalized training session</li>
-                            <li>30-day implementation support</li>
-                        </ul>
-                        <p><strong>Typical engagement:</strong> 2-3 weeks.</p>
+                        <p><strong>What's included:</strong> Custom AI workflow design, Claude Projects setup, knowledge management configuration, tool selection, personalized training, 30-day support.</p>
+                        <p><strong>Timeline:</strong> 2 to 3 weeks.</p>
                         <a href="https://calendly.com/leadershipinchangellc/30min" target="_blank" rel="noopener noreferrer" class="discovery-button ripple">Book Free Strategy Call</a>
                     </div>
                 </details>
@@ -3547,30 +3548,30 @@
                 <details class="service-card">
                     <summary>
                         <div class="service-header">
-                            <h4>AI Workflow Audit</h4>
-                            <div class="service-price">$800</div>
+                            <div class="accordion-icon-wrapper">
+                                <svg viewBox="0 0 24 24">
+                                    <rect x="3" y="3" width="7" height="7" rx="1"/>
+                                    <rect x="14" y="3" width="7" height="7" rx="1"/>
+                                    <rect x="3" y="14" width="7" height="7" rx="1"/>
+                                    <rect x="14" y="14" width="7" height="7" rx="1"/>
+                                    <line x1="10" y1="6.5" x2="14" y2="6.5"/>
+                                    <line x1="10" y1="17.5" x2="14" y2="17.5"/>
+                                    <line x1="6.5" y1="10" x2="6.5" y2="14"/>
+                                    <line x1="17.5" y1="10" x2="17.5" y2="14"/>
+                                </svg>
+                            </div>
+                            <div class="service-header-content">
+                                <h4>AI Workflow Audit</h4>
+                                <div class="service-price">$800</div>
+                            </div>
                         </div>
                         <div class="service-tagline">Identify automation opportunities</div>
-                        <ul class="service-features">
-                            <li>Workflow analysis</li>
-                            <li>AI opportunity mapping</li>
-                            <li>2 to 3 SOPs</li>
-                        </ul>
-                        <div class="service-meta">Timeline: 2 to 4 weeks</div>
-                        <div class="service-toggle">Learn More</div>
+                        <div class="service-toggle">Learn More ▼</div>
                     </summary>
                     <div class="service-details">
                         <p><strong>Comprehensive assessment that identifies high-impact AI opportunities through workflow audits, then delivers Standard Operating Procedures (SOPs) and a ready-to-use 3-month implementation plan.</strong></p>
-                        <p><strong>What's included:</strong></p>
-                        <ul>
-                            <li>Workflow audit identifying automation opportunities</li>
-                            <li>AI opportunity mapping and prioritization</li>
-                            <li>Standard Operating Procedures (SOPs) for 2-3 high-impact workflows</li>
-                            <li>Tool recommendations and configuration (Claude, ChatGPT, NotebookLM)</li>
-                            <li>Team training on your new SOPs if needed</li>
-                            <li>30-day support and optimization</li>
-                        </ul>
-                        <p><strong>Typical engagement:</strong> 2-4 weeks.</p>
+                        <p><strong>What's included:</strong> Workflow audit, AI opportunity mapping, SOPs for 2-3 workflows, tool recommendations, team training, 30-day support.</p>
+                        <p><strong>Timeline:</strong> 2 to 4 weeks.</p>
                         <a href="https://calendly.com/leadershipinchangellc/30min" target="_blank" rel="noopener noreferrer" class="discovery-button ripple">Book Free Strategy Call</a>
                     </div>
                 </details>
@@ -3578,29 +3579,26 @@
                 <details class="service-card">
                     <summary>
                         <div class="service-header">
-                            <h4>Executive Coaching</h4>
-                            <div class="service-price">$200/session</div>
+                            <div class="accordion-icon-wrapper">
+                                <svg viewBox="0 0 24 24">
+                                    <rect x="4" y="6" width="16" height="14" rx="2"/>
+                                    <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                                    <path d="M8 12h8"/>
+                                    <path d="M8 16h8"/>
+                                </svg>
+                            </div>
+                            <div class="service-header-content">
+                                <h4>Executive Coaching</h4>
+                                <div class="service-price">$200/session</div>
+                            </div>
                         </div>
                         <div class="service-tagline">1-on-1 strategic AI guidance</div>
-                        <ul class="service-features">
-                            <li>AI strategy and planning</li>
-                            <li>Change management coaching</li>
-                            <li>60-minute video sessions</li>
-                        </ul>
-                        <div class="service-toggle">Learn More</div>
+                        <div class="service-toggle">Learn More ▼</div>
                     </summary>
                     <div class="service-details">
                         <p><strong>Strategic coaching sessions focused on helping you lead AI adoption effectively while maintaining your organization's values and culture.</strong></p>
-                        <p><strong>Focus Areas:</strong></p>
-                        <ul>
-                            <li>AI change management strategies</li>
-                            <li>Strategic AI implementation planning</li>
-                            <li>Team adoption and training approaches</li>
-                            <li>Ethical AI governance frameworks</li>
-                            <li>Measuring AI impact and ROI</li>
-                            <li>Overcoming resistance and building buy-in</li>
-                        </ul>
-                        <p><strong>Format:</strong> 60-minute 1-on-1 sessions via video call.</p>
+                        <p><strong>Focus Areas:</strong> AI change management, strategic implementation planning, team adoption, ethical AI governance, measuring ROI, building buy-in.</p>
+                        <p><strong>Format:</strong> 60-minute sessions via video call.</p>
                         <a href="https://calendly.com/leadershipinchangellc/30min" target="_blank" rel="noopener noreferrer" class="discovery-button ripple">Book Coaching Session</a>
                     </div>
                 </details>
@@ -3613,31 +3611,24 @@
                 <details class="service-card">
                     <summary>
                         <div class="service-header">
-                            <h4>AI Readiness Assessment</h4>
-                            <div class="service-price">Starting at $3,000</div>
+                            <div class="accordion-icon-wrapper">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 11l3 3L22 4"/>
+                                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                                </svg>
+                            </div>
+                            <div class="service-header-content">
+                                <h4>AI Readiness Assessment</h4>
+                                <div class="service-price">Starting at $3,000</div>
+                            </div>
                         </div>
                         <div class="service-tagline">4-week strategic foundation</div>
-                        <ul class="service-features">
-                            <li>Comprehensive workflow audit</li>
-                            <li>Prioritized roadmap</li>
-                            <li>Cost-benefit analysis</li>
-                        </ul>
-                        <div class="service-meta">Timeline: 4 weeks</div>
-                        <div class="service-toggle">Learn More</div>
+                        <div class="service-toggle">Learn More ▼</div>
                     </summary>
                     <div class="service-details">
                         <p><strong>Comprehensive AI Readiness Assessment that identifies where AI can transform your operations through workflow audits, with a custom strategic roadmap for implementation using existing AI tools and platforms.</strong></p>
-                        <p><strong>What's included:</strong></p>
-                        <ul>
-                            <li>Comprehensive workflow audit identifying automation opportunities across departments</li>
-                            <li>AI opportunity mapping across departments</li>
-                            <li>Strategic implementation roadmap with priorities</li>
-                            <li>Tool and platform recommendations (ChatGPT, Claude, automation platforms)</li>
-                            <li>Cost-benefit analysis for each opportunity</li>
-                            <li>Executive presentation with findings and recommendations</li>
-                            <li>30-day support after delivery</li>
-                        </ul>
-                        <p><strong>Deliverables:</strong> AI Readiness Report, prioritized opportunity matrix, 90-day implementation roadmap, SOP framework.</p>
+                        <p><strong>What's included:</strong> Comprehensive workflow audit, AI opportunity mapping, strategic roadmap, tool recommendations, cost-benefit analysis, executive presentation, 30-day support.</p>
+                        <p><strong>Deliverables:</strong> AI Readiness Report, prioritized opportunity matrix, 90-day roadmap, SOP framework.</p>
                         <a href="https://calendly.com/leadershipinchangellc/30min" target="_blank" rel="noopener noreferrer" class="discovery-button ripple">Book Free Strategy Call</a>
                     </div>
                 </details>
@@ -3645,29 +3636,24 @@
                 <details class="service-card">
                     <summary>
                         <div class="service-header">
-                            <h4>AI Implementation Sprint</h4>
-                            <div class="service-price">Starting at $6,000</div>
+                            <div class="accordion-icon-wrapper">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                                </svg>
+                            </div>
+                            <div class="service-header-content">
+                                <h4>AI Implementation Sprint</h4>
+                                <div class="service-price">Starting at $6,000</div>
+                            </div>
                         </div>
                         <div class="service-tagline">Hands-on setup of 3-5 workflows</div>
-                        <ul class="service-features">
-                            <li>Working workflows with SOPs</li>
-                            <li>Team training program</li>
-                            <li>60-day support</li>
-                        </ul>
-                        <div class="service-meta">Timeline: 4 to 6 weeks</div>
-                        <div class="service-toggle">Learn More</div>
+                        <div class="service-toggle">Learn More ▼</div>
                     </summary>
                     <div class="service-details">
                         <p><strong>Hands-on implementation of 3-5 high-impact AI workflows using existing tools and platforms. We configure, test, create SOPs, and train your team.</strong></p>
-                        <p><strong>What's included:</strong></p>
-                        <ul>
-                            <li>Training on desired AI workflows</li>
-                            <li>Implementation using existing AI platforms (Claude, ChatGPT, Perplexity)</li>
-                            <li>Working prototypes and proof-of-concepts</li>
-                            <li>Custom AI projects with organization-specific instructions</li>
-                            <li>30-day post-implementation support</li>
-                        </ul>
+                        <p><strong>What's included:</strong> Training on AI workflows, implementation using existing platforms, working prototypes, custom AI projects, 30-day support.</p>
                         <p><strong>What we implement:</strong> AI research systems, automated content workflows, smart document processing, custom AI assistants, knowledge management.</p>
+                        <p><strong>Timeline:</strong> 4 to 6 weeks.</p>
                         <a href="https://calendly.com/leadershipinchangellc/30min" target="_blank" rel="noopener noreferrer" class="discovery-button ripple">Book Free Strategy Call</a>
                     </div>
                 </details>
@@ -3675,30 +3661,24 @@
                 <details class="service-card">
                     <summary>
                         <div class="service-header">
-                            <h4>AI Change Management</h4>
-                            <div class="service-price">Starting at $12,000</div>
+                            <div class="accordion-icon-wrapper">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                    <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                </svg>
+                            </div>
+                            <div class="service-header-content">
+                                <h4>AI Change Management</h4>
+                                <div class="service-price">Starting at $12,000</div>
+                            </div>
                         </div>
                         <div class="service-tagline">3-6 month transformation program</div>
-                        <ul class="service-features">
-                            <li>Strategic transformation roadmap</li>
-                            <li>Team adoption program</li>
-                            <li>Monthly strategy sessions</li>
-                        </ul>
-                        <div class="service-meta">Timeline: 3 to 6 months</div>
-                        <div class="service-toggle">Learn More</div>
+                        <div class="service-toggle">Learn More ▼</div>
                     </summary>
                     <div class="service-details">
                         <p><strong>Strategic AI transformation that amplifies your team's strengths while preserving organizational culture and values.</strong></p>
-                        <p><strong>What's included:</strong></p>
-                        <ul>
-                            <li>Strategic AI transformation roadmap aligned with your values</li>
-                            <li>Change management frameworks tailored to your culture</li>
-                            <li>Phased implementation of AI tools and workflows</li>
-                            <li>Team adoption and training</li>
-                            <li>Regular check-ins and strategic guidance</li>
-                            <li>Ongoing optimization and support</li>
-                            <li>Measurement frameworks focused on human impact</li>
-                        </ul>
+                        <p><strong>What's included:</strong> Strategic transformation roadmap, change management frameworks, phased implementation, team adoption and training, regular check-ins, ongoing optimization, measurement frameworks.</p>
+                        <p><strong>Timeline:</strong> 3 to 6 months.</p>
                         <a href="https://calendly.com/leadershipinchangellc/30min" target="_blank" rel="noopener noreferrer" class="discovery-button ripple">Book Free Strategy Call</a>
                     </div>
                 </details>
@@ -3706,26 +3686,24 @@
                 <details class="service-card">
                     <summary>
                         <div class="service-header">
-                            <h4>Competitive Intelligence Setup</h4>
-                            <div class="service-price">$1,200</div>
+                            <div class="accordion-icon-wrapper">
+                                <svg viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M12 6v6l4 2"/>
+                                </svg>
+                            </div>
+                            <div class="service-header-content">
+                                <h4>Competitive Intelligence Setup</h4>
+                                <div class="service-price">$1,200</div>
+                            </div>
                         </div>
                         <div class="service-tagline">Automated competitor monitoring</div>
-                        <ul class="service-features">
-                            <li>Automated tracking workflows</li>
-                            <li>Market trend analysis</li>
-                            <li>Insights dashboard</li>
-                        </ul>
-                        <div class="service-meta">Timeline: 2 weeks</div>
-                        <div class="service-toggle">Learn More</div>
+                        <div class="service-toggle">Learn More ▼</div>
                     </summary>
                     <div class="service-details">
                         <p><strong>Automated competitor monitoring and market intelligence that keeps your team informed without manual research.</strong></p>
-                        <ul>
-                            <li>Custom tracking of competitors, keywords, and trends</li>
-                            <li>Weekly insights delivered to your inbox</li>
-                            <li>Dashboard setup for ongoing monitoring</li>
-                            <li>3 months of reporting included</li>
-                        </ul>
+                        <p><strong>What's included:</strong> Custom tracking of competitors and trends, weekly insights, dashboard setup, 3 months of reporting.</p>
+                        <p><strong>Timeline:</strong> 2 weeks.</p>
                         <a href="https://calendly.com/leadershipinchangellc/30min" target="_blank" rel="noopener noreferrer" class="discovery-button ripple">Book Free Strategy Call</a>
                     </div>
                 </details>
@@ -3743,24 +3721,13 @@
         </div>
     </section>
 
-    <!-- Letter + Human-Centered Commitment -->
+    <!-- My AI Philosophy -->
     <section class="letter-section fade-in">
         <h2>My AI Philosophy</h2>
         <div class="letter-box">
             <p>I believe the best AI work is calm, clear, and human-first. Strategy comes before tools, and people stay at the center of every decision.</p>
             <p>I help leaders implement AI in ways that protect values, improve outcomes, and build trust inside their teams.</p>
         </div>
-    </section>
-
-    <section class="commitment-section fade-in">
-        <h2>Human-Centered AI Commitment</h2>
-        <ul class="commitment-list">
-            <li>Ethical review for every implementation</li>
-            <li>Privacy-first approach to data handling</li>
-            <li>Transparency in AI decision-making</li>
-            <li>Focus on augmentation, not replacement</li>
-            <li>Alignment with your organizational values</li>
-        </ul>
     </section>
 
     <!-- Testimonials Section -->
@@ -3850,51 +3817,51 @@
         <p class="section-intro">Common questions about working with an AI consultant.</p>
         <div class="faq-grid">
             <details class="faq-item">
-                <summary>How do you charge for projects?<span class="problem-toggle">+</span></summary>
+                <summary>How do you charge for projects?<span class="problem-toggle">▼</span></summary>
                 <div class="faq-body">Most projects are fixed-fee based on scope and timeline. I also offer custom retainers for ongoing support.</div>
             </details>
             <details class="faq-item">
-                <summary>Do I need technical knowledge to work with you?<span class="problem-toggle">+</span></summary>
+                <summary>Do I need technical knowledge to work with you?<span class="problem-toggle">▼</span></summary>
                 <div class="faq-body">No. I translate technical options into clear, practical steps so your team can adopt AI confidently.</div>
             </details>
             <details class="faq-item">
-                <summary>What if we're already using AI tools but not seeing results?<span class="problem-toggle">+</span></summary>
+                <summary>What if we're already using AI tools but not seeing results?<span class="problem-toggle">▼</span></summary>
                 <div class="faq-body">I audit your current workflows, identify gaps, and optimize what you already have for measurable impact.</div>
             </details>
             <details class="faq-item">
-                <summary>Can you help us avoid vendor lock-in?<span class="problem-toggle">+</span></summary>
+                <summary>Can you help us avoid vendor lock-in?<span class="problem-toggle">▼</span></summary>
                 <div class="faq-body">Yes. I prioritize flexible, tool-agnostic strategies so you can pivot as platforms evolve.</div>
             </details>
             <details class="faq-item">
-                <summary>How do you handle data privacy and security?<span class="problem-toggle">+</span></summary>
+                <summary>How do you handle data privacy and security?<span class="problem-toggle">▼</span></summary>
                 <div class="faq-body">Every project includes privacy and ethics reviews. We use least-privilege access and clear data policies.</div>
             </details>
             <details class="faq-item">
-                <summary>What's the difference between strategy and implementation?<span class="problem-toggle">+</span></summary>
+                <summary>What's the difference between strategy and implementation?<span class="problem-toggle">▼</span></summary>
                 <div class="faq-body">Strategy defines priorities and ROI. Implementation builds workflows, SOPs, and training to make it real.</div>
             </details>
             <details class="faq-item">
-                <summary>Do you offer ongoing support after projects end?<span class="problem-toggle">+</span></summary>
+                <summary>Do you offer ongoing support after projects end?<span class="problem-toggle">▼</span></summary>
                 <div class="faq-body">Yes. Many clients continue with monthly strategy calls and optimization support.</div>
             </details>
             <details class="faq-item">
-                <summary>How do you measure ROI on AI investments?<span class="problem-toggle">+</span></summary>
+                <summary>How do you measure ROI on AI investments?<span class="problem-toggle">▼</span></summary>
                 <div class="faq-body">We track time saved, cost reductions, and performance metrics tied to your business goals.</div>
             </details>
             <details class="faq-item">
-                <summary>What industries do you work with?<span class="problem-toggle">+</span></summary>
+                <summary>What industries do you work with?<span class="problem-toggle">▼</span></summary>
                 <div class="faq-body">I work with creators, small businesses, nonprofits, and churches across a variety of sectors.</div>
             </details>
             <details class="faq-item">
-                <summary>How long does a typical project take?<span class="problem-toggle">+</span></summary>
+                <summary>How long does a typical project take?<span class="problem-toggle">▼</span></summary>
                 <div class="faq-body">Most engagements range from 2 to 6 weeks, depending on scope and complexity.</div>
             </details>
             <details class="faq-item">
-                <summary>Do you work with clients outside the US?<span class="problem-toggle">+</span></summary>
+                <summary>Do you work with clients outside the US?<span class="problem-toggle">▼</span></summary>
                 <div class="faq-body">Yes. I serve leaders worldwide with remote-first delivery and flexible scheduling.</div>
             </details>
             <details class="faq-item">
-                <summary>What's your refund or guarantee policy?<span class="problem-toggle">+</span></summary>
+                <summary>What's your refund or guarantee policy?<span class="problem-toggle">▼</span></summary>
                 <div class="faq-body">I set clear expectations up front. If a project is not a fit, I will say so before we start.</div>
             </details>
         </div>
