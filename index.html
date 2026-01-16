@@ -47,6 +47,93 @@
             scroll-behavior: smooth;
         }
 
+        /* Header Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-accent {
+            height: 3px;
+            background: var(--peach);
+            width: 100%;
+        }
+
+        .header-container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            gap: 3rem;
+        }
+
+        .header-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--navy);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .header-logo:hover {
+            color: var(--peach-dark);
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .header-nav-link {
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .header-nav-link:hover {
+            color: var(--navy);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-shrink: 0;
+        }
+
+        .header-subscribe-btn {
+            padding: 0.625rem 1.5rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+            text-decoration: none;
+            border-radius: 50px;
+            background: var(--navy);
+            color: var(--white);
+            border: none;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .header-subscribe-btn:hover {
+            background: var(--navy-light);
+            transform: translateY(-1px);
+        }
+
         /* Section Base Styles */
         section {
             position: relative;
@@ -60,6 +147,7 @@
             align-items: center;
             justify-content: center;
             padding: var(--section-padding);
+            padding-top: calc(var(--section-padding) + 80px);
             background: var(--bg-light);
         }
 
@@ -370,6 +458,18 @@
             border-left: 3px solid var(--peach);
         }
 
+        .service-cta-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .service-cta-buttons .btn {
+            flex: 1;
+            min-width: 140px;
+        }
+
         .service-result .service-detail-label {
             color: var(--peach-dark);
         }
@@ -526,62 +626,55 @@
         }
 
         .newsletter-cta-arrow {
-            font-size: 3.5rem;
-            color: var(--accent-blue);
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
-            animation: arrowPulse 2s ease-in-out infinite;
+            min-width: 120px;
+            height: 60px;
         }
 
-        .newsletter-cta-arrow::before {
-            content: '→';
-            position: absolute;
-            opacity: 0.3;
-            animation: arrowSlide 2s ease-in-out infinite;
+        .newsletter-cta-arrow svg {
+            width: 100%;
+            height: 100%;
+            color: var(--peach);
         }
 
-        @keyframes arrowPulse {
-            0%, 100% {
-                transform: translateX(0) scale(1);
-                opacity: 1;
-            }
-            50% {
-                transform: translateX(10px) scale(1.15);
-                opacity: 0.9;
-            }
+        .newsletter-cta-arrow path {
+            stroke: var(--peach);
+            stroke-width: 2.5;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
-        @keyframes arrowSlide {
+        .newsletter-cta-arrow path:first-child {
+            stroke-dasharray: 150;
+            animation: arrowDraw 2s ease-in-out infinite;
+        }
+
+        @keyframes arrowDraw {
             0% {
-                transform: translateX(-25px);
-                opacity: 0;
+                stroke-dashoffset: 150;
+                opacity: 0.4;
             }
             50% {
-                transform: translateX(0);
-                opacity: 0.3;
+                stroke-dashoffset: 0;
+                opacity: 0.8;
             }
             100% {
-                transform: translateX(25px);
-                opacity: 0;
+                stroke-dashoffset: 150;
+                opacity: 0.4;
             }
         }
 
-        .newsletter-cta-container:hover .newsletter-cta-arrow {
-            animation: arrowBounce 0.6s ease-in-out;
+        .newsletter-cta-container:hover .newsletter-cta-arrow path:first-child {
+            stroke: var(--peach-dark);
+            animation: arrowDraw 1.5s ease-in-out infinite;
         }
 
-        @keyframes arrowBounce {
-            0%, 100% {
-                transform: translateX(0);
-            }
-            25% {
-                transform: translateX(-12px);
-            }
-            75% {
-                transform: translateX(12px);
-            }
+        .newsletter-cta-container:hover .newsletter-cta-arrow path:last-child {
+            stroke: var(--peach-dark);
         }
 
         .newsletter-cta-right {
@@ -597,20 +690,45 @@
             font-family: 'Inter', sans-serif;
             text-decoration: none;
             border-radius: 50px;
-            background: var(--accent-blue);
-            color: var(--white);
-            border: 2px solid var(--accent-blue);
+            background: var(--peach);
+            color: var(--navy);
+            border: 2px solid var(--peach);
             transition: var(--transition);
             display: inline-block;
             text-align: center;
             white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 0.01em;
+        }
+
+        .newsletter-subscribe-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .newsletter-subscribe-btn:hover::before {
+            width: 300px;
+            height: 300px;
         }
 
         .newsletter-subscribe-btn:hover {
-            background: var(--accent-blue-dark);
-            border-color: var(--accent-blue-dark);
+            background: var(--peach-dark);
+            border-color: var(--peach-dark);
             transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 15px 30px rgba(244, 196, 176, 0.4);
+        }
+
+        .newsletter-subscribe-btn:active {
+            transform: translateY(-1px);
         }
 
         /* Contact Modal */
@@ -962,6 +1080,28 @@
                 display: none;
             }
 
+            .header-container {
+                padding: 1.25rem 1.5rem;
+                gap: 2rem;
+            }
+
+            .header-logo {
+                font-size: 1.25rem;
+            }
+
+            .header-nav {
+                gap: 1.75rem;
+            }
+
+            .header-nav-link {
+                font-size: 0.875rem;
+            }
+
+            .header-subscribe-btn {
+                padding: 0.625rem 1.25rem;
+                font-size: 0.875rem;
+            }
+
             .newsletter-cta-right {
                 justify-content: center;
             }
@@ -1002,12 +1142,53 @@
                 padding: 0 1.25rem 1.25rem 1.25rem;
             }
 
+            .service-cta-buttons {
+                flex-direction: column;
+            }
+
+            .service-cta-buttons .btn {
+                width: 100%;
+            }
+
             .about-content {
                 gap: 1.75rem;
             }
 
             .about-section {
                 padding-left: 1rem;
+            }
+
+            .header-container {
+                padding: 1rem 1.25rem;
+                flex-wrap: wrap;
+                gap: 1.5rem;
+            }
+
+            .header-logo {
+                font-size: 1.125rem;
+                width: 100%;
+                text-align: center;
+            }
+
+            .header-nav {
+                width: 100%;
+                justify-content: center;
+                gap: 1.25rem;
+                flex-wrap: wrap;
+            }
+
+            .header-nav-link {
+                font-size: 0.875rem;
+            }
+
+            .header-actions {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .header-subscribe-btn {
+                padding: 0.625rem 1.5rem;
+                font-size: 0.875rem;
             }
         }
 
@@ -1024,14 +1205,29 @@
     </style>
 </head>
 <body>
+    <a id="top"></a>
+    <header class="header">
+        <div class="header-accent"></div>
+        <div class="header-container">
+            <a href="#top" class="header-logo">Joel Salinas / AI Strategy & Implementation</a>
+            <nav class="header-nav">
+                <a href="#about" class="header-nav-link">About Me</a>
+                <a href="#services" class="header-nav-link">Services</a>
+                <a href="#" onclick="openContactModal(); return false;" class="header-nav-link">Contact Me</a>
+            </nav>
+            <div class="header-actions">
+                <a href="https://leadershipinchange.com/subscribe" target="_blank" rel="noopener noreferrer" class="header-subscribe-btn">Subscribe to my newsletter</a>
+            </div>
+        </div>
+    </header>
+
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
                 <h1>AI Strategy Expert for <span class="accent">Nonprofits, Small Businesses & Creators</span></h1>
                 <div class="cta-buttons">
                     <a href="https://calendly.com/leadershipinchangellc/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book a Free Call</a>
-                    <a href="#services" class="btn btn-secondary">Our Services</a>
-                    <a href="#" onclick="openContactModal(); return false;" class="btn btn-secondary">Contact Us</a>
+                    <a href="#" onclick="openContactModal(); return false;" class="btn btn-secondary">Contact Me</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -1075,6 +1271,10 @@
                                     <div class="service-detail-label">Result</div>
                                     <div class="service-detail-content">Organized knowledge system that saves 5-10 hours/week on creation.</div>
                                 </div>
+                                <div class="service-cta-buttons">
+                                    <a href="https://calendly.com/leadershipinchangellc/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book a Free Call</a>
+                                    <a href="#" onclick="openContactModal(); return false;" class="btn btn-secondary">Contact Me</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1102,6 +1302,10 @@
                                     <div class="service-detail-label">Result</div>
                                     <div class="service-detail-content">Typical savings of $1,500-3,000/month in time value.</div>
                                 </div>
+                                <div class="service-cta-buttons">
+                                    <a href="https://calendly.com/leadershipinchangellc/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book a Free Call</a>
+                                    <a href="#" onclick="openContactModal(); return false;" class="btn btn-secondary">Contact Me</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1124,6 +1328,10 @@
                                 <div class="service-detail">
                                     <div class="service-detail-label">Best For</div>
                                     <div class="service-detail-content">CEOs, nonprofit directors, church leaders, entrepreneurs implementing AI.</div>
+                                </div>
+                                <div class="service-cta-buttons">
+                                    <a href="https://calendly.com/leadershipinchangellc/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book a Free Call</a>
+                                    <a href="#" onclick="openContactModal(); return false;" class="btn btn-secondary">Contact Me</a>
                                 </div>
                             </div>
                         </div>
@@ -1158,6 +1366,10 @@
                                     <div class="service-detail-label">Result</div>
                                     <div class="service-detail-content">Identify $10K-50K in annual savings opportunities.</div>
                                 </div>
+                                <div class="service-cta-buttons">
+                                    <a href="https://calendly.com/leadershipinchangellc/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book a Free Call</a>
+                                    <a href="#" onclick="openContactModal(); return false;" class="btn btn-secondary">Contact Me</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1185,6 +1397,10 @@
                                     <div class="service-detail-label">Result</div>
                                     <div class="service-detail-content">15-40% time savings on automated processes.</div>
                                 </div>
+                                <div class="service-cta-buttons">
+                                    <a href="https://calendly.com/leadershipinchangellc/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book a Free Call</a>
+                                    <a href="#" onclick="openContactModal(); return false;" class="btn btn-secondary">Contact Me</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1207,6 +1423,10 @@
                                 <div class="service-detail">
                                     <div class="service-detail-label">Best For</div>
                                     <div class="service-detail-content">Organizations making significant AI investments.</div>
+                                </div>
+                                <div class="service-cta-buttons">
+                                    <a href="https://calendly.com/leadershipinchangellc/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book a Free Call</a>
+                                    <a href="#" onclick="openContactModal(); return false;" class="btn btn-secondary">Contact Me</a>
                                 </div>
                             </div>
                         </div>
@@ -1261,9 +1481,14 @@
                 <h2 class="newsletter-cta-headline">Want to lead wisely in the age of AI?</h2>
                 <p class="newsletter-cta-description">Join 3,500+ leaders getting practical frameworks for AI adoption, strategy before tech, culture over code.</p>
             </div>
-            <div class="newsletter-cta-arrow">→</div>
+            <div class="newsletter-cta-arrow">
+                <svg viewBox="0 0 140 60" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 5 30 Q 50 5, 95 30" stroke-dasharray="150" fill="none"/>
+                    <path d="M 85 25 L 95 30 L 85 35" stroke-dasharray="0" fill="none"/>
+                </svg>
+            </div>
             <div class="newsletter-cta-right">
-                <a href="https://leadershipinchange.com/subscribe" target="_blank" rel="noopener noreferrer" class="newsletter-subscribe-btn">Subscribe</a>
+                <a href="https://leadershipinchange.com/subscribe" target="_blank" rel="noopener noreferrer" class="newsletter-subscribe-btn">Subscribe to my newsletter</a>
             </div>
         </div>
     </section>
