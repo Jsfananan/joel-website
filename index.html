@@ -610,6 +610,27 @@
             letter-spacing: -0.01em;
         }
 
+        .service-subtitle {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.5;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        .service-badge {
+            display: inline-block;
+            padding: 0.375rem 0.75rem;
+            background: var(--peach);
+            color: var(--navy);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-radius: 20px;
+            margin-bottom: 0.5rem;
+        }
+
         .service-learn-more {
             opacity: 0;
             font-size: 0.9rem;
@@ -1042,6 +1063,125 @@
             text-align: center;
             padding: 3rem;
             color: var(--text-light);
+        }
+
+        /* Partner Section */
+        .partner-section {
+            padding: var(--section-padding);
+            background: var(--white);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .partner-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .partner-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .partner-text {
+            font-size: clamp(1.125rem, 2vw, 1.375rem);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .partner-text strong {
+            color: var(--navy);
+            font-weight: 600;
+        }
+
+        /* Expertise Banner */
+        .expertise-banner {
+            padding: 2.5rem 2rem;
+            background: var(--white);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .expertise-banner-container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .expertise-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .expertise-header h3 {
+            font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+            font-weight: 600;
+            color: var(--navy);
+            letter-spacing: -0.01em;
+        }
+
+        .expertise-carousel {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            padding: 0.5rem 0;
+        }
+
+        .expertise-carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .expertise-card {
+            min-width: 100%;
+            background: linear-gradient(135deg, rgba(244, 196, 176, 0.1) 0%, rgba(244, 196, 176, 0.05) 100%);
+            border: 1px solid rgba(244, 196, 176, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .expertise-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .expertise-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background: var(--white);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .expertise-item:hover {
+            border-color: var(--peach);
+            box-shadow: 0 2px 8px rgba(244, 196, 176, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .expertise-item::before {
+            content: '✓';
+            color: var(--peach-dark);
+            font-weight: 700;
+            font-size: 1.125rem;
+        }
+
+        .expertise-item-text {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--navy);
         }
 
         /* Footer */
@@ -1744,6 +1884,14 @@
                 gap: 1.5rem;
             }
 
+            .expertise-items {
+                grid-template-columns: 1fr;
+            }
+
+            .expertise-banner {
+                padding: 2rem 1.5rem;
+            }
+
             .post-card {
                 padding: 1.5rem;
                 min-height: 350px;
@@ -1859,6 +2007,38 @@
         </div>
     </section>
 
+    <section class="expertise-banner" aria-label="My Expertise">
+        <div class="expertise-banner-container">
+            <div class="expertise-header">
+                <h3>My Expertise</h3>
+            </div>
+            <div class="expertise-carousel">
+                <div class="expertise-card">
+                    <div class="expertise-items">
+                        <div class="expertise-item">
+                            <span class="expertise-item-text">ChatGPT Agents</span>
+                        </div>
+                        <div class="expertise-item">
+                            <span class="expertise-item-text">Claude and Claude Projects</span>
+                        </div>
+                        <div class="expertise-item">
+                            <span class="expertise-item-text">NotebookLM Research</span>
+                        </div>
+                        <div class="expertise-item">
+                            <span class="expertise-item-text">Gemini and AI Visual Brand</span>
+                        </div>
+                        <div class="expertise-item">
+                            <span class="expertise-item-text">AI Tool Implementation</span>
+                        </div>
+                        <div class="expertise-item">
+                            <span class="expertise-item-text">AI Opportunity Finder</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="services" class="services" aria-label="Services section">
         <div class="services-container">
             <div class="services-header">
@@ -1874,7 +2054,8 @@
                         <div class="service-header">
                             <div class="service-title-group">
                                 <div class="service-title">Second Brain Build</div>
-                                <div class="service-price">$600</div>
+                                <div class="service-price">$400</div>
+                                <div class="service-subtitle">Lost in information overload? Can't find what you've already learned?</div>
                             </div>
                             <div class="service-learn-more">Learn More →</div>
                         </div>
@@ -1905,7 +2086,8 @@
                         <div class="service-header">
                             <div class="service-title-group">
                                 <div class="service-title">AI Workflow Audit</div>
-                                <div class="service-price">$800</div>
+                                <div class="service-price">Custom</div>
+                                <div class="service-subtitle">Wasting hours on manual work but unsure what AI can actually automate?</div>
                             </div>
                             <div class="service-learn-more">Learn More →</div>
                         </div>
@@ -1935,8 +2117,10 @@
                     <div class="service-item" onclick="toggleService(this)">
                         <div class="service-header">
                             <div class="service-title-group">
+                                <div class="service-badge">Most Popular</div>
                                 <div class="service-title">Executive Coaching</div>
                                 <div class="service-price">$200/session</div>
+                                <div class="service-subtitle">Leading AI adoption but need strategic guidance without the tech jargon?</div>
                             </div>
                             <div class="service-learn-more">Learn More →</div>
                         </div>
@@ -1959,6 +2143,17 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="partner-section" aria-label="Partner with Me">
+        <div class="partner-container">
+            <div class="partner-content">
+                <p class="partner-text">
+                    <strong>Sponsors, Collaborators, Partners</strong> — Let's work together. Contact me to explore partnership opportunities.
+                </p>
+                <a href="#" onclick="openContactModal(); return false;" class="btn btn-primary">Contact Me</a>
             </div>
         </div>
     </section>
