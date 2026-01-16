@@ -229,7 +229,7 @@
             --bg-light: #F8F8FD;
             --border: #D1D5DB;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --section-padding: 6rem 2rem;
+            --section-padding: 5rem 2rem;
             --container-max: 1400px;
         }
 
@@ -332,7 +332,8 @@
 
         .header-subscribe-btn:hover {
             background: var(--navy-light);
-            transform: translateY(-1px);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(26, 43, 91, 0.25);
         }
 
         /* Section Base Styles */
@@ -348,7 +349,7 @@
             align-items: center;
             justify-content: center;
             padding: var(--section-padding);
-            padding-top: calc(var(--section-padding) + 80px);
+            padding-top: calc(5rem + 90px);
             background: var(--bg-light);
         }
 
@@ -357,14 +358,14 @@
             width: 100%;
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
-            gap: 6rem;
+            gap: 4rem;
             align-items: center;
         }
 
         .hero-content {
             display: flex;
             flex-direction: column;
-            gap: 3rem;
+            gap: 2.25rem;
             animation: fadeInUp 0.8s ease-out;
         }
 
@@ -410,10 +411,10 @@
         }
 
         .hero-image img:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 30px 80px rgba(26, 43, 91, 0.2), 
-                        0 0 0 4px rgba(255, 255, 255, 0.9),
-                        0 0 0 8px rgba(244, 196, 176, 0.3);
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 40px 100px rgba(26, 43, 91, 0.25), 
+                        0 0 0 4px rgba(255, 255, 255, 0.95),
+                        0 0 0 8px rgba(244, 196, 176, 0.4);
         }
 
         .cta-buttons {
@@ -468,8 +469,8 @@
         .btn-primary:hover {
             background: var(--peach-dark);
             border-color: var(--peach-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(244, 196, 176, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(244, 196, 176, 0.5);
         }
 
         .btn-primary:active {
@@ -560,8 +561,8 @@
 
         .service-item:hover {
             border-color: var(--peach);
-            box-shadow: 0 8px 24px rgba(26, 43, 91, 0.12);
-            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(26, 43, 91, 0.15);
+            transform: translateY(-8px);
         }
 
         .service-item.active {
@@ -720,7 +721,7 @@
 
         .about-intro {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
             animation: fadeInUp 0.8s ease-out 0.2s both;
         }
 
@@ -768,7 +769,7 @@
             position: relative;
             padding-left: 1.75rem;
             border-left: 2px solid rgba(244, 196, 176, 0.2);
-            transition: border-color 0.3s ease;
+            transition: var(--transition);
         }
 
         .about-section:hover {
@@ -852,7 +853,7 @@
 
         .latest-posts-header {
             text-align: left;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
             max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
@@ -1041,6 +1042,125 @@
             color: var(--text-light);
         }
 
+        /* Footer */
+        .footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 3rem 2rem 2rem;
+            border-top: 1px solid rgba(244, 196, 176, 0.2);
+        }
+
+        .footer-container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .footer-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-brand {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+
+        .footer-brand p {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .footer-links h4 {
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+            color: var(--peach);
+        }
+
+        .footer-links a {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--peach);
+        }
+
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-contact a {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-contact a:hover {
+            color: var(--peach);
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-copyright {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-social a {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            color: var(--peach);
+        }
+
         .newsletter-cta {
             padding: var(--section-padding);
             background: var(--bg-light);
@@ -1080,51 +1200,33 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            min-width: 120px;
+            min-width: 80px;
             height: 60px;
         }
 
-        .newsletter-cta-arrow svg {
-            width: 100%;
-            height: 100%;
+        .newsletter-cta-arrow-icon {
+            font-size: 2.5rem;
             color: var(--peach);
+            animation: pointToButton 2s ease-in-out infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .newsletter-cta-arrow path {
-            stroke: var(--peach);
-            stroke-width: 2.5;
-            fill: none;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        .newsletter-cta-arrow path:first-child {
-            stroke-dasharray: 150;
-            animation: arrowDraw 2s ease-in-out infinite;
-        }
-
-        @keyframes arrowDraw {
-            0% {
-                stroke-dashoffset: 150;
-                opacity: 0.4;
+        @keyframes pointToButton {
+            0%, 100% {
+                transform: translateX(0);
+                opacity: 0.6;
             }
             50% {
-                stroke-dashoffset: 0;
-                opacity: 0.8;
-            }
-            100% {
-                stroke-dashoffset: 150;
-                opacity: 0.4;
+                transform: translateX(15px);
+                opacity: 1;
             }
         }
 
-        .newsletter-cta-container:hover .newsletter-cta-arrow path:first-child {
-            stroke: var(--peach-dark);
-            animation: arrowDraw 1.5s ease-in-out infinite;
-        }
-
-        .newsletter-cta-container:hover .newsletter-cta-arrow path:last-child {
-            stroke: var(--peach-dark);
+        .newsletter-cta-container:hover .newsletter-cta-arrow-icon {
+            color: var(--peach-dark);
+            animation: pointToButton 1s ease-in-out infinite;
         }
 
         .newsletter-cta-right {
@@ -1173,8 +1275,8 @@
         .newsletter-subscribe-btn:hover {
             background: var(--peach-dark);
             border-color: var(--peach-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(244, 196, 176, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(244, 196, 176, 0.5);
         }
 
         .newsletter-subscribe-btn:active {
@@ -1422,6 +1524,10 @@
                 --section-padding: 5rem 2rem;
             }
 
+            .hero {
+                padding-top: calc(5rem + 95px);
+            }
+
             .hero-container {
                 grid-template-columns: 1fr;
                 gap: 4rem;
@@ -1454,6 +1560,14 @@
         @media (max-width: 768px) {
             :root {
                 --section-padding: 4rem 1.5rem;
+            }
+
+            .hero-container {
+                gap: 3rem;
+            }
+
+            .hero-content {
+                gap: 2rem;
             }
 
             .hero {
@@ -1530,9 +1644,22 @@
                 display: none;
             }
 
+            .footer-main {
+                flex-direction: column;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
             .header-container {
                 padding: 1.25rem 1.5rem;
                 gap: 2rem;
+            }
+
+            .hero {
+                padding-top: calc(4rem + 95px);
             }
 
             .header-logo {
@@ -1574,6 +1701,11 @@
         @media (max-width: 640px) {
             :root {
                 --section-padding: 3.5rem 1.25rem;
+            }
+
+            .hero {
+                padding-top: calc(4rem + 120px);
+                padding-bottom: 4rem;
             }
 
             .hero-container {
@@ -1693,10 +1825,11 @@
     <header class="header">
         <div class="header-accent"></div>
         <div class="header-container">
-            <a href="#top" class="header-logo">Joel Salinas / AI Strategy & Implementation</a>
+            <a href="#top" class="header-logo">Joel Salinas</a>
             <nav class="header-nav">
                 <a href="#about" class="header-nav-link">About Me</a>
                 <a href="#services" class="header-nav-link">Services</a>
+                <a href="https://leadershipinchange.com/p/premium-member-hub" target="_blank" rel="noopener noreferrer" class="header-nav-link">AI Tool Hub</a>
                 <a href="#" onclick="openContactModal(); return false;" class="header-nav-link">Contact Me</a>
             </nav>
             <div class="header-actions">
@@ -1986,10 +2119,7 @@
                 <p class="newsletter-cta-description">Join 3,500+ leaders getting practical frameworks for AI adoption, strategy before tech, culture over code.</p>
             </div>
             <div class="newsletter-cta-arrow">
-                <svg viewBox="0 0 140 60" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M 5 30 Q 50 5, 95 30" stroke-dasharray="150" fill="none"/>
-                    <path d="M 85 25 L 95 30 L 85 35" stroke-dasharray="0" fill="none"/>
-                </svg>
+                <div class="newsletter-cta-arrow-icon">→</div>
             </div>
             <div class="newsletter-cta-right">
                 <a href="https://leadershipinchange.com/subscribe" target="_blank" rel="noopener noreferrer" class="newsletter-subscribe-btn">Subscribe to my newsletter</a>
@@ -2183,7 +2313,7 @@
             observer.observe(section);
         });
 
-        // Fetch and display latest Substack posts
+        // Fetch and display latest Substack posts (optimized for speed)
         async function fetchLatestPosts() {
             const postsContainer = document.getElementById('postsContainer');
             
@@ -2195,27 +2325,21 @@
                 // Check for parsing errors
                 const parseError = xmlDoc.querySelector('parsererror');
                 if (parseError) {
-                    throw new Error('RSS parsing error: ' + parseError.textContent);
+                    throw new Error('RSS parsing error');
                 }
                 
                 // Get all items (posts)
                 const items = xmlDoc.querySelectorAll('item');
                 const posts = [];
                 
-                // Extract post data (limit to 3)
+                // Extract post data (limit to 3) - optimized parsing
                 for (let i = 0; i < Math.min(3, items.length); i++) {
                     const item = items[i];
-                    const title = item.querySelector('title')?.textContent || 'Untitled';
-                    const link = item.querySelector('link')?.textContent || item.querySelector('guid')?.textContent || '#';
+                    const title = item.querySelector('title')?.textContent?.trim() || 'Untitled';
+                    const link = item.querySelector('link')?.textContent?.trim() || item.querySelector('guid')?.textContent?.trim() || '#';
                     const pubDate = item.querySelector('pubDate')?.textContent || item.querySelector('dc\\:date')?.textContent || '';
-                    const description = item.querySelector('description')?.textContent || item.querySelector('content\\:encoded')?.textContent || '';
                     
-                    // Clean up description (remove HTML tags)
-                    const tempDiv = document.createElement('div');
-                    tempDiv.innerHTML = description;
-                    const excerpt = tempDiv.textContent || tempDiv.innerText || '';
-                    
-                    // Format date
+                    // Format date (simplified)
                     let formattedDate = '';
                     if (pubDate) {
                         try {
@@ -2228,37 +2352,28 @@
                                 });
                             }
                         } catch (e) {
-                            console.warn('Date parsing error:', e);
+                            // Skip date if parsing fails
                         }
                     }
                     
                     posts.push({
-                        title: title.trim(),
-                        link: link.trim(),
-                        date: formattedDate,
-                        excerpt: excerpt.trim().substring(0, 150) + (excerpt.trim().length > 150 ? '...' : '')
+                        title,
+                        link,
+                        date: formattedDate
                     });
                 }
                 
                 return posts;
             }
             
-            // Helper function to estimate read time
-            function estimateReadTime(text) {
-                const wordsPerMinute = 200;
-                const wordCount = text.split(/\s+/).length;
-                const minutes = Math.ceil(wordCount / wordsPerMinute);
-                return minutes;
-            }
-            
             // Helper function to display posts
             function displayPosts(posts) {
                 if (posts.length > 0) {
-                    postsContainer.innerHTML = posts.map((post, index) => {
+                    postsContainer.innerHTML = posts.map((post) => {
                         return `
                             <a href="${post.link}" target="_blank" rel="noopener noreferrer" class="post-card">
                                 <div class="post-card-header">
-                                    <img src="headshot.webp" alt="Joel Salinas" class="post-card-avatar">
+                                    <img src="headshot.webp" alt="Joel Salinas" class="post-card-avatar" loading="lazy">
                                     <span class="post-card-brand">Leadership in Change</span>
                                 </div>
                                 <h3 class="post-title">${post.title}</h3>
@@ -2274,93 +2389,117 @@
                 return false;
             }
             
-            // Try multiple RSS feed URLs - first try direct fetch, then CORS proxies
-            const rssUrls = [
-                'https://leadershipinchange10.substack.com/feed',
-                'https://leadershipinchange10.substack.com/rss',
-                'https://leadershipinchange.com/feed',
-                'https://leadershipinchange.com/rss'
-            ];
+            // Optimized: Try only the most likely working URLs first
+            const primaryRssUrl = 'https://leadershipinchange10.substack.com/feed';
+            const primaryProxy = 'https://api.allorigins.win/get?url=';
             
-            const corsProxies = [
-                'https://api.allorigins.win/get?url=',
-                'https://corsproxy.io/?',
-                'https://api.codetabs.com/v1/proxy?quest='
-            ];
-            
-            // First, try direct fetch (some RSS feeds allow CORS)
-            for (const rssUrl of rssUrls) {
-                try {
-                    const response = await fetch(rssUrl, {
-                        method: 'GET',
-                        mode: 'cors',
-                        headers: {
-                            'Accept': 'application/rss+xml, application/xml, text/xml, */*'
-                        }
-                    });
-                    
-                    if (response.ok) {
-                        const xmlText = await response.text();
-                        const posts = parseRSS(xmlText);
+            try {
+                // Try primary proxy first (most reliable)
+                const proxyUrl = primaryProxy + encodeURIComponent(primaryRssUrl);
+                const response = await fetch(proxyUrl, {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.contents) {
+                        const posts = parseRSS(data.contents);
                         if (displayPosts(posts)) {
                             return; // Success!
                         }
                     }
-                } catch (error) {
-                    console.log('Direct fetch failed for', rssUrl, '- trying proxies');
                 }
+            } catch (error) {
+                console.log('Primary fetch failed, trying alternatives');
             }
             
-            // If direct fetch fails, try CORS proxies
-            for (const rssUrl of rssUrls) {
-                for (const proxy of corsProxies) {
-                    try {
-                        const proxyUrl = proxy + encodeURIComponent(rssUrl);
-                        
-                        const response = await fetch(proxyUrl, {
-                            method: 'GET',
-                            headers: {
-                                'Accept': 'application/json, text/xml, */*'
-                            }
-                        });
-                        
-                        if (!response.ok) {
-                            throw new Error(`HTTP error! status: ${response.status}`);
-                        }
-                        
-                        let data;
-                        if (proxy.includes('allorigins')) {
-                            data = await response.json();
-                            if (!data.contents) {
-                                throw new Error('No content received from allorigins');
-                            }
-                            const posts = parseRSS(data.contents);
-                            if (displayPosts(posts)) {
-                                return; // Success!
-                            }
-                        } else {
-                            // For other proxies, try to get XML directly
-                            const xmlText = await response.text();
-                            const posts = parseRSS(xmlText);
-                            if (displayPosts(posts)) {
-                                return; // Success!
-                            }
-                        }
-                    } catch (error) {
-                        console.warn(`Failed with ${rssUrl} via ${proxy}:`, error.message);
-                        continue; // Try next combination
+            // Fallback: Try direct fetch
+            try {
+                const response = await fetch(primaryRssUrl, {
+                    method: 'GET',
+                    mode: 'cors',
+                    headers: {
+                        'Accept': 'application/rss+xml, application/xml, text/xml'
+                    }
+                });
+                
+                if (response.ok) {
+                    const xmlText = await response.text();
+                    const posts = parseRSS(xmlText);
+                    if (displayPosts(posts)) {
+                        return; // Success!
                     }
                 }
+            } catch (error) {
+                console.log('Direct fetch failed');
+            }
+            
+            // Final fallback: Try alternative RSS endpoint
+            try {
+                const altUrl = 'https://leadershipinchange10.substack.com/rss';
+                const proxyUrl = primaryProxy + encodeURIComponent(altUrl);
+                const response = await fetch(proxyUrl);
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.contents) {
+                        const posts = parseRSS(data.contents);
+                        if (displayPosts(posts)) {
+                            return; // Success!
+                        }
+                    }
+                }
+            } catch (error) {
+                console.log('Alternative fetch failed');
             }
             
             // If all attempts failed, show error message
             postsContainer.innerHTML = '<div class="posts-error">Unable to load latest posts at this time. <a href="https://leadershipinchange10.substack.com" target="_blank" rel="noopener noreferrer">Visit Leadership in Change</a> to read the latest articles.</div>';
         }
+        
+        // Load posts immediately when DOM is ready (don't wait for full page load)
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', fetchLatestPosts);
+        } else {
+            fetchLatestPosts();
+        }
 
-        // Load posts when page loads
-        fetchLatestPosts();
     </script>
     </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <h3>Joel Salinas Leadership and Change, LLC</h3>
+                    <p>Helping leaders maximize their impact wisely with AI strategy, implementation, and change management.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/privacy.html">Privacy Policy</a>
+                    <a href="/basic.html">Basic</a>
+                    <a href="/standard.html">Standard</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <a href="mailto:leadershipandchangellc@gmail.com">leadershipandchangellc@gmail.com</a>
+                    <a href="https://www.linkedin.com/in/jsalinasf/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    © 2026 Joel Salinas - Leadership in Change LLC. All rights reserved.
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/jsalinasf/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
 
