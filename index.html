@@ -1129,59 +1129,68 @@
             overflow-x: auto;
             scroll-behavior: smooth;
             -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
-            padding: 0.5rem 0;
+            scrollbar-width: thin;
+            scrollbar-color: var(--peach) var(--border);
+            padding: 1rem 0.5rem;
+            margin: 0 -0.5rem;
         }
 
         .expertise-carousel::-webkit-scrollbar {
-            display: none;
+            height: 8px;
         }
 
-        .expertise-card {
-            min-width: 100%;
-            background: linear-gradient(135deg, rgba(244, 196, 176, 0.1) 0%, rgba(244, 196, 176, 0.05) 100%);
-            border: 1px solid rgba(244, 196, 176, 0.3);
-            border-radius: 12px;
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
+        .expertise-carousel::-webkit-scrollbar-track {
+            background: var(--border);
+            border-radius: 4px;
         }
 
-        .expertise-items {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
+        .expertise-carousel::-webkit-scrollbar-thumb {
+            background: var(--peach);
+            border-radius: 4px;
+        }
+
+        .expertise-carousel::-webkit-scrollbar-thumb:hover {
+            background: var(--peach-dark);
         }
 
         .expertise-item {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 0.75rem;
-            padding: 0.75rem;
+            padding: 1.25rem 1rem;
             background: var(--white);
-            border-radius: 8px;
+            border-radius: 12px;
             border: 1px solid var(--border);
             transition: var(--transition);
+            width: 180px;
+            min-width: 180px;
+            max-width: 180px;
+            flex-shrink: 0;
+            min-height: 200px;
+            flex-direction: column;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
         }
 
         .expertise-item:hover {
             border-color: var(--peach);
-            box-shadow: 0 2px 8px rgba(244, 196, 176, 0.2);
-            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(244, 196, 176, 0.25);
+            transform: translateY(-4px);
         }
 
         .expertise-item::before {
             content: '✓';
             color: var(--peach-dark);
             font-weight: 700;
-            font-size: 1.125rem;
+            font-size: 1.25rem;
+            flex-shrink: 0;
         }
 
         .expertise-item-text {
             font-size: 0.95rem;
             font-weight: 500;
             color: var(--navy);
+            line-height: 1.5;
+            word-wrap: break-word;
         }
 
         /* Footer */
@@ -1884,12 +1893,20 @@
                 gap: 1.5rem;
             }
 
-            .expertise-items {
-                grid-template-columns: 1fr;
-            }
-
             .expertise-banner {
                 padding: 2rem 1.5rem;
+            }
+
+            .expertise-carousel {
+                padding: 1rem 0.25rem;
+            }
+
+            .expertise-item {
+                width: 160px;
+                min-width: 160px;
+                max-width: 160px;
+                min-height: 180px;
+                padding: 1rem 0.875rem;
             }
 
             .post-card {
@@ -2013,27 +2030,23 @@
                 <h3>My Expertise</h3>
             </div>
             <div class="expertise-carousel">
-                <div class="expertise-card">
-                    <div class="expertise-items">
-                        <div class="expertise-item">
-                            <span class="expertise-item-text">ChatGPT Agents</span>
-                        </div>
-                        <div class="expertise-item">
-                            <span class="expertise-item-text">Claude and Claude Projects</span>
-                        </div>
-                        <div class="expertise-item">
-                            <span class="expertise-item-text">NotebookLM Research</span>
-                        </div>
-                        <div class="expertise-item">
-                            <span class="expertise-item-text">Gemini and AI Visual Brand</span>
-                        </div>
-                        <div class="expertise-item">
-                            <span class="expertise-item-text">AI Tool Implementation</span>
-                        </div>
-                        <div class="expertise-item">
-                            <span class="expertise-item-text">AI Opportunity Finder</span>
-                        </div>
-                    </div>
+                <div class="expertise-item">
+                    <span class="expertise-item-text">ChatGPT Agents</span>
+                </div>
+                <div class="expertise-item">
+                    <span class="expertise-item-text">Claude and Claude Projects</span>
+                </div>
+                <div class="expertise-item">
+                    <span class="expertise-item-text">NotebookLM Research</span>
+                </div>
+                <div class="expertise-item">
+                    <span class="expertise-item-text">Gemini and AI Visual Brand</span>
+                </div>
+                <div class="expertise-item">
+                    <span class="expertise-item-text">AI Tool Implementation</span>
+                </div>
+                <div class="expertise-item">
+                    <span class="expertise-item-text">AI Opportunity Finder</span>
                 </div>
             </div>
         </div>
