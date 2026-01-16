@@ -17,7 +17,7 @@
     <!-- Primary Meta Tags -->
     <title>AI Strategy Consultant for Nonprofits, Small Business & Creators | Joel Salinas</title>
     <meta name="title" content="AI Strategy Consultant for Nonprofits, Small Business & Creators | Joel Salinas">
-    <meta name="description" content="Boutique AI consulting for nonprofits, small businesses, and creators. AI strategy audits, implementation, and change management. Human-centered, ethical AI adoption. 50% off for nonprofits.">
+    <meta name="description" content="Boutique AI consulting for nonprofits, small businesses, and creators. AI strategy audits, implementation, and change management. Human-centered, ethical AI adoption. 25% off for nonprofits.">
     <meta name="keywords" content="AI leadership consultant, AI implementation for leaders, executive AI coaching, AI change management, strategic AI consulting, human-centered AI, AI leadership training, Fortune 500 AI consulting, nonprofit AI consulting">
     <meta name="author" content="Joel Salinas">
     <meta name="robots" content="index, follow">
@@ -31,7 +31,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jsalinas.org/">
     <meta property="og:title" content="AI Strategy Consultant for Nonprofits, Small Business & Creators | Joel Salinas">
-    <meta property="og:description" content="Boutique AI consulting for nonprofits, small businesses, and creators. AI strategy audits, implementation, and change management. Human-centered, ethical AI adoption. 50% off for nonprofits.">
+    <meta property="og:description" content="Boutique AI consulting for nonprofits, small businesses, and creators. AI strategy audits, implementation, and change management. Human-centered, ethical AI adoption. 25% off for nonprofits.">
     <meta property="og:image" content="https://jsalinas.org/headshot.webp">
     <meta property="og:site_name" content="AI Leadership & Strategy">
     <meta property="og:locale" content="en_US">
@@ -40,7 +40,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://jsalinas.org/">
     <meta name="twitter:title" content="AI Strategy Consultant for Nonprofits, Small Business & Creators | Joel Salinas">
-    <meta name="twitter:description" content="Boutique AI consulting for nonprofits, small businesses, and creators. AI strategy audits, implementation, and change management. Human-centered, ethical AI adoption. 50% off for nonprofits.">
+    <meta name="twitter:description" content="Boutique AI consulting for nonprofits, small businesses, and creators. AI strategy audits, implementation, and change management. Human-centered, ethical AI adoption. 25% off for nonprofits.">
     <meta name="twitter:image" content="https://jsalinas.org/headshot.webp">
     <meta name="twitter:creator" content="@jsalinasf">
     
@@ -2859,30 +2859,20 @@
         }
 
         .who-help-card {
-            background: var(--white);
-            border: 1px solid var(--border);
+            background: var(--light-bg);
+            border: 2px solid var(--border);
             border-radius: 12px;
             padding: 1.5rem;
-            box-shadow: 0 2px 10px rgba(30, 58, 95, 0.06);
-            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+            transition: transform 0.2s ease, border-color 0.2s ease;
         }
 
         .who-help-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(30, 58, 95, 0.1);
-            border-color: rgba(244, 196, 176, 0.6);
+            transform: translateY(-3px);
+            border-color: rgba(244, 196, 176, 0.8);
         }
 
-        .card-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            background: rgba(30, 58, 95, 0.08);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .who-help-card .accordion-icon-wrapper {
             margin-bottom: 1rem;
-            color: var(--navy);
         }
 
         .who-help-card h3 {
@@ -2928,7 +2918,7 @@
 
         .badge {
             display: inline-block;
-            background: rgba(244, 196, 176, 0.25);
+            background: rgba(244, 196, 176, 0.3);
             color: var(--navy);
             font-size: 0.8rem;
             font-weight: 700;
@@ -2941,69 +2931,31 @@
             background: var(--light-bg);
         }
 
-        .problems-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.25rem;
-            margin-top: 2rem;
-        }
-
-        .problem-card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 0;
-            overflow: hidden;
-        }
-
-        .problem-card summary {
+        .problems-list {
             list-style: none;
-            cursor: pointer;
-            padding: 1.25rem;
+            padding: 0;
+            margin: 2rem auto 0;
+            max-width: 900px;
+            background: var(--white);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+        }
+
+        .problems-list li {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border);
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-        }
-
-        .problem-card summary::-webkit-details-marker {
-            display: none;
-        }
-
-        .problem-card h3 {
-            font-size: 1.05rem;
-            margin-bottom: 0.35rem;
+            gap: 0.75rem;
+            align-items: flex-start;
             color: var(--dark-text);
         }
 
-        .problem-card p {
-            color: var(--light-text);
-            font-size: 0.95rem;
-            margin: 0;
+        .problems-list li:last-child {
+            border-bottom: none;
         }
 
-        .problem-toggle {
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            border: 1px solid var(--border);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            color: var(--navy);
-            flex-shrink: 0;
-        }
-
-        .problem-card[open] .problem-toggle {
-            transform: rotate(45deg);
-            background: rgba(244, 196, 176, 0.2);
-        }
-
-        .problem-body {
-            padding: 0 1.25rem 1.25rem 1.25rem;
-            border-top: 1px solid var(--border);
-            background: rgba(244, 196, 176, 0.05);
+        .problems-list .spec-icon {
+            margin-top: 2px;
         }
 
         .process-section {
@@ -3198,22 +3150,23 @@
             border-radius: 8px;
         }
 
-        .pillars-section {
+        .letter-section {
             background: var(--light-bg);
         }
 
-        .pillars-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
+        .letter-box {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
         }
 
-        .pillar-card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.5rem;
+        .letter-box p {
+            color: var(--light-text);
+            line-height: 1.7;
+            margin-bottom: 1rem;
         }
 
         .commitment-section {
@@ -3393,11 +3346,10 @@
     <section class="hero" id="main-content">
         <div class="hero-content">
             <h1>AI Strategy Consultant for Nonprofits, Small Businesses & Creators</h1>
-            <p class="hero-subheadline">Boutique AI consulting for ethical, human-centered strategy. I help organizations adopt AI wisely without the hype or enterprise costs.</p>
             <ul class="hero-specializations">
                 <li><span class="spec-icon">✓</span>AI Strategy & Opportunity Audits</li>
                 <li><span class="spec-icon">✓</span>AI Change Management & Adoption</li>
-                <li><span class="spec-icon">✓</span>Nonprofit AI Implementation, 50% off all services</li>
+                <li><span class="spec-icon">✓</span>Nonprofit AI Implementation, 25% off all services</li>
                 <li><span class="spec-icon">✓</span>Creator Systems & Second Brain Builds</li>
                 <li><span class="spec-icon">✓</span>Ethics Reviews & Risk Mitigation</li>
             </ul>
@@ -3435,7 +3387,12 @@
         <p class="section-intro">I specialize in three types of clients. Which one are you?</p>
         <div class="who-help-grid">
             <div class="who-help-card">
-                <div class="card-icon">✍</div>
+                <div class="accordion-icon-wrapper">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M4 20h16"/>
+                        <path d="M7 16l10-10 3 3-10 10H7z"/>
+                    </svg>
+                </div>
                 <h3>Creators & Solo Entrepreneurs</h3>
                 <ul>
                     <li>Second brain systems</li>
@@ -3446,7 +3403,12 @@
                 <a href="#creator-services" class="card-button">Creator Solutions →</a>
             </div>
             <div class="who-help-card">
-                <div class="card-icon">🏢</div>
+                <div class="accordion-icon-wrapper">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="3" y="3" width="8" height="18"/>
+                        <rect x="13" y="7" width="8" height="14"/>
+                    </svg>
+                </div>
                 <h3>Small Businesses (1-50 Employees)</h3>
                 <ul>
                     <li>Process audits & optimization</li>
@@ -3457,8 +3419,12 @@
                 <a href="#business-services" class="card-button">Small Business Services →</a>
             </div>
             <div class="who-help-card">
-                <div class="badge">50% OFF ALL SERVICES</div>
-                <div class="card-icon">❤</div>
+                <div class="badge">25% OFF ALL SERVICES</div>
+                <div class="accordion-icon-wrapper">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 21s-7-4.5-9-8.5S4.5 4 8 4c2 0 3.5 1.2 4 2.5C12.5 5.2 14 4 16 4c3.5 0 5 4.5 3 8.5S12 21 12 21z"/>
+                    </svg>
+                </div>
                 <h3>Nonprofits & Churches</h3>
                 <ul>
                     <li>Mission-aligned AI strategy</li>
@@ -3474,73 +3440,13 @@
     <section class="problems-section fade-in" id="problems">
         <h2>Common AI Challenges I Solve</h2>
         <p class="section-intro">If you're facing one of these, I can help.</p>
-        <div class="problems-grid">
-            <details class="problem-card">
-                <summary>
-                    <div>
-                        <h3>No In-House AI Expertise</h3>
-                        <p>You need AI strategy but don't have technical staff.</p>
-                    </div>
-                    <span class="problem-toggle">+</span>
-                </summary>
-                <div class="problem-body">
-                    <p><strong>Solution:</strong> I serve as your fractional AI strategist, audit opportunities, and train your team.</p>
-                    <p><strong>Best for:</strong> Small teams without technical staff.</p>
-                </div>
-            </details>
-            <details class="problem-card">
-                <summary>
-                    <div>
-                        <h3>Inefficient Manual Processes</h3>
-                        <p>Your team wastes hours on repetitive tasks every week.</p>
-                    </div>
-                    <span class="problem-toggle">+</span>
-                </summary>
-                <div class="problem-body">
-                    <p><strong>Solution:</strong> I identify the biggest time drains and automate them with tools you already have.</p>
-                    <p><strong>Typical result:</strong> 40 to 60 percent less admin time.</p>
-                </div>
-            </details>
-            <details class="problem-card">
-                <summary>
-                    <div>
-                        <h3>Don't Know Where to Start</h3>
-                        <p>AI feels overwhelming with too many tools and options.</p>
-                    </div>
-                    <span class="problem-toggle">+</span>
-                </summary>
-                <div class="problem-body">
-                    <p><strong>Solution:</strong> I build a clear, prioritized roadmap based on your goals and capacity.</p>
-                    <p><strong>Best for:</strong> First-time AI adopters.</p>
-                </div>
-            </details>
-            <details class="problem-card">
-                <summary>
-                    <div>
-                        <h3>Worried About AI Ethics & Risks</h3>
-                        <p>You want AI benefits without compromising values or privacy.</p>
-                    </div>
-                    <span class="problem-toggle">+</span>
-                </summary>
-                <div class="problem-body">
-                    <p><strong>Solution:</strong> Every implementation includes an ethics review for values, privacy, and transparency.</p>
-                    <p><strong>Best for:</strong> Mission-driven organizations.</p>
-                </div>
-            </details>
-            <details class="problem-card">
-                <summary>
-                    <div>
-                        <h3>Limited Budget for AI</h3>
-                        <p>You can't afford expensive consultants or enterprise tools.</p>
-                    </div>
-                    <span class="problem-toggle">+</span>
-                </summary>
-                <div class="problem-body">
-                    <p><strong>Solution:</strong> I maximize what you already have in Google Workspace and Microsoft 365.</p>
-                    <p><strong>Average savings:</strong> $500 to $2,000 per month.</p>
-                </div>
-            </details>
-        </div>
+        <ul class="problems-list">
+            <li><span class="spec-icon">✓</span><strong>No in-house AI expertise.</strong> Strategy and training without new hires.</li>
+            <li><span class="spec-icon">✓</span><strong>Inefficient manual processes.</strong> Automations that save hours each week.</li>
+            <li><span class="spec-icon">✓</span><strong>Not sure where to start.</strong> Clear, prioritized AI roadmap.</li>
+            <li><span class="spec-icon">✓</span><strong>Ethics and risk concerns.</strong> Values-first, privacy-safe implementation.</li>
+            <li><span class="spec-icon">✓</span><strong>Limited budget.</strong> Maximize Google Workspace and Microsoft 365.</li>
+        </ul>
     </section>
 
     <!-- My Process -->
@@ -3828,85 +3734,26 @@
 
         <div class="callout-box" id="nonprofit-services">
             <h3>Nonprofit & Church Pricing</h3>
-            <p>All consulting services are 50% off for 501(c)(3) organizations and churches.</p>
+            <p>All consulting services are 25% off for 501(c)(3) organizations and churches.</p>
             <ul>
                 <li>Budget-conscious strategies</li>
                 <li>Free 30-minute nonprofit strategy calls</li>
             </ul>
             <a href="https://calendly.com/leadershipinchangellc/30min" target="_blank" rel="noopener noreferrer" class="discovery-button ripple">Schedule Nonprofit Consultation</a>
         </div>
-
-        <div class="callout-box">
-            <h3>Monthly Retainers & Ongoing Support</h3>
-            <p>After implementation, many clients continue with ongoing optimization and support.</p>
-            <ul>
-                <li>Monthly strategy calls</li>
-                <li>Troubleshooting and adjustments</li>
-            </ul>
-            <p><strong>Investment:</strong> Custom retainer based on needs. Contact for retainer pricing.</p>
-            <a href="#contact" class="discovery-button ripple">Discuss Ongoing Support</a>
-        </div>
     </section>
 
-    <!-- What I Don't Do -->
-    <section class="do-dont-section fade-in">
-        <h2>I'm a Strategy Consultant, Not a Software Developer</h2>
-        <p class="section-intro">Honesty builds trust. Here's what I do and don't do so we're aligned from the start.</p>
-        <div class="do-dont-grid">
-            <div class="do-dont-card">
-                <h3>What I Do</h3>
-                <ul>
-                    <li>Strategic AI planning</li>
-                    <li>Workflow design & optimization</li>
-                    <li>Prototyping & proof-of-concepts</li>
-                    <li>Tool configuration (Claude Projects, GPTs)</li>
-                    <li>SOP creation & documentation</li>
-                    <li>Team training & change management</li>
-                    <li>AI audits & ethics reviews</li>
-                </ul>
-            </div>
-            <div class="do-dont-card">
-                <h3>What I Don't Do</h3>
-                <ul>
-                    <li>Custom software development</li>
-                    <li>Backend engineering</li>
-                    <li>Building proprietary AI models</li>
-                    <li>Complex database architecture</li>
-                    <li>Mobile app development</li>
-                    <li>Enterprise-scale infrastructure</li>
-                </ul>
-            </div>
-        </div>
-        <div class="do-dont-note">
-            <strong>Why This Keeps Your Costs Low</strong>
-            <p>I'm a strategist, not a developer. For custom builds beyond prototypes, I connect you with vetted partners. You get strategic expertise at $600 to $12,000 versus $30,000 to $100,000+ for full custom development. When you need development, I can manage the relationship or hand off with full documentation.</p>
-        </div>
-    </section>
-
-    <!-- Three Pillars -->
-    <section class="pillars-section fade-in">
+    <!-- Letter + Human-Centered Commitment -->
+    <section class="letter-section fade-in">
         <h2>My AI Philosophy</h2>
-        <p class="section-intro">Three principles that guide every client engagement.</p>
-        <div class="pillars-grid">
-            <div class="pillar-card">
-                <h3>Innovation Without Hype</h3>
-                <p>AI should unlock new possibilities, not just automate old processes. I help you reimagine what's possible when AI amplifies your team's strengths.</p>
-            </div>
-            <div class="pillar-card">
-                <h3>Cost Reduction with Proof</h3>
-                <p>Every AI investment should pay for itself. I provide ROI projections before implementation and track results after. No faith-based budgeting.</p>
-            </div>
-            <div class="pillar-card">
-                <h3>Adaptability for the Future</h3>
-                <p>AI changes fast. I build systems that evolve with you, not rigid implementations that become obsolete in 6 months.</p>
-            </div>
+        <div class="letter-box">
+            <p>I believe the best AI work is calm, clear, and human-first. Strategy comes before tools, and people stay at the center of every decision.</p>
+            <p>I help leaders implement AI in ways that protect values, improve outcomes, and build trust inside their teams.</p>
         </div>
     </section>
 
-    <!-- Human-Centered AI Commitment -->
     <section class="commitment-section fade-in">
         <h2>Human-Centered AI Commitment</h2>
-        <p class="section-intro">Every implementation follows these principles:</p>
         <ul class="commitment-list">
             <li>Ethical review for every implementation</li>
             <li>Privacy-first approach to data handling</li>
@@ -3914,7 +3761,6 @@
             <li>Focus on augmentation, not replacement</li>
             <li>Alignment with your organizational values</li>
         </ul>
-        <p class="section-intro">I believe AI should make your team more effective, not expendable. Technology serves people, not the other way around.</p>
     </section>
 
     <!-- Testimonials Section -->
@@ -4113,7 +3959,7 @@
                     <li>Private community membership</li>
                     <li>Direct messaging with Joel</li>
                     <li>Exclusive templates and frameworks</li>
-                    <li>50% off Cozora (worth $360)</li>
+                    <li>25% off Cozora (worth $180)</li>
                 </ul>
                 <a href="https://leadershipinchange.com/subscribe" target="_blank" rel="noopener noreferrer" class="tier-button premium">
                     Join Premium
@@ -4208,7 +4054,7 @@
                             </div>
                         </div>
                         
-                        <p style="margin-top: 1.5rem; padding: 1rem; background: var(--coral); border-radius: 8px; color: var(--navy); font-weight: 600;"><strong>Note:</strong> Churches and non-profits receive 50% off prices above</p>
+                        <p style="margin-top: 1.5rem; padding: 1rem; background: var(--coral); border-radius: 8px; color: var(--navy); font-weight: 600;"><strong>Note:</strong> Churches and non-profits receive 25% off prices above</p>
                         
                         <a href="mailto:leadershipinchangellc@gmail.com" class="discovery-button ripple">Inquire - Email us at leadershipinchangellc@gmail.com</a>
                     </div>
@@ -4253,7 +4099,7 @@
                             <li>Strategic positioning within newsletter content</li>
                         </ul>
                         
-                        <div class="nonprofit-badge">Churches and non-profits receive 50% off</div>
+                        <div class="nonprofit-badge">Churches and non-profits receive 25% off</div>
                         
                         <a href="mailto:leadershipinchangellc@gmail.com" class="discovery-button ripple">Inquire - Email us at leadershipinchangellc@gmail.com</a>
                     </div>
@@ -4299,7 +4145,7 @@
                             <li>Written walkthrough and explanation</li>
                         </ul>
                         
-                        <div class="nonprofit-badge">Churches and non-profits receive 50% off</div>
+                        <div class="nonprofit-badge">Churches and non-profits receive 25% off</div>
                         
                         <a href="mailto:leadershipinchangellc@gmail.com" class="discovery-button ripple">Inquire - Email us at leadershipinchangellc@gmail.com</a>
                     </div>
@@ -4347,7 +4193,7 @@
                         
                         <p><strong>Perfect for:</strong> Brands seeking deeper integration, unique content opportunities, and long-term strategic partnerships</p>
                         
-                        <div class="nonprofit-badge">Churches and non-profits receive 50% off</div>
+                        <div class="nonprofit-badge">Churches and non-profits receive 25% off</div>
                         
                         <a href="mailto:leadershipinchangellc@gmail.com" class="discovery-button ripple">Inquire - Email us at leadershipinchangellc@gmail.com</a>
                     </div>
