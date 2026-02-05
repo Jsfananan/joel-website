@@ -1137,6 +1137,67 @@
             color: var(--text-light);
         }
 
+        .post-card-skeleton {
+            pointer-events: none;
+        }
+
+        .post-card-skeleton .post-card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .skeleton-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--border);
+            display: inline-block;
+            animation: skeleton-pulse 1.5s ease-in-out infinite;
+        }
+
+        .skeleton-brand {
+            width: 120px;
+            height: 0.875rem;
+            background: var(--border);
+            border-radius: 4px;
+            display: inline-block;
+            animation: skeleton-pulse 1.5s ease-in-out infinite;
+        }
+
+        .skeleton-title {
+            height: 1.5rem;
+            background: var(--border);
+            border-radius: 4px;
+            margin-top: 1rem;
+            width: 90%;
+            animation: skeleton-pulse 1.5s ease-in-out infinite;
+        }
+
+        .skeleton-meta {
+            height: 0.875rem;
+            width: 80px;
+            background: var(--border);
+            border-radius: 4px;
+            margin-top: 1rem;
+            animation: skeleton-pulse 1.5s ease-in-out infinite;
+        }
+
+        .skeleton-link {
+            display: inline-block;
+            height: 1rem;
+            width: 100px;
+            background: var(--border);
+            border-radius: 4px;
+            margin-top: 1rem;
+            animation: skeleton-pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes skeleton-pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
         /* Partner Section */
         .partner-section {
             padding: var(--section-padding);
@@ -2411,7 +2472,9 @@
                 <h2><span class="header-main">Leadership in Change</span></h2>
             </div>
             <div id="postsContainer" class="posts-grid">
-                <div class="posts-loading">Loading latest posts...</div>
+                <div class="post-card post-card-skeleton" aria-hidden="true"><div class="post-card-header"><span class="skeleton-avatar"></span><span class="skeleton-brand"></span></div><div class="skeleton-title"></div><div class="skeleton-meta"></div><span class="skeleton-link"></span></div>
+                <div class="post-card post-card-skeleton" aria-hidden="true"><div class="post-card-header"><span class="skeleton-avatar"></span><span class="skeleton-brand"></span></div><div class="skeleton-title"></div><div class="skeleton-meta"></div><span class="skeleton-link"></span></div>
+                <div class="post-card post-card-skeleton" aria-hidden="true"><div class="post-card-header"><span class="skeleton-avatar"></span><span class="skeleton-brand"></span></div><div class="skeleton-title"></div><div class="skeleton-meta"></div><span class="skeleton-link"></span></div>
             </div>
         </div>
     </section>
@@ -2617,171 +2680,143 @@
             observer.observe(section);
         });
 
-        // Fetch and display latest Substack posts (optimized for speed)
+        // Fetch and display latest Substack posts (lazy-loaded, multiple fallbacks, timeout)
+        const RSS_FEED_URLS = [
+            'https://leadershipinchange10.substack.com/feed',
+            'https://leadershipinchange.com/feed',
+            'https://leadershipinchange10.substack.com/rss'
+        ];
+        const FETCH_TIMEOUT_MS = 8000;
+
+        function parseRSS(xmlString) {
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(xmlString, 'text/xml');
+            const parseError = xmlDoc.querySelector('parsererror');
+            if (parseError) throw new Error('RSS parsing error');
+            const items = xmlDoc.querySelectorAll('item');
+            const posts = [];
+            for (let i = 0; i < Math.min(3, items.length); i++) {
+                const item = items[i];
+                const title = item.querySelector('title')?.textContent?.trim() || 'Untitled';
+                const link = item.querySelector('link')?.textContent?.trim() || item.querySelector('guid')?.textContent?.trim() || '#';
+                const pubDate = item.querySelector('pubDate')?.textContent || item.querySelector('dc\\:date')?.textContent || '';
+                let formattedDate = '';
+                if (pubDate) {
+                    try {
+                        const date = new Date(pubDate);
+                        if (!isNaN(date.getTime())) {
+                            formattedDate = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+                        }
+                    } catch (e) {}
+                }
+                posts.push({ title, link, date: formattedDate });
+            }
+            return posts;
+        }
+
+        function displayPosts(postsContainer, posts) {
+            if (!posts.length) return false;
+            postsContainer.innerHTML = posts.map((post) => `
+                <a href="${post.link}" target="_blank" rel="noopener noreferrer" class="post-card">
+                    <div class="post-card-header">
+                        <img src="headshot.webp" alt="Joel Salinas" class="post-card-avatar" loading="lazy">
+                        <span class="post-card-brand">Leadership in Change</span>
+                    </div>
+                    <h3 class="post-title">${post.title}</h3>
+                    <div class="post-meta"><span class="post-date">${post.date}</span></div>
+                    <span class="post-link">Read the full post</span>
+                </a>
+            `).join('');
+            return true;
+        }
+
+        function fetchWithTimeout(url, timeoutMs) {
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+            return fetch(url, { signal: controller.signal })
+                .then((r) => { clearTimeout(timeoutId); return r; })
+                .catch((e) => { clearTimeout(timeoutId); throw e; });
+        }
+
         async function fetchLatestPosts() {
             const postsContainer = document.getElementById('postsContainer');
-            
-            // Helper function to parse RSS XML
-            function parseRSS(xmlString) {
-                const parser = new DOMParser();
-                const xmlDoc = parser.parseFromString(xmlString, 'text/xml');
-                
-                // Check for parsing errors
-                const parseError = xmlDoc.querySelector('parsererror');
-                if (parseError) {
-                    throw new Error('RSS parsing error');
-                }
-                
-                // Get all items (posts)
-                const items = xmlDoc.querySelectorAll('item');
-                const posts = [];
-                
-                // Extract post data (limit to 3) - optimized parsing
-                for (let i = 0; i < Math.min(3, items.length); i++) {
-                    const item = items[i];
-                    const title = item.querySelector('title')?.textContent?.trim() || 'Untitled';
-                    const link = item.querySelector('link')?.textContent?.trim() || item.querySelector('guid')?.textContent?.trim() || '#';
-                    const pubDate = item.querySelector('pubDate')?.textContent || item.querySelector('dc\\:date')?.textContent || '';
-                    
-                    // Format date (simplified)
-                    let formattedDate = '';
-                    if (pubDate) {
-                        try {
-                            const date = new Date(pubDate);
-                            if (!isNaN(date.getTime())) {
-                                formattedDate = date.toLocaleDateString('en-US', { 
-                                    year: 'numeric', 
-                                    month: 'long', 
-                                    day: 'numeric' 
-                                });
-                            }
-                        } catch (e) {
-                            // Skip date if parsing fails
-                        }
-                    }
-                    
-                    posts.push({
-                        title,
-                        link,
-                        date: formattedDate
+            if (!postsContainer) return;
+
+            function getXmlFromResponse(response, isJson) {
+                if (isJson) {
+                    return response.json().then(function(data) {
+                        return data.contents || data.content || (data && data.contents);
                     });
                 }
-                
-                return posts;
+                return response.text();
             }
-            
-            // Helper function to display posts
-            function displayPosts(posts) {
-                if (posts.length > 0) {
-                    postsContainer.innerHTML = posts.map((post) => {
-                        return `
-                            <a href="${post.link}" target="_blank" rel="noopener noreferrer" class="post-card">
-                                <div class="post-card-header">
-                                    <img src="headshot.webp" alt="Joel Salinas" class="post-card-avatar" loading="lazy">
-                                    <span class="post-card-brand">Leadership in Change</span>
-                                </div>
-                                <h3 class="post-title">${post.title}</h3>
-                                <div class="post-meta">
-                                    <span class="post-date">${post.date}</span>
-                                </div>
-                                <span class="post-link">Read the full post</span>
-                            </a>
-                        `;
-                    }).join('');
-                    return true;
-                }
-                return false;
-            }
-            
-            // Try multiple RSS feed URLs and CORS proxies
-            const rssUrls = [
-                'https://leadershipinchange10.substack.com/feed',
-                'https://leadershipinchange10.substack.com/rss',
-                'https://leadershipinchange.com/feed',
-                'https://leadershipinchange.com/rss'
+
+            // Try each feed URL with each proxy until one returns valid posts
+            const proxies = [
+                { name: 'allorigins-raw', url: function(feedUrl) { return 'https://api.allorigins.win/raw?url=' + encodeURIComponent(feedUrl); }, json: false },
+                { name: 'allorigins-get', url: function(feedUrl) { return 'https://api.allorigins.win/get?url=' + encodeURIComponent(feedUrl); }, json: true, unwrap: 'contents' },
+                { name: 'corsproxy', url: function(feedUrl) { return 'https://corsproxy.io/?' + encodeURIComponent(feedUrl); }, json: false },
+                { name: 'codetabs', url: function(feedUrl) { return 'https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent(feedUrl); }, json: false }
             ];
-            
-            const corsProxies = [
-                'https://api.allorigins.win/get?url=',
-                'https://corsproxy.io/?',
-                'https://api.codetabs.com/v1/proxy?quest='
-            ];
-            
-            // First, try direct fetch (some RSS feeds allow CORS)
-            for (const rssUrl of rssUrls) {
+
+            // First try direct fetch (works if feed allows CORS)
+            for (const feedUrl of RSS_FEED_URLS) {
                 try {
-                    const response = await fetch(rssUrl, {
-                        method: 'GET',
-                        mode: 'cors',
-                        headers: {
-                            'Accept': 'application/rss+xml, application/xml, text/xml, */*'
-                        }
-                    });
-                    
-                    if (response.ok) {
-                        const xmlText = await response.text();
+                    const response = await fetchWithTimeout(feedUrl, 5000);
+                    if (!response.ok) continue;
+                    const xmlText = await response.text();
+                    if (xmlText && xmlText.length > 100) {
                         const posts = parseRSS(xmlText);
-                        if (displayPosts(posts)) {
-                            return; // Success!
-                        }
+                        if (posts.length && displayPosts(postsContainer, posts)) return;
                     }
-                } catch (error) {
-                    // Continue to next URL
-                }
+                } catch (e) { continue; }
             }
-            
-            // If direct fetch fails, try CORS proxies
-            for (const rssUrl of rssUrls) {
-                for (const proxy of corsProxies) {
+
+            // Then try each feed URL with each proxy
+            for (const feedUrl of RSS_FEED_URLS) {
+                for (const proxy of proxies) {
                     try {
-                        const proxyUrl = proxy + encodeURIComponent(rssUrl);
-                        
-                        const response = await fetch(proxyUrl, {
-                            method: 'GET',
-                            headers: {
-                                'Accept': 'application/json, text/xml, */*'
-                            }
-                        });
-                        
-                        if (!response.ok) {
-                            continue;
-                        }
-                        
-                        let data;
-                        if (proxy.includes('allorigins')) {
-                            data = await response.json();
-                            if (!data.contents) {
-                                continue;
-                            }
-                            const posts = parseRSS(data.contents);
-                            if (displayPosts(posts)) {
-                                return; // Success!
-                            }
+                        const url = typeof proxy.url === 'function' ? proxy.url(feedUrl) : proxy.url + encodeURIComponent(feedUrl);
+                        const response = await fetchWithTimeout(url, FETCH_TIMEOUT_MS);
+                        if (!response.ok) continue;
+                        let xmlText;
+                        if (proxy.json) {
+                            const data = await response.json();
+                            xmlText = data.contents || data.content || '';
                         } else {
-                            // For other proxies, try to get XML directly
-                            const xmlText = await response.text();
-                            const posts = parseRSS(xmlText);
-                            if (displayPosts(posts)) {
-                                return; // Success!
-                            }
+                            xmlText = await response.text();
                         }
-                    } catch (error) {
-                        // Continue to next combination
+                        if (!xmlText || xmlText.length < 100) continue;
+                        const posts = parseRSS(xmlText);
+                        if (posts.length && displayPosts(postsContainer, posts)) return;
+                    } catch (e) {
                         continue;
                     }
                 }
             }
-            
-            // If all attempts failed, show error message
-            postsContainer.innerHTML = '<div class="posts-error">Unable to load latest posts at this time. <a href="https://leadershipinchange10.substack.com" target="_blank" rel="noopener noreferrer">Visit Leadership in Change</a> to read the latest articles.</div>';
+
+            postsContainer.innerHTML = '<div class="posts-error" style="grid-column: 1 / -1;">Unable to load latest posts at this time. <a href="https://leadershipinchange10.substack.com" target="_blank" rel="noopener noreferrer">Visit Leadership in Change</a> to read the latest articles.</div>';
         }
-        
-        // Load posts immediately when DOM is ready (don't wait for full page load)
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', fetchLatestPosts);
-        } else {
-            fetchLatestPosts();
-        }
+
+        // Lazy-load: only fetch when the posts section is near the viewport
+        (function initPostsLoader() {
+            const section = document.querySelector('.latest-posts');
+            const postsContainer = document.getElementById('postsContainer');
+            if (!section || !postsContainer) return;
+
+            let loaded = false;
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    if (loaded) return;
+                    const entry = entries[0];
+                    if (!entry.isIntersecting) return;
+                    loaded = true;
+                    fetchLatestPosts();
+                },
+                { rootMargin: '400px', threshold: 0 }
+            );
+            observer.observe(section);
+        })();
 
     </script>
     </main>
