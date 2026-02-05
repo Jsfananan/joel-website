@@ -1,0 +1,57 @@
+# Joel Salinas - Human-first AI Strategy Coach
+
+> Joel Salinas helps business leaders, creators, and solopreneurs maximize their impact wisely with AI through one-on-one coaching, workflow automation, and strategic guidance.
+
+## About
+
+Joel Salinas is a Bolivian-born humanitarian, business leader, speaker, writer, and lifelong learner. He is the founder of three AI-powered businesses: Cozora (https://cozora.org), Leadership in Change (https://leadershipinchange.com), and Newsletter Compass (https://newslettercompass.com). He publishes a newsletter read by 3,500+ leaders focused on AI adoption, strategy before tech, and culture over code.
+
+## Services
+
+### Second Brain Build - $450
+Build a personal AI knowledge management system using Claude Projects and ChatGPT. Includes custom workflow design, tool configuration, 1-on-1 training, and 30-day support. Typically saves 5-10 hours per week.
+URL: https://jsalinas.org/services/second-brain-build.html
+
+### AI Workflow Audit - Custom Pricing
+Complete workflow analysis and AI opportunity mapping. Includes competitive analysis, 2-3 custom SOPs for high-impact tasks, tool recommendations and setup, and 30-day optimization support. Typical savings of $1,500-3,000/month in time value.
+URL: https://jsalinas.org/services/ai-workflow-audit.html
+
+### Executive Coaching - $200/session
+1-on-1 strategic guidance on AI strategy, change management, team training, ethical governance, and ROI measurement. 60-minute video calls on a flexible schedule.
+URL: https://jsalinas.org/services/executive-coaching.html
+
+### Interactive Prototype Development - Custom Pricing
+Transform AI ideas into working prototypes. End-to-end development from concept to interactive prototype, including AI integration, user interface design, testing, and iteration support.
+URL: https://jsalinas.org/services/ai-prototype-development.html
+
+## Philosophy
+
+- AI should amplify your leadership, not replace it
+- Technology serves your mission, not the other way around
+- Strategy before tech, culture over code
+- Human-first approach to AI adoption
+
+## Expertise
+
+- ChatGPT and ChatGPT Agents
+- Claude and Claude Projects
+- Google Gemini
+- NotebookLM Research
+- AI Tool Implementation
+- AI Workflow Automation
+- AI Change Management
+- AI Leadership Strategy
+
+## Contact
+
+- Website: https://jsalinas.org
+- Email: leadershipandchangellc@gmail.com
+- LinkedIn: https://www.linkedin.com/in/jsalinasf/
+- Newsletter: https://leadershipinchange.com/subscribe
+- Book a free call: https://calendly.com/leadershipinchangellc/30min
+
+## Related Projects
+
+- Cozora: https://cozora.org - Learn AI, live and interactive
+- Leadership in Change: https://leadershipinchange.com - Strategic AI insights for leaders
+- Newsletter Compass: https://newslettercompass.com - AI-powered creator tools
