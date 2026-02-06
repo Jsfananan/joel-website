@@ -950,60 +950,43 @@
             const postsContainer = document.getElementById('postsContainer');
             if (!postsContainer) return;
 
-            function getXmlFromResponse(response, isJson) {
-                if (isJson) {
-                    return response.json().then(function(data) {
-                        return data.contents || data.content || (data && data.contents);
-                    });
-                }
-                return response.text();
-            }
-
-            // Try each feed URL with each proxy until one returns valid posts
             const proxies = [
-                { name: 'allorigins-raw', url: function(feedUrl) { return 'https://api.allorigins.win/raw?url=' + encodeURIComponent(feedUrl); }, json: false },
-                { name: 'allorigins-get', url: function(feedUrl) { return 'https://api.allorigins.win/get?url=' + encodeURIComponent(feedUrl); }, json: true, unwrap: 'contents' },
-                { name: 'corsproxy', url: function(feedUrl) { return 'https://corsproxy.io/?' + encodeURIComponent(feedUrl); }, json: false },
-                { name: 'codetabs', url: function(feedUrl) { return 'https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent(feedUrl); }, json: false }
+                { url: function(f) { return 'https://api.allorigins.win/raw?url=' + encodeURIComponent(f); }, json: false },
+                { url: function(f) { return 'https://api.allorigins.win/get?url=' + encodeURIComponent(f); }, json: true },
+                { url: function(f) { return 'https://corsproxy.io/?' + encodeURIComponent(f); }, json: false }
             ];
 
-            // First try direct fetch (works if feed allows CORS)
-            for (const feedUrl of RSS_FEED_URLS) {
-                try {
-                    const response = await fetchWithTimeout(feedUrl, 5000);
-                    if (!response.ok) continue;
-                    const xmlText = await response.text();
-                    if (xmlText && xmlText.length > 100) {
-                        const posts = parseRSS(xmlText);
-                        if (posts.length && displayPosts(postsContainer, posts)) return;
+            function tryFetch(feedUrl, proxy) {
+                const url = proxy ? proxy.url(feedUrl) : feedUrl;
+                return fetchWithTimeout(url, 6000).then(function(response) {
+                    if (!response.ok) return Promise.reject('not ok');
+                    if (proxy && proxy.json) {
+                        return response.json().then(function(data) { return data.contents || data.content || ''; });
                     }
-                } catch (e) { continue; }
+                    return response.text();
+                }).then(function(xmlText) {
+                    if (!xmlText || xmlText.length < 100) return Promise.reject('empty');
+                    var posts = parseRSS(xmlText);
+                    if (!posts.length) return Promise.reject('no posts');
+                    return posts;
+                });
             }
 
-            // Then try each feed URL with each proxy
-            for (const feedUrl of RSS_FEED_URLS) {
-                for (const proxy of proxies) {
-                    try {
-                        const url = typeof proxy.url === 'function' ? proxy.url(feedUrl) : proxy.url + encodeURIComponent(feedUrl);
-                        const response = await fetchWithTimeout(url, FETCH_TIMEOUT_MS);
-                        if (!response.ok) continue;
-                        let xmlText;
-                        if (proxy.json) {
-                            const data = await response.json();
-                            xmlText = data.contents || data.content || '';
-                        } else {
-                            xmlText = await response.text();
-                        }
-                        if (!xmlText || xmlText.length < 100) continue;
-                        const posts = parseRSS(xmlText);
-                        if (posts.length && displayPosts(postsContainer, posts)) return;
-                    } catch (e) {
-                        continue;
-                    }
-                }
-            }
+            // Fire ALL requests in parallel — first success wins
+            var attempts = [];
+            RSS_FEED_URLS.forEach(function(feedUrl) {
+                attempts.push(tryFetch(feedUrl, null));
+                proxies.forEach(function(proxy) {
+                    attempts.push(tryFetch(feedUrl, proxy));
+                });
+            });
 
-            postsContainer.innerHTML = '<div class="posts-error" style="grid-column: 1 / -1;">Unable to load latest posts at this time. <a href="https://leadershipinchange10.substack.com" target="_blank" rel="noopener noreferrer">Visit Leadership in Change</a> to read the latest articles.</div>';
+            try {
+                var posts = await Promise.any(attempts);
+                displayPosts(postsContainer, posts);
+            } catch (e) {
+                postsContainer.innerHTML = '<div class="posts-error" style="grid-column: 1 / -1;">Unable to load latest posts at this time. <a href="https://leadershipinchange10.substack.com" target="_blank" rel="noopener noreferrer">Visit Leadership in Change</a> to read the latest articles.</div>';
+            }
         }
 
         // Lazy-load: only fetch when the posts section is near the viewport
