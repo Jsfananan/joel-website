@@ -1031,32 +1031,53 @@ section {
     margin: 0 auto;
 }
 
-.ai-builds-header {
+/* Vision Statement */
+.ai-builds-vision {
     text-align: center;
-    margin-bottom: 3.5rem;
+    margin-bottom: 4rem;
 }
 
-.ai-builds-header h2 {
+.ai-builds-vision h2 {
     font-size: clamp(2.5rem, 5vw, 3.5rem);
     font-weight: 800;
     color: var(--white);
     letter-spacing: -0.02em;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
-.ai-builds-header p {
-    font-size: clamp(1.125rem, 2vw, 1.25rem);
-    color: rgba(255, 255, 255, 0.75);
-    line-height: 1.6;
-    max-width: 700px;
-    margin: 0 auto;
+.ai-builds-vision-lead {
+    font-family: 'Crimson Text', serif;
+    font-size: clamp(1.125rem, 2vw, 1.3rem);
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.7;
+    max-width: 750px;
+    margin: 0 auto 1rem;
+}
+
+.ai-builds-vision-lead strong {
+    color: var(--peach);
+    font-weight: 700;
+}
+
+/* Examples Section */
+.ai-builds-examples {
+    margin-bottom: 4rem;
+}
+
+.ai-builds-examples-label {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--peach);
+    margin-bottom: 1.25rem;
+    text-align: center;
 }
 
 .ai-builds-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    margin-bottom: 3rem;
 }
 
 .ai-build-card {
@@ -1131,18 +1152,128 @@ section {
     border-radius: 50%;
 }
 
+/* Imagine Grid */
+.ai-builds-imagine {
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.ai-builds-imagine-title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 2rem;
+    letter-spacing: -0.01em;
+}
+
+.ai-builds-imagine-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.ai-builds-imagine-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(244, 196, 176, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    text-align: left;
+    transition: var(--transition);
+}
+
+.ai-builds-imagine-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(244, 196, 176, 0.25);
+}
+
+.ai-builds-imagine-card svg {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    color: var(--peach);
+    margin-top: 2px;
+}
+
+.ai-builds-imagine-card span {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
+}
+
+.ai-builds-imagine-more {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--peach);
+    opacity: 0.9;
+}
+
+/* Value Props */
+.ai-builds-value-props {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 4rem;
+    padding: 2.5rem;
+    background: rgba(244, 196, 176, 0.06);
+    border-radius: 16px;
+    border: 1px solid rgba(244, 196, 176, 0.12);
+}
+
+.ai-builds-value-prop {
+    text-align: center;
+}
+
+.ai-builds-value-prop h4 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--peach);
+    margin-bottom: 0.75rem;
+}
+
+.ai-builds-value-prop p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.6;
+}
+
+/* CTA */
 .ai-builds-cta {
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.25rem;
+    gap: 1.5rem;
 }
 
 .ai-builds-cta p {
     font-size: clamp(1.25rem, 2.5vw, 1.5rem);
     font-weight: 600;
     color: var(--white);
+}
+
+.ai-builds-cta-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.ai-builds-learn-more {
+    font-size: 0.95rem;
+    color: var(--peach);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.ai-builds-learn-more:hover {
+    color: var(--peach-light);
+    text-decoration: underline;
 }
 
 /* Partner Section */
@@ -2186,6 +2317,10 @@ section {
     .ai-builds-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .ai-builds-imagine-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -2246,6 +2381,16 @@ section {
     }
 
     .ai-build-card {
+        padding: 2rem;
+    }
+
+    .ai-builds-imagine-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ai-builds-value-props {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
         padding: 2rem;
     }
 
