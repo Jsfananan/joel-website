@@ -20,9 +20,39 @@ URL: https://jsalinas.org/services/ai-workflow-audit.html
 1-on-1 strategic guidance on AI strategy, change management, team training, ethical governance, and ROI measurement. 60-minute video calls on a flexible schedule.
 URL: https://jsalinas.org/services/executive-coaching.html
 
+### Fractional Chief AI Officer - Monthly Retainer
+Executive-level AI leadership on a flexible monthly retainer. Includes AI strategy sessions, governance and policy oversight, use case identification, tool evaluation, team readiness assessment, and ongoing advisory support. Ideal for mid-size companies, nonprofits, and healthcare organizations that need AI leadership without a full-time hire.
+URL: https://jsalinas.org/services/fractional-caio.html
+
 ### Interactive Prototype Development - Custom Pricing
 Transform AI ideas into working prototypes. End-to-end development from concept to interactive prototype, including AI integration, user interface design, testing, and iteration support.
 URL: https://jsalinas.org/services/ai-prototype-development.html
+
+## Articles
+
+### What Is AI Coaching for Executives? A Practical Guide for 2026
+AI coaching for executives is 1-on-1 strategic guidance from a human coach who helps leaders make confident decisions about AI adoption, strategy, and change management.
+URL: https://jsalinas.org/articles/ai-coaching-for-executives.html
+
+### How to Build a Human-Centered AI Strategy for Your Organization
+A human-centered AI strategy starts with people and workflows before technology. This guide covers the four pillars of people-first AI adoption.
+URL: https://jsalinas.org/articles/human-centered-ai-strategy.html
+
+### AI for Nonprofits: A Strategy Guide for Mission-Driven Leaders
+92% of nonprofits use AI but only 7% report major impact. This guide covers high-impact use cases, budget-friendly tools, and governance frameworks for mission-driven organizations.
+URL: https://jsalinas.org/articles/ai-for-nonprofits.html
+
+### How to Lead Your Team Through AI Adoption Without the Resistance
+A 5-step framework for leading AI adoption that addresses team resistance through inclusion, transparency, and starting with pain points your team actually wants solved.
+URL: https://jsalinas.org/articles/leading-team-through-ai-adoption.html
+
+### The 90-Day AI Roadmap: How Business Leaders Can Start Using AI Today
+A phased 90-day plan for business leaders to find their first AI win, build workflows, and scale what works across their organization.
+URL: https://jsalinas.org/articles/90-day-ai-roadmap.html
+
+### What Is a Fractional Chief AI Officer? Why Every Mid-Size Company Needs One
+A fractional Chief AI Officer gives organizations executive-level AI leadership without the full-time cost. This guide covers what a CAIO does, who needs one, and how to evaluate the right fit.
+URL: https://jsalinas.org/articles/fractional-chief-ai-officer.html
 
 ## Philosophy
 
@@ -41,6 +71,7 @@ URL: https://jsalinas.org/services/ai-prototype-development.html
 - AI Workflow Automation
 - AI Change Management
 - AI Leadership Strategy
+- Fractional Chief AI Officer (CAIO) Services
 
 ## Contact
 
