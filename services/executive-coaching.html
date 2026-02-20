@@ -69,6 +69,11 @@
         <div class="header-accent"></div>
         <div class="header-container">
             <a href="/" class="header-logo">Joel Salinas</a>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <nav class="header-nav">
                 <a href="/about.html" class="header-nav-link">About</a>
                 <a href="/services/index.html" class="header-nav-link">Services</a>
@@ -98,6 +103,7 @@
         <div class="service-page-hero-container">
             <h1>AI Executive Coaching</h1>
             <p class="service-page-tagline">Strategic AI guidance without the tech jargon. Make confident decisions about AI adoption in your organization.</p>
+            <p class="service-page-price">$200 per session</p>
             <a href="https://calendly.com/leadershipinchangellc/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book a Free Discovery Call</a>
         </div>
     </section>
@@ -138,7 +144,14 @@
 
             <div class="service-page-result-box">
                 <h3>What Clients Say</h3>
-                <p>Leaders who work with me gain the confidence to make AI decisions without second-guessing, build teams that embrace AI rather than fear it, and implement strategies that deliver measurable results within weeks, not months.</p>
+                <blockquote class="testimonial">
+                    <p>&ldquo;We are in awe of the progress we have been able to make. The progress our organization has made with Joel's guidance has been transformative.&rdquo;</p>
+                    <cite>&mdash; Client T, Executive Leader</cite>
+                </blockquote>
+                <blockquote class="testimonial">
+                    <p>&ldquo;I didn't know where to start with AI. Now we've completed 3 big customized builds, saving me personally 10 hours per week. We're having more ideas every day of what's possible as we continue to work together.&rdquo;</p>
+                    <cite>&mdash; Client B, Business Owner</cite>
+                </blockquote>
             </div>
 
             <h2>Why Work With Me</h2>

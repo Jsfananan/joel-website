@@ -1,6 +1,6 @@
 # Joel Salinas - Human-first AI Strategy Coach
 
-> Joel Salinas helps business leaders, creators, and solopreneurs maximize their impact wisely with AI through one-on-one coaching, workflow automation, and strategic guidance.
+> Joel Salinas helps business leaders and organizations maximize their impact wisely with AI through one-on-one coaching, workflow automation, custom AI application development, and strategic guidance.
 
 ## About
 
@@ -24,9 +24,9 @@ URL: https://jsalinas.org/services/executive-coaching.html
 Executive-level AI leadership on a flexible monthly retainer. Includes AI strategy sessions, governance and policy oversight, use case identification, tool evaluation, team readiness assessment, and ongoing advisory support. Ideal for mid-size companies, nonprofits, and healthcare organizations that need AI leadership without a full-time hire.
 URL: https://jsalinas.org/services/fractional-caio.html
 
-### Interactive Prototype Development - Custom Pricing
-Transform AI ideas into working prototypes. End-to-end development from concept to interactive prototype, including AI integration, user interface design, testing, and iteration support.
-URL: https://jsalinas.org/services/ai-prototype-development.html
+### Custom AI App Development - Custom Pricing
+Purpose-built AI applications tailored to your exact workflow. You own them outright with no subscriptions and no vendor lock-in. From content systems and internal tools to custom dashboards and team platforms.
+URL: https://jsalinas.org/services/custom-ai-apps.html
 
 ## Articles
 
@@ -54,6 +54,10 @@ URL: https://jsalinas.org/articles/90-day-ai-roadmap.html
 A fractional Chief AI Officer gives organizations executive-level AI leadership without the full-time cost. This guide covers what a CAIO does, who needs one, and how to evaluate the right fit.
 URL: https://jsalinas.org/articles/fractional-chief-ai-officer.html
 
+### Why Custom AI Tools Are Replacing Per-Seat SaaS
+Companies are spending six figures per year on SaaS tools their teams half-use. This article breaks down why building custom AI tools you own outright is now the smarter move for organizations at scale.
+URL: https://jsalinas.org/articles/custom-ai-tools-vs-saas.html
+
 ## Philosophy
 
 - AI should amplify your leadership, not replace it
@@ -76,7 +80,7 @@ URL: https://jsalinas.org/articles/fractional-chief-ai-officer.html
 ## Contact
 
 - Website: https://jsalinas.org
-- Email: leadershipandchangellc@gmail.com
+- Email: leadershipinchangellc@gmail.com
 - LinkedIn: https://www.linkedin.com/in/jsalinasf/
 - Newsletter: https://leadershipinchange.com/subscribe
 - Book a free call: https://calendly.com/leadershipinchangellc/30min

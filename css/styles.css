@@ -2164,6 +2164,97 @@ section {
     color: var(--text);
 }
 
+/* Testimonials */
+.testimonial {
+    margin: 1.25rem 0;
+    padding: 0;
+    border: none;
+    font-style: normal;
+}
+
+.testimonial p {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+}
+
+.testimonial cite {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 600;
+    color: var(--peach-dark);
+}
+
+.testimonials-section {
+    padding: var(--section-padding);
+    background: var(--white);
+}
+
+.testimonials-container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+}
+
+.testimonials-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.testimonials-header h2 {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: -0.02em;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background: var(--bg-light);
+    border: 2px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: var(--transition);
+}
+
+.testimonial-card:hover {
+    border-color: var(--peach);
+    box-shadow: 0 8px 24px rgba(26, 43, 91, 0.1);
+}
+
+.testimonial-card blockquote {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.testimonial-card blockquote p {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.125rem;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 1rem;
+}
+
+.testimonial-card cite {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 600;
+    color: var(--peach-dark);
+}
+
 .service-page-cta {
     padding: 4rem 2rem;
     background: var(--navy);
@@ -3247,39 +3338,10 @@ section {
 
     .header-container {
         padding: 1rem 1rem;
-        flex-wrap: wrap;
-        gap: 1rem;
     }
 
     .header-logo {
         font-size: 1.125rem;
-        width: 100%;
-        text-align: center;
-    }
-
-    .header-nav {
-        width: 100%;
-        justify-content: center;
-        gap: 0.5rem 0.75rem;
-        flex-wrap: wrap;
-        row-gap: 0.75rem;
-    }
-
-    .header-nav-link {
-        font-size: 0.8125rem;
-        padding: 0.5rem 0.75rem;
-        white-space: nowrap;
-        min-width: fit-content;
-    }
-
-    .header-actions {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .header-subscribe-btn {
-        padding: 0.625rem 1.5rem;
-        font-size: 0.875rem;
     }
 
     /* New sections mobile responsive */
@@ -3389,6 +3451,88 @@ section {
     .services-page-grid-container {
         padding: 1.5rem 1.25rem;
         gap: 1.25rem;
+    }
+}
+
+/* Mobile Navigation Toggle */
+.mobile-nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 110;
+}
+
+.mobile-nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--navy);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.mobile-nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 768px) {
+    .mobile-nav-toggle {
+        display: block;
+    }
+
+    .header-container {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
+    .header-logo {
+        width: auto;
+        text-align: left;
+    }
+
+    .header-nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--white);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        z-index: 105;
+        padding: 2rem;
+    }
+
+    .header-nav.active {
+        display: flex;
+    }
+
+    .header-nav-link {
+        font-size: 1.25rem;
+        padding: 0.75rem 1.5rem;
+    }
+
+    .header-actions {
+        display: none;
+    }
+
+    .header-nav.active + .header-actions,
+    .header-actions.mobile-visible {
+        display: none;
     }
 }
 
