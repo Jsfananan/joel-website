@@ -2087,7 +2087,14 @@ section {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--peach-dark);
+    margin-bottom: 0.5rem;
+}
+
+.service-page-hero .service-page-price-note {
+    font-size: 0.9rem;
+    color: var(--medium-gray);
     margin-bottom: 2rem;
+    font-style: italic;
 }
 
 .service-page-content {

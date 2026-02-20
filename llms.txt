@@ -8,19 +8,19 @@ Joel Salinas is a Bolivian-born humanitarian, business leader, speaker, writer, 
 
 ## Services
 
-### Second Brain Build - $450
+### Second Brain Build - $750
 Build a personal AI knowledge management system using Claude Projects and ChatGPT. Includes custom workflow design, tool configuration, 1-on-1 training, and 30-day support. Typically saves 5-10 hours per week.
 URL: https://jsalinas.org/services/second-brain-build.html
 
-### AI Workflow Audit - Starting at $800
+### AI Workflow Audit - Starting at $2,500
 Complete workflow analysis and AI opportunity mapping. Includes competitive analysis, 2-3 custom SOPs for high-impact tasks, tool recommendations and setup, and 30-day optimization support. Typical savings of $1,500-3,000/month in time value.
 URL: https://jsalinas.org/services/ai-workflow-audit.html
 
-### Executive Coaching - $200/session
+### Executive Coaching - $350/session
 1-on-1 strategic guidance on AI strategy, change management, team training, ethical governance, and ROI measurement. 60-minute video calls on a flexible schedule.
 URL: https://jsalinas.org/services/executive-coaching.html
 
-### Fractional Chief AI Officer - Monthly Retainer
+### Fractional Chief AI Officer - Starting at $2,500/month
 Executive-level AI leadership on a flexible monthly retainer. Includes AI strategy sessions, governance and policy oversight, use case identification, tool evaluation, team readiness assessment, and ongoing advisory support. Ideal for mid-size companies, nonprofits, and healthcare organizations that need AI leadership without a full-time hire.
 URL: https://jsalinas.org/services/fractional-caio.html
 
