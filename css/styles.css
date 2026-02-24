@@ -2388,6 +2388,20 @@ section {
     margin: 0 auto;
 }
 
+.sponsor-hero-badge {
+    display: inline-block;
+    padding: 0.4rem 1.2rem;
+    background: var(--peach);
+    color: var(--navy);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 50px;
+    margin-bottom: 1.25rem;
+}
+
 .sponsor-hero-label {
     font-size: 0.85rem;
     font-weight: 600;
