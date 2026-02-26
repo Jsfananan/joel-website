@@ -3022,8 +3022,8 @@ section {
     gap: 2rem;
     flex-wrap: wrap;
     font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
-    color: #666;
+    font-size: 1.15rem;
+    color: #555;
 }
 
 .trust-item {

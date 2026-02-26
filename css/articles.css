@@ -306,13 +306,14 @@
 
 /* Articles Index Page */
 .articles-hero {
-    padding: 4rem 2rem 2rem;
+    padding: 5rem 2rem 3rem;
     background: var(--bg-light);
 }
 
 .articles-hero-container {
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .articles-hero h1 {
@@ -336,29 +337,79 @@
 }
 
 .articles-list-container {
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .articles-list-item {
     display: block;
-    padding: 2rem 0;
-    border-bottom: 1px solid var(--border);
+    padding: 1.75rem 1.5rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--border);
+    border-radius: 0 8px 8px 0;
     text-decoration: none;
     color: inherit;
     transition: var(--transition);
-}
-
-.articles-list-item:first-child {
-    padding-top: 0;
+    background: transparent;
 }
 
 .articles-list-item:last-child {
-    border-bottom: none;
+    margin-bottom: 0;
 }
 
 .articles-list-item:hover {
-    padding-left: 1rem;
+    background: rgba(26, 43, 91, 0.02);
+    transform: translateX(4px);
+}
+
+/* Category color bars */
+.articles-list-item[data-category="triad"] {
+    border-left-color: var(--navy);
+}
+
+.articles-list-item[data-category="strategy"] {
+    border-left-color: var(--peach);
+}
+
+.articles-list-item[data-category="leadership"] {
+    border-left-color: #4A90A4;
+}
+
+.articles-list-item[data-category="guide"] {
+    border-left-color: #B8860B;
+}
+
+/* Category tag labels */
+.article-category {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.2rem 0.6rem;
+    border-radius: 3px;
+    margin-bottom: 0.5rem;
+}
+
+.article-category--triad {
+    background: rgba(26, 43, 91, 0.1);
+    color: var(--navy);
+}
+
+.article-category--strategy {
+    background: rgba(244, 196, 176, 0.3);
+    color: #A0522D;
+}
+
+.article-category--leadership {
+    background: rgba(74, 144, 164, 0.12);
+    color: #3A7A8A;
+}
+
+.article-category--guide {
+    background: rgba(184, 134, 11, 0.12);
+    color: #8B6914;
 }
 
 .articles-list-item h2 {
