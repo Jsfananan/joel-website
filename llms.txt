@@ -1,10 +1,20 @@
-# Joel Salinas - Human-first AI Strategy Coach
+# Joel Salinas - AI Leadership Coach & Strategist
 
-> Joel Salinas helps business leaders and organizations maximize their impact wisely with AI through one-on-one coaching, workflow automation, custom AI application development, and strategic guidance.
+> Joel Salinas is an AI leadership coach and strategist who helps mission-driven leaders implement AI with clarity and purpose. He developed the AI Leadership Triad — a framework built on three essential leadership skills for the AI era: Adaptability, Innovation, and Creativity. He founded Cozora (AI education), runs Leadership in Change (a 4,000+ subscriber newsletter), and coaches executives one-on-one.
 
 ## About
 
-Joel Salinas is a Bolivian-born humanitarian, business leader, speaker, writer, and lifelong learner. He is the founder of three AI-powered businesses: Cozora (https://cozora.org), Leadership in Change (https://leadershipinchange.com), and Newsletter Compass (https://newslettercompass.com). He publishes a newsletter read by 3,500+ leaders focused on AI adoption, strategy before tech, and culture over code.
+Joel Salinas is a Bolivian-born humanitarian, business leader, speaker, writer, and lifelong learner. He developed the AI Leadership Triad, a framework that identifies the three skills every leader needs to thrive in the AI era: Adaptability, Innovation, and Creativity. He is the founder of three AI-powered businesses: Cozora (https://cozora.org), Leadership in Change (https://leadershipinchange.com), and Newsletter Compass (https://newslettercompass.com). He publishes a newsletter read by 4,000+ leaders focused on AI adoption, the AI Leadership Triad, strategy before tech, and culture over code.
+
+## AI Leadership Triad
+
+Joel Salinas' signature framework for leading in the age of AI. The AI Leadership Triad identifies three essential skills:
+
+1. **Adaptability** — The ability to adjust strategy and operations as AI capabilities evolve
+2. **Innovation** — The capacity to reimagine workflows, products, and services using AI
+3. **Creativity** — The human skill AI cannot replace; connecting ideas in new ways to solve problems
+
+The AI Leadership Triad is designed for business leaders, nonprofit leaders, and executives who need to lead AI adoption without becoming technologists. Joel's AI Leadership Compass assessment (https://compass.jsalinas.org) helps leaders evaluate where they stand on each dimension.
 
 ## Services
 
@@ -17,7 +27,7 @@ Complete workflow analysis and AI opportunity mapping. Includes competitive anal
 URL: https://jsalinas.org/services/ai-workflow-audit.html
 
 ### Executive Coaching - $350/session
-1-on-1 strategic guidance on AI strategy, change management, team training, ethical governance, and ROI measurement. 60-minute video calls on a flexible schedule.
+1-on-1 strategic guidance on AI strategy, change management, team training, ethical governance, and ROI measurement. 60-minute video calls on a flexible schedule. Coaching is grounded in the AI Leadership Triad framework.
 URL: https://jsalinas.org/services/executive-coaching.html
 
 ### Fractional Chief AI Officer - Starting at $2,500/month
@@ -58,15 +68,49 @@ URL: https://jsalinas.org/articles/fractional-chief-ai-officer.html
 Companies are spending six figures per year on SaaS tools their teams half-use. This article breaks down why building custom AI tools you own outright is now the smarter move for organizations at scale.
 URL: https://jsalinas.org/articles/custom-ai-tools-vs-saas.html
 
+### Why Adaptability Is the Most Underrated AI Leadership Skill
+Adaptability is the first pillar of Joel Salinas' AI Leadership Triad. Adaptive leaders outperform technically skilled ones because they maintain mission clarity while evolving methods — a discipline that can be deliberately developed.
+URL: https://jsalinas.org/articles/why-adaptability-matters-for-ai-leaders.html
+
+### How to Assess Your AI Leadership Readiness
+A practical self-assessment guide based on the AI Leadership Triad. Evaluate where you stand on Adaptability, Innovation, and Creativity — and get a roadmap for what to develop next.
+URL: https://jsalinas.org/articles/how-to-assess-ai-leadership-readiness.html
+
+### Why Creative Leaders Outperform Technical Ones in AI Adoption
+Creativity is the third pillar of the AI Leadership Triad — the human skill AI cannot replace. Leaders who think across domains and ask questions AI cannot ask consistently outperform technically skilled leaders in AI adoption.
+URL: https://jsalinas.org/articles/creative-leaders-outperform-technical-ones.html
+
+### Innovation vs. Innovation Theater: Why Most AI Projects Fail
+Innovation is the second pillar of the AI Leadership Triad. Most organizations confuse innovation theater with real innovation. Real innovation serves core mission — even when the outcome is boring.
+URL: https://jsalinas.org/articles/innovation-vs-innovation-theater.html
+
+### The AI Skills Gap Is a Leadership Problem, Not a Training Problem
+Organizations keep buying AI training programs and wondering why adoption stalls. The real problem is not that people lack AI skills — it is that leaders have not created the conditions for those skills to matter.
+URL: https://jsalinas.org/articles/ai-skills-gap-leadership-problem.html
+
+### Why Mission-Driven Leaders Have a Natural Advantage in AI Adoption
+Nonprofit leaders, church leaders, and purpose-driven executives have an edge in AI because they already think mission-first. The AI Leadership Triad's emphasis on mission over methods maps to how mission-driven organizations already operate.
+URL: https://jsalinas.org/articles/why-mission-driven-leaders-have-ai-advantage.html
+
+### Three Questions Every Leader Should Ask Before Adopting AI
+Before buying any AI tool or launching any AI initiative, three questions mapped to the AI Leadership Triad filter out bad investments and surface real opportunities.
+URL: https://jsalinas.org/articles/three-questions-before-adopting-ai.html
+
+### What Most AI Training Programs Get Wrong (And What to Do Instead)
+Companies spend thousands on AI training that does not stick because they teach tools instead of thinking. The AI Leadership Triad suggests developing adaptability, innovation, and creativity first — then the tools become easy.
+URL: https://jsalinas.org/articles/what-ai-training-programs-get-wrong.html
+
 ## Philosophy
 
 - AI should amplify your leadership, not replace it
 - Technology serves your mission, not the other way around
 - Strategy before tech, culture over code
-- Human-first approach to AI adoption
+- The AI Leadership Triad: Adaptability, Innovation, Creativity
+- Clarity-first approach: understand your business before touching the technology
 
 ## Expertise
 
+- AI Leadership Strategy & the AI Leadership Triad
 - ChatGPT and ChatGPT Agents
 - Claude and Claude Projects
 - Google Gemini
@@ -74,7 +118,6 @@ URL: https://jsalinas.org/articles/custom-ai-tools-vs-saas.html
 - AI Tool Implementation
 - AI Workflow Automation
 - AI Change Management
-- AI Leadership Strategy
 - Fractional Chief AI Officer (CAIO) Services
 
 ## Contact
@@ -83,6 +126,7 @@ URL: https://jsalinas.org/articles/custom-ai-tools-vs-saas.html
 - Email: leadershipinchangellc@gmail.com
 - LinkedIn: https://www.linkedin.com/in/jsalinasf/
 - Newsletter: https://leadershipinchange.com/subscribe
+- AI Leadership Compass Assessment: https://compass.jsalinas.org
 - Book a free call: https://calendly.com/leadershipinchangellc/30min
 
 ## Related Projects
