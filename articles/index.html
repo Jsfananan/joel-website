@@ -117,6 +117,13 @@
 
     <section class="articles-list">
         <div class="articles-list-container">
+            <div class="articles-filter">
+                <button class="articles-filter-btn active" data-filter="all">All</button>
+                <button class="articles-filter-btn articles-filter-btn--triad" data-filter="triad">AI Leadership Triad</button>
+                <button class="articles-filter-btn articles-filter-btn--strategy" data-filter="strategy">Strategy</button>
+                <button class="articles-filter-btn articles-filter-btn--leadership" data-filter="leadership">Leadership</button>
+                <button class="articles-filter-btn articles-filter-btn--guide" data-filter="guide">Practical Guide</button>
+            </div>
             <a href="/articles/why-adaptability-matters-for-ai-leaders.html" class="articles-list-item" data-category="triad">
                 <span class="article-category article-category--triad">AI Leadership Triad</span>
                 <h2>Why Adaptability Is the Most Underrated AI Leadership Skill</h2>
@@ -261,5 +268,21 @@
             </div>
         </div>
     </footer>
+    <script>
+        document.querySelectorAll('.articles-filter-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var filter = this.getAttribute('data-filter');
+                document.querySelectorAll('.articles-filter-btn').forEach(function(b) { b.classList.remove('active'); });
+                this.classList.add('active');
+                document.querySelectorAll('.articles-list-item[data-category]').forEach(function(item) {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = '';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>

@@ -342,6 +342,60 @@
     padding: 0 1rem;
 }
 
+/* Category filter toggles */
+.articles-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.articles-filter-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    background: transparent;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.articles-filter-btn:hover {
+    border-color: var(--navy);
+    color: var(--navy);
+}
+
+.articles-filter-btn.active {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: var(--white);
+}
+
+.articles-filter-btn--triad.active {
+    background: var(--navy);
+    border-color: var(--navy);
+}
+
+.articles-filter-btn--strategy.active {
+    background: #A0522D;
+    border-color: #A0522D;
+}
+
+.articles-filter-btn--leadership.active {
+    background: #3A7A8A;
+    border-color: #3A7A8A;
+}
+
+.articles-filter-btn--guide.active {
+    background: #8B6914;
+    border-color: #8B6914;
+}
+
 .articles-list-item {
     display: block;
     padding: 1.75rem 1.5rem;
