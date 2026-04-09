@@ -4181,3 +4181,629 @@ section {
         transition-duration: 0.01ms !important;
     }
 }
+
+/* ===========================================
+   Fractional CAIO Page Components
+   =========================================== */
+
+/* Wider container for full-width sections on service pages */
+.service-page-content-wide {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* CTA button groups */
+.service-page-hero .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+/* Philosophy callout boxes */
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 1.5rem 0 3rem;
+}
+
+.philosophy-card {
+    background: var(--bg-light);
+    border-left: 4px solid var(--peach);
+    border-radius: 12px;
+    padding: 1.75rem 2rem;
+}
+
+.philosophy-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 0 0 0.75rem;
+    letter-spacing: -0.01em;
+}
+
+.philosophy-card p {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Problem cards (light background variant, overrides the dark-bg version) */
+.service-page-content .problem-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 1.5rem 0 3rem;
+}
+
+.service-page-content .problem-card {
+    background: var(--white);
+    border: 1px solid rgba(26, 43, 91, 0.1);
+    border-radius: 14px;
+    padding: 2rem 1.75rem;
+    text-align: left;
+    align-items: flex-start;
+    box-shadow: 0 1px 3px rgba(26, 43, 91, 0.05), 0 4px 12px rgba(26, 43, 91, 0.03);
+    transition: var(--transition);
+}
+
+.service-page-content .problem-card:hover {
+    background: var(--white);
+    border-color: var(--peach);
+    box-shadow: 0 4px 12px rgba(26, 43, 91, 0.08), 0 12px 28px rgba(26, 43, 91, 0.06);
+    transform: translateY(-3px);
+}
+
+.service-page-content .problem-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 0 0 0.75rem;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+}
+
+.service-page-content .problem-card p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* About block (bio + headshot) */
+.about-block {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 2.5rem;
+    align-items: start;
+    background: var(--bg-light);
+    border-radius: 16px;
+    padding: 2.5rem;
+    margin: 1.5rem 0 3rem;
+}
+
+.about-block-image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(244, 196, 176, 0.4);
+    box-shadow: 0 8px 24px rgba(26, 43, 91, 0.12);
+}
+
+.about-block-content p {
+    font-size: 1.05rem;
+    color: var(--text);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+}
+
+.about-block-content p:last-of-type {
+    margin-bottom: 1.25rem;
+}
+
+.about-block-content .btn {
+    margin-top: 0.5rem;
+}
+
+/* Pricing grid + cards */
+.pricing-note {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--text-light);
+    font-style: italic;
+    margin: 0.5rem 0 2rem;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 1.5rem 0 3rem;
+}
+
+.pricing-card {
+    position: relative;
+    background: var(--white);
+    border: 1px solid rgba(26, 43, 91, 0.1);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 1px 3px rgba(26, 43, 91, 0.05), 0 6px 18px rgba(26, 43, 91, 0.04);
+    transition: var(--transition);
+}
+
+.pricing-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(26, 43, 91, 0.08), 0 16px 40px rgba(26, 43, 91, 0.08);
+}
+
+.pricing-card-featured {
+    border: 2px solid var(--peach);
+    box-shadow: 0 2px 8px rgba(244, 196, 176, 0.2), 0 12px 32px rgba(26, 43, 91, 0.08);
+}
+
+.pricing-badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--peach);
+    color: var(--navy);
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 6px 16px;
+    border-radius: 20px;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(244, 196, 176, 0.4);
+}
+
+.pricing-tier {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--peach-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0 0 0.75rem;
+}
+
+.pricing-amount {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1;
+    margin: 0 0 0.25rem;
+    letter-spacing: -0.02em;
+}
+
+.pricing-period {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-light);
+    letter-spacing: 0;
+}
+
+.pricing-tagline {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.5;
+    margin: 0 0 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(26, 43, 91, 0.08);
+}
+
+.pricing-features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+}
+
+.pricing-feature {
+    position: relative;
+    padding-left: 1.75rem;
+    font-size: 0.95rem;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.pricing-feature::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--peach-dark);
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+.pricing-feature strong {
+    color: var(--navy);
+    font-weight: 700;
+}
+
+.pricing-size {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-style: italic;
+    margin: 0 0 1.25rem;
+    text-align: center;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+/* Simple info box (used for builds / one-conversation callouts) */
+.info-box {
+    background: var(--bg-light);
+    border: 1px solid rgba(26, 43, 91, 0.08);
+    border-radius: 14px;
+    padding: 1.75rem 2rem;
+    margin: 1.5rem 0 2.5rem;
+}
+
+.info-box h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 0 0 0.5rem;
+}
+
+.info-box p {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin: 0 0 1rem;
+}
+
+.info-box p:last-child {
+    margin-bottom: 0;
+}
+
+.info-box a.info-box-link {
+    display: inline-block;
+    font-weight: 600;
+    color: var(--navy);
+    border-bottom: 2px solid var(--peach);
+    padding-bottom: 2px;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.info-box a.info-box-link:hover {
+    color: var(--peach-dark);
+    border-bottom-color: var(--peach-dark);
+}
+
+/* Comparison table */
+.comparison-table-wrapper {
+    overflow-x: auto;
+    margin: 1.5rem 0 3rem;
+    border-radius: 14px;
+    box-shadow: 0 1px 3px rgba(26, 43, 91, 0.06), 0 6px 20px rgba(26, 43, 91, 0.05);
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    font-size: 0.95rem;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.comparison-table thead th {
+    background: var(--navy);
+    color: var(--white);
+    font-weight: 700;
+    text-align: left;
+    padding: 1.1rem 1.25rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+}
+
+.comparison-table thead th:first-child {
+    background: var(--navy);
+}
+
+.comparison-table tbody td {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid rgba(26, 43, 91, 0.06);
+    color: var(--text);
+    vertical-align: middle;
+}
+
+.comparison-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.comparison-table tbody tr:nth-child(even) {
+    background: var(--bg-light);
+}
+
+.comparison-table tbody td:first-child {
+    font-weight: 600;
+    color: var(--navy);
+    background: rgba(244, 196, 176, 0.08);
+}
+
+.comparison-table tbody td.highlight {
+    color: var(--peach-dark);
+    font-weight: 700;
+}
+
+/* 90-day timeline */
+.timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 1.5rem 0 3rem;
+    counter-reset: timeline;
+}
+
+.timeline-item {
+    position: relative;
+    background: var(--white);
+    border: 1px solid rgba(26, 43, 91, 0.08);
+    border-top: 4px solid var(--peach);
+    border-radius: 14px;
+    padding: 2rem 1.75rem 1.75rem;
+    counter-increment: timeline;
+    box-shadow: 0 1px 3px rgba(26, 43, 91, 0.05), 0 4px 12px rgba(26, 43, 91, 0.03);
+}
+
+.timeline-item::before {
+    content: counter(timeline);
+    position: absolute;
+    top: -18px;
+    left: 1.75rem;
+    background: var(--peach);
+    color: var(--navy);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(244, 196, 176, 0.5);
+}
+
+.timeline-phase {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 0.75rem 0 0.75rem;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+}
+
+.timeline-item p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* Condensed FAQ accordion (pillar page) */
+.faq-condensed {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+}
+
+.faq-item-condensed {
+    background: var(--white);
+    border: 1px solid rgba(26, 43, 91, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.faq-item-condensed:hover {
+    border-color: rgba(244, 196, 176, 0.6);
+}
+
+.faq-item-condensed.active {
+    border-color: var(--peach);
+    box-shadow: 0 4px 12px rgba(26, 43, 91, 0.06);
+}
+
+.faq-question-condensed {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 1.25rem 1.5rem;
+    text-align: left;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--navy);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.faq-question-condensed:hover {
+    background: rgba(244, 196, 176, 0.08);
+}
+
+.faq-icon {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    background: var(--peach);
+    color: var(--navy);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-item-condensed.active .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-answer-condensed {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item-condensed.active .faq-answer-condensed {
+    max-height: 500px;
+    padding: 0 1.5rem 1.25rem;
+}
+
+.faq-answer-condensed p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+/* "See all FAQs" button — peach outline, NOT blue */
+.faq-link {
+    text-align: center;
+    margin: 1.5rem 0 2.5rem;
+}
+
+.faq-link a {
+    display: inline-block;
+    padding: 0.85rem 1.75rem;
+    background: transparent;
+    color: var(--navy);
+    border: 2px solid var(--peach);
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.faq-link a:hover {
+    background: var(--peach);
+    color: var(--navy);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(244, 196, 176, 0.4);
+}
+
+/* Expanded FAQ (standalone FAQ page) */
+.faq-expanded {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin: 1.5rem 0 3rem;
+}
+
+.faq-item-expanded {
+    background: var(--white);
+    border: 1px solid rgba(26, 43, 91, 0.1);
+    border-left: 4px solid var(--peach);
+    border-radius: 12px;
+    padding: 1.75rem 2rem;
+    transition: var(--transition);
+}
+
+.faq-item-expanded:hover {
+    box-shadow: 0 4px 12px rgba(26, 43, 91, 0.06), 0 12px 28px rgba(26, 43, 91, 0.04);
+    transform: translateY(-2px);
+}
+
+.faq-title-expanded {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 0 0 0.75rem;
+    letter-spacing: -0.01em;
+    line-height: 1.35;
+}
+
+.faq-item-expanded p {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.75;
+    margin: 0;
+}
+
+.faq-footer-links {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(26, 43, 91, 0.08);
+}
+
+.faq-footer-links a {
+    color: var(--navy);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid var(--peach);
+    padding-bottom: 2px;
+    transition: var(--transition);
+}
+
+.faq-footer-links a:hover {
+    color: var(--peach-dark);
+    border-bottom-color: var(--peach-dark);
+}
+
+/* Result box h2 override (used on pillar + FAQ pages) */
+.service-page-content .service-page-result-box h2 {
+    margin-top: 0;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--navy);
+}
+
+/* Responsive: stack grids on smaller screens */
+@media (max-width: 900px) {
+    .philosophy-grid,
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-page-content .problem-grid,
+    .timeline-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-block {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 2rem 1.5rem;
+    }
+
+    .about-block-image {
+        justify-self: center;
+    }
+
+    .about-block-image img {
+        width: 160px;
+        height: 160px;
+    }
+
+    .comparison-table {
+        font-size: 0.85rem;
+    }
+
+    .comparison-table thead th,
+    .comparison-table tbody td {
+        padding: 0.75rem 0.85rem;
+    }
+}
