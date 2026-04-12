@@ -2373,6 +2373,57 @@ section {
 }
 
 /* ===========================================
+   Mid-Article CTA & Newsletter Components
+   =========================================== */
+
+.mid-article-cta {
+    background: var(--bg-light);
+    border-left: 4px solid var(--peach-dark);
+    padding: 1.5rem 2rem;
+    margin: 2.5rem 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.mid-article-cta p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: var(--text);
+    margin-bottom: 1rem;
+}
+
+.mid-article-cta .btn {
+    font-size: 0.85rem;
+}
+
+.newsletter-signup {
+    background: var(--navy);
+    color: var(--white);
+    padding: var(--section-padding);
+    text-align: center;
+}
+
+.newsletter-signup-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.newsletter-signup h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+}
+
+.newsletter-signup p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: var(--peach-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+/* ===========================================
    Sponsor / Media Kit Page
    =========================================== */
 
@@ -3522,6 +3573,42 @@ section {
 .service-overview-link:hover {
     gap: 0.75rem;
     color: var(--peach-dark);
+}
+
+.service-overview-tiers {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 0.75rem 0;
+}
+
+.service-overview-tier {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text);
+}
+
+.service-overview-tier .tier-icon {
+    color: var(--peach-dark);
+    font-size: 0.85rem;
+}
+
+.service-overview-tier .tier-detail {
+    display: block;
+    width: 100%;
+    font-size: 0.8rem;
+    color: var(--text-light);
+    padding-left: 1.35rem;
+}
+
+.service-overview-icon {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    display: block;
 }
 
 .services-page-cta {

@@ -36,7 +36,7 @@ The Chief AI Officer role is the fastest-growing C-suite title in history (70% Y
 
 All meetings remote via Google Meet. US-based, English + Spanish.
 
-### Tier 1 — Advisor — $1,500/month
+### Tier 1 — Advisor — $1,750/month
 - Up to **2 hours/month** live strategy (remote, Google Meet)
 - **Unlimited async email + Slack + Loom** (24-hr response, business hours)
 - **Quarterly** AI opportunity scan (2–3 highest-ROI use cases)
@@ -44,8 +44,8 @@ All meetings remote via Google Meet. US-based, English + Spanish.
 - Quarterly exec team check-in **as needed**
 - **For:** Small businesses, 10–100 employees, boards asking "what's our AI plan?"
 
-### Tier 2 — Operator — $3,000/month
-- Up to **6 hours/month** live strategy (remote)
+### Tier 2 — Operator — $3,500/month
+- Up to **4 hours/month** live strategy (remote)
 - **Unlimited async** (same SLA)
 - **Quarterly** AI opportunity scan + prioritized roadmap
 - **1 exec workshop/quarter** (60–90 min)
@@ -87,7 +87,7 @@ All meetings remote via Google Meet. US-based, English + Spanish.
 | Hands-On | $5K–$10K | HatchWorks, Subtextive, Automation Transformation |
 | Embedded | $15K–$25K+ | ChiefAIOfficer.com, AI Hat top tier |
 
-**Joel's slot:** $1.5K owns the cleanest SMB entry; $3K hits the Growth sweet spot. Transparent build pricing is rare and a procurement advantage.
+**Joel's slot:** $1.75K owns the cleanest SMB entry; $3.5K hits the Growth sweet spot. Transparent build pricing is rare and a procurement advantage.
 
 **SERP competitor to beat:** theaihat.com (3 top-ranking articles). Study structure, out-execute on specificity, case studies, and the change management angle they lack.
 
@@ -114,10 +114,10 @@ All meetings remote via Google Meet. US-based, English + Spanish.
 3. **The ROI argument** — *"$50K AI implementations fail without strategy. I'm the strategy."* (dedicated section)
 4. The problem — board asking, team experimenting without direction, competitors moving faster
 5. Who Joel is — change management + LiC + builder + bilingual stack, 1 paragraph + headshot
-6. What you get — 2-tier pricing table (Advisor $1.5K / Operator $3K)
+6. What you get — 2-tier pricing table (Advisor $1.75K / Operator $3.5K)
 7. Build add-ons — scoped pricing
 8. Also available — one-off coaching sessions (secondary mention)
-9. Cost comparison vs full-time — table ($250K+ vs $18K–$36K/yr)
+9. Cost comparison vs full-time — table ($250K+ vs $21K–$42K/yr)
 10. 30/60/90 framework — visual timeline
 11. Proof — LiC subscriber count, article links, client logos (as they come)
 12. Condensed FAQ (5 questions) → link to full FAQ page
@@ -128,7 +128,7 @@ All meetings remote via Google Meet. US-based, English + Spanish.
 - **Secondary:** `fractional CAIO`, `fractional AI officer`, `fractional AI leadership`
 - **Long-tail (FAQ page):** fractional CAIO cost, fractional CAIO vs consultant, do I need a CAIO, fractional CAIO deliverables, fractional CAIO vs full-time
 - **Title tag:** `Fractional Chief AI Officer | Joel Salinas`
-- **Meta:** `Fractional CAIO for mid-market leaders. Strategy, hands-on builds, and change management. Transparent pricing from $1,500/mo. 90-day ROI.`
+- **Meta:** `Fractional CAIO for mid-market leaders. Strategy, hands-on builds, and change management. Transparent pricing from $1,750/mo. 90-day ROI.`
 
 ---
 
@@ -213,7 +213,7 @@ Each links to pillar + landing page.
 - YouTube: consider a "Fractional CAIO Q&A" short-form series
 
 ### Sales
-- Reach 3 Advisor + 2 Operator clients ($9K MRR)
+- Reach 3 Advisor + 2 Operator clients ($12,250 MRR)
 - Launch referral program (20% of first month for introductions)
 - Outbound: 10 personalized mid-market CEO emails/week
 
