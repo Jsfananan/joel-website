@@ -3605,10 +3605,13 @@ section {
     padding-left: 1.35rem;
 }
 
-.service-overview-icon {
-    font-size: 1.75rem;
-    margin-bottom: 0.5rem;
+img.service-overview-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 0.75rem;
     display: block;
+    object-fit: contain;
+    border-radius: 4px;
 }
 
 .services-page-cta {
