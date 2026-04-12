@@ -3501,12 +3501,25 @@ section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
-    background: var(--white);
 }
 
 .service-featured {
     grid-column: 1 / -1;
     border: 2px solid var(--peach);
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.service-featured img.service-overview-icon {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    margin-bottom: 0;
+}
+
+.service-featured-content {
+    flex: 1;
 }
 
 .service-overview-card {
@@ -3515,10 +3528,27 @@ section {
     border-radius: 12px;
     padding: 2rem;
     transition: box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-overview-card:not(.service-featured) {
+    text-align: center;
+    align-items: center;
+}
+
+.service-overview-card:not(.service-featured) img.service-overview-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1rem;
 }
 
 .service-overview-card:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.service-overview-card:not(.service-featured) .service-overview-description {
+    flex: 1;
 }
 
 .service-overview-badge {
@@ -3615,12 +3645,12 @@ img.service-overview-icon {
 }
 
 .card-icon {
-    width: 48px;
-    height: 48px;
-    margin-bottom: 0.75rem;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1rem;
     display: block;
     object-fit: contain;
-    border-radius: 4px;
+    border-radius: 6px;
 }
 
 .services-page-cta {
@@ -3739,6 +3769,14 @@ img.service-overview-icon {
 
     .service-featured {
         grid-column: auto;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .service-featured img.service-overview-icon {
+        width: 64px;
+        height: 64px;
     }
 }
 
