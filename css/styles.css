@@ -4908,6 +4908,53 @@ img.service-overview-icon {
     color: var(--navy);
 }
 
+/* Stats grid — quantitative proof blocks */
+.service-page-content .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin: 1rem 0 3rem;
+}
+
+@media (max-width: 1100px) {
+    .service-page-content .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.stat-card {
+    background: var(--white);
+    border: 1px solid rgba(26, 43, 91, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem 1.25rem;
+    text-align: left;
+}
+
+.stat-card .stat-number {
+    font-family: 'Crimson Text', Georgia, serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--peach);
+    margin: 0 0 0.5rem;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+}
+
+.stat-card .stat-label {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.55;
+    margin: 0;
+}
+
+.stat-card .stat-source {
+    display: block;
+    margin-top: 0.35rem;
+    font-size: 0.8rem;
+    color: var(--text-muted, #6b7280);
+    font-style: italic;
+}
+
 /* Responsive: stack grids on smaller screens */
 @media (max-width: 900px) {
     .philosophy-grid,
@@ -4916,6 +4963,7 @@ img.service-overview-icon {
     }
 
     .service-page-content .problem-grid,
+    .service-page-content .stats-grid,
     .timeline-grid {
         grid-template-columns: 1fr;
     }
