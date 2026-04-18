@@ -135,6 +135,96 @@
             max-width: 700px;
         }
 
+        /* Dual flagship card grid */
+        .dual-flagship-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .dual-flagship-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dual-flagship-card:hover {
+            border-color: var(--peach);
+            box-shadow: 0 8px 20px rgba(26, 43, 91, 0.08);
+            transform: translateY(-4px);
+        }
+
+        .dual-flagship-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--peach-dark);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .dual-flagship-title {
+            font-size: 1.3rem;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .dual-flagship-tagline {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .dual-flagship-description {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .dual-flagship-points {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .dual-flagship-points li {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.75rem;
+        }
+
+        .dual-flagship-points li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--peach);
+            font-weight: bold;
+        }
+
+        .dual-flagship-card .btn {
+            margin-bottom: 0.75rem;
+        }
+
+        .dual-flagship-secondary {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            text-align: center;
+            margin: 0;
+        }
+
         /* Proof points */
         .proof-points {
             display: grid;
@@ -294,6 +384,10 @@
                 font-size: 0.95rem;
             }
 
+            .dual-flagship-grid {
+                grid-template-columns: 1fr;
+            }
+
             .other-services-grid {
                 grid-template-columns: 1fr;
             }
@@ -304,6 +398,10 @@
 
             .proof-points {
                 grid-template-columns: 1fr;
+            }
+
+            .dual-flagship-card {
+                padding: 2rem;
             }
         }
     </style>
@@ -449,78 +547,53 @@
 
     <section class="flagship-section">
         <div class="flagship-container">
-            <h2>The Flagship: Fractional Chief AI Officer</h2>
+            <h2>Start here</h2>
             <div class="flagship-header">
-                <h3>Most small and mid-sized businesses don't have $250,000 to spend on a Chief AI Officer. They don't need to. You need a CAIO's brain, not their salary.</h3>
-                <p>This is the flagship service. Strategic AI leadership embedded in your organization, with hands-on builds and change management. Six-month initial commitment, then month-to-month.</p>
+                <h3>Two proven paths. Coaching is where most leaders begin — one focused conversation to get unstuck. Fractional leadership is where engagements deepen into ongoing AI strategy. Start where you are.</h3>
             </div>
 
-            <div class="proof-points">
-                <div class="proof-point">
-                    <h4>Measurable wins in 30 to 45 days</h4>
-                    <p>Not 6 to 9 months. You see results in the first quarter, not after a year of planning.</p>
-                </div>
-                <div class="proof-point">
-                    <h4>Around 10% of the cost of a full-time CAIO</h4>
-                    <p>Strategy plus hands-on builds plus change management for a fraction of a $250,000 annual hire.</p>
-                </div>
-                <div class="proof-point">
-                    <h4>Strategy, builds, and change management in one engagement</h4>
-                    <p>You don't hand off to different vendors. I lead the strategy and ship the tools alongside it.</p>
-                </div>
-            </div>
+            <div class="dual-flagship-grid">
+                <div class="dual-flagship-card">
+                    <p class="dual-flagship-label">Most Leaders Start Here</p>
+                    <h4 class="dual-flagship-title">Executive AI Coaching</h4>
+                    <p class="dual-flagship-tagline">One focused conversation. Strategic clarity, fast.</p>
+                    <p class="dual-flagship-description">Pay-per-session or a short sprint. Work 1-on-1 with an MBA-trained AI strategist who has shipped real AI products and coached executives through transformation. Bring one decision, one rollout, or one team challenge. Walk away with a plan.</p>
 
-            <h3 style="font-size: 1.3rem; margin-bottom: 2rem; color: var(--navy);">Two pricing tiers</h3>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <p class="pricing-tier">Advisor</p>
-                    <p class="pricing-amount">$1,750<span class="pricing-period"> /month</span></p>
-                    <p class="pricing-tagline">For small businesses getting serious about AI.</p>
+                    <ul class="dual-flagship-points">
+                        <li>One hour, one focused problem</li>
+                        <li>No retainer commitment</li>
+                        <li>Often the first step into fractional leadership</li>
+                    </ul>
 
-                    <div class="pricing-features">
-                        <div class="pricing-feature"><strong>Up to 2 hours/month</strong> of live strategy sessions</div>
-                        <div class="pricing-feature">Quarterly AI opportunity scan identifying your next 2-3 highest-value processes</div>
-                        <div class="pricing-feature">Async support between sessions (email and Loom)</div>
-                        <div class="pricing-feature">Access to tool vetting library</div>
-                    </div>
-
-                    <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3PqUgOrCRz9Cj6rn42ZOA8Xxix2HvF7pmmtm2tvYgGCdFgf5_DrZ8r-9IMpjStbE-8OEEK5dYg" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block">Book a Free Discovery Call</a>
+                    <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3PqUgOrCRz9Cj6rn42ZOA8Xxix2HvF7pmmtm2tvYgGCdFgf5_DrZ8r-9IMpjStbE-8OEEK5dYg" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block">Book a Coaching Session</a>
+                    <p class="dual-flagship-secondary">Starting at per-session pricing</p>
                 </div>
 
-                <div class="pricing-card pricing-card-featured">
-                    <div class="pricing-badge">Most Popular</div>
-                    <p class="pricing-tier">Operator</p>
-                    <p class="pricing-amount">$3,500<span class="pricing-period"> /month</span></p>
-                    <p class="pricing-tagline">For small to mid-sized businesses ready to execute.</p>
+                <div class="dual-flagship-card">
+                    <p class="dual-flagship-label">The Scale-Up</p>
+                    <h4 class="dual-flagship-title">Fractional Chief AI Officer</h4>
+                    <p class="dual-flagship-tagline">Ongoing AI leadership. Strategy, builds, and change management.</p>
+                    <p class="dual-flagship-description">When one conversation is not enough, and you need strategic AI leadership embedded in your organization. Around ten percent of the cost of a full-time CAIO, measurable wins in 30 to 45 days, and a human-first approach that amplifies your team.</p>
 
-                    <div class="pricing-features">
-                        <div class="pricing-feature"><strong>Up to 4 hours/month</strong> of live strategy sessions</div>
-                        <div class="pricing-feature">Everything in Advisor, plus:</div>
-                        <div class="pricing-feature">Prioritized 12-month roadmap</div>
-                        <div class="pricing-feature"><strong>One executive workshop per quarter</strong> (60 to 90 minutes)</div>
-                        <div class="pricing-feature"><strong>Board-ready AI update deck</strong> each quarter</div>
-                    </div>
+                    <ul class="dual-flagship-points">
+                        <li>Advisor tier from $1,750/month</li>
+                        <li>Operator tier at $3,500/month</li>
+                        <li>Includes strategy, governance, and hands-on builds</li>
+                    </ul>
 
-                    <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3PqUgOrCRz9Cj6rn42ZOA8Xxix2HvF7pmmtm2tvYgGCdFgf5_DrZ8r-9IMpjStbE-8OEEK5dYg" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block">Book a Free Discovery Call</a>
+                    <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3PqUgOrCRz9Cj6rn42ZOA8Xxix2HvF7pmmtm2tvYgGCdFgf5_DrZ8r-9IMpjStbE-8OEEK5dYg" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block">See Fractional CAIO Details</a>
+                    <p class="dual-flagship-secondary">Six-month initial commitment</p>
                 </div>
             </div>
-
-            <a href="fractional-caio.html" class="secondary-cta-link">See Full Fractional CAIO Details →</a>
         </div>
     </section>
 
     <section class="other-services-section">
         <div class="other-services-container">
             <h2>Other ways I help</h2>
-            <p class="other-services-intro">If you need something more targeted than ongoing AI leadership, here are ways we can work together on specific problems.</p>
+            <p class="other-services-intro">If you need something more targeted than coaching or fractional leadership, here are ways we can work together on specific problems.</p>
 
             <div class="other-services-grid">
-                <div class="other-service-card">
-                    <h3>Executive AI Coaching</h3>
-                    <p>Strategic 1-on-1 guidance for leaders navigating AI adoption. Great for one-off conversations or a focused sprint.</p>
-                    <a href="executive-coaching.html">Book a Coaching Session →</a>
-                </div>
-
                 <div class="other-service-card">
                     <h3>AI Workflow Audit</h3>
                     <p>A focused audit that identifies high-impact AI opportunities and builds a 90-day implementation roadmap.</p>
