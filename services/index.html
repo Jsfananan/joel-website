@@ -12,22 +12,22 @@
       gtag('config', 'G-VWWDV2L12H');
     </script>
 
-    <title>AI Strategy Services | Joel Salinas</title>
-    <meta name="description" content="AI strategy coaching, workflow automation, executive coaching, and custom AI application development. Choose your path to AI implementation with Joel Salinas.">
-    <meta name="keywords" content="AI strategy services, AI coaching services, executive AI coaching, AI workflow audit, Second Brain build, custom AI applications">
+    <title>AI Strategy Services | Fractional CAIO, Coaching, and Custom Builds | Joel Salinas</title>
+    <meta name="description" content="Fractional Chief AI Officer, executive coaching, AI workflow audits, and custom AI applications for small and mid-sized businesses and nonprofits. Book a free discovery call.">
+    <meta name="keywords" content="fractional chief AI officer, fractional CAIO, AI strategy services, executive AI coaching, AI workflow audit, custom AI applications, Second Brain build">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://jsalinas.org/services/index.html">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jsalinas.org/services/index.html">
-    <meta property="og:title" content="AI Strategy Services | Joel Salinas">
-    <meta property="og:description" content="AI strategy coaching, workflow automation, executive coaching, and custom AI application development. Choose your path to AI implementation.">
+    <meta property="og:title" content="AI Strategy Services | Fractional CAIO, Coaching, and Custom Builds | Joel Salinas">
+    <meta property="og:description" content="Fractional Chief AI Officer, executive coaching, AI workflow audits, and custom AI applications for small and mid-sized businesses and nonprofits.">
     <meta property="og:image" content="https://jsalinas.org/headshot.webp">
 
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://jsalinas.org/services/index.html">
-    <meta property="twitter:title" content="AI Strategy Services | Joel Salinas">
-    <meta property="twitter:description" content="AI strategy coaching, workflow automation, executive coaching, and custom AI application development. Choose your path to AI implementation.">
+    <meta property="twitter:title" content="AI Strategy Services | Fractional CAIO, Coaching, and Custom Builds | Joel Salinas">
+    <meta property="twitter:description" content="Fractional Chief AI Officer, executive coaching, AI workflow audits, and custom AI applications for small and mid-sized businesses and nonprofits.">
     <meta property="twitter:image" content="https://jsalinas.org/headshot.webp">
 
     <link rel="icon" type="image/webp" href="/headshot.webp">
@@ -35,6 +35,278 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
+
+    <style>
+        /* Trust bar styling */
+        .trust-bar {
+            background: var(--white);
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--border);
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .trust-bar-container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            text-align: center;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            font-weight: 500;
+            letter-spacing: 0.01em;
+        }
+
+        /* Recent client wins section */
+        .client-wins-section {
+            padding: var(--section-padding);
+            background: var(--white);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .client-wins-container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .client-wins-section h2 {
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        .client-wins-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .client-win-card {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--peach);
+            transition: var(--transition);
+        }
+
+        .client-win-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(26, 43, 91, 0.08);
+        }
+
+        .client-win-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Flagship section */
+        .flagship-section {
+            padding: var(--section-padding);
+            background: linear-gradient(135deg, rgba(244, 196, 176, 0.08) 0%, rgba(26, 43, 91, 0.04) 100%);
+        }
+
+        .flagship-container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .flagship-section h2 {
+            margin-bottom: 1.5rem;
+            color: var(--peach-dark);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+        }
+
+        .flagship-header {
+            margin-bottom: 3rem;
+        }
+
+        .flagship-header h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--navy);
+        }
+
+        .flagship-header p {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            line-height: 1.7;
+            max-width: 700px;
+        }
+
+        /* Proof points */
+        .proof-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .proof-point {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .proof-point:hover {
+            border-color: var(--peach);
+            box-shadow: 0 8px 20px rgba(26, 43, 91, 0.08);
+        }
+
+        .proof-point h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--navy);
+        }
+
+        .proof-point p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Secondary CTA link */
+        .secondary-cta-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--peach-dark);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .secondary-cta-link:hover {
+            color: var(--navy);
+            transform: translateX(4px);
+        }
+
+        /* Other ways I help section */
+        .other-services-section {
+            padding: var(--section-padding);
+            background: var(--white);
+        }
+
+        .other-services-container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .other-services-section h2 {
+            margin-bottom: 0.75rem;
+        }
+
+        .other-services-intro {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+        }
+
+        .other-services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.75rem;
+        }
+
+        .other-service-card {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .other-service-card:hover {
+            border-color: var(--peach);
+            box-shadow: 0 8px 20px rgba(26, 43, 91, 0.08);
+            transform: translateY(-4px);
+        }
+
+        .other-service-card h3 {
+            font-size: 1.05rem;
+            margin-bottom: 0.75rem;
+            color: var(--navy);
+        }
+
+        .other-service-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .other-service-card a {
+            color: var(--peach-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .other-service-card a:hover {
+            color: var(--navy);
+            transform: translateX(4px);
+        }
+
+        /* FAQ section */
+        .faq-section {
+            padding: var(--section-padding);
+            background: var(--white);
+            border-top: 1px solid var(--border);
+        }
+
+        .faq-container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .faq-section h2 {
+            margin-bottom: 2.5rem;
+        }
+
+        .faq-full-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--peach-dark);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .faq-full-link:hover {
+            color: var(--navy);
+            transform: translateX(4px);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .flagship-header h3 {
+                font-size: 1.5rem;
+            }
+
+            .flagship-header p {
+                font-size: 0.95rem;
+            }
+
+            .other-services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .client-wins-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .proof-points {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 
     <script type="application/ld+json">
     {
@@ -127,7 +399,7 @@
                 <a href="mailto:Joel@LeadershipinChange.com" class="header-nav-link">Contact</a>
             </nav>
             <div class="header-actions">
-                <a href="https://calendar.google.com/appointments/schedules/AcZssZ3PqUgOrCRz9Cj6rn42ZOA8Xxix2HvF7pmmtm2tvYgGCdFgf5_DrZ8r-9IMpjStbE-8OEEK5dYg" target="_blank" rel="noopener noreferrer" class="header-subscribe-btn">Book a Free Call</a>
+                <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3PqUgOrCRz9Cj6rn42ZOA8Xxix2HvF7pmmtm2tvYgGCdFgf5_DrZ8r-9IMpjStbE-8OEEK5dYg" target="_blank" rel="noopener noreferrer" class="header-subscribe-btn">Book a Free Call</a>
             </div>
         </div>
     </header>
@@ -141,77 +413,186 @@
     </nav>
 
     <main>
-    <section class="services-page-hero">
-        <div class="services-page-hero-container">
-            <h1>Choose Your Path to AI Implementation</h1>
-            <p class="services-page-intro">Whether you need ongoing AI leadership, strategic clarity, a tactical audit, a knowledge system, or a custom application — there's a path forward. Below are the ways we work together.</p>
+    <section class="service-page-hero">
+        <div class="service-page-hero-container">
+            <h1>AI Leadership That Amplifies Your Team. Not Replaces It.</h1>
+            <p class="service-page-intro">Fractional AI leadership, executive coaching, and custom builds for small and mid-sized businesses and nonprofits. Pick the right starting point below.</p>
+            <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3PqUgOrCRz9Cj6rn42ZOA8Xxix2HvF7pmmtm2tvYgGCdFgf5_DrZ8r-9IMpjStbE-8OEEK5dYg" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book a Free Discovery Call</a>
         </div>
     </section>
 
-    <section class="services-page-grid">
-        <div class="services-page-grid-container">
-            <div class="service-overview-card service-featured">
-                <div class="service-overview-badge">Flagship Service</div>
-                <img src="/images/icons/icon-caio.jpeg" alt="Fractional CAIO icon" class="service-overview-icon" width="80" height="80">
-                <div class="service-featured-content">
-                    <h2>Fractional Chief AI Officer</h2>
-                    <p class="service-overview-tagline">Executive-level AI leadership for your organization, without the executive-level price tag.</p>
-                    <p class="service-overview-description">Ongoing AI strategy, governance, and accountability for your leadership team — so you can move confidently without hiring a full-time CAIO.</p>
-                    <div class="service-overview-tiers">
-                        <div class="service-overview-tier">
-                            <span class="tier-icon">&#9670;</span>
-                            <strong>Advisor</strong> — $1,750/mo
-                            <span class="tier-detail">Up to 2 hrs/mo strategy, quarterly AI scan, async support</span>
-                        </div>
-                        <div class="service-overview-tier">
-                            <span class="tier-icon">&#9733;</span>
-                            <strong>Operator</strong> — $3,500/mo
-                            <span class="tier-detail">Up to 4 hrs/mo strategy, 12-month roadmap, exec workshops, board decks</span>
-                        </div>
-                    </div>
-                    <a href="fractional-caio.html" class="service-overview-link">See Full Packages →</a>
+    <section class="trust-bar">
+        <div class="trust-bar-container">
+            Substack Bestseller · Trusted by 5,000+ executives across nonprofit, health, and SaaS
+        </div>
+    </section>
+
+    <section class="client-wins-section">
+        <div class="client-wins-container">
+            <h2>Recent Client Wins</h2>
+            <div class="client-wins-grid">
+                <div class="client-win-card">
+                    <p>AI content repurposer for a healthcare firm.</p>
+                </div>
+                <div class="client-win-card">
+                    <p>Customer service bot for a national nonprofit.</p>
+                </div>
+                <div class="client-win-card">
+                    <p>Mapping tool for a landscaping company.</p>
+                </div>
+                <div class="client-win-card">
+                    <p>Website and app build for a nonprofit organization.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="flagship-section">
+        <div class="flagship-container">
+            <h2>The Flagship: Fractional Chief AI Officer</h2>
+            <div class="flagship-header">
+                <h3>Most small and mid-sized businesses don't have $250,000 to spend on a Chief AI Officer. They don't need to. You need a CAIO's brain, not their salary.</h3>
+                <p>This is the flagship service. Strategic AI leadership embedded in your organization, with hands-on builds and change management. Six-month initial commitment, then month-to-month.</p>
+            </div>
+
+            <div class="proof-points">
+                <div class="proof-point">
+                    <h4>Measurable wins in 30 to 45 days</h4>
+                    <p>Not 6 to 9 months. You see results in the first quarter, not after a year of planning.</p>
+                </div>
+                <div class="proof-point">
+                    <h4>Around 10% of the cost of a full-time CAIO</h4>
+                    <p>Strategy plus hands-on builds plus change management for a fraction of a $250,000 annual hire.</p>
+                </div>
+                <div class="proof-point">
+                    <h4>Strategy, builds, and change management in one engagement</h4>
+                    <p>You don't hand off to different vendors. I lead the strategy and ship the tools alongside it.</p>
                 </div>
             </div>
 
-            <div class="service-overview-card">
-                <img src="/images/icons/icon-coaching.jpeg" alt="Executive AI Coaching icon" class="service-overview-icon" width="64" height="64">
-                <h2>Executive AI Coaching</h2>
-                <p class="service-overview-tagline">Strategic guidance for leaders navigating AI adoption.</p>
-                <p class="service-overview-description">Stop spinning on tactical AI decisions. Work 1-on-1 with someone who's built AI products, coached executives, and runs multiple AI-driven businesses. We'll clarify your strategy and unblock the decisions holding you back.</p>
-                <a href="executive-coaching.html" class="service-overview-link">Learn More →</a>
+            <h3 style="font-size: 1.3rem; margin-bottom: 2rem; color: var(--navy);">Two pricing tiers</h3>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <p class="pricing-tier">Advisor</p>
+                    <p class="pricing-amount">$1,750<span class="pricing-period"> /month</span></p>
+                    <p class="pricing-tagline">For small businesses getting serious about AI.</p>
+
+                    <div class="pricing-features">
+                        <div class="pricing-feature"><strong>Up to 2 hours/month</strong> of live strategy sessions</div>
+                        <div class="pricing-feature">Quarterly AI opportunity scan identifying your next 2-3 highest-value processes</div>
+                        <div class="pricing-feature">Async support between sessions (email and Loom)</div>
+                        <div class="pricing-feature">Access to tool vetting library</div>
+                    </div>
+
+                    <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3PqUgOrCRz9Cj6rn42ZOA8Xxix2HvF7pmmtm2tvYgGCdFgf5_DrZ8r-9IMpjStbE-8OEEK5dYg" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block">Book a Free Discovery Call</a>
+                </div>
+
+                <div class="pricing-card pricing-card-featured">
+                    <div class="pricing-badge">Most Popular</div>
+                    <p class="pricing-tier">Operator</p>
+                    <p class="pricing-amount">$3,500<span class="pricing-period"> /month</span></p>
+                    <p class="pricing-tagline">For small to mid-sized businesses ready to execute.</p>
+
+                    <div class="pricing-features">
+                        <div class="pricing-feature"><strong>Up to 4 hours/month</strong> of live strategy sessions</div>
+                        <div class="pricing-feature">Everything in Advisor, plus:</div>
+                        <div class="pricing-feature">Prioritized 12-month roadmap</div>
+                        <div class="pricing-feature"><strong>One executive workshop per quarter</strong> (60 to 90 minutes)</div>
+                        <div class="pricing-feature"><strong>Board-ready AI update deck</strong> each quarter</div>
+                    </div>
+
+                    <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3PqUgOrCRz9Cj6rn42ZOA8Xxix2HvF7pmmtm2tvYgGCdFgf5_DrZ8r-9IMpjStbE-8OEEK5dYg" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block">Book a Free Discovery Call</a>
+                </div>
             </div>
 
-            <div class="service-overview-card">
-                <img src="/images/icons/icon-audit.jpeg" alt="AI Workflow Audit icon" class="service-overview-icon" width="64" height="64">
-                <h2>AI Workflow Audit</h2>
-                <p class="service-overview-tagline">See exactly where AI can save your team time and money.</p>
-                <p class="service-overview-description">We audit your workflows, identify high-impact AI opportunities, and build a 90-day implementation roadmap with clear ROI metrics. No guessing. Just results.</p>
-                <a href="ai-workflow-audit.html" class="service-overview-link">Learn More →</a>
+            <a href="fractional-caio.html" class="secondary-cta-link">See Full Fractional CAIO Details →</a>
+        </div>
+    </section>
+
+    <section class="other-services-section">
+        <div class="other-services-container">
+            <h2>Other ways I help</h2>
+            <p class="other-services-intro">If you need something more targeted than ongoing AI leadership, here are ways we can work together on specific problems.</p>
+
+            <div class="other-services-grid">
+                <div class="other-service-card">
+                    <h3>Executive AI Coaching</h3>
+                    <p>Strategic 1-on-1 guidance for leaders navigating AI adoption. Great for one-off conversations or a focused sprint.</p>
+                    <a href="executive-coaching.html">Book a Coaching Session →</a>
+                </div>
+
+                <div class="other-service-card">
+                    <h3>AI Workflow Audit</h3>
+                    <p>A focused audit that identifies high-impact AI opportunities and builds a 90-day implementation roadmap.</p>
+                    <a href="ai-workflow-audit.html">See Audit Details →</a>
+                </div>
+
+                <div class="other-service-card">
+                    <h3>Custom AI Applications</h3>
+                    <p>Purpose-built AI tools for your exact workflow. You own the code, no subscriptions.</p>
+                    <a href="custom-ai-apps.html">See Custom AI App Pricing →</a>
+                </div>
+
+                <div class="other-service-card">
+                    <h3>Second Brain Build</h3>
+                    <p>A searchable AI-powered knowledge vault built for how your team actually works.</p>
+                    <a href="second-brain-build.html">See Second Brain Build →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="faq-container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-condensed">
+                <div class="faq-item-condensed">
+                    <button class="faq-question-condensed" onclick="toggleFaq(this)">
+                        How is this different from hiring a consultant?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer-condensed">
+                        <p>Consultants drop in, deliver a report, and leave. A fractional CAIO is embedded in your strategy. You get continuity, accountability, and someone who knows your business over time. I also build alongside you when it makes sense, not just advise.</p>
+                    </div>
+                </div>
+                <div class="faq-item-condensed">
+                    <button class="faq-question-condensed" onclick="toggleFaq(this)">
+                        What if I already have a CTO or IT director?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer-condensed">
+                        <p>A CTO owns technical architecture. A fractional CAIO owns AI strategy and governance. These are complementary roles. Many of my clients have both, and I work directly with their CTO to align on priorities and execution.</p>
+                    </div>
+                </div>
+                <div class="faq-item-condensed">
+                    <button class="faq-question-condensed" onclick="toggleFaq(this)">
+                        Do you build tools or only advise?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer-condensed">
+                        <p>Both. Strategy is the core of this service, and I also ship custom AI tools, agents, workflows, and integrations. Builds are scoped separately at $2,000 to $5,000 each.</p>
+                    </div>
+                </div>
+                <div class="faq-item-condensed">
+                    <button class="faq-question-condensed" onclick="toggleFaq(this)">
+                        What if I just want a single strategy session, not an ongoing retainer?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer-condensed">
+                        <p>Absolutely. Executive AI coaching is available as a one-off session for leaders who want a focused conversation without a retainer commitment. Great for pressure-testing a decision, getting unstuck on a specific rollout, or just having an expert sounding board for an hour. Learn more on the executive coaching page.</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="service-overview-card">
-                <img src="/images/icons/icon-brain.jpeg" alt="Second Brain Build icon" class="service-overview-icon" width="64" height="64">
-                <h2>Second Brain Build</h2>
-                <p class="service-overview-tagline">A searchable knowledge vault that remembers what you know.</p>
-                <p class="service-overview-description">Your institutional knowledge lives in emails, documents, and your head. We'll build you a custom AI-powered Second Brain — searchable, organized, and tailored to how you work.</p>
-                <a href="second-brain-build.html" class="service-overview-link">Learn More →</a>
-            </div>
-
-            <div class="service-overview-card">
-                <img src="/images/icons/icon-custom-apps.jpeg" alt="Custom AI Applications icon" class="service-overview-icon" width="64" height="64">
-                <h2>Custom AI Applications</h2>
-                <p class="service-overview-tagline">Purpose-built AI tools that fit your business, not the other way around.</p>
-                <p class="service-overview-description">Off-the-shelf tools have limits. We build custom AI applications for your specific workflows. Content systems, research tools, dashboards — you own it entirely.</p>
-                <a href="custom-ai-apps.html" class="service-overview-link">Learn More →</a>
-            </div>
+            <a href="/fractional-ai-faq.html" class="faq-full-link">See all frequently asked questions →</a>
         </div>
     </section>
 
     <section class="services-page-cta">
         <div class="services-page-cta-container">
-            <h2>Not sure which service fits?</h2>
-            <p>Book a free discovery call and we'll figure out the right fit together — no pressure, no pitch.</p>
-            <a href="https://calendar.google.com/appointments/schedules/AcZssZ3PqUgOrCRz9Cj6rn42ZOA8Xxix2HvF7pmmtm2tvYgGCdFgf5_DrZ8r-9IMpjStbE-8OEEK5dYg" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book a Free Discovery Call</a>
+            <h2>Ready for AI leadership that actually ships?</h2>
+            <p>This is a free 20-minute call. No pitch. You tell me where you are, and I'll tell you whether a fractional CAIO, a coaching session, or a specific build is the right fit.</p>
+            <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3PqUgOrCRz9Cj6rn42ZOA8Xxix2HvF7pmmtm2tvYgGCdFgf5_DrZ8r-9IMpjStbE-8OEEK5dYg" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book a Free Discovery Call</a>
         </div>
     </section>
     </main>
@@ -246,5 +627,17 @@
         </div>
     </footer>
 
+    <script>
+        function toggleFaq(button) {
+            const item = button.parentElement;
+            const allItems = document.querySelectorAll('.faq-item-condensed');
+            allItems.forEach(function(i) {
+                if (i !== item && i.classList.contains('active')) {
+                    i.classList.remove('active');
+                }
+            });
+            item.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
