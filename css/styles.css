@@ -3084,18 +3084,93 @@ section {
     flex-wrap: wrap;
 }
 
-.trust-banner-clients {
+/* Trusted-by clients block */
+.trust-clients {
+    margin-top: 0.5rem;
+    padding: 1.25rem 2rem 1.1rem;
+    background: #ffffff;
+    border: 1px solid rgba(26, 43, 91, 0.08);
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(26, 43, 91, 0.04);
+    max-width: 920px;
+    width: 100%;
     text-align: center;
-    font-size: 0.95rem;
-    color: #666;
+}
+
+.trust-clients-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--peach-dark, #b04a2e);
+    margin: 0 0 0.85rem;
+}
+
+.trust-clients-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0 1.75rem;
+    row-gap: 0.5rem;
+}
+
+.trust-clients-list li {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #1A2B5B;
+    position: relative;
+    padding: 0;
+    line-height: 1.2;
+}
+
+.trust-clients-list li:not(:last-child)::after {
+    content: '\00B7';
+    position: absolute;
+    right: -1.05rem;
+    top: 50%;
+    transform: translateY(-55%);
+    color: rgba(26, 43, 91, 0.35);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.trust-clients-meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: #6b6b6b;
     margin: 0;
-    max-width: 900px;
-    line-height: 1.5;
+    font-style: italic;
 }
 
 @media (max-width: 768px) {
-    .trust-banner-clients {
-        font-size: 0.875rem;
+    .trust-clients {
+        padding: 1rem 1.25rem 0.9rem;
+        border-radius: 12px;
+    }
+    .trust-clients-label {
+        font-size: 0.65rem;
+        margin-bottom: 0.7rem;
+    }
+    .trust-clients-list {
+        gap: 0 1.25rem;
+        row-gap: 0.4rem;
+    }
+    .trust-clients-list li {
+        font-size: 1.1rem;
+    }
+    .trust-clients-list li:not(:last-child)::after {
+        right: -0.75rem;
+        font-size: 1.2rem;
+    }
+    .trust-clients-meta {
+        font-size: 0.78rem;
     }
 }
 
