@@ -45,7 +45,7 @@ URL: https://jsalinas.org/services/executive-coaching.html
 ### Fractional Chief AI Officer (starting $1,750/month)
 Executive-level AI leadership on a monthly retainer, without the cost of a full-time hire.
 
-**Advisor tier ($1,750/month):** For small businesses with 10 to 100 employees getting serious about AI. Includes up to 2 hours of live strategy sessions per month, async support via email and Loom (24-hour response, business hours), quarterly AI opportunity scan identifying the next 2-3 highest-value processes, vendor and tool vetting library access, and quarterly executive team check-in.
+**Advisor tier ($1,750/month):** For small businesses with 10 to 100 employees getting serious about AI. Includes up to 2 hours of live strategy sessions per month, async support via email and Loom (2 business day response), quarterly AI opportunity scan identifying the next 2-3 highest-value processes, vendor and tool vetting library access, and quarterly executive team check-in.
 
 **Operator tier ($3,500/month):** For small to mid-sized businesses with 50 to 500 employees ready to execute. Includes everything in Advisor plus: up to 4 hours of live strategy sessions, quarterly prioritized 12-month roadmap, one executive workshop per quarter (60-90 minutes), board-ready AI update deck each quarter, and shadow AI and governance framework.
 
