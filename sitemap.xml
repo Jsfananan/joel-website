@@ -71,6 +71,27 @@
         <priority>0.8</priority>
     </url>
 
+    <url>
+        <loc>https://jsalinas.org/services/coaching-vs-fractional.html</loc>
+        <lastmod>2026-05-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
+    <url>
+        <loc>https://jsalinas.org/faq.html</loc>
+        <lastmod>2026-05-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://jsalinas.org/ai-leadership-triad.html</loc>
+        <lastmod>2026-05-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
     <!-- Articles -->
     <url>
         <loc>https://jsalinas.org/articles/</loc>

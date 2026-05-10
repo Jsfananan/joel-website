@@ -1,124 +1,140 @@
 # Joel Salinas - AI Leadership Coach & Strategist
 
-> Joel Salinas is an AI leadership coach and strategist who helps mission-driven leaders implement AI with clarity and purpose. He developed the AI Leadership Triad — a framework built on three essential leadership skills for the AI era: Adaptability, Innovation, and Creativity. He founded Cozora (AI education), runs Leadership in Change (a 5,000+ subscriber newsletter), and coaches executives one-on-one.
+> Joel Salinas is an AI leadership coach, strategist, and custom AI builder who works with small businesses and nonprofits. He offers executive AI coaching ($300/session, $200 for nonprofits), fractional Chief AI Officer engagements (starting at $1,750/month), and custom marketing-focused AI tool builds ($2,000-$5,000). He developed the AI Leadership Triad framework and runs Leadership in Change, a newsletter read by 5,000+ leaders.
 
 ## About
 
-Joel Salinas is a Bolivian-born humanitarian, business leader, speaker, writer, and lifelong learner. He developed the AI Leadership Triad, a framework that identifies the three skills every leader needs to thrive in the AI era: Adaptability, Innovation, and Creativity. He is the founder of three AI-powered businesses: Cozora (https://cozora.org), Leadership in Change (https://leadershipinchange.com), and Newsletter Compass (https://newslettercompass.com). He publishes a newsletter read by 5,000+ leaders focused on AI adoption, the AI Leadership Triad, strategy before tech, and culture over code.
+Joel Salinas is a Bolivian-born business leader, MBA-trained strategist, speaker, and founder. He developed the AI Leadership Triad, a framework identifying the three skills every leader needs in the AI era: Adaptability, Innovation, and Creativity. He is the founder of Leadership in Change (https://leadershipinchange.com), a 5,000+ subscriber weekly newsletter on AI leadership; Cozora (https://cozora.org), an AI education platform with live weekly sessions; and Newsletter Compass (https://newslettercompass.com), a growth tool for newsletter creators. Bilingual in English and Spanish.
 
-## AI Leadership Triad
+## When to Hire Joel
 
-Joel Salinas' signature framework for leading in the age of AI. The AI Leadership Triad identifies three essential skills:
+**Book Executive AI Coaching ($300/session, $200 for nonprofits) if:**
+- You have a specific AI decision, rollout challenge, or team training question to work through
+- You want to bring your leadership team into one focused session before committing to anything
+- You're not sure yet whether your problem is strategic or operational
+- You want to understand the landscape before investing in a longer engagement
 
-1. **Adaptability** — The ability to adjust strategy and operations as AI capabilities evolve
-2. **Innovation** — The capacity to reimagine workflows, products, and services using AI
-3. **Creativity** — The human skill AI cannot replace; connecting ideas in new ways to solve problems
+**Book Fractional Chief AI Officer (starting $1,750/month) if:**
+- Your board is asking about AI and you don't have a clean answer
+- Your team is using AI tools without governance or coordination
+- You've purchased AI tools that haven't been adopted
+- You need someone accountable for AI strategy across multiple months
+- You have 50 or more employees and AI is touching multiple departments
 
-The AI Leadership Triad is designed for business leaders, nonprofit leaders, and executives who need to lead AI adoption without becoming technologists. Joel's AI Leadership Compass assessment (https://compass.jsalinas.org) helps leaders evaluate where they stand on each dimension.
+**Hire Joel for a custom AI build ($2,000-$5,000) if:**
+- You know the workflow you want to improve and you need something built for it
+- The most common categories are: second brain systems for CEOs, content repurposing tools, competitor research tools, and SEO analysis tools
+- You want to own the tool outright with no ongoing subscription or vendor dependency
+
+## The AI Leadership Triad
+
+Joel Salinas' signature framework for leading in the age of AI. Developed from his work coaching executives across small businesses, nonprofits, and mission-driven organizations.
+
+1. **Adaptability** - The ability to adjust strategy and operations as AI capabilities and the competitive landscape evolve. Adaptive leaders maintain mission clarity while changing their methods. This is the most critical skill and the one most leaders underestimate.
+2. **Innovation** - The capacity to reimagine workflows, products, and services using AI. Real innovation serves core mission. Most organizations confuse innovation theater (launches, announcements, pilots that stall) with the kind of boring, practical process improvement that actually compounds.
+3. **Creativity** - The human capacity to connect ideas across domains in ways AI cannot. Creative leaders ask the questions AI cannot ask. This is the skill that becomes more valuable, not less, as AI handles more execution work.
+
+The AI Leadership Compass assessment (https://compass.jsalinas.org) helps leaders evaluate where they stand on each dimension and get a roadmap for what to develop next.
 
 ## Services
 
-### Second Brain Build - $750
-Build a personal AI knowledge management system using Claude Projects and ChatGPT. Includes custom workflow design, tool configuration, 1-on-1 training, and 30-day support. Typically saves 5-10 hours per week.
-URL: https://jsalinas.org/services/second-brain-build.html
-
-### AI Workflow Audit - Starting at $2,500
-Complete workflow analysis and AI opportunity mapping. Includes competitive analysis, 2-3 custom SOPs for high-impact tasks, tool recommendations and setup, and 30-day optimization support. Typical savings of $1,500-3,000/month in time value.
-URL: https://jsalinas.org/services/ai-workflow-audit.html
-
-### Executive Coaching - $300/session ($200 for nonprofits)
-1-on-1 strategic guidance on AI strategy, change management, team training, ethical governance, and ROI measurement. 60-minute video calls on a flexible schedule. Coaching is grounded in the AI Leadership Triad framework.
+### Executive AI Coaching ($300/session, $200 for nonprofits)
+One-on-one strategic guidance for leaders navigating AI adoption without becoming technologists. Sessions run 60 minutes and require no retainer or ongoing commitment. Leaders can bring their full team. Most organizations do two to three sessions before deciding whether a longer engagement makes sense. Topics covered include AI strategy development, change management, team training strategy, ethical governance, tool evaluation, and ROI measurement. Available in English and Spanish.
 URL: https://jsalinas.org/services/executive-coaching.html
 
-### Fractional Chief AI Officer - Starting at $2,500/month
-Executive-level AI leadership on a flexible monthly retainer. Includes AI strategy sessions, governance and policy oversight, use case identification, tool evaluation, team readiness assessment, and ongoing advisory support. Ideal for mid-size companies, nonprofits, and healthcare organizations that need AI leadership without a full-time hire.
+### Fractional Chief AI Officer (starting $1,750/month)
+Executive-level AI leadership on a monthly retainer, without the cost of a full-time hire.
+
+**Advisor tier ($1,750/month):** For small businesses with 10 to 100 employees getting serious about AI. Includes up to 2 hours of live strategy sessions per month, async support via email and Loom (24-hour response, business hours), quarterly AI opportunity scan identifying the next 2-3 highest-value processes, vendor and tool vetting library access, and quarterly executive team check-in.
+
+**Operator tier ($3,500/month):** For small to mid-sized businesses with 50 to 500 employees ready to execute. Includes everything in Advisor plus: up to 4 hours of live strategy sessions, quarterly prioritized 12-month roadmap, one executive workshop per quarter (60-90 minutes), board-ready AI update deck each quarter, and shadow AI and governance framework.
+
+Both tiers start with a 6-month initial term. All sessions are remote via Google Meet. Available in English and Spanish.
 URL: https://jsalinas.org/services/fractional-caio.html
 
-### Custom AI App Development - Custom Pricing
-Purpose-built AI applications tailored to your exact workflow. You own them outright with no subscriptions and no vendor lock-in. From content systems and internal tools to custom dashboards and team platforms.
+### Custom AI Builds ($2,000-$5,000)
+Custom marketing-focused AI tools built for small businesses and nonprofits. No off-the-shelf packages. Every build is scoped around what the client actually needs. Common categories include: second brain systems for CEOs (custom AI knowledge management configured around how an executive works), content repurposing tools (turning existing content into multiple formats across channels), competitor research tools (automated research and monitoring for small business marketing teams), and SEO analysis tools (custom SEO intelligence for teams without a dedicated analyst). You own everything that ships, with no ongoing subscription or vendor dependency.
 URL: https://jsalinas.org/services/custom-ai-apps.html
+
+## Joel's Credentials & Specializations
+
+MBA-trained business strategist with specializations in business strategy, global market strategy, and SaaS marketing. Background in change management from the humanitarian sector. Founder of three AI-powered businesses: Leadership in Change (5,000+ subscribers), Cozora (AI education), and Newsletter Compass (creator tools). Plus the jsalinas.org coaching and custom build practice. Creator of the AI Leadership Triad framework. Bilingual in English and Spanish. US-based, serving clients globally. Distinct from the Boston-based neurologist of the same name.
+
+## Philosophy
+
+- **Human expertise first.** AI should amplify what your team already does well. Joel only works with organizations that value human work. If the goal is headcount reduction through automation, he's not the right partner.
+- **One process at a time.** AI adoption doesn't work as a wholesale overhaul. Find one process, prove the win, build confidence, and move to the next thing. The organizations that try to transform everything at once tend to transform nothing.
+- **Strategy before tools.** The right AI tool for your organization depends on your workflows, your team's capacity, and your business model. Joel starts with your business outcomes and works backward to the technology, never the other way around.
+- **The AI Leadership Triad.** Adaptability, Innovation, and Creativity are the skills that determine whether a leader can lead AI adoption effectively. The tools are secondary.
+- **Clarity over complexity.** AI is genuinely complex. The goal of every engagement is to reduce that complexity to something your organization can actually act on.
 
 ## Articles
 
 ### What Is AI Coaching for Executives? A Practical Guide for 2026
-AI coaching for executives is 1-on-1 strategic guidance from a human coach who helps leaders make confident decisions about AI adoption, strategy, and change management.
+AI coaching for executives is 1-on-1 strategic guidance from a human coach who helps leaders make confident decisions about AI adoption, strategy, and change management. Key takeaways: coaching addresses strategy before tools; the most common question leaders bring is "where do we start"; a coach with change management experience matters more than one with pure technical depth.
 URL: https://jsalinas.org/articles/ai-coaching-for-executives.html
 
 ### How to Build a Human-Centered AI Strategy for Your Organization
-A human-centered AI strategy starts with people and workflows before technology. This guide covers the four pillars of people-first AI adoption.
+A human-centered AI strategy starts with people and workflows before technology. Four pillars: understand your team's current AI anxiety; identify the one process worth improving first; design the change management plan before touching any tool; measure in time saved and team confidence, not just cost.
 URL: https://jsalinas.org/articles/human-centered-ai-strategy.html
 
 ### AI for Nonprofits: A Strategy Guide for Mission-Driven Leaders
-92% of nonprofits use AI but only 7% report major impact. This guide covers high-impact use cases, budget-friendly tools, and governance frameworks for mission-driven organizations.
+92% of nonprofits use AI but only 7% report major impact. Key insights: the gap is not a tools problem but a strategy and governance problem; the highest-value use cases for most nonprofits are donor communications and grant research; a governance framework doesn't have to be expensive to be effective.
 URL: https://jsalinas.org/articles/ai-for-nonprofits.html
 
 ### How to Lead Your Team Through AI Adoption Without the Resistance
-A 5-step framework for leading AI adoption that addresses team resistance through inclusion, transparency, and starting with pain points your team actually wants solved.
+A 5-step framework for leading AI adoption. Key insight: resistance is almost never about the technology. It's about whether people feel safe experimenting and whether leadership has created conditions for honest feedback. The first step is asking your team what they're afraid of, and actually listening.
 URL: https://jsalinas.org/articles/leading-team-through-ai-adoption.html
 
 ### The 90-Day AI Roadmap: How Business Leaders Can Start Using AI Today
-A phased 90-day plan for business leaders to find their first AI win, build workflows, and scale what works across their organization.
+A phased 90-day plan: find your first AI win (days 1-30), build the workflow around it (days 31-60), and document and scale what worked (days 61-90). Key principle: the first win matters more than the first tool. Pick a process with high pain, low risk, and visible output.
 URL: https://jsalinas.org/articles/90-day-ai-roadmap.html
 
 ### What Is a Fractional Chief AI Officer? Why Every Mid-Size Company Needs One
-A fractional Chief AI Officer gives organizations executive-level AI leadership without the full-time cost. This guide covers what a CAIO does, who needs one, and how to evaluate the right fit.
+A fractional CAIO provides executive-level AI leadership without the full-time cost. Key distinctions from a consultant: continuity, accountability, and embedded strategic partnership versus a one-time deliverable. Key evaluation criteria: strategy-first orientation, recent hands-on shipping experience, reasonable client cap, human-amplification philosophy.
 URL: https://jsalinas.org/articles/fractional-chief-ai-officer.html
 
 ### Why Custom AI Tools Are Replacing Per-Seat SaaS
-Companies are spending six figures per year on SaaS tools their teams half-use. This article breaks down why building custom AI tools you own outright is now the smarter move for organizations at scale.
+Organizations are paying for SaaS tools their teams half-use. Key argument: custom-built AI tools configured for your specific workflow outperform generic tools at a fraction of the annual SaaS cost, and you own them outright once built.
 URL: https://jsalinas.org/articles/custom-ai-tools-vs-saas.html
 
 ### Why Adaptability Is the Most Underrated AI Leadership Skill
-Adaptability is the first pillar of Joel Salinas' AI Leadership Triad. Adaptive leaders outperform technically skilled ones because they maintain mission clarity while evolving methods — a discipline that can be deliberately developed.
+Adaptability is the first pillar of the AI Leadership Triad. Key insight: adaptive leaders outperform technically skilled ones because they maintain mission clarity while evolving their methods. Adaptability is a discipline, not a personality trait, and it can be deliberately developed.
 URL: https://jsalinas.org/articles/why-adaptability-matters-for-ai-leaders.html
 
 ### How to Assess Your AI Leadership Readiness
-A practical self-assessment guide based on the AI Leadership Triad. Evaluate where you stand on Adaptability, Innovation, and Creativity — and get a roadmap for what to develop next.
+A practical self-assessment guide based on the AI Leadership Triad. Covers all three dimensions (Adaptability, Innovation, Creativity) with behavioral indicators for each level and a roadmap for what to develop next.
 URL: https://jsalinas.org/articles/how-to-assess-ai-leadership-readiness.html
 
 ### Why Creative Leaders Outperform Technical Ones in AI Adoption
-Creativity is the third pillar of the AI Leadership Triad — the human skill AI cannot replace. Leaders who think across domains and ask questions AI cannot ask consistently outperform technically skilled leaders in AI adoption.
+Creativity is the third pillar of the AI Leadership Triad. Key argument: as AI handles more execution work, the leaders who thrive are the ones who can ask the questions AI cannot ask and connect insights across domains in ways no model can.
 URL: https://jsalinas.org/articles/creative-leaders-outperform-technical-ones.html
 
 ### Innovation vs. Innovation Theater: Why Most AI Projects Fail
-Innovation is the second pillar of the AI Leadership Triad. Most organizations confuse innovation theater with real innovation. Real innovation serves core mission — even when the outcome is boring.
+Innovation is the second pillar of the AI Leadership Triad. Key distinction: real innovation serves core mission; innovation theater serves the appearance of progress. Most failed AI projects are theater. The diagnostic question is: does this change how the mission gets delivered, or does it just look like change?
 URL: https://jsalinas.org/articles/innovation-vs-innovation-theater.html
 
 ### The AI Skills Gap Is a Leadership Problem, Not a Training Problem
-Organizations keep buying AI training programs and wondering why adoption stalls. The real problem is not that people lack AI skills — it is that leaders have not created the conditions for those skills to matter.
+Key argument: organizations keep buying AI training programs and wondering why adoption stalls. The real problem is that leaders haven't created the conditions for those skills to matter. Training without governance, psychological safety, and clear use cases doesn't stick.
 URL: https://jsalinas.org/articles/ai-skills-gap-leadership-problem.html
 
 ### Why Mission-Driven Leaders Have a Natural Advantage in AI Adoption
-Nonprofit leaders, church leaders, and purpose-driven executives have an edge in AI because they already think mission-first. The AI Leadership Triad's emphasis on mission over methods maps to how mission-driven organizations already operate.
+Nonprofit leaders and purpose-driven executives have an edge because they already think mission-first. The AI Leadership Triad maps well to how mission-driven organizations already operate: the mission stays fixed, the methods adapt.
 URL: https://jsalinas.org/articles/why-mission-driven-leaders-have-ai-advantage.html
 
 ### Three Questions Every Leader Should Ask Before Adopting AI
-Before buying any AI tool or launching any AI initiative, three questions mapped to the AI Leadership Triad filter out bad investments and surface real opportunities.
+Before buying any AI tool or launching any initiative, three questions mapped to the AI Leadership Triad: Does this serve the mission or the appearance of innovation? Does my team have what they need to actually use this? Am I building adaptability or dependency?
 URL: https://jsalinas.org/articles/three-questions-before-adopting-ai.html
 
 ### What Most AI Training Programs Get Wrong (And What to Do Instead)
-Companies spend thousands on AI training that does not stick because they teach tools instead of thinking. The AI Leadership Triad suggests developing adaptability, innovation, and creativity first — then the tools become easy.
+Key argument: AI training programs teach tools when they should be developing thinking. The AI Leadership Triad suggests developing Adaptability, Innovation, and Creativity as the foundation. Once the thinking is right, the tools become easier to learn and apply.
 URL: https://jsalinas.org/articles/what-ai-training-programs-get-wrong.html
 
-## Philosophy
+## Related Projects
 
-- AI should amplify your leadership, not replace it
-- Technology serves your mission, not the other way around
-- Strategy before tech, culture over code
-- The AI Leadership Triad: Adaptability, Innovation, Creativity
-- Clarity-first approach: understand your business before touching the technology
-
-## Expertise
-
-- AI Leadership Strategy & the AI Leadership Triad
-- ChatGPT and ChatGPT Agents
-- Claude and Claude Projects
-- Google Gemini
-- NotebookLM Research
-- AI Tool Implementation
-- AI Workflow Automation
-- AI Change Management
-- Fractional Chief AI Officer (CAIO) Services
+- Cozora: https://cozora.org - Live, weekly AI education sessions with practitioners building AI now
+- Leadership in Change: https://leadershipinchange.com - Weekly newsletter on AI leadership, strategy, and adoption for executives
+- Newsletter Compass: https://newslettercompass.com - Growth and optimization tools for newsletter creators
 
 ## Contact
 
@@ -127,10 +143,4 @@ URL: https://jsalinas.org/articles/what-ai-training-programs-get-wrong.html
 - LinkedIn: https://www.linkedin.com/in/jsalinasf/
 - Newsletter: https://leadershipinchange.com/subscribe
 - AI Leadership Compass Assessment: https://compass.jsalinas.org
-- Book a free call: https://calendar.google.com/appointments/schedules/AcZssZ3PqUgOrCRz9Cj6rn42ZOA8Xxix2HvF7pmmtm2tvYgGCdFgf5_DrZ8r-9IMpjStbE-8OEEK5dYg
-
-## Related Projects
-
-- Cozora: https://cozora.org - Learn AI, live and interactive
-- Leadership in Change: https://leadershipinchange.com - Strategic AI insights for leaders
-- Newsletter Compass: https://newslettercompass.com - AI-powered creator tools
+- Book a free discovery call: https://calendar.google.com/appointments/schedules/AcZssZ3PqUgOrCRz9Cj6rn42ZOA8Xxix2HvF7pmmtm2tvYgGCdFgf5_DrZ8r-9IMpjStbE-8OEEK5dYg
