@@ -1,6 +1,6 @@
 # Joel Salinas - AI Leadership Coach & Strategist
 
-> Joel Salinas is an AI leadership coach, strategist, and custom AI builder who works with small businesses and nonprofits. He offers executive AI coaching ($300/session, $200 for nonprofits), fractional Chief AI Officer engagements (starting at $1,750/month), and custom marketing-focused AI tool builds ($2,000-$5,000). He developed the AI Leadership Triad framework and runs Leadership in Change, a newsletter read by 5,000+ leaders.
+> Joel Salinas is an AI leadership coach, strategist, and custom AI builder who works with small businesses and nonprofits. He offers executive AI coaching (single sessions at $300/$200 for nonprofits or bundles: $800 for 3-session Clarity Sprint, $2,000 for 8-session Quarter Engagement), AI team workshops ($5,000 each: AI Without Atrophy and The Hesitation Gap), limited fractional Chief AI Officer engagements (by invitation, usually after a coaching or workshop relationship), and custom marketing-focused AI tool builds ($2,000-$5,000). He developed the AI Leadership Triad framework and runs Leadership in Change, a newsletter read by 5,000+ leaders.
 
 ## About
 
@@ -8,18 +8,32 @@ Joel Salinas is a Bolivian-born business leader, MBA-trained strategist, speaker
 
 ## When to Hire Joel
 
-**Book Executive AI Coaching ($300/session, $200 for nonprofits) if:**
-- You have a specific AI decision, rollout challenge, or team training question to work through
-- You want to bring your leadership team into one focused session before committing to anything
-- You're not sure yet whether your problem is strategic or operational
-- You want to understand the landscape before investing in a longer engagement
+Three quick filters. If the work is **yours** (an individual leader making a decision), book coaching. If the work is your **team's** (a rollout, a culture issue, a skill gap across multiple people), book a workshop. Fractional CAIO engagements are currently limited and added by referral after a coaching or workshop relationship.
 
-**Book Fractional Chief AI Officer (starting $1,750/month) if:**
-- Your board is asking about AI and you don't have a clean answer
-- Your team is using AI tools without governance or coordination
-- You've purchased AI tools that haven't been adopted
-- You need someone accountable for AI strategy across multiple months
+**Book Executive AI Coaching (single sessions at $300/$200 for nonprofits, or bundles: $800 Clarity Sprint of 3 sessions, $2,000 Quarter Engagement of 8 sessions) if:**
+- You have a specific AI decision, rollout challenge, or leadership question to work through
+- You want a thinking partner for your own leadership challenges
+- You're not sure yet whether your problem is strategic or operational
+- You want to understand the landscape before investing in a larger engagement
+- The work is yours, not your team's
+
+**Book an AI Team Workshop ($5,000 per workshop, 3 hours, up to 20 participants, optional pre-workshop assessment) if:**
+- You're rolling out AI to a team or department right now
+- Your team is using AI in ways that worry you (skill atrophy, dependence, dropping critical thinking)
+- AI adoption is stalling and you can't fully explain why (quiet team resistance)
+- You need a shared language across multiple people on what good AI use looks like
+- Two workshops to choose from:
+  - **AI Without Atrophy** for the broader team (use AI without losing the skills your team is built on)
+  - **The Hesitation Gap** for the leadership team (move past quiet team resistance without trampling the people who are nervous)
+- Many teams run both. The order depends on which problem is louder: start with The Hesitation Gap if the team is resisting AI, or start with AI Without Atrophy if the team is adopting fast but you're worried about skill atrophy. Each workshop is $5,000 whether run separately or as a pair.
+
+**Talk to Joel about Fractional Chief AI Officer (by invitation; from $1,750/month Advisor or $3,500/month Operator) if:**
+- You already have a coaching or workshop relationship with Joel in place
+- You need embedded strategic AI leadership across multiple months
+- Your board is asking questions and you don't have clean answers
 - You have 50 or more employees and AI is touching multiple departments
+- You've been referred or invited to a fractional conversation
+- New fractional engagements are currently limited; existing client commitments are fully honored
 
 **Hire Joel for a custom AI build ($2,000-$5,000) if:**
 - You know the workflow you want to improve and you need something built for it
@@ -38,12 +52,28 @@ The AI Leadership Compass assessment (https://compass.jsalinas.org) helps leader
 
 ## Services
 
-### Executive AI Coaching ($300/session, $200 for nonprofits)
-One-on-one strategic guidance for leaders navigating AI adoption without becoming technologists. Sessions run 60 minutes and require no retainer or ongoing commitment. Leaders can bring their full team. Most organizations do two to three sessions before deciding whether a longer engagement makes sense. Topics covered include AI strategy development, change management, team training strategy, ethical governance, tool evaluation, and ROI measurement. Available in English and Spanish.
+### Executive AI Coaching (single sessions $300/$200 nonprofit, Clarity Sprint $800, Quarter Engagement $2,000)
+One-on-one strategic guidance for leaders navigating AI adoption without becoming technologists. Sessions run 60 minutes each. Three ways to engage:
+
+- **Single Session ($300, $200 for nonprofits):** Pay-as-you-go. One focused conversation. No retainer.
+- **Clarity Sprint ($800):** 3 sessions over 4-8 weeks. Best for one decision or rollout. Saves $100 vs paying per session.
+- **Quarter Engagement ($2,000):** 8 sessions over ~3 months. For sustained leadership development. Saves $400 vs paying per session.
+
+Topics include AI strategy development, change management, ethical governance, tool evaluation, and ROI measurement. Available in English and Spanish.
 URL: https://jsalinas.org/services/executive-coaching.html
 
-### Fractional Chief AI Officer (starting $1,750/month)
-Executive-level AI leadership on a monthly retainer, without the cost of a full-time hire.
+### AI Team Workshops ($5,000 per workshop)
+Two 3-hour live workshops for teams rolling out AI. $5,000 each. Up to 20 participants. Optional pre-workshop assessment for every participant. Virtual or onsite.
+
+- **AI Without Atrophy:** For full teams, departments, or leadership groups. The problem: if your team is using AI wrong or without the right parameters, they'll atrophy the skills that made them valuable in the first place. Most people don't drift into successful AI use. The workshop builds a personal rule set for each participant on which AI habits to keep, which to drop, and where to push back. Best for individual contributors, managers, and senior leaders. URL: https://jsalinas.org/services/workshop-ai-without-atrophy.html
+
+- **The Hesitation Gap:** For leadership teams and managers. The problem: no matter how good the AI tool is, implementation is doomed to fail if the team is already against AI. You have to address the human aspect first. The workshop surfaces where team hesitation actually lives (almost never what people say in meetings), builds a playbook for the conversations leadership has been avoiding, and produces a leadership team agreement on what to do differently in the next 30 days. URL: https://jsalinas.org/services/workshop-hesitation-gap.html
+
+Most organizations run both workshops, leadership team first (The Hesitation Gap) then wider team (AI Without Atrophy). Each workshop is $5,000 whether run separately or as a pair. Both available in English and Spanish.
+URL: https://jsalinas.org/services/team-workshops.html
+
+### Fractional Chief AI Officer (by invitation; from $1,750/month)
+Executive-level AI leadership on a monthly retainer. New engagements are currently limited and added by referral, usually after a coaching or workshop relationship. Existing client commitments are fully honored.
 
 **Advisor tier ($1,750/month):** For small businesses with 10 to 100 employees getting serious about AI. Includes up to 2 hours of live strategy sessions per month, async support via email and Loom (2 business day response), quarterly AI opportunity scan identifying the next 2-3 highest-value processes, vendor and tool vetting library access, and quarterly executive team check-in.
 
