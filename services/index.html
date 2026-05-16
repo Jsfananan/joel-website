@@ -168,6 +168,41 @@
             margin-bottom: 0.5rem;
         }
 
+        .dual-flagship-label-urgent {
+            display: inline-block;
+            background: var(--peach);
+            color: var(--navy);
+            padding: 0.4rem 0.85rem;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .dual-flagship-card .btn-secondary {
+            background: transparent;
+            color: var(--navy);
+            border: 1.5px solid var(--border);
+        }
+        .dual-flagship-card .btn-secondary:hover {
+            background: var(--bg-light);
+            border-color: var(--text-light);
+            color: var(--navy);
+        }
+
+        .service-page-hero-skip {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--text-light);
+            font-size: 0.93rem;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .service-page-hero-skip:hover {
+            color: var(--peach-dark);
+            text-decoration: underline;
+        }
+
         .dual-flagship-title {
             font-size: 1.3rem;
             color: var(--navy);
@@ -523,6 +558,7 @@
             <h1>AI That Amplifies Your Team.</h1>
             <p class="service-page-intro">Every engagement here is built around one thesis: AI is most valuable when it amplifies the people who already make your organization good. Three ways to work together below.</p>
             <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3PqUgOrCRz9Cj6rn42ZOA8Xxix2HvF7pmmtm2tvYgGCdFgf5_DrZ8r-9IMpjStbE-8OEEK5dYg" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book a Free Discovery Call</a>
+            <div><a href="#start-here" class="service-page-hero-skip">↓ Skip to pricing</a></div>
         </div>
     </section>
 
@@ -556,7 +592,7 @@
         </div>
     </section>
 
-    <section class="flagship-section">
+    <section class="flagship-section" id="start-here">
         <div class="flagship-container">
             <h2>Start here</h2>
             <div class="flagship-header">
@@ -581,7 +617,7 @@
                 </div>
 
                 <div class="dual-flagship-card">
-                    <p class="dual-flagship-label">For Teams · 50% Off Launch Offer</p>
+                    <p class="dual-flagship-label dual-flagship-label-urgent">For Teams · 50% Off Launch Offer</p>
                     <h4 class="dual-flagship-title">AI Implementation Assessment + Workshop</h4>
                     <p class="dual-flagship-tagline">Remove the biggest barriers to AI implementation in your company.</p>
                     <p class="dual-flagship-description">Two focus areas: <em>AI Without Atrophy</em> (protect team skills) or <em>The Hesitation Gap</em> (close team AI resistance). Run one or both.</p>
@@ -609,7 +645,7 @@
                         <li>Best fit for orgs already in a coaching or workshop relationship</li>
                     </ul>
 
-                    <a href="/services/fractional-caio.html" class="btn btn-primary btn-block">See How It Works</a>
+                    <a href="/services/fractional-caio.html" class="btn btn-secondary btn-block">See How It Works</a>
                     <p class="dual-flagship-secondary">By invitation · Limited capacity</p>
                 </div>
             </div>
