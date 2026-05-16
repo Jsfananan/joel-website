@@ -531,3 +531,16 @@
         padding: 2rem 1.25rem;
     }
 }
+
+/* === Navy-section link visibility (defensive fix for invisible CTA links on dark backgrounds) === */
+.article-cta a {
+    color: var(--peach);
+}
+.article-cta a:hover {
+    color: var(--white);
+    text-decoration: underline;
+}
+.article-cta .btn-primary,
+.article-cta .btn-primary:hover {
+    color: var(--white);
+}
