@@ -480,13 +480,28 @@
     </style>
 
     <!--
-        FORM SETUP REQUIRED before publishing this page:
-        The signup form below currently posts to a Formspree placeholder.
-        Joel needs to either:
-          1) Replace action="https://formspree.io/f/REPLACE_FORM_ID" with a real Formspree form ID
-          2) OR replace with a Tally / Google Forms / Mailerlite endpoint
-          3) OR swap the entire form for an embedded Google Form iframe
-        Until configured, form submissions WILL FAIL. Fallback is the Calendly link below the form.
+        GOOGLE FORM SETUP (do this in your Google Workspace account):
+          1) Go to forms.google.com and create a new Google Form titled something like
+             "Launch Spot: AI Implementation Assessment + Workshop".
+          2) Add these fields (suggested):
+             - Your full name (short answer, required)
+             - Work email (short answer, required)
+             - Company / organization (short answer, required)
+             - Your role / title (short answer, required)
+             - Approximate participant count up to 20 (short answer, required)
+             - Which focus area fits your team? (multiple choice: AI Without Atrophy /
+               The Hesitation Gap / Both / Not sure)
+             - What is slowing your AI rollout right now? (paragraph, OPTIONAL; keep low friction)
+             - Ideal workshop timing (multiple choice: ASAP / 2-4 weeks / 4-8 weeks / Flexible)
+          3) Configure the form to email you on each submission
+             (Responses tab â three-dot menu â "Get email notifications for new responses").
+          4) Click the "Send" button (top right) â the embed-code tab (the "<>" icon) â
+             copy the entire iframe code.
+          5) Replace the placeholder block below (the <div class="signup-form-placeholder">) with
+             that iframe. Style is fine as-is; you may want to set height="1400" or similar so
+             the form is visible without scrolling.
+        UNTIL THE FORM IS CONFIGURED, this page shows a friendly placeholder with the discovery-call
+        Calendly link as the working fallback. Visitors can still claim a launch spot through that path.
     -->
 </head>
 <body>
@@ -740,72 +755,20 @@
     <section class="signup-section" id="signup">
         <div class="signup-container">
             <h2>Claim Your Launch Spot</h2>
-            <p class="signup-intro">First 10 companies get 50% off. <strong style="color: var(--peach);">$3,750 instead of $7,500.</strong> No payment yet. Fill out the form and Joel will follow up within one business day with engagement details and an invoice.</p>
+            <p class="signup-intro">First 10 companies get 50% off. <strong style="color: var(--peach);">$3,750 instead of $7,500.</strong> No payment yet. The intake form goes live shortly. Until then, the fastest path to claim a launch spot is a short call with Joel.</p>
 
-            <form class="signup-form" action="https://formspree.io/f/REPLACE_FORM_ID" method="POST">
-                <!-- Honeypot field to deter bots -->
-                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-
-                <div class="signup-form-group">
-                    <label class="signup-form-label" for="name">Your full name <span class="signup-form-required">*</span></label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-
-                <div class="signup-form-group">
-                    <label class="signup-form-label" for="email">Work email <span class="signup-form-required">*</span></label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-
-                <div class="signup-form-group">
-                    <label class="signup-form-label" for="company">Company / organization name <span class="signup-form-required">*</span></label>
-                    <input type="text" id="company" name="company" required>
-                </div>
-
-                <div class="signup-form-group">
-                    <label class="signup-form-label" for="role">Your role / title <span class="signup-form-required">*</span></label>
-                    <input type="text" id="role" name="role" required>
-                </div>
-
-                <div class="signup-form-group">
-                    <label class="signup-form-label" for="team_size">Approximate participant count (up to 20) <span class="signup-form-required">*</span></label>
-                    <input type="number" id="team_size" name="team_size" min="1" max="100" required>
-                </div>
-
-                <div class="signup-form-group">
-                    <label class="signup-form-label" for="focus_area">Which focus area fits your team? <span class="signup-form-required">*</span></label>
-                    <select id="focus_area" name="focus_area" required>
-                        <option value="">Choose one...</option>
-                        <option value="ai-without-atrophy">AI Without Atrophy (broader team · skill preservation)</option>
-                        <option value="hesitation-gap">The Hesitation Gap (leadership team · closing team resistance)</option>
-                        <option value="both">Both engagements</option>
-                        <option value="not-sure">Not sure yet · would like to talk through fit</option>
-                    </select>
-                </div>
-
-                <div class="signup-form-group">
-                    <label class="signup-form-label" for="situation">What's actually slowing your AI rollout right now? <span class="signup-form-required">*</span></label>
-                    <textarea id="situation" name="situation" required placeholder="A few sentences. What's the team's biggest barrier as you see it? What's been tried?"></textarea>
-                </div>
-
-                <div class="signup-form-group">
-                    <label class="signup-form-label" for="timing">Ideal workshop timing</label>
-                    <select id="timing" name="timing">
-                        <option value="">Choose one...</option>
-                        <option value="asap">As soon as possible</option>
-                        <option value="2-4-weeks">In the next 2-4 weeks</option>
-                        <option value="4-8-weeks">In the next 4-8 weeks</option>
-                        <option value="flexible">Flexible · whatever works</option>
-                    </select>
-                </div>
-
-                <!-- Hidden field to track which page the submission came from -->
-                <input type="hidden" name="_subject" value="Launch sign-up: AI Implementation Assessment + Workshop">
-                <input type="hidden" name="source" value="launch/team-workshops.html">
-
-                <button type="submit" class="btn btn-primary signup-form-submit">Submit and Reserve a Launch Spot →</button>
-
-                <p class="signup-form-microcopy">No payment yet. Joel will review and follow up within one business day with engagement details and an invoice for the 50% launch rate.</p>
-            </form>
+            <!-- ============================================================
+                 STEP 5: REPLACE THIS ENTIRE <div class="signup-form-placeholder">
+                 BLOCK WITH YOUR GOOGLE FORMS IFRAME (see setup instructions above).
+                 ============================================================ -->
+            <div class="signup-form-placeholder" style="background: var(--white); padding: 3rem 2rem; border-radius: 12px; text-align: center; box-shadow: 0 8px 24px rgba(26, 43, 91, 0.12);">
+                <p style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--peach-dark); font-weight: 700; margin-bottom: 1rem;">Sign-up form coming online shortly</p>
+                <h3 style="color: var(--navy); font-size: 1.4rem; margin-bottom: 1rem;">In the meantime, book a 15-minute call to claim a launch spot</h3>
+                <p style="color: var(--text-light); line-height: 1.7; margin-bottom: 1.75rem; max-width: 480px; margin-left: auto; margin-right: auto;">The form is being set up. Until it goes live, the fastest way to lock in the 50% launch rate is a short discovery call with Joel. He will confirm fit, send the engagement details, and invoice you for $3,750.</p>
+                <a href="https://calendar.google.com/appointments/schedules/AcZssZ3PqUgOrCRz9Cj6rn42ZOA8Xxix2HvF7pmmtm2tvYgGCdFgf5_DrZ8r-9IMpjStbE-8OEEK5dYg" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book a Launch Spot Call â</a>
+                <p style="color: var(--text-light); font-size: 0.88rem; margin-top: 1.25rem; margin-bottom: 0;">Or email Joel directly at <a href="mailto:Joel@LeadershipinChange.com" style="color: var(--peach-dark); font-weight: 600;">Joel@LeadershipinChange.com</a> with subject âLaunch spotâ.</p>
+            </div>
+            <!-- END placeholder block -->
 
             <p class="signup-alternative">Prefer to talk before signing up? <a href="https://calendar.google.com/appointments/schedules/AcZssZ3PqUgOrCRz9Cj6rn42ZOA8Xxix2HvF7pmmtm2tvYgGCdFgf5_DrZ8r-9IMpjStbE-8OEEK5dYg" target="_blank" rel="noopener noreferrer">Book a free 30-minute discovery call →</a></p>
         </div>
