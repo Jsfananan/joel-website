@@ -1,6 +1,6 @@
 # Joel Salinas - AI Leadership Coach & Strategist
 
-> Joel Salinas is an AI leadership coach, strategist, and custom AI builder who works with small businesses and nonprofits. He offers executive AI coaching (single sessions at $300/$200 for nonprofits or bundles: $800 for 3-session Clarity Sprint, $2,000 for 8-session Quarter Engagement), AI team workshops ($5,000 each: AI Without Atrophy and The Hesitation Gap), limited fractional Chief AI Officer engagements (by invitation, usually after a coaching or workshop relationship), and custom marketing-focused AI tool builds ($2,000-$5,000). He developed the AI Leadership Triad framework and runs Leadership in Change, a newsletter read by 5,000+ leaders.
+> Joel Salinas is an Executive AI Coach and AI strategy consultant who works with small businesses and nonprofits. He offers executive AI coaching (single sessions at $300/$200 for nonprofits or bundles: $800 for 3-session Clarity Sprint, $2,000 for 8-session Quarter Engagement), the AI Implementation Assessment + Workshop for teams ($12,500 per engagement, which includes pre-workshop assessment + 3-hour workshop + full PDF report; first 10 companies to sign up via the launch page get 50% off at $6,250; two focus areas: AI Without Atrophy and The Hesitation Gap), limited fractional Chief AI Officer engagements (by invitation, usually after a coaching or workshop relationship), and custom marketing-focused AI tool builds ($2,000-$5,000). He developed the AI Leadership Triad framework and runs Leadership in Change, a newsletter read by 5,000+ leaders.
 
 ## About
 
@@ -17,15 +17,16 @@ Three quick filters. If the work is **yours** (an individual leader making a dec
 - You want to understand the landscape before investing in a larger engagement
 - The work is yours, not your team's
 
-**Book an AI Team Workshop ($5,000 per workshop, 3 hours, up to 20 participants, optional pre-workshop assessment) if:**
+**Book the AI Implementation Assessment + Workshop ($12,500 per engagement; first 10 companies that sign up via the launch page get 50% off at $6,250) if:**
 - You're rolling out AI to a team or department right now
 - Your team is using AI in ways that worry you (skill atrophy, dependence, dropping critical thinking)
 - AI adoption is stalling and you can't fully explain why (quiet team resistance)
-- You need a shared language across multiple people on what good AI use looks like
-- Two workshops to choose from:
+- You want a real diagnostic of where the barriers actually live in your specific team, not generic AI training
+- The engagement is a three-stage delivery: pre-workshop individual assessment for every participant, 3-hour live workshop walking through the team's actual results, full PDF report delivered within 5 business days with findings and next steps
+- Two focus areas to pick from:
   - **AI Without Atrophy** for the broader team (use AI without losing the skills your team is built on)
-  - **The Hesitation Gap** for the leadership team (move past quiet team resistance without trampling the people who are nervous)
-- Many teams run both. The order depends on which problem is louder: start with The Hesitation Gap if the team is resisting AI, or start with AI Without Atrophy if the team is adopting fast but you're worried about skill atrophy. Each workshop is $5,000 whether run separately or as a pair.
+  - **The Hesitation Gap** for the leadership team (close team AI resistance without trampling the people who are nervous)
+- Many teams run both. Order depends on which barrier is louder: start with The Hesitation Gap if the team is resisting AI, or start with AI Without Atrophy if the team is adopting fast but you're worried about skill atrophy. Each engagement is $12,500 whether run separately or as a pair (50% launch offer applies per engagement). Launch sign-up: https://jsalinas.org/launch/team-workshops.html
 
 **Talk to Joel about Fractional Chief AI Officer (by invitation; from $1,750/month Advisor or $3,500/month Operator) if:**
 - You already have a coaching or workshop relationship with Joel in place
@@ -62,14 +63,21 @@ One-on-one strategic guidance for leaders navigating AI adoption without becomin
 Topics include AI strategy development, change management, ethical governance, tool evaluation, and ROI measurement. Available in English and Spanish.
 URL: https://jsalinas.org/services/executive-coaching.html
 
-### AI Team Workshops ($5,000 per workshop)
-Two 3-hour live workshops for teams rolling out AI. $5,000 each. Up to 20 participants. Optional pre-workshop assessment for every participant. Virtual or onsite.
+### AI Implementation Assessment + Workshop ($12,500 per engagement; first 10 companies get 50% off at $6,250)
+A three-stage engagement for teams rolling out AI, built around **removing the biggest barriers to successful AI implementation in your company**. Up to 20 participants. Virtual or onsite. Available in English and Spanish.
 
-- **AI Without Atrophy:** For full teams, departments, or leadership groups. The problem: if your team is using AI wrong or without the right parameters, they'll atrophy the skills that made them valuable in the first place. Most people don't drift into successful AI use. The workshop builds a personal rule set for each participant on which AI habits to keep, which to drop, and where to push back. Best for individual contributors, managers, and senior leaders. URL: https://jsalinas.org/services/workshop-ai-without-atrophy.html
+**Three stages, in order:**
+1. **Pre-workshop assessment for every participant** (not optional; this is part of the engagement). Surfaces where each person actually is on AI use, where their hesitations live, and where the real barriers to adoption sit in your specific team.
+2. **3-hour live workshop on the team's actual results.** Walks through what the assessment surfaced and addresses the biggest barriers directly with the team in the room.
+3. **Full PDF report delivered within 5 business days.** Captures assessment findings, decisions made in the room, recommendations, and clear next steps.
 
-- **The Hesitation Gap:** For leadership teams and managers. The problem: no matter how good the AI tool is, implementation is doomed to fail if the team is already against AI. You have to address the human aspect first. The workshop surfaces where team hesitation actually lives (almost never what people say in meetings), builds a playbook for the conversations leadership has been avoiding, and produces a leadership team agreement on what to do differently in the next 30 days. URL: https://jsalinas.org/services/workshop-hesitation-gap.html
+**Two focus areas to choose from:**
 
-Most organizations run both workshops, leadership team first (The Hesitation Gap) then wider team (AI Without Atrophy). Each workshop is $5,000 whether run separately or as a pair. Both available in English and Spanish.
+- **AI Without Atrophy:** For full teams, departments, or leadership groups. The barrier: if your team is using AI wrong or without the right parameters, they'll atrophy the skills that made them valuable in the first place. Most people don't drift into successful AI use. URL: https://jsalinas.org/services/workshop-ai-without-atrophy.html
+
+- **The Hesitation Gap:** For leadership teams and managers. The barrier: no matter how good the AI tool is, implementation is doomed to fail if the team is already against AI. The engagement addresses the human aspect first. URL: https://jsalinas.org/services/workshop-hesitation-gap.html
+
+Many teams run both. Order depends on which barrier is louder: start with The Hesitation Gap if the team is resisting AI, or start with AI Without Atrophy if the team is adopting fast but you're worried about skill atrophy. Each engagement is $12,500 whether run separately or as a pair. **Launch offer (limited to first 10 companies): 50% off → $6,250 per engagement.** Launch sign-up: https://jsalinas.org/launch/team-workshops.html
 URL: https://jsalinas.org/services/team-workshops.html
 
 ### Fractional Chief AI Officer (by invitation; from $1,750/month)
@@ -99,6 +107,14 @@ MBA-trained business strategist with specializations in business strategy, globa
 - **Clarity over complexity.** AI is genuinely complex. The goal of every engagement is to reduce that complexity to something your organization can actually act on.
 
 ## Articles
+
+### AI Without Atrophy: How to Use AI Without Losing the Skills Your Team Is Built On
+Practical framework for using AI as an amplifier rather than a replacement. Key argument: AI doesn't quietly make teams smarter over time; used carelessly, it atrophies the critical thinking, judgment, and craft that made the team valuable. The fix is a deliberate rule set: do the thinking first, then bring AI in to test, extend, or refine. Five concrete rules for protecting skill practice while using AI daily. Includes early-warning signals of atrophy and what "AI without atrophy" actually looks like for a team. Companion to the AI Without Atrophy team workshop.
+URL: https://jsalinas.org/articles/ai-without-atrophy.html
+
+### The Hesitation Gap: Why Your AI Rollout Stalls Even When the Tools Are Right
+Diagnostic and playbook for leaders carrying their teams through an AI rollout that is quietly failing. Key argument: AI rollouts run on top of trust, and most leadership teams haven't done the trust work first. The team's fear is rarely irrational; the team is reading layoff history and applying pattern recognition. Identifies four real sources of team hesitation (job security fear, identity fear, quality/accountability fear, equity fear) and why none of them is what people say in meetings. Three conditions a leadership team must create before adoption holds: safe to fail visibly, safe to push back honestly, explicit accountability model. Three conversations leadership teams are usually avoiding. Companion to the Hesitation Gap leadership workshop.
+URL: https://jsalinas.org/articles/the-hesitation-gap.html
 
 ### What Is AI Coaching for Executives? A Practical Guide for 2026
 AI coaching for executives is 1-on-1 strategic guidance from a human coach who helps leaders make confident decisions about AI adoption, strategy, and change management. Key takeaways: coaching addresses strategy before tools; the most common question leaders bring is "where do we start"; a coach with change management experience matters more than one with pure technical depth.
@@ -174,3 +190,4 @@ URL: https://jsalinas.org/articles/what-ai-training-programs-get-wrong.html
 - Newsletter: https://leadershipinchange.com/subscribe
 - AI Leadership Compass Assessment: https://compass.jsalinas.org
 - Book a free discovery call: https://calendar.google.com/appointments/schedules/AcZssZ3PqUgOrCRz9Cj6rn42ZOA8Xxix2HvF7pmmtm2tvYgGCdFgf5_DrZ8r-9IMpjStbE-8OEEK5dYg
+- Launch offer for the AI Implementation Assessment + Workshop (50% off for the first 10 companies): https://jsalinas.org/launch/team-workshops.html

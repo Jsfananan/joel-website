@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VWWDV2L12H"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VWWDV2L12H');
+    </script>
+
+    <!-- Primary Meta Tags -->
+    <title>The Hesitation Gap: Why Your AI Rollout Stalls Even When the Tools Are Right | Joel Salinas</title>
+    <meta name="description" content="No matter how good the AI tool is, your implementation is doomed to fail if the team is already against AI. The gap between what leadership wants and what the team is willing to do is where most rollouts go to die. Here's how to close it.">
+    <meta name="keywords" content="AI hesitation gap, AI rollout failure, team AI resistance, AI adoption stalled, why AI rollouts fail, AI change management, AI implementation problems, leadership AI adoption, team AI fear">
+    <meta name="author" content="Joel Salinas">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <link rel="canonical" href="https://jsalinas.org/articles/the-hesitation-gap.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://jsalinas.org/articles/the-hesitation-gap.html">
+    <meta property="og:title" content="The Hesitation Gap: Why Your AI Rollout Stalls Even When the Tools Are Right">
+    <meta property="og:description" content="No matter how good the AI tool is, implementation is doomed to fail if the team is already against AI. Here's where the resistance actually lives, and how to close the gap.">
+    <meta property="og:image" content="https://jsalinas.org/headshot.webp">
+    <meta property="og:site_name" content="Joel Salinas - AI Leadership Coach & Strategist">
+    <meta property="article:published_time" content="2026-05-14">
+    <meta property="article:author" content="Joel Salinas">
+    <meta property="article:section" content="AI Leadership">
+    <meta property="article:tag" content="AI rollout">
+    <meta property="article:tag" content="team resistance">
+    <meta property="article:tag" content="AI change management">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://jsalinas.org/articles/the-hesitation-gap.html">
+    <meta property="twitter:title" content="The Hesitation Gap: Why Your AI Rollout Stalls Even When the Tools Are Right">
+    <meta property="twitter:description" content="No matter how good the AI tool is, implementation is doomed to fail if the team is already against AI.">
+    <meta property="twitter:image" content="https://jsalinas.org/headshot.webp">
+
+    <meta name="theme-color" content="#1A2B5B">
+
+    <link rel="icon" type="image/webp" href="/headshot.webp">
+    <link rel="apple-touch-icon" href="/headshot.webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/articles.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "The Hesitation Gap: Why Your AI Rollout Stalls Even When the Tools Are Right",
+      "description": "The gap between what leadership wants and what the team is willing to do is where most AI rollouts go to die. A practical framework for leaders carrying their team through an AI implementation.",
+      "author": {
+        "@type": "Person",
+        "name": "Joel Salinas",
+        "url": "https://jsalinas.org"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Joel Salinas",
+        "url": "https://jsalinas.org",
+        "image": "https://jsalinas.org/headshot.webp"
+      },
+      "datePublished": "2026-05-14",
+      "dateModified": "2026-05-14",
+      "mainEntityOfPage": "https://jsalinas.org/articles/the-hesitation-gap.html",
+      "image": "https://jsalinas.org/headshot.webp",
+      "articleSection": "AI Leadership",
+      "keywords": ["AI hesitation gap", "AI rollout failure", "team AI resistance", "AI adoption", "AI change management", "leadership AI"],
+      "wordCount": 2200
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jsalinas.org/"},
+        {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://jsalinas.org/articles/"},
+        {"@type": "ListItem", "position": 3, "name": "The Hesitation Gap"}
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the hesitation gap?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The hesitation gap is the distance between what leadership wants the team to do with AI and what the team is actually willing to do. It shows up as quiet resistance: people use the tool when leaders are watching and stop the moment they're not. The gap isn't about the technology. It's about whether the team feels safe enough to engage honestly with the change. Most stalled AI rollouts are sitting inside this gap."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do most AI rollouts fail even when the technology is good?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because AI rollouts run on top of trust, and most leadership teams haven't done the trust work first. The team's fear is rarely irrational. Most people have already watched colleagues get told a tool would amplify their work and then watched those colleagues get cut six months later. When that's the lived experience underneath the rollout, no amount of tool quality fixes the adoption problem. The human aspect has to be addressed before the implementation has any real chance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I know if my team is hesitating about AI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The clearest signal is compliance without engagement. People use the tool in meetings or when leadership asks, then quietly stop the moment the pressure is off. The pilot looks good in the dashboard, the dashboards stop reflecting reality, and three quarters later nothing's actually changed. Other signals: questions that should be asked are missing in team meetings, the same two people do all the demos, and the people who should be most affected by AI are the quietest in the room."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should leaders do first when team hesitation is the real problem?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Stop pushing harder. Sit down with the team and ask what they're actually afraid of. Then actually listen, without immediately solving or reassuring. The fear is almost never what people say it is in meetings. The real fear lives in private conversations, in things people only say to one peer, in the questions they don't ask. The leadership work is creating enough safety that those things can come into the room. That's what closes the gap. Pushing harder widens it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the hesitation gap really about leadership, not the team?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mostly, yes. The team's hesitation is a rational response to conditions leadership has set, intentionally or not. If a team has watched two rounds of layoffs in the last eighteen months, hesitation about AI is a reasonable response to lived experience the team has already seen, not a refusal to engage with new tools. The work of closing the hesitation gap is mostly the leadership team's work: creating conditions where it's safe to test AI on real work, fail visibly, and tell leadership what was learned. Without those conditions, the team's hesitation will hold."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="header-accent"></div>
+        <div class="header-container">
+            <a href="/" class="header-logo">Joel Salinas</a>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="header-nav">
+                <a href="/about.html" class="header-nav-link">About</a>
+                <a href="/services/index.html" class="header-nav-link">Work With Me</a>
+                <a href="/articles/" class="header-nav-link">Articles</a>
+                <a href="https://compass.jsalinas.org" target="_blank" rel="noopener noreferrer" class="header-nav-link">Free Assessment</a>
+                <a href="/faq.html" class="header-nav-link">FAQ</a>
+                <a href="mailto:Joel@LeadershipinChange.com" class="header-nav-link">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a href="https://calendar.google.com/appointments/schedules/AcZssZ3PqUgOrCRz9Cj6rn42ZOA8Xxix2HvF7pmmtm2tvYgGCdFgf5_DrZ8r-9IMpjStbE-8OEEK5dYg" target="_blank" rel="noopener noreferrer" class="header-subscribe-btn">Book a Free Call</a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="breadcrumb-container">
+            <a href="/">Home</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="/articles/">Articles</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current">The Hesitation Gap</span>
+        </div>
+    </nav>
+
+    <main>
+    <section class="article-hero">
+        <div class="article-hero-container">
+            <div class="article-meta">
+                <span class="article-meta-date">May 14, 2026</span>
+                <span class="article-meta-divider">|</span>
+                <span class="article-meta-reading">10 min read</span>
+            </div>
+            <h1>The Hesitation Gap: Why Your AI Rollout Stalls Even When the Tools Are Right</h1>
+            <p class="article-subtitle">No matter how good the AI tool is, implementation is doomed to fail if the team is already against AI. The gap between what leadership wants and what the team is willing to do is where most rollouts go to die.</p>
+        </div>
+    </section>
+
+    <section class="article-content">
+        <div class="article-content-container">
+
+            <div class="article-tldr">
+                <strong>TL;DR:</strong> AI rollouts don't stall because the tools are wrong. They stall because the team is quietly hesitating and the leadership team hasn't created the conditions to address it. The fear is almost never irrational. The fix isn't more training, a bigger budget, or louder mandates from the top. It's the work leadership has to do <em>before</em> the rollout has any real chance: name where the team's hesitation actually comes from, have the conversations leadership has been avoiding, and build conditions where it's safe to test AI on real work. The tool comes after that. Not before.
+            </div>
+
+            <p>So here's the part most leaders miss. I've watched companies spend hundreds of thousands of dollars on an AI rollout and watch it quietly stall, not because the technology was wrong, but because nobody on the leadership team actually sat down with their people and asked what they were afraid of. The team's fear is almost never irrational. Most of the people I sit with have already watched a round of layoffs somewhere. They've already seen a colleague get told a tool would amplify their work and then watched that colleague's role get cut six months later.</p>
+
+            <p>When leadership pushes harder on adoption without addressing that, you don't get adoption. You get compliance. People use the tool when leaders are watching and stop the moment they're not. The rollout looks like it's working in the dashboard, and three quarters later you wonder why nothing changed.</p>
+
+            <p>That gap, between what leadership wants and what the team is actually willing to do, is the hesitation gap. It's where most AI rollouts go to die. And the work of closing it is mostly the leadership team's work, not the team's.</p>
+
+            <div class="article-learning-preview">
+                <p>In this article, you'll learn:</p>
+                <ul>
+                    <li>What the hesitation gap actually is and why most leadership teams don't see it until the rollout is already stalled</li>
+                    <li>The four real sources of team AI hesitation (and why none of them is what people say out loud in meetings)</li>
+                    <li>Why pushing harder makes the gap wider, not narrower</li>
+                    <li>The specific conditions a leadership team has to create before adoption can actually take hold</li>
+                    <li>The conversations your leadership team is avoiding, and how to start having them</li>
+                </ul>
+            </div>
+
+            <h2>What the Hesitation Gap Actually Is</h2>
+
+            <p>Every AI rollout has two parties. There's what leadership wants the team to do with AI, and there's what the team is actually willing to do. When those two things line up, the rollout works. When they don't, you have a hesitation gap.</p>
+
+            <p>The hesitation gap is rarely visible in the first 30 days of a rollout. People use the tool when they're asked. They show up to training. They post a use case in the company Slack. Leadership sees engagement and assumes the rollout is taking hold. Then 60 days in, something quietly shifts. The pilot dashboard numbers stop tracking with hallway conversation. The same two enthusiastic users do all the demos. The questions that should be coming up in team meetings are missing.</p>
+
+            <p>By 90 days, leadership is wondering why the rollout feels stuck. The tool is good. The training was solid. The communication has been clear. And yet, nothing has actually changed in how the work gets done. That's the hesitation gap making itself visible. It was there the whole time. It just looked like adoption while leadership was watching.</p>
+
+            <div class="article-pullquote">
+                The hesitation gap was there the whole time. It just looked like adoption while leadership was watching.
+            </div>
+
+            <h2>Where Hesitation Actually Comes From (It's Not What People Say)</h2>
+
+            <p>In every leadership team I sit with, the first question is the same. "Why is the team hesitating?" And the leadership team has theories. They'll say it's a training problem. They'll say the team isn't tech-savvy. They'll say there's a generational gap. They'll say a few specific holdouts are dragging the rest of the team down.</p>
+
+            <p>Those are surface-level explanations. They're usually wrong, or at least incomplete. The real hesitation almost always lives in one of four places, and none of these is the thing people say in meetings.</p>
+
+            <h3>1. Job security fear that's earned, not irrational.</h3>
+            <p>Most knowledge workers have watched at least one round of layoffs justified by automation, efficiency, or "doing more with less." They've watched leadership say a new tool would amplify the team and then watched a third of the team get cut. When leadership now says AI will amplify their work, the team has historical pattern recognition telling them what comes next. The team isn't being irrational; they're applying lived experience to a recognizable pattern, and what they're seeing in this rollout looks a lot like what they saw the last time someone in leadership said "don't worry."</p>
+
+            <h3>2. Identity fear that's about more than the job.</h3>
+            <p>People's roles are tied to their identity. A writer's identity is "I'm someone who can put thoughts on the page in a way that moves readers." A clinician's identity is "I'm someone whose judgment about a patient is trusted." When AI starts doing the visible work that was the basis of that identity, even if leadership says it's just a tool, the loss of identity is real. People don't say "I'm afraid of losing my identity" out loud. They just quietly stop engaging.</p>
+
+            <h3>3. Quality fear about being held responsible for AI output.</h3>
+            <p>People who care about their craft worry about what happens when AI produces work that goes out under their name. If something goes wrong, who's accountable? If the AI hallucinates a stat in a report I signed off on, am I the one who looks careless? The team isn't refusing AI because they don't believe in it. They're refusing AI because nobody has clarified the accountability model. Until that's clear, the safest move is to stay on the sidelines.</p>
+
+            <h3>4. Equity fear about who benefits from the productivity.</h3>
+            <p>If AI makes me twice as productive, does my workload go down or does the expectation simply double? If I save four hours a week with AI, do I get those four hours back, or does my manager fill them with more tasks? The team has been here before with every prior productivity tool, and the answer was almost always "you get more work." If nobody on the leadership team has explicitly said what's different this time, the team is going to assume nothing is.</p>
+
+            <p>Notice how none of these is "I don't understand AI" or "I'm not tech-savvy." Those are the explanations leadership reaches for because they're easier to address. The actual sources of hesitation are harder, because they're about leadership choices, organizational history, and unstated expectations. Closing the hesitation gap means addressing the real sources, not the surface-level ones.</p>
+
+            <h2>Why Pushing Harder Makes the Gap Wider</h2>
+
+            <p>The first instinct most leadership teams have when they sense a hesitation gap is to push harder. More training. More mandates. More dashboards. A directive from the CEO that AI usage is now a performance expectation. The thinking is that the team will adopt once the pressure is high enough.</p>
+
+            <p>That instinct is wrong, and it backfires in a specific way. The team is already operating on the safest available behavior, which is surface compliance. Pushing harder doesn't change the underlying hesitation. It just deepens the team's commitment to performing adoption rather than practicing it. The pilot dashboards stay green. The hallway conversations stay grim. The gap between what leadership sees and what's actually happening on the team gets wider.</p>
+
+            <p>There's a second cost. The team learns that pressing them when they're already nervous is leadership's go-to move. So next time leadership says "we need everyone to lean in," the team's response is even more guarded than it was the first time. The trust that closing the gap requires gets harder to build.</p>
+
+            <p>The leaders I work with who close the gap successfully are the ones who do the opposite of pushing harder. They slow down. They sit with the team. They ask what's actually slowing things down. Then they actually listen, without immediately reassuring or solving. That's what changes the underlying dynamic. Nothing else does.</p>
+
+            <div class="article-pullquote">
+                The leaders who close the gap successfully do the opposite of pushing harder. They slow down. They sit with the team. They actually listen.
+            </div>
+
+            <h2>The Conditions a Leadership Team Has to Create First</h2>
+
+            <p>Adoption isn't the goal. Adoption is the outcome of having the right conditions in place. The leadership team's job is to create those conditions, and then adoption follows on its own. Without the conditions, no amount of pushing will produce sustainable adoption.</p>
+
+            <p>Three conditions matter most, and most stalled rollouts I see are missing one or two of them.</p>
+
+            <h3>Condition 1: It has to be safe to fail visibly.</h3>
+            <p>If somebody on the team tries AI on a real piece of work and it doesn't go well, what happens? If the answer is "they'll be quietly judged," nobody will try AI on anything that matters. They'll only use it for safe, low-stakes work. The team has to know that experimenting with AI on real work, and sometimes failing, is the goal, not a deviation. Until failing visibly is safe, the team will only engage with AI in performative ways.</p>
+
+            <h3>Condition 2: It has to be safe to push back honestly.</h3>
+            <p>If somebody on the team says "I think this rollout is moving too fast" or "I don't think this is the right use case for AI," what happens? If the answer is "they're labeled a resistor," nobody will tell the leadership team what's actually happening on the ground. The team will just nod through the meetings and quietly stop using the tool. The pushback has to be welcome, not penalized, or the leadership team loses access to the only data that matters.</p>
+
+            <h3>Condition 3: The accountability model has to be explicit.</h3>
+            <p>Who's responsible when AI produces something that goes out under a team member's name? What happens if an AI output causes a real problem with a customer, a patient, a stakeholder? The team needs a clear answer, not a vague "we'll figure it out." Until accountability is clarified, the careful people on the team (which is usually the most senior ones) will stay on the sidelines. And those are exactly the people whose adoption signals the rest of the team.</p>
+
+            <p>Most leadership teams haven't had these three conversations explicitly. They've assumed the conditions are in place. The team can tell they aren't. That asymmetry is the hesitation gap.</p>
+
+            <div class="mid-article-cta">
+                <p><strong>Want to close the hesitation gap on your leadership team?</strong> The Hesitation Gap engagement is built around exactly this work. Three stages: pre-workshop assessment for every leader, 3-hour live workshop on the leadership team's actual results, and a full PDF report with the leadership agreement and the conversations to have in the next 30 days. <strong>$12,500 per engagement. First 10 companies that sign up get 50% off ($6,250).</strong></p>
+                <a href="/launch/team-workshops.html" class="btn btn-secondary">Claim a Launch Spot (50% Off) →</a>
+            </div>
+
+            <h2>The Conversations Your Leadership Team Is Avoiding</h2>
+
+            <p>Every leadership team I work with has the conversations they don't want to have. With the team about layoffs. With the board about pace. With each other about whether the rollout is actually working. Those avoidances are usually invisible from the inside; they feel like normal scheduling pressure or busy quarters. From the outside, the pattern is clear.</p>
+
+            <p>The three conversations most leadership teams need to have, in order, look like this.</p>
+
+            <h3>Conversation 1: With each other, on whether the leadership team is actually aligned.</h3>
+            <p>Most leadership teams haven't said out loud, to each other, what they think the AI rollout is actually for. Some are quietly hoping for efficiency gains that allow them to reduce headcount. Some are hoping for amplification that allows the same team to do more. Some haven't decided. Until the leadership team is honest with each other, the team underneath them will sense the inconsistency, and the inconsistency itself is part of what creates the hesitation gap.</p>
+
+            <h3>Conversation 2: With the team, about what's actually on the table.</h3>
+            <p>The team has questions they haven't asked out loud because they think the answers are bad. "Are layoffs on the table?" "If I save time with AI, do I get that time back?" "Am I going to be evaluated on AI usage?" Leadership owes the team direct answers to those questions, even when the answer is "I don't know yet, and here's when I will." Honest "I don't know" is more usable than "trust the process."</p>
+
+            <h3>Conversation 3: With the board or the funder, about pace.</h3>
+            <p>If the leadership team is being pressed from above to move faster than the team can absorb, that's a real constraint. But pretending that pressure isn't there, and just pushing harder on the team, is the worst of both worlds. The honest version is to push back on the pace upstream and protect the team downstream. That conversation is hard. It's also the conversation that determines whether the rollout actually has a chance.</p>
+
+            <p>None of these conversations is going to be comfortable. That's why they've been avoided. But they're the conversations the rollout sits on top of. Skip them, and the tool you bought, no matter how good, isn't going to do the work the leadership team is hoping it'll do.</p>
+
+            <div class="article-pullquote">
+                Skip the hard conversations, and the tool you bought, no matter how good, isn't going to do the work you're hoping it'll do.
+            </div>
+
+            <h2>What "Closed the Gap" Actually Looks Like</h2>
+
+            <p>A leadership team that has closed the hesitation gap doesn't have a team without doubts. They have a team that can voice the doubts out loud, in the room, without the air going out of the conversation. The team still has fear. They have a place to put it.</p>
+
+            <p>Adoption on a team that's closed the gap looks different from adoption on a team that's just complying. People bring half-formed AI experiments to team meetings. People push back on use cases that don't make sense, and the leadership team doesn't get defensive. People talk about what didn't work, not just what did. The pilot dashboard probably looks less impressive in week three. By month six, the work has actually changed. By month nine, the team is teaching themselves things that no top-down rollout would have produced.</p>
+
+            <p>That's the version of adoption that holds up. It's slower in the first quarter, faster from then on. It's harder to measure in dashboards and easier to feel in how the team talks about the work. It's the version of AI rollout that doesn't need to be pushed because the team is pulling.</p>
+
+            <div class="article-remember">
+                <h3>If You Only Remember This</h3>
+                <ul>
+                    <li><strong>The hesitation gap is mostly a leadership problem, not a team problem.</strong> The team's fear is usually a rational response to conditions leadership has set. Closing the gap is leadership's work.</li>
+                    <li><strong>Pushing harder makes the gap wider.</strong> Mandates produce compliance, not adoption. Slowing down and sitting with the team is the move that actually changes the dynamic.</li>
+                    <li><strong>Adoption sits on top of three conditions: safe to fail visibly, safe to push back honestly, explicit accountability.</strong> Without those, no tool is good enough to drive real change.</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="article-cta">
+        <div class="article-cta-container">
+            <h2>Ready to close the hesitation gap on your team?</h2>
+            <p>The Hesitation Gap engagement is built around exactly this work. Three stages: pre-workshop assessment for every leader, 3-hour live workshop on the leadership team's actual results, and a full PDF report with findings, the leadership agreement, and the conversations to have in the next 30 days. Up to 20 participants. Virtual or onsite. <strong>$12,500 per engagement, with the first 10 companies that sign up via the launch page getting 50% off ($6,250).</strong></p>
+            <a href="/launch/team-workshops.html" class="btn btn-primary">Claim a Launch Spot (50% Off) →</a>
+            <p style="margin-top: 1rem;"><a href="/services/workshop-hesitation-gap.html">See full engagement details →</a> &nbsp; · &nbsp; <a href="https://calendar.google.com/appointments/schedules/AcZssZ3PqUgOrCRz9Cj6rn42ZOA8Xxix2HvF7pmmtm2tvYgGCdFgf5_DrZ8r-9IMpjStbE-8OEEK5dYg" target="_blank" rel="noopener noreferrer">Book a discovery call →</a></p>
+        </div>
+    </section>
+
+    <section class="article-related">
+        <div class="article-related-container">
+            <h2>Keep Reading</h2>
+            <div class="article-related-grid">
+                <a href="/articles/leading-team-through-ai-adoption.html" class="article-related-card">
+                    <h3>Leading Your Team Through AI Adoption Without the Resistance</h3>
+                    <p>A 5-step framework for AI adoption that treats your team as participants in the decision rather than recipients of it.</p>
+                </a>
+                <a href="/articles/ai-skills-gap-leadership-problem.html" class="article-related-card">
+                    <h3>The AI Skills Gap Is a Leadership Problem</h3>
+                    <p>Most "skills gaps" are really conditions gaps. Training doesn't stick when leadership hasn't created the room for the skills to matter.</p>
+                </a>
+                <a href="/services/workshop-ai-without-atrophy.html" class="article-related-card">
+                    <h3>AI Without Atrophy Workshop →</h3>
+                    <p>The companion workshop for the broader team. Use AI without losing the critical thinking your team is built on.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <h3>Joel Salinas - Leadership in Change LLC</h3>
+                    <p>AI leadership coach and strategist. Creator of the AI Leadership Triad. Helping mission-driven leaders implement AI with clarity and purpose.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/privacy.html">Privacy Policy</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <a href="mailto:Joel@LeadershipinChange.com">Joel@LeadershipinChange.com</a>
+                    <a href="https://www.linkedin.com/in/jsalinasf/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    &copy; 2026 Joel Salinas - Leadership in Change LLC. All rights reserved.
+                    <br>All client information is handled with strict confidentiality.
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/jsalinasf/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
