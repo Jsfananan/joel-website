@@ -1,6 +1,6 @@
 # Joel Salinas - AI Leadership Coach & Strategist
 
-> Joel Salinas is an Executive AI Coach and AI strategy consultant who works with small businesses and nonprofits. He offers executive AI coaching (single sessions at $300/$200 for nonprofits or bundles: $800 for 3-session Clarity Sprint, $2,000 for 8-session Quarter Engagement), the AI Implementation Assessment + Workshop for teams ($12,500 per engagement, which includes pre-workshop assessment + 3-hour workshop + full PDF report; first 10 companies to sign up via the launch page get 50% off at $6,250; two focus areas: AI Without Atrophy and The Hesitation Gap), limited fractional Chief AI Officer engagements (by invitation, usually after a coaching or workshop relationship), and custom marketing-focused AI tool builds ($2,000-$5,000). He developed the AI Leadership Triad framework and runs Leadership in Change, a newsletter read by 5,000+ leaders.
+> Joel Salinas is an Executive AI Coach and AI strategy consultant who works with small businesses and nonprofits. He offers executive AI coaching (single sessions at $300/$200 for nonprofits or bundles: $800 for 3-session Clarity Sprint, $2,000 for 8-session Quarter Engagement), the AI Implementation Assessment + Workshop for teams ($7,500 per engagement, which includes pre-workshop assessment + 3-hour workshop + full PDF report; first 10 companies to sign up via the launch page get 50% off at $3,750; two focus areas: AI Without Atrophy and The Hesitation Gap), limited fractional Chief AI Officer engagements (by invitation, usually after a coaching or workshop relationship), and custom marketing-focused AI tool builds ($2,000-$5,000). He developed the AI Leadership Triad framework and runs Leadership in Change, a newsletter read by 5,000+ leaders.
 
 ## About
 
@@ -17,7 +17,7 @@ Three quick filters. If the work is **yours** (an individual leader making a dec
 - You want to understand the landscape before investing in a larger engagement
 - The work is yours, not your team's
 
-**Book the AI Implementation Assessment + Workshop ($12,500 per engagement; first 10 companies that sign up via the launch page get 50% off at $6,250) if:**
+**Book the AI Implementation Assessment + Workshop ($7,500 per engagement; first 10 companies that sign up via the launch page get 50% off at $3,750) if:**
 - You're rolling out AI to a team or department right now
 - Your team is using AI in ways that worry you (skill atrophy, dependence, dropping critical thinking)
 - AI adoption is stalling and you can't fully explain why (quiet team resistance)
@@ -26,7 +26,7 @@ Three quick filters. If the work is **yours** (an individual leader making a dec
 - Two focus areas to pick from:
   - **AI Without Atrophy** for the broader team (use AI without losing the skills your team is built on)
   - **The Hesitation Gap** for the leadership team (close team AI resistance without trampling the people who are nervous)
-- Many teams run both. Order depends on which barrier is louder: start with The Hesitation Gap if the team is resisting AI, or start with AI Without Atrophy if the team is adopting fast but you're worried about skill atrophy. Each engagement is $12,500 whether run separately or as a pair (50% launch offer applies per engagement). Launch sign-up: https://jsalinas.org/launch/team-workshops.html
+- Many teams run both. Order depends on which barrier is louder: start with The Hesitation Gap if the team is resisting AI, or start with AI Without Atrophy if the team is adopting fast but you're worried about skill atrophy. Each engagement is $7,500 whether run separately or as a pair (50% launch offer applies per engagement). Launch sign-up: https://jsalinas.org/launch/team-workshops.html
 
 **Talk to Joel about Fractional Chief AI Officer (by invitation; from $1,750/month Advisor or $3,500/month Operator) if:**
 - You already have a coaching or workshop relationship with Joel in place
@@ -63,7 +63,7 @@ One-on-one strategic guidance for leaders navigating AI adoption without becomin
 Topics include AI strategy development, change management, ethical governance, tool evaluation, and ROI measurement. Available in English and Spanish.
 URL: https://jsalinas.org/services/executive-coaching.html
 
-### AI Implementation Assessment + Workshop ($12,500 per engagement; first 10 companies get 50% off at $6,250)
+### AI Implementation Assessment + Workshop ($7,500 per engagement; first 10 companies get 50% off at $3,750)
 A three-stage engagement for teams rolling out AI, built around **removing the biggest barriers to successful AI implementation in your company**. Up to 20 participants. Virtual or onsite. Available in English and Spanish.
 
 **Three stages, in order:**
@@ -77,7 +77,7 @@ A three-stage engagement for teams rolling out AI, built around **removing the b
 
 - **The Hesitation Gap:** For leadership teams and managers. The barrier: no matter how good the AI tool is, implementation is doomed to fail if the team is already against AI. The engagement addresses the human aspect first. URL: https://jsalinas.org/services/workshop-hesitation-gap.html
 
-Many teams run both. Order depends on which barrier is louder: start with The Hesitation Gap if the team is resisting AI, or start with AI Without Atrophy if the team is adopting fast but you're worried about skill atrophy. Each engagement is $12,500 whether run separately or as a pair. **Launch offer (limited to first 10 companies): 50% off → $6,250 per engagement.** Launch sign-up: https://jsalinas.org/launch/team-workshops.html
+Many teams run both. Order depends on which barrier is louder: start with The Hesitation Gap if the team is resisting AI, or start with AI Without Atrophy if the team is adopting fast but you're worried about skill atrophy. Each engagement is $7,500 whether run separately or as a pair. **Launch offer (limited to first 10 companies): 50% off → $3,750 per engagement.** Launch sign-up: https://jsalinas.org/launch/team-workshops.html
 URL: https://jsalinas.org/services/team-workshops.html
 
 ### Fractional Chief AI Officer (by invitation; from $1,750/month)
