@@ -215,29 +215,38 @@
             text-decoration: underline;
         }
 
+        .service-page-hero {
+            padding: 5rem 2rem;
+        }
         .hero-split {
             display: grid;
-            grid-template-columns: 1.55fr 1fr;
-            gap: 3.5rem;
+            grid-template-columns: 1.7fr 1fr;
+            gap: 5rem;
             align-items: center;
         }
         .hero-split-text {
             text-align: left;
         }
+        .hero-split-text h1 {
+            margin-bottom: 1.5rem;
+        }
+        .hero-split-text .service-page-intro {
+            margin-bottom: 2rem;
+        }
         .hero-split-image {
             text-align: center;
         }
         .hero-headshot {
-            width: 100%;
-            max-width: 280px;
-            height: auto;
-            border-radius: 16px;
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
             box-shadow: 0 16px 40px rgba(26, 43, 91, 0.16);
             display: block;
             margin: 0 auto;
+            object-fit: cover;
         }
         .hero-headshot-caption {
-            margin: 1rem 0 0 0;
+            margin: 1.25rem 0 0 0;
             color: var(--navy);
             font-weight: 700;
             font-size: 1.05rem;
@@ -251,16 +260,20 @@
             margin-top: 0.2rem;
         }
         @media (max-width: 768px) {
+            .service-page-hero {
+                padding: 3rem 1.5rem;
+            }
             .hero-split {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+                gap: 2.5rem;
                 text-align: center;
             }
             .hero-split-text {
                 text-align: center;
             }
             .hero-headshot {
-                max-width: 180px;
+                width: 160px;
+                height: 160px;
             }
         }
 
@@ -624,7 +637,7 @@
                     <div><a href="#start-here" class="service-page-hero-skip">↓ Skip to pricing</a></div>
                 </div>
                 <div class="hero-split-image">
-                    <img src="/headshot.webp" alt="Joel Salinas, Executive AI Coach" class="hero-headshot" loading="eager" width="280" height="280">
+                    <img src="/headshot.webp" alt="Joel Salinas, Executive AI Coach" class="hero-headshot" loading="eager" width="240" height="240">
                     <p class="hero-headshot-caption">Joel Salinas<br><span>Executive AI Coach</span></p>
                 </div>
             </div>
