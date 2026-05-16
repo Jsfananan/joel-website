@@ -64,7 +64,7 @@ Topics include AI strategy development, change management, ethical governance, t
 URL: https://jsalinas.org/services/executive-coaching.html
 
 ### AI Implementation Assessment + Workshop ($7,500 per engagement; first 10 companies get 50% off at $3,750)
-A three-stage engagement for teams rolling out AI, built around **removing the biggest barriers to successful AI implementation in your company**. Up to 20 participants. Virtual or onsite. Available in English and Spanish.
+A three-stage engagement for teams rolling out AI, built around **removing the biggest barriers to successful AI implementation in your company**. Up to 20 participants. Delivered online. Available in English and Spanish.
 
 **Three stages, in order:**
 1. **Pre-workshop assessment for every participant** (not optional; this is part of the engagement). Surfaces where each person actually is on AI use, where their hesitations live, and where the real barriers to adoption sit in your specific team.
