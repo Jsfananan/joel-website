@@ -566,33 +566,74 @@
 
     <section class="launch-section roi-section-launch">
         <div class="launch-section-container">
-            <h2>Why this engagement pays for itself</h2>
-            <p style="text-align: center; max-width: 720px; margin: 0 auto 2rem auto;">Gartner forecasts that around 30% of generative AI projects will be abandoned after proof of concept by the end of 2025 [<a href="https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025" target="_blank" rel="noopener noreferrer" style="color: var(--peach-dark);">source</a>]. The reason is almost never the tools. It is the team. Here is what that means in dollars.</p>
-
-            <div class="roi-launch-grid">
-                <div class="roi-launch-card">
-                    <div class="roi-launch-number">$6K-$12K</div>
-                    <div class="roi-launch-label">Annual AI tool spend for a 20-person team</div>
-                    <p>ChatGPT Team, Claude Pro, or an enterprise license blend at typical 2025 rates. When adoption stalls (and it usually does), much of that becomes shelfware while the team still carries the change-management overhead.</p>
+            <h2>The math, in one line</h2>
+            <div class="roi-simple-grid">
+                <div class="roi-simple-card roi-simple-card-featured">
+                    <div class="roi-simple-number">$187</div>
+                    <div class="roi-simple-label">Per participant at launch rate</div>
+                    <p>Less than two hours of an average knowledge worker's loaded cost. $3,750 total for up to 20 people, paid in two halves.</p>
                 </div>
-                <div class="roi-launch-card roi-launch-card-featured">
-                    <div class="roi-launch-number">$3,750</div>
-                    <div class="roi-launch-label">Launch rate for the full engagement</div>
-                    <p>$187 per participant. Less than two hours of an average knowledge worker's loaded cost. The launch rate is half the list price because the first ten companies are also helping me build the case studies.</p>
-                </div>
-                <div class="roi-launch-card">
-                    <div class="roi-launch-number">4-12x</div>
-                    <div class="roi-launch-label">If this prevents one stalled quarter</div>
-                    <p>A 20-person team that loses 10-30 hours per person to a stalled rollout costs roughly $15K-$45K in unrealized productivity at $75/hr loaded. One prevented stall pays the engagement back several times over.</p>
+                <div class="roi-simple-card">
+                    <div class="roi-simple-number">4-12x</div>
+                    <div class="roi-simple-label">Return if it prevents one stalled quarter</div>
+                    <p>A 20-person team losing 10-30 hours per person to a stalled rollout costs $15K-$45K in unrealized productivity at $75/hr loaded. One prevented stall pays the engagement back several times over.</p>
                 </div>
             </div>
+
+            <p style="text-align: center; max-width: 720px; margin: 1.5rem auto 0 auto; font-size: 0.95rem; color: var(--text-light);">Context: Gartner forecasts ~30% of generative AI projects will be abandoned after proof of concept by end of 2025 [<a href="https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025" target="_blank" rel="noopener noreferrer" style="color: var(--peach-dark);">source</a>]. The reason is almost never the tools. It's the team.</p>
 
             <div style="background: var(--bg-light); border-left: 4px solid var(--peach); border-radius: 8px; padding: 1.75rem 2rem; max-width: 760px; margin: 2.5rem auto 0 auto;">
                 <p style="color: var(--peach-dark); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; margin: 0 0 0.5rem 0;">Honest limitation</p>
-                <p style="color: var(--text-light); line-height: 1.7; margin: 0;">This is a new engagement. The launch rate exists because the first ten companies are helping me build the case studies. Worst case for you: the engagement confirms your team is already running clean and you spent $3,750 verifying it. Best case: it surfaces the barrier you couldn't see clearly enough to act on, before it costs you a quarter you didn't budget to lose.</p>
+                <p style="color: var(--text-light); line-height: 1.7; margin: 0;">This is a new engagement. The launch rate exists because the first ten companies are helping me build the case studies. Worst case: the engagement confirms your team is already running clean and you spent $3,750 verifying it. Best case: it surfaces the barrier you couldn't see clearly enough to act on, before it costs you a quarter you didn't budget to lose.</p>
             </div>
         </div>
     </section>
+
+    <style>
+        .roi-simple-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+        .roi-simple-card {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+        .roi-simple-card-featured {
+            background: linear-gradient(135deg, rgba(244, 196, 176, 0.12) 0%, rgba(26, 43, 91, 0.04) 100%);
+            border: 2px solid var(--peach);
+        }
+        .roi-simple-number {
+            color: var(--peach-dark);
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        .roi-simple-label {
+            color: var(--navy);
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+        .roi-simple-card p {
+            color: var(--text-light);
+            font-size: 0.93rem;
+            line-height: 1.55;
+            margin: 0;
+        }
+        @media (max-width: 768px) {
+            .roi-simple-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 
     <style>
         .roi-section-launch {
@@ -681,13 +722,13 @@
                     <p class="focus-area-tag">For Your Whole Team</p>
                     <h3>AI Without Atrophy</h3>
                     <div class="barrier-line">The Barrier: AI use is quietly atrophying your team's core skills.</div>
-                    <p>Best for individual contributors, managers, and senior leaders using AI in daily work. Builds a personal rule set for each participant plus a shared team agreement on the skills you commit to keep sharp. <a href="/services/workshop-ai-without-atrophy.html">See full details →</a></p>
+                    <p>Best for individual contributors, managers, and senior leaders using AI in daily work. Builds a personal rule set for each participant plus a shared team agreement on the skills you commit to keep sharp.</p>
                 </div>
                 <div class="focus-area-card">
                     <p class="focus-area-tag">For Your Leadership Team</p>
                     <h3>The Hesitation Gap</h3>
                     <div class="barrier-line">The Barrier: Team hesitation is stalling your AI rollout.</div>
-                    <p>Best for leadership teams and managers carrying an AI rollout. Surfaces where team hesitation actually lives, builds a playbook for the conversations you've been avoiding, and produces a leadership team agreement for the next 30 days. <a href="/services/workshop-hesitation-gap.html">See full details →</a></p>
+                    <p>Best for leadership teams and managers carrying an AI rollout. Surfaces where team hesitation actually lives, builds a playbook for the conversations you've been avoiding, and produces a leadership team agreement for the next 30 days.</p>
                 </div>
             </div>
 
@@ -695,89 +736,36 @@
         </div>
     </section>
 
-    <section class="launch-section">
-        <div class="launch-section-container">
-            <h2>What happens after you sign up</h2>
-            <p style="text-align: center; max-width: 720px; margin: 0 auto 1rem auto;">Here's the process. No surprises.</p>
-
-            <div class="process-flow">
-                <div class="process-step">
-                    <div class="process-step-number"></div>
-                    <div class="process-step-content">
-                        <strong>You fill out the launch sign-up form below.</strong>
-                        <p>Tell us about your team, which focus area fits, and what's slowing your rollout right now. Takes about 4 minutes.</p>
-                    </div>
-                </div>
-                <div class="process-step">
-                    <div class="process-step-number"></div>
-                    <div class="process-step-content">
-                        <strong>Joel reviews and confirms within 1 business day.</strong>
-                        <p>You'll receive a confirmation email with engagement details and a Zoho Books invoice for the 50% deposit ($1,875).</p>
-                    </div>
-                </div>
-                <div class="process-step">
-                    <div class="process-step-number"></div>
-                    <div class="process-step-content">
-                        <strong>You pay the deposit ($1,875).</strong>
-                        <p>Payment confirms your launch slot at the $3,750 rate. The remaining $1,875 balance is due by your workshop start date. You have up to 12 months from this point to schedule the workshop, so you can lock in the launch rate now even if your team isn't ready to run it for several months.</p>
-                    </div>
-                </div>
-                <div class="process-step">
-                    <div class="process-step-number"></div>
-                    <div class="process-step-content">
-                        <strong>We set a workshop date together (within 12 months).</strong>
-                        <p>Joel shares calendar options. You pick what works for your team. Engagement is scheduled.</p>
-                    </div>
-                </div>
-                <div class="process-step">
-                    <div class="process-step-number"></div>
-                    <div class="process-step-content">
-                        <strong>Pre-workshop assessments go out.</strong>
-                        <p>Each participant on your team receives the individual assessment link, with a deadline ahead of the workshop date.</p>
-                    </div>
-                </div>
-                <div class="process-step">
-                    <div class="process-step-number"></div>
-                    <div class="process-step-content">
-                        <strong>Final $1,875 balance invoiced; due by workshop start date.</strong>
-                        <p>Joel sends the balance invoice once your workshop date is locked. Payment is due on or before the workshop start date.</p>
-                    </div>
-                </div>
-                <div class="process-step">
-                    <div class="process-step-number"></div>
-                    <div class="process-step-content">
-                        <strong>We run the 3-hour workshop.</strong>
-                        <p>Online via Google Meet. Joel walks the team through the assessment results and addresses the real barriers directly.</p>
-                    </div>
-                </div>
-                <div class="process-step">
-                    <div class="process-step-number"></div>
-                    <div class="process-step-content">
-                        <strong>Joel delivers the full PDF report within 5 business days.</strong>
-                        <p>Findings, recommendations, and clear next steps your team can act on immediately.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class="signup-section" id="signup">
         <div class="signup-container">
             <h2>Claim Your Launch Spot</h2>
-            <p class="signup-intro">First 10 companies get 50% off. <strong style="color: var(--peach);">$3,750 instead of $7,500.</strong> Paid in two halves ($1,875 deposit to lock the slot, $1,875 due by workshop start). 12 months to schedule. The intake form goes live shortly; until then, the fastest path to claim a launch spot is a short call with Joel.</p>
+            <p class="signup-intro">First 10 companies get 50% off. <strong style="color: var(--peach);">$3,750 instead of $7,500.</strong> Paid in two halves ($1,875 deposit to lock the slot, $1,875 due by workshop start). 12 months to schedule. Fill out the form below to lock in your spot. Joel reviews and follows up within one business day.</p>
 
-            <!-- ============================================================
-                 STEP 5: REPLACE THIS ENTIRE <div class="signup-form-placeholder">
-                 BLOCK WITH YOUR GOOGLE FORMS IFRAME (see setup instructions above).
-                 ============================================================ -->
-            <div class="signup-form-placeholder" style="background: var(--white); padding: 3rem 2rem; border-radius: 12px; text-align: center; box-shadow: 0 8px 24px rgba(26, 43, 91, 0.12);">
-                <p style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--peach-dark); font-weight: 700; margin-bottom: 1rem;">Sign-up form coming online shortly</p>
-                <h3 style="color: var(--navy); font-size: 1.4rem; margin-bottom: 1rem;">In the meantime, book a 15-minute call to claim a launch spot</h3>
-                <p style="color: var(--text-light); line-height: 1.7; margin-bottom: 1.75rem; max-width: 480px; margin-left: auto; margin-right: auto;">The form is being set up. Until it goes live, the fastest way to lock in the 50% launch rate is a short discovery call with Joel. He will confirm fit, send the engagement details, and invoice you for $3,750.</p>
-                <a href="https://calendar.google.com/appointments/schedules/AcZssZ3PqUgOrCRz9Cj6rn42ZOA8Xxix2HvF7pmmtm2tvYgGCdFgf5_DrZ8r-9IMpjStbE-8OEEK5dYg" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book a Launch Spot Call â</a>
-                <p style="color: var(--text-light); font-size: 0.88rem; margin-top: 1.25rem; margin-bottom: 0;">Or email Joel directly at <a href="mailto:Joel@LeadershipinChange.com" style="color: var(--peach-dark); font-weight: 600;">Joel@LeadershipinChange.com</a> with subject âLaunch spotâ.</p>
+            <div class="signup-form-embed">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfSdwd0Em8HMJZaENAzeyNCp3EKbTMNfkLQ6SxpR8lQnbjyDA/viewform?embedded=true" width="100%" height="1010" frameborder="0" marginheight="0" marginwidth="0" title="Launch Spot Sign-Up Form" loading="lazy">Loading…</iframe>
             </div>
-            <!-- END placeholder block -->
+
+            <style>
+                .signup-form-embed {
+                    background: var(--white);
+                    padding: 1.5rem 1rem;
+                    border-radius: 12px;
+                    box-shadow: 0 8px 24px rgba(26, 43, 91, 0.12);
+                    max-width: 720px;
+                    margin: 0 auto 1.5rem auto;
+                }
+                .signup-form-embed iframe {
+                    display: block;
+                    width: 100%;
+                    border: none;
+                    border-radius: 8px;
+                }
+                @media (max-width: 768px) {
+                    .signup-form-embed {
+                        padding: 1rem 0.5rem;
+                    }
+                }
+            </style>
 
             <p class="signup-alternative">Prefer to talk before signing up? <a href="https://calendar.google.com/appointments/schedules/AcZssZ3PqUgOrCRz9Cj6rn42ZOA8Xxix2HvF7pmmtm2tvYgGCdFgf5_DrZ8r-9IMpjStbE-8OEEK5dYg" target="_blank" rel="noopener noreferrer">Book a free 30-minute discovery call →</a></p>
         </div>
@@ -844,13 +832,52 @@
         </div>
     </section>
 
-    <section class="article-cta">
-        <div class="article-cta-container">
-            <h2>10 launch spots. First-come, first-served.</h2>
-            <p>If your team is rolling out AI right now and you want a real diagnostic and a workshop built around your actual barriers, this is the offer. $3,750 for the first 10 companies. $7,500 after that.</p>
-            <a href="#signup" class="btn btn-primary">Claim a Launch Spot →</a>
+    <section class="launch-section launch-final-cta">
+        <div class="launch-section-container">
+            <div class="launch-final-cta-card">
+                <h2>10 launch spots. First-come, first-served.</h2>
+                <p>If your team is rolling out AI right now and you want a real diagnostic and a workshop built around your actual barriers, this is the offer. $3,750 for the first 10 companies. $7,500 after that.</p>
+                <a href="#signup" class="btn btn-primary">Claim a Launch Spot →</a>
+            </div>
         </div>
     </section>
+
+    <style>
+        .launch-final-cta {
+            background: linear-gradient(135deg, rgba(244, 196, 176, 0.10) 0%, rgba(26, 43, 91, 0.04) 100%);
+        }
+        .launch-final-cta-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 3rem 2.5rem;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(26, 43, 91, 0.08);
+            border: 1px solid rgba(244, 196, 176, 0.3);
+        }
+        .launch-final-cta-card h2 {
+            color: var(--navy);
+            font-size: 1.65rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .launch-final-cta-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 1.75rem;
+            max-width: 620px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.02rem;
+        }
+        @media (max-width: 768px) {
+            .launch-final-cta-card {
+                padding: 2.25rem 1.5rem;
+            }
+            .launch-final-cta-card h2 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
     </main>
 
     <footer class="footer">
