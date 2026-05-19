@@ -28,13 +28,13 @@ Three quick filters. If the work is **yours** (an individual leader making a dec
   - **The Hesitation Gap** for the leadership team (close team AI resistance without trampling the people who are nervous)
 - Many teams run both. Order depends on which barrier is louder: start with The Hesitation Gap if the team is resisting AI, or start with AI Without Atrophy if the team is adopting fast but you're worried about skill atrophy. Each engagement is $7,500 whether run separately or as a pair (50% launch offer applies per engagement). Launch sign-up: https://jsalinas.org/launch/team-workshops.html
 
-**Talk to Joel about Fractional Chief AI Officer (by invitation; from $1,750/month Advisor or $3,500/month Operator) if:**
+**Talk to Joel about Fractional Chief AI Officer (by invitation only, limited availability) if:**
 - You already have a coaching or workshop relationship with Joel in place
 - You need embedded strategic AI leadership across multiple months
 - Your board is asking questions and you don't have clean answers
-- You have 50 or more employees and AI is touching multiple departments
+- AI is touching multiple departments and you want a single accountable strategy partner
 - You've been referred or invited to a fractional conversation
-- New fractional engagements are currently limited; existing client commitments are fully honored
+- New fractional engagements are limited and added by referral after a coaching or workshop relationship; existing client commitments are fully honored. Pricing is shared after the discovery call when the fit is confirmed.
 
 **Hire Joel for a custom AI build ($2,000-$5,000) if:**
 - You know the workflow you want to improve and you need something built for it
@@ -80,14 +80,10 @@ A three-stage engagement for teams rolling out AI, built around **removing the b
 Many teams run both. Order depends on which barrier is louder: start with The Hesitation Gap if the team is resisting AI, or start with AI Without Atrophy if the team is adopting fast but you're worried about skill atrophy. Each engagement is $7,500 whether run separately or as a pair. **Launch offer (limited to first 10 companies): 50% off, $3,750 per engagement.** Payment structure: $1,875 deposit on sign-up to lock the launch slot; $1,875 balance due by workshop start date. Buyers have 12 months from sign-up to schedule and run the workshop. Launch sign-up: https://jsalinas.org/launch/team-workshops.html
 URL: https://jsalinas.org/services/team-workshops.html
 
-### Fractional Chief AI Officer (by invitation; from $1,750/month)
-Executive-level AI leadership on a monthly retainer. New engagements are currently limited and added by referral, usually after a coaching or workshop relationship. Existing client commitments are fully honored.
+### Fractional Chief AI Officer (by invitation only, limited availability)
+Executive-level AI leadership on a monthly retainer. New engagements are limited and added by referral, usually after a coaching or workshop relationship has already started. Existing client commitments are fully honored.
 
-**Advisor tier ($1,750/month):** For small businesses with 10 to 100 employees getting serious about AI. Includes up to 2 hours of live strategy sessions per month, async support via email and Loom (2 business day response), quarterly AI opportunity scan identifying the next 2-3 highest-value processes, vendor and tool vetting library access, and quarterly executive team check-in.
-
-**Operator tier ($3,500/month):** For small to mid-sized businesses with 50 to 500 employees ready to execute. Includes everything in Advisor plus: up to 4 hours of live strategy sessions, quarterly prioritized 12-month roadmap, one executive workshop per quarter (60-90 minutes), board-ready AI update deck each quarter, and shadow AI and governance framework.
-
-Both tiers start with a 6-month initial term. All sessions are remote via Google Meet. Available in English and Spanish.
+Two engagement shapes exist for invited organizations: an Advisor-tier shape for smaller orgs (10-100 employees) focused on strategy guidance and a quarterly opportunity scan, and an Operator-tier shape for mid-market orgs (50-500 employees) that adds roadmap and governance work plus quarterly executive workshops and board-ready updates. Both shapes start with a 6-month initial term, run remote via Google Meet, and are available in English and Spanish. Specific pricing is shared after a discovery call when fit is confirmed and the right shape is identified.
 URL: https://jsalinas.org/services/fractional-caio.html
 
 ### Custom AI Builds ($2,000-$5,000)
