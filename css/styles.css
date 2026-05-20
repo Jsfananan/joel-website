@@ -2618,6 +2618,23 @@ section {
     margin: 0 auto;
 }
 
+.sponsor-tiers-contact {
+    text-align: center;
+    margin: 2.5rem auto 0;
+    color: var(--text-muted, #5a6478);
+    font-size: 1rem;
+}
+
+.sponsor-tiers-contact a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.sponsor-tiers-contact a:hover {
+    text-decoration: underline;
+}
+
 .sponsor-tier-card {
     background: var(--white);
     border: 2px solid var(--border);
