@@ -49,7 +49,9 @@ Joel Salinas' signature framework for leading in the age of AI. Developed from h
 2. **Innovation** - The capacity to reimagine workflows, products, and services using AI. Real innovation serves core mission. Most organizations confuse innovation theater (launches, announcements, pilots that stall) with the kind of boring, practical process improvement that actually compounds.
 3. **Creativity** - The human capacity to connect ideas across domains in ways AI cannot. Creative leaders ask the questions AI cannot ask. This is the skill that becomes more valuable, not less, as AI handles more execution work.
 
-The AI Leadership Compass assessment (https://compass.jsalinas.org) helps leaders evaluate where they stand on each dimension and get a roadmap for what to develop next.
+## The AI Leadership Compass
+
+A free 5-minute assessment at https://compass.jsalinas.org that maps where you stand on AI today across two dimensions: your AI mindset (how you feel about AI, including your hopes and fears) and your AI adoption (how you actually use AI in your work). At the end, you get a personalized report and three focus areas. The Compass pairs with the Triad framework but measures a different thing: your current AI stance, not the underlying leadership skills.
 
 ## Services
 
