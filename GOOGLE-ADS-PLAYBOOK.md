@@ -39,7 +39,7 @@ Prove that paid search traffic can be converted into discovery calls for Joel's 
 - No header nav, no breadcrumb, no cross-links (all stripped for cold ad traffic)
 - Single primary CTA: Book a Free Discovery Call
 - Secondary "See Pricing" anchor link for scanners
-- Trust bar under hero: Substack Bestseller · 6,000+ CEOs, execs & founders
+- Trust bar under hero: Substack Bestseller · 7,000+ CEOs, execs & founders
 - Option 3 (Fractional AI Leadership) highlighted as "The Smart Play"
 - Sticky mobile CTA appears after 400px scroll
 - Pricing visible on page ($1,750 and $3,500 tiers) — this filters time-wasters before they book
@@ -231,7 +231,7 @@ Add more as you review Search Terms report in week one.
 8. 90-Day AI Roadmap. Not a Slide Deck
 9. Book a Free AI Strategy Call
 10. Real AI Leadership From $1,750/mo
-11. Trusted by 6,000+ CEOs & Execs
+11. Trusted by 7,000+ CEOs & Execs
 12. Substack Bestseller on AI Leadership
 13. Start With AI the Right Way
 14. Strategy, Builds, Change Management
@@ -241,7 +241,7 @@ Add more as you review Search Terms report in week one.
 
 1. Fractional AI leadership for small and mid-sized businesses. Strategy, hands-on builds, and change management.
 2. Human-first AI strategy that amplifies your team. Book a free 20-minute discovery call.
-3. MBA-trained. Substack bestseller. Trusted by 6,000+ CEOs, execs, and founders across nonprofit, health, and SaaS.
+3. MBA-trained. Substack bestseller. Trusted by 7,000+ CEOs, execs, and founders across nonprofit, health, and SaaS.
 4. From $1,750 per month. Six-month commitment. Remote and bilingual. See if we're a fit in one free call.
 
 ### Pin Strategy
@@ -266,7 +266,7 @@ Do not pin any headlines. Let Google rotate to find the best combinations. Pinni
 
 **Sitelink 3: Read the Newsletter**
 - Description 1: Leadership in Change. AI leadership weekly.
-- Description 2: Read by 6,000+ CEOs, execs, and founders.
+- Description 2: Read by 7,000+ CEOs, execs, and founders.
 - URL: `https://leadershipinchange.com`
 
 **Sitelink 4: FAQ**
