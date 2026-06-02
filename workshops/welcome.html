@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VWWDV2L12H"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VWWDV2L12H');
+      gtag('event', 'workshop_purchase_complete', {'workshop': 'ai_foundation_founding_cohort_jul18'});
+    </script>
+
+    <title>Welcome to the Founding Cohort | The AI Foundation Workshop | Joel Salinas</title>
+    <meta name="description" content="Welcome to the AI Foundation Workshop founding cohort. Saturday, July 18, 2026, 10am-12pm ET on Zoom.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://jsalinas.org/workshops/welcome.html">
+
+    <link rel="icon" type="image/webp" href="/headshot.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <style>
+        /* ============================================
+           WORKSHOP WELCOME PAGE — post-payment confirmation
+           Brand: navy hero / white text / peach CTAs
+           Goal: confirm + 3 immediate next steps + warmth
+           ============================================ */
+
+        /* HERO -------------------------------------------------- */
+        .welc-hero {
+            background: var(--navy);
+            color: #ffffff;
+            padding: 5rem 2rem 4rem;
+        }
+        .welc-hero-inner {
+            max-width: 760px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .welc-hero-eyebrow {
+            color: var(--peach);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            margin: 0 0 1.25rem 0;
+        }
+        .welc-hero h1 {
+            color: #ffffff;
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: clamp(2.4rem, 5vw, 3.6rem);
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin: 0 0 1.25rem 0;
+        }
+        .welc-hero-sub {
+            color: rgba(255, 255, 255, 0.86);
+            font-size: 1.15rem;
+            line-height: 1.55;
+            margin: 0 0 2rem 0;
+        }
+        .welc-hero-sub strong {
+            color: var(--peach);
+            font-weight: 600;
+        }
+        .welc-hero-confirm {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(244, 196, 176, 0.25);
+            border-radius: 12px;
+            padding: 1.5rem 1.75rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            line-height: 1.6;
+            text-align: left;
+        }
+        .welc-hero-confirm strong {
+            color: var(--peach);
+            font-weight: 600;
+        }
+
+        /* NEXT STEPS -------------------------------------------- */
+        .welc-steps {
+            background: var(--bg-light);
+            padding: 5rem 2rem;
+        }
+        .welc-steps-inner {
+            max-width: 920px;
+            margin: 0 auto;
+        }
+        .welc-steps h2 {
+            color: var(--navy);
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: clamp(1.4rem, 2.4vw, 1.75rem);
+            font-weight: 700;
+            margin: 0 0 0.5rem 0;
+            text-align: center;
+            letter-spacing: -0.01em;
+        }
+        .welc-steps-lede {
+            color: var(--text-light);
+            text-align: center;
+            font-size: 1.02rem;
+            margin: 0 0 3rem 0;
+        }
+        .welc-steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+        .welc-step {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+        }
+        .welc-step-num {
+            background: var(--peach);
+            color: var(--navy);
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', system-ui, sans-serif;
+            font-weight: 800;
+            font-size: 1rem;
+            margin: 0 0 1.25rem 0;
+        }
+        .welc-step h3 {
+            color: var(--navy);
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 0 0 0.75rem 0;
+            line-height: 1.3;
+        }
+        .welc-step p {
+            color: var(--text-light);
+            font-size: 0.97rem;
+            line-height: 1.6;
+            margin: 0 0 1.5rem 0;
+            flex-grow: 1;
+        }
+        .welc-step-cta {
+            display: inline-block;
+            background: var(--peach);
+            color: var(--navy);
+            font-family: 'Inter', system-ui, sans-serif;
+            font-weight: 700;
+            font-size: 0.92rem;
+            padding: 0.75rem 1.25rem;
+            border-radius: 6px;
+            text-decoration: none;
+            text-align: center;
+            align-self: flex-start;
+            transition: background 0.15s ease;
+        }
+        .welc-step-cta:hover {
+            background: var(--peach-dark);
+        }
+        .welc-step-meta {
+            color: var(--text-light);
+            font-size: 0.88rem;
+            font-style: italic;
+            margin: 0;
+        }
+
+        /* WHAT'S COMING ----------------------------------------- */
+        .welc-timeline {
+            background: var(--navy);
+            color: #ffffff;
+            padding: 5rem 2rem;
+        }
+        .welc-timeline-inner {
+            max-width: 760px;
+            margin: 0 auto;
+        }
+        .welc-timeline h2 {
+            color: #ffffff;
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: clamp(1.4rem, 2.4vw, 1.75rem);
+            font-weight: 700;
+            margin: 0 0 2rem 0;
+            text-align: center;
+            letter-spacing: -0.01em;
+        }
+        .welc-timeline-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .welc-timeline-list > li {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 1.5rem;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .welc-timeline-list > li:last-child {
+            border-bottom: none;
+        }
+        .welc-timeline-when {
+            color: var(--peach);
+            font-family: 'Inter', system-ui, sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding-top: 0.2rem;
+        }
+        .welc-timeline-what {
+            color: rgba(255, 255, 255, 0.88);
+            font-size: 1rem;
+            line-height: 1.55;
+        }
+        .welc-timeline-what strong {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        /* QUESTIONS --------------------------------------------- */
+        .welc-questions {
+            background: var(--bg-light);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        .welc-questions-inner {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .welc-questions h2 {
+            color: var(--navy);
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0 0 0.75rem 0;
+        }
+        .welc-questions p {
+            color: var(--text-light);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .welc-questions a {
+            color: var(--peach-dark);
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        /* MOBILE ------------------------------------------------ */
+        @media (max-width: 720px) {
+            .welc-hero {
+                padding: 3.5rem 1.5rem 3rem;
+            }
+            .welc-hero h1 {
+                font-size: 2rem;
+            }
+            .welc-steps,
+            .welc-timeline {
+                padding: 3.5rem 1.5rem;
+            }
+            .welc-questions {
+                padding: 3rem 1.5rem;
+            }
+            .welc-timeline-list > li {
+                grid-template-columns: 1fr;
+                gap: 0.4rem;
+            }
+            .welc-timeline-when {
+                padding-top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-accent"></div>
+        <div class="header-container">
+            <a href="/" class="header-logo">Joel Salinas</a>
+        </div>
+    </header>
+
+    <main>
+
+    <!-- HERO — confirmation + first impression -->
+    <section class="welc-hero" aria-label="Welcome">
+        <div class="welc-hero-inner">
+            <p class="welc-hero-eyebrow">The AI Foundation Workshop</p>
+            <h1>You're in.</h1>
+            <p class="welc-hero-sub">Welcome to the founding cohort. <strong>Saturday, July 18, 2026, 10am-12pm ET on Zoom.</strong></p>
+            <div class="welc-hero-confirm">
+                <p style="margin: 0;">Payment received. Your Stripe receipt is on its way to your inbox. <strong>Joel will send a personal welcome email within 2 hours</strong> with your Zoom link and confirmation he's reviewed your Compass results.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEXT STEPS — what to do right now -->
+    <section class="welc-steps" aria-label="Three things to do now">
+        <div class="welc-steps-inner">
+            <h2>While you wait, three quick things.</h2>
+            <p class="welc-steps-lede">All three take less than 20 minutes total. Doing them now means Joel walks into the live session knowing exactly where you are.</p>
+
+            <div class="welc-steps-grid">
+                <div class="welc-step">
+                    <span class="welc-step-num">1</span>
+                    <h3>Take the AI Leadership Compass</h3>
+                    <p>Fifteen minutes. The Compass produces a personalized PDF with your archetype and recommendations. Save the PDF and bring it to the live session. Joel reviews every result before the cohort, so the sooner you take it, the more of the live time gets shaped around your actual situation.</p>
+                    <a href="https://compass.jsalinas.org" target="_blank" rel="noopener noreferrer" class="welc-step-cta">Take the Compass →</a>
+                </div>
+
+                <div class="welc-step">
+                    <span class="welc-step-num">2</span>
+                    <h3>Block your calendar</h3>
+                    <p>Saturday, July 18, 2026, 10am-12pm ET (7am PT · 4pm CET). Block the time now so it doesn't get scheduled over. Your Zoom link arrives in the welcome email.</p>
+                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=AI+Foundation+Workshop+(Founding+Cohort)&dates=20260718T140000Z/20260718T160000Z&details=Live+on+Zoom.+Zoom+link+will+be+sent+by+Joel+via+email.+Pre-work%3A+take+the+AI+Leadership+Compass+at+compass.jsalinas.org" target="_blank" rel="noopener noreferrer" class="welc-step-cta">Add to Google Calendar →</a>
+                </div>
+
+                <div class="welc-step">
+                    <span class="welc-step-num">3</span>
+                    <h3>Watch your inbox</h3>
+                    <p>Joel's personal welcome email arrives within 2 hours. It includes your Zoom link, confirmation he's reviewed your Compass results, and the schedule for Day 7 group office hours and Day 30 Implementation Review.</p>
+                    <p class="welc-step-meta">From: joel@leadershipinchange.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIMELINE — what's coming over 30 days -->
+    <section class="welc-timeline" aria-label="What comes next">
+        <div class="welc-timeline-inner">
+            <h2>The 30-day Foundation Sprint</h2>
+            <ol class="welc-timeline-list">
+                <li>
+                    <span class="welc-timeline-when">This week</span>
+                    <span class="welc-timeline-what"><strong>Pre-work.</strong> Take the AI Leadership Compass and save the PDF results. Joel reviews every result before the live session.</span>
+                </li>
+                <li>
+                    <span class="welc-timeline-when">Jul 18 · Day 0</span>
+                    <span class="welc-timeline-what"><strong>Live workshop, 10am-12pm ET on Zoom.</strong> Joel teaches the Foundation Playbook for each archetype, then you build your team's 90-day plan in the room. You leave with your Foundation Playbook PDF and the AI Rollout Readiness Checklist.</span>
+                </li>
+                <li>
+                    <span class="welc-timeline-when">Jul 25 · Day 7</span>
+                    <span class="welc-timeline-what"><strong>Group office hours, 45-minute Zoom.</strong> Joel works through each attendee's 90-day plan now that you've started implementing. Optional. Most attendees show up.</span>
+                </li>
+                <li>
+                    <span class="welc-timeline-when">Aug 17 · Day 30</span>
+                    <span class="welc-timeline-what"><strong>Implementation Review.</strong> You submit a 1-page progress note. Joel writes back with one specific recommendation based on what you've built. Founding cohort attendees include a structured testimonial as part of this review.</span>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- QUESTIONS — direct line to Joel -->
+    <section class="welc-questions" aria-label="Questions">
+        <div class="welc-questions-inner">
+            <h2>Questions about pre-work or scheduling?</h2>
+            <p>Reach Joel directly at <a href="mailto:joel@leadershipinchange.com">joel@leadershipinchange.com</a>. He answers personally, usually within a business day.</p>
+        </div>
+    </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <h3>Joel Salinas - Leadership in Change LLC</h3>
+                    <p>AI Strategy Coach. 1-on-1 coaching, executive workshops, and Fractional CAIO advisory for mission-driven leaders building the foundation for AI inside their organizations.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/privacy.html">Privacy Policy</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <a href="mailto:Joel@LeadershipinChange.com">Joel@LeadershipinChange.com</a>
+                    <a href="https://www.linkedin.com/in/jsalinasf/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    &copy; 2026 Joel Salinas - Leadership in Change LLC. All rights reserved.
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/jsalinasf/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
