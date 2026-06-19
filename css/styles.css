@@ -5206,3 +5206,53 @@ img.service-overview-icon {
         padding: 0.75rem 0.85rem;
     }
 }
+
+/* ============================================================
+   Header nav fix: never wrap link labels, and switch to the
+   hamburger across the full tablet/laptop zone (<=1024px) so
+   the desktop nav only shows when there is room for it.
+   Fixes "Work With Me" wrapping to 3 lines and the CTA button
+   getting clipped between 769px and 1024px. Site-wide.
+   ============================================================ */
+.header-nav-link {
+    white-space: nowrap;
+}
+
+@media (max-width: 1100px) {
+    .mobile-nav-toggle {
+        display: block;
+    }
+
+    .header-container {
+        justify-content: space-between;
+    }
+
+    .header-nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--white);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        z-index: 105;
+        padding: 2rem;
+    }
+
+    .header-nav.active {
+        display: flex;
+    }
+
+    .header-nav-link {
+        font-size: 1.25rem;
+        padding: 0.75rem 1.5rem;
+    }
+
+    .header-actions {
+        display: none;
+    }
+}
