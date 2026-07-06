@@ -3483,6 +3483,104 @@ section {
     color: var(--peach-dark);
 }
 
+/* 7a. Services-grid eyebrow badges flow inline (not the absolute pill) */
+.services-grid .service-badge {
+    position: static;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    z-index: auto;
+}
+
+/* 7b. Expandable Service Cards */
+.service-card-expand {
+    padding: 0;
+    overflow: hidden;
+}
+
+.service-card-expand > summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    outline: none;
+}
+
+.service-card-expand > summary::-webkit-details-marker { display: none; }
+
+.service-card-expand > summary:focus-visible {
+    box-shadow: inset 0 0 0 2px var(--peach);
+    border-radius: 14px;
+}
+
+.service-expand-toggle {
+    margin-top: 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--peach-dark);
+    width: fit-content;
+}
+
+.service-expand-toggle::before { content: "See how I help"; }
+.service-card-expand[open] .service-expand-toggle::before { content: "Show less"; }
+
+.service-expand-toggle .chevron {
+    display: inline-block;
+    transition: transform 0.25s ease;
+    font-size: 1.15rem;
+    line-height: 1;
+}
+
+.service-card-expand[open] .service-expand-toggle .chevron { transform: rotate(90deg); }
+
+.service-reveal {
+    padding: 0 2rem 2rem;
+    animation: reveal-fade 0.35s ease;
+}
+
+.service-reveal-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 0 0 0.85rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+}
+
+.service-reveal-label.secondary { border-top: none; padding-top: 0.5rem; }
+
+.service-reveal ul {
+    padding-left: 1.2rem;
+    margin: 0 0 1.25rem;
+}
+
+.service-reveal li {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.55;
+    margin-bottom: 0.5rem;
+}
+
+.service-reveal .reveal-note {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    color: var(--text-light);
+    line-height: 1.55;
+    margin: 0 0 1.25rem;
+}
+
+@keyframes reveal-fade {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 /* 8. About Simplified */
 .about-simplified {
     background: var(--navy);

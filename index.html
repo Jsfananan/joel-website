@@ -385,73 +385,92 @@
             </div>
 
             <div class="services-category">
-                <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.75rem; margin-bottom: 3rem;">
+                <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.75rem; margin-bottom: 3rem; align-items: start;">
                     <!-- Primary Service - Executive Coaching -->
-                    <div class="service-card service-card-featured" style="border: 2px solid var(--peach); background: linear-gradient(135deg, rgba(244, 196, 176, 0.08) 0%, rgba(26, 43, 91, 0.04) 100%);">
-                        <div class="service-badge" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--peach-dark); font-weight: 600; margin-bottom: 0.5rem;">Most Leaders Start Here</div>
-                        <svg class="card-icon" viewBox="0 0 48 48" width="64" height="64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--navy); margin-bottom: 1rem;" aria-label="Executive AI Coaching icon" role="img">
-                            <circle cx="14" cy="16" r="4" fill="currentColor" fill-opacity="0.15"/>
-                            <path d="M7 34c0-3.9 3.1-7 7-7s7 3.1 7 7"/>
-                            <circle cx="34" cy="16" r="4" fill="currentColor" fill-opacity="0.15"/>
-                            <path d="M27 34c0-3.9 3.1-7 7-7s7 3.1 7 7"/>
-                            <path d="M19 14c2-1.5 8-1.5 10 0" stroke-dasharray="2 2"/>
-                            <circle cx="24" cy="10" r="1.6" fill="currentColor"/>
+                    <details class="service-card service-card-featured service-card-expand" style="border: 2px solid var(--peach); background: linear-gradient(135deg, rgba(244, 196, 176, 0.08) 0%, rgba(26, 43, 91, 0.04) 100%);">
+                        <summary>
+                            <div class="service-badge" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--peach-dark); font-weight: 600; margin-bottom: 0.5rem;">Most Leaders Start Here</div>
+                            <svg class="card-icon" viewBox="0 0 48 48" width="64" height="64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--navy); margin-bottom: 1rem;" aria-label="Executive AI Coaching icon" role="img">
+                                <circle cx="14" cy="16" r="4" fill="currentColor" fill-opacity="0.15"/>
+                                <path d="M7 34c0-3.9 3.1-7 7-7s7 3.1 7 7"/>
+                                <circle cx="34" cy="16" r="4" fill="currentColor" fill-opacity="0.15"/>
+                                <path d="M27 34c0-3.9 3.1-7 7-7s7 3.1 7 7"/>
+                                <path d="M19 14c2-1.5 8-1.5 10 0" stroke-dasharray="2 2"/>
+                                <circle cx="24" cy="10" r="1.6" fill="currentColor"/>
+                            </svg>
+                            <h3 class="service-card-title">Executive AI Coaching &amp; Consulting</h3>
+                            <p class="service-card-tagline">1-on-1 strategy for leaders putting AI to work.</p>
+                            <p class="service-card-description" style="flex-grow: 0; margin-bottom: 0;">Work directly with an MBA-trained AI strategist who has shipped real AI products and coached executives through change.</p>
+                            <span class="service-expand-toggle"><span class="chevron">›</span></span>
+                        </summary>
+                        <div class="service-reveal">
+                            <p class="service-reveal-label">The questions we work through together:</p>
+                            <ul>
+                                <li>"Am I falling behind, and what actually matters right now?"</li>
+                                <li>"How do I roll this out without my team's skills going soft?"</li>
+                                <li>"My team is hesitant. How do I bring them along?"</li>
+                                <li>"What's the real strategy underneath all the hype?"</li>
+                                <li>"How do I move fast without breaking what already works?"</li>
+                            </ul>
+                            <p class="reveal-note">Single sessions or ongoing coaching, 1-on-1 over Google Meet. We build around the AI Leadership Triad: adaptability, innovation, and creativity.</p>
+                            <a href="/services/executive-coaching.html" class="service-card-link">Explore Executive AI Coaching →</a>
+                        </div>
+                    </details>
+
+                    <!-- Center - Start Here / Free Consultation -->
+                    <div class="service-card service-card-featured" style="border: 2px solid var(--peach); background: linear-gradient(135deg, rgba(244, 196, 176, 0.14) 0%, rgba(26, 43, 91, 0.05) 100%); justify-content: center; align-items: center; text-align: center;">
+                        <div class="service-badge" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--peach-dark); font-weight: 600; margin-bottom: 0.75rem;">Start Here</div>
+                        <svg class="card-icon" viewBox="0 0 48 48" width="56" height="56" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--navy); margin-bottom: 1rem;" aria-label="Free consultation icon" role="img">
+                            <path d="M8 12h32a2 2 0 0 1 2 2v18a2 2 0 0 1-2 2H20l-8 7v-7H8a2 2 0 0 1-2-2V14a2 2 0 0 1 2-2z" fill="currentColor" fill-opacity="0.08"/>
+                            <path d="M16 20h16M16 26h10"/>
                         </svg>
-                        <h3 class="service-card-title">Executive AI Coaching</h3>
-                        <p class="service-card-tagline">One focused conversation. Strategic clarity, fast.</p>
-                        <p class="service-card-description">Single sessions or coaching bundles. Work 1-on-1 with an MBA-trained AI strategist who has shipped real AI products and coached executives through transformation. From $300/session or $800 for a 3-session sprint.</p>
-                        <a href="/services/executive-coaching.html" class="service-card-link">Explore Executive AI Coaching →</a>
+                        <h3 class="service-card-title">Start with a free consultation</h3>
+                        <p class="service-card-description" style="flex-grow: 0; margin-bottom: 1.5rem;">See how I can best serve you. One conversation, no pitch, and you'll leave with a clear next step whether or not we work together.</p>
+                        <a href="https://calendar.google.com/appointments/schedules/AcZssZ3PqUgOrCRz9Cj6rn42ZOA8Xxix2HvF7pmmtm2tvYgGCdFgf5_DrZ8r-9IMpjStbE-8OEEK5dYg" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book a Free Consultation</a>
                     </div>
 
-                    <!-- Secondary Service - Team Workshops -->
-                    <div class="service-card service-card-featured" style="border: 2px solid var(--peach); background: linear-gradient(135deg, rgba(244, 196, 176, 0.08) 0%, rgba(26, 43, 91, 0.04) 100%);">
-                        <div class="service-badge" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--peach-dark); font-weight: 600; margin-bottom: 0.5rem;">For Teams · 50% Off Launch Offer</div>
-                        <svg class="card-icon" viewBox="0 0 48 48" width="64" height="64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--navy); margin-bottom: 1rem;" aria-label="AI Implementation Assessment and Workshop icon" role="img">
-                            <circle cx="24" cy="11" r="3" fill="currentColor" fill-opacity="0.2"/>
-                            <circle cx="11" cy="20" r="3" fill="currentColor" fill-opacity="0.15"/>
-                            <circle cx="37" cy="20" r="3" fill="currentColor" fill-opacity="0.15"/>
-                            <circle cx="15" cy="35" r="3" fill="currentColor" fill-opacity="0.15"/>
-                            <circle cx="33" cy="35" r="3" fill="currentColor" fill-opacity="0.15"/>
-                            <path d="M21 12L13 18M27 12L35 18M14 23L17 32M34 23L31 32M18 35h12"/>
-                        </svg>
-                        <h3 class="service-card-title">AI Implementation Assessment + Workshop</h3>
-                        <p class="service-card-tagline">Remove the biggest barriers to AI implementation in your company.</p>
-                        <p class="service-card-description">A three-stage engagement with two focus areas: <em>AI Without Atrophy</em> (skill preservation) or <em>The Hesitation Gap</em> (team resistance).</p>
-                        <ul class="service-card-description" style="padding-left: 1.2rem; margin-top: 0;">
-                            <li>Pre-workshop assessment for every participant</li>
-                            <li>3-hour live workshop on your team's results</li>
-                            <li>Full PDF report with findings and next steps</li>
-                        </ul>
-                        <p class="service-card-description"><strong>$7,500 · first 10 companies 50% off → $3,750</strong></p>
-                        <a href="/launch/team-workshops.html" class="service-card-link">Claim a Launch Spot (50% Off) →</a>
-                    </div>
-
-                    <!-- Tertiary Service - Fractional CAIO (demoted) -->
-                    <div class="service-card" style="border: 1px solid var(--border); background: var(--white);">
-                        <div class="service-badge" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-light); font-weight: 600; margin-bottom: 0.5rem;">Limited Availability · By Invitation</div>
-                        <svg class="card-icon" viewBox="0 0 48 48" width="64" height="64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-light); margin-bottom: 1rem;" aria-label="Fractional Chief AI Officer icon" role="img">
-                            <rect x="18" y="6" width="12" height="9" rx="1.5" fill="currentColor" fill-opacity="0.3"/>
-                            <rect x="6" y="22" width="10" height="7" rx="1.5" fill="currentColor" fill-opacity="0.1"/>
-                            <rect x="19" y="22" width="10" height="7" rx="1.5" fill="currentColor" fill-opacity="0.1"/>
-                            <rect x="32" y="22" width="10" height="7" rx="1.5" fill="currentColor" fill-opacity="0.1"/>
-                            <rect x="13" y="36" width="9" height="6" rx="1.5" fill="currentColor" fill-opacity="0.1"/>
-                            <rect x="26" y="36" width="9" height="6" rx="1.5" fill="currentColor" fill-opacity="0.1"/>
-                            <path d="M24 15v3M11 18v4M24 18v4M37 18v4M17.5 29v3M30.5 29v3"/>
-                        </svg>
-                        <h3 class="service-card-title">Fractional Chief AI Officer</h3>
-                        <p class="service-card-tagline">Ongoing AI leadership embedded in your organization.</p>
-                        <p class="service-card-description">For a small number of organizations that need a strategic AI partner across multiple months. Limited and added by referral after a coaching or workshop relationship.</p>
-                        <a href="/services/fractional-caio.html" class="service-card-link">See Fractional Chief AI Officer Details →</a>
-                    </div>
+                    <!-- Tertiary Service - Fractional CAIO (expandable) -->
+                    <details class="service-card service-card-expand" style="border: 1px solid var(--border); background: var(--white);">
+                        <summary>
+                            <div class="service-badge" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-light); font-weight: 600; margin-bottom: 0.5rem;">Limited Availability · By Invitation</div>
+                            <svg class="card-icon" viewBox="0 0 48 48" width="64" height="64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--navy); margin-bottom: 1rem;" aria-label="Fractional Chief AI Officer icon" role="img">
+                                <rect x="18" y="6" width="12" height="9" rx="1.5" fill="currentColor" fill-opacity="0.3"/>
+                                <rect x="6" y="22" width="10" height="7" rx="1.5" fill="currentColor" fill-opacity="0.1"/>
+                                <rect x="19" y="22" width="10" height="7" rx="1.5" fill="currentColor" fill-opacity="0.1"/>
+                                <rect x="32" y="22" width="10" height="7" rx="1.5" fill="currentColor" fill-opacity="0.1"/>
+                                <rect x="13" y="36" width="9" height="6" rx="1.5" fill="currentColor" fill-opacity="0.1"/>
+                                <rect x="26" y="36" width="9" height="6" rx="1.5" fill="currentColor" fill-opacity="0.1"/>
+                                <path d="M24 15v3M11 18v4M24 18v4M37 18v4M17.5 29v3M30.5 29v3"/>
+                            </svg>
+                            <h3 class="service-card-title">Fractional Chief AI Officer</h3>
+                            <p class="service-card-tagline">Embedded AI leadership, without the $250K hire.</p>
+                            <p class="service-card-description" style="flex-grow: 0; margin-bottom: 0;">Ongoing AI strategy and governance for organizations that need a partner across multiple months, not a one-time report.</p>
+                            <span class="service-expand-toggle"><span class="chevron">›</span></span>
+                        </summary>
+                        <div class="service-reveal">
+                            <p class="service-reveal-label">You're probably here because one of these is true:</p>
+                            <ul>
+                                <li>Your board is asking about AI and you don't have a clean answer.</li>
+                                <li>Your team is experimenting with tools and it's starting to get messy.</li>
+                                <li>Your competitors are moving and you can feel the gap opening.</li>
+                            </ul>
+                            <p class="service-reveal-label secondary">What you get:</p>
+                            <ul>
+                                <li>An AI roadmap your team can actually act on, one process at a time</li>
+                                <li>A board-ready AI update deck each quarter</li>
+                                <li>Governance so adoption stays safe and human-first</li>
+                                <li>Custom builds when it makes sense, not just advice</li>
+                            </ul>
+                            <p class="reveal-note">A consultant drops in, delivers a report, and leaves. A fractional CAIO stays embedded in your strategy. Added by referral, usually after coaching. Advisor from $1,750/mo, Operator from $3,500/mo.</p>
+                            <a href="/services/fractional-caio.html" class="service-card-link">See Fractional Chief AI Officer Details →</a>
+                        </div>
+                    </details>
                 </div>
 
                 <div style="text-align: center; padding: 2rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin: 2rem 0;">
                     <p style="color: var(--text-light); font-size: 0.95rem; margin: 0;">Need something built? Explore <a href="/services/custom-ai-apps.html" style="color: var(--peach-dark); font-weight: 600; text-decoration: none;">custom AI applications</a>, or start with an <a href="/services/ai-workflow-audit.html" style="color: var(--peach-dark); font-weight: 600; text-decoration: none;">AI workflow audit</a> to find what to automate first.</p>
                 </div>
 
-                <div class="services-cta">
-                    <a href="https://calendar.google.com/appointments/schedules/AcZssZ3PqUgOrCRz9Cj6rn42ZOA8Xxix2HvF7pmmtm2tvYgGCdFgf5_DrZ8r-9IMpjStbE-8OEEK5dYg" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book a Free Discovery Call</a>
-                </div>
             </div>
         </div>
     </section>
