@@ -5505,3 +5505,36 @@ img.service-overview-icon {
     font-size: 0.95rem;
     margin-top: auto;
 }
+
+/* Price line on the How-I-Help cards (price as a trust signal, on the card face) */
+.service-card-price {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: var(--navy);
+    font-size: 1rem;
+    margin: 0.7rem 0 0;
+    line-height: 1.4;
+}
+.service-card-price span {
+    font-weight: 500;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* Trust line directly under the hero CTAs */
+.hero-cta-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+.hero-trustline {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin: 0;
+}
+
+/* "Not the right fit" list inside the CAIO reveal */
+.service-reveal-label.caution {
+    color: var(--peach-dark);
+}
