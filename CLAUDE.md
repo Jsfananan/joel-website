@@ -25,6 +25,17 @@
 - Canonical public URL: `https://calendar.google.com/appointments/schedules/AcZssZ3PqUgOrCRz9Cj6rn42ZOA8Xxix2HvF7pmmtm2tvYgGCdFgf5_DrZ8r-9IMpjStbE-8OEEK5dYg`
 - NEVER use the `/calendar/u/0/appointments/schedules/...` variant — that's an account-scoped admin URL that errors out for non-Joel visitors. This caused a booking dropoff on 2026-05-14 when the services hub redesign introduced it; fixed 2026-05-19.
 
+## Product Naming Rule (NON-NEGOTIABLE)
+- **Product names always contain "Judgment."** The offers are the **AI Judgment Workshop**, the **90-Day Judgment Engagement**, and future ones (Audit, Roundtable, etc.) follow the same pattern.
+- **Never rename an offer to a generic term** (Consulting, Coaching, Program, Engagement-alone).
+- **Category words like "consulting" and "coaching" are descriptors, not names.** They appear only in taglines, body copy, and SEO metadata (title tags, meta descriptions, H2 subheads, FAQ) — the terms buyers actually search ("AI consulting," "executive AI coaching," "AI consultant for nonprofits and small businesses"). They never appear inside a product name.
+
+## Positioning (current, as of 2026-07-10 repositioning)
+- Hook: **AI is everywhere. Judgment is scarce.** Promise: help nonprofit and SMB leaders adopt AI without outsourcing their judgment to it.
+- Two offers: **AI Judgment Workshop** (one live workshop a month → waitlist popup + `/workshop-waitlist.html`, captures to Google Sheet via Apps Script + email) and the **90-Day Judgment Engagement** (From $4,500, three tiers, max 3 concurrent clients; starts with a $750 Strategy Intensive, 90 min, credited; 1-on-1 email inquiry CTA).
+- Workshop waitlist backend: Google Apps Script web app → "Workshop Waitlist" Google Sheet + email to Joel. Endpoint lives in `workshop-waitlist.html` and the homepage modal script.
+- Shared waitlist form styles live in `css/styles.css` under `.wl-*` (used by the page and the homepage popup).
+
 ## Key Context
 - Primary goal: funnel visitors to the Google Calendar discovery-call link
 - Canonical title: **Executive AI Coach** (Fractional CAIO retired as Joel's title, kept as a by-invitation-only service)

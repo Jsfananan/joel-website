@@ -5639,3 +5639,129 @@ img.service-overview-icon {
 .service-reveal-label.caution {
     color: var(--peach-dark);
 }
+
+/* ===========================================
+   Workshop Waitlist Form (shared: page + modal)
+   =========================================== */
+.wl-form { width: 100%; }
+.wl-field { margin-bottom: 1.4rem; }
+.wl-field label {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+}
+.wl-field .req { color: #dc2626; }
+.wl-field input,
+.wl-field select {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: var(--text);
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    -webkit-appearance: none;
+    appearance: none;
+}
+.wl-field input::placeholder { color: #9aa3b2; }
+.wl-field input:hover,
+.wl-field select:hover { border-color: var(--peach-dark); }
+.wl-field input:focus,
+.wl-field select:focus {
+    outline: none;
+    border-color: var(--peach-dark);
+    box-shadow: 0 0 0 4px rgba(232, 166, 138, 0.18);
+}
+.wl-field select {
+    cursor: pointer;
+    padding-right: 2.75rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%234A5568' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1.1rem center;
+}
+.wl-error {
+    display: none;
+    color: #dc2626;
+    font-size: 0.85rem;
+    margin-top: 0.45rem;
+}
+.wl-error.active { display: block; }
+.wl-submit {
+    width: 100%;
+    padding: 1.05rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--navy);
+    background: var(--peach);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 0.4rem;
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease, background 0.2s ease;
+}
+.wl-submit:hover {
+    background: var(--peach-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(232, 166, 138, 0.4);
+}
+.wl-submit:active { transform: translateY(0); box-shadow: 0 6px 14px rgba(232, 166, 138, 0.3); }
+.wl-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; box-shadow: none; }
+.wl-help {
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-top: 1.4rem;
+}
+.wl-help a { color: var(--navy); font-weight: 600; }
+.wl-success { display: none; text-align: center; padding: 1.5rem 0; }
+.wl-success.active { display: block; }
+.wl-success-icon {
+    width: 64px; height: 64px; line-height: 64px;
+    margin: 0 auto 1.25rem; border-radius: 50%;
+    background: var(--peach); color: var(--navy);
+    font-size: 2rem; font-weight: 700;
+}
+.wl-success h3 { font-family: 'Inter', sans-serif; color: var(--navy); font-size: 1.4rem; margin-bottom: 0.5rem; }
+.wl-success p { font-family: 'Inter', sans-serif; color: var(--text-light); line-height: 1.6; }
+
+/* Standalone waitlist page layout */
+.waitlist-page { padding: 4rem 2rem 5rem; background: var(--bg-light); }
+.waitlist-container { max-width: 620px; margin: 0 auto; }
+.waitlist-eyebrow {
+    font-family: 'Inter', sans-serif; font-size: 0.85rem; text-transform: uppercase;
+    letter-spacing: 0.12em; font-weight: 600; color: var(--peach-dark);
+    text-align: center; margin-bottom: 0.75rem;
+}
+.waitlist-page h1 {
+    font-family: 'Inter', sans-serif; font-size: 2.1rem; font-weight: 800;
+    color: var(--navy); text-align: center; line-height: 1.2; margin-bottom: 1rem;
+}
+.waitlist-intro {
+    font-family: 'Inter', sans-serif; font-size: 1.05rem; line-height: 1.7;
+    color: var(--text-light); text-align: center; margin-bottom: 2.5rem;
+}
+.waitlist-card {
+    background: var(--white); border: 1px solid var(--border); border-radius: 16px;
+    padding: 2.5rem; box-shadow: 0 10px 40px rgba(26, 43, 91, 0.06);
+}
+
+/* Waitlist modal (reuses the shared .contact-modal shell) */
+.wl-modal-body { padding: 1.5rem 2rem 2rem; }
+.wl-modal-intro {
+    font-family: 'Inter', sans-serif; font-size: 0.98rem; color: var(--text-light);
+    line-height: 1.6; margin-bottom: 1.75rem;
+}
+
+@media (max-width: 600px) {
+    .waitlist-page { padding: 2.5rem 1.25rem 3.5rem; }
+    .waitlist-page h1 { font-size: 1.7rem; }
+    .waitlist-card { padding: 1.75rem 1.5rem; }
+    .wl-modal-body { padding: 1.25rem 1.25rem 1.5rem; }
+}

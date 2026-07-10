@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join the Workshop Waitlist | Joel Salinas</title>
+    <meta name="title" content="Join the Workshop Waitlist | Joel Salinas">
+    <meta name="description" content="One live workshop a month for nonprofit and SMB leaders adopting AI without outsourcing their judgment to it. Get on the waitlist for the next date.">
+    <meta name="author" content="Joel Salinas">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://jsalinas.org/workshop-waitlist.html">
+    <link rel="icon" type="image/webp" href="/headshot.webp">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jsalinas.org/workshop-waitlist.html">
+    <meta property="og:title" content="Join the Workshop Waitlist | Joel Salinas">
+    <meta property="og:description" content="One live workshop a month for nonprofit and SMB leaders adopting AI without outsourcing their judgment to it. Get on the waitlist for the next date.">
+    <meta property="og:image" content="https://jsalinas.org/headshot.webp">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a id="top"></a>
+    <header class="header">
+        <div class="header-accent"></div>
+        <div class="header-container">
+            <a href="/" class="header-logo">Joel Salinas</a>
+            <a href="#waitlist-form" class="header-cta-mobile" data-cta="header-mobile">Waitlist</a>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="header-nav">
+                <a href="/#about" class="header-nav-link">About</a>
+                <a href="/#services" class="header-nav-link">Work With Me</a>
+                <a href="/articles/" class="header-nav-link">Articles</a>
+                <a href="https://compass.jsalinas.org" target="_blank" rel="noopener noreferrer" class="header-nav-link">Free Assessment</a>
+                <a href="/faq.html" class="header-nav-link">FAQ</a>
+                <a href="mailto:Joel@LeadershipinChange.com" class="header-nav-link">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a href="#waitlist-form" class="header-subscribe-btn" data-cta="header-desktop">Join the workshop waitlist</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+    <section class="waitlist-page">
+        <div class="waitlist-container">
+            <p class="waitlist-eyebrow">One live workshop a month</p>
+            <h1>Get on the workshop waitlist</h1>
+            <p class="waitlist-intro">Each month I run one live workshop for nonprofit and SMB leaders putting AI to work without handing over their team's judgment. Seats are limited and go to the waitlist first. Tell me a little about where you are, and I'll send you the next date.</p>
+
+            <div class="waitlist-card" id="waitlist-form">
+                <form class="wl-form" id="waitlistForm">
+                    <div class="wl-field">
+                        <label for="wl-name">Name <span class="req">*</span></label>
+                        <input type="text" id="wl-name" name="name" autocomplete="name" required>
+                        <div class="wl-error" id="name-error">Please enter your name</div>
+                    </div>
+                    <div class="wl-field">
+                        <label for="wl-email">Email address <span class="req">*</span></label>
+                        <input type="email" id="wl-email" name="email" autocomplete="email" required>
+                        <div class="wl-error" id="email-error">Please enter a valid email address</div>
+                    </div>
+                    <div class="wl-field">
+                        <label for="wl-stage">Where are you in your AI journey? <span class="req">*</span></label>
+                        <select id="wl-stage" name="stage" required>
+                            <option value="" disabled selected>Choose one...</option>
+                            <option value="Just getting started">Just getting started</option>
+                            <option value="Using AI ad hoc, want a real strategy">Using AI ad hoc, want a real strategy</option>
+                            <option value="Leading my team through adoption">Leading my team through adoption</option>
+                            <option value="Have specific projects to build">Have specific projects to build</option>
+                        </select>
+                        <div class="wl-error" id="stage-error">Please pick where you are</div>
+                    </div>
+                    <input type="hidden" name="source" value="jsalinas.org/workshop-waitlist">
+                    <button type="submit" class="wl-submit" id="wlSubmitBtn">Get on the waitlist</button>
+                </form>
+                <div class="wl-success" id="waitlistSuccess">
+                    <div class="wl-success-icon">&#10003;</div>
+                    <h3>You're on the list.</h3>
+                    <p>Thanks. I'll email you the next workshop date and details soon.</p>
+                </div>
+                <p class="wl-help">Have a question? Email <a href="mailto:Joel@LeadershipinChange.com">Joel@leadershipinchange.com</a></p>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <script>
+        // === Google Apps Script Web App endpoint (writes to your Sheet + emails you) ===
+        const WAITLIST_ENDPOINT = "https://script.google.com/macros/s/AKfycbwg0HXcjN3xhEj-ZyqKVnwFHPGKPBHaCelhm86QeuvepyJJDNwujoTJIPBKAgC-vrlWeA/exec";
+
+        const wlForm = document.getElementById('waitlistForm');
+        const wlSubmitBtn = document.getElementById('wlSubmitBtn');
+        const wlSuccess = document.getElementById('waitlistSuccess');
+
+        wlForm.addEventListener('submit', async function (e) {
+            e.preventDefault();
+            document.querySelectorAll('#waitlistForm .wl-error').forEach(function (el) { el.classList.remove('active'); });
+
+            const name = document.getElementById('wl-name').value.trim();
+            const email = document.getElementById('wl-email').value.trim();
+            const stage = document.getElementById('wl-stage').value;
+            let valid = true;
+            if (!name) { document.getElementById('name-error').classList.add('active'); valid = false; }
+            if (!email || email.indexOf('@') < 1) { document.getElementById('email-error').classList.add('active'); valid = false; }
+            if (!stage) { document.getElementById('stage-error').classList.add('active'); valid = false; }
+            if (!valid) return;
+
+            if (WAITLIST_ENDPOINT.indexOf('REPLACE_WITH') === 0) {
+                alert('This form is not connected yet. Please email Joel@leadershipinchange.com to join the waitlist.');
+                return;
+            }
+
+            wlSubmitBtn.disabled = true;
+            wlSubmitBtn.textContent = 'Adding you...';
+
+            try {
+                const body = new URLSearchParams(new FormData(wlForm));
+                await fetch(WAITLIST_ENDPOINT, { method: 'POST', mode: 'no-cors', body: body });
+                wlForm.style.display = 'none';
+                wlSuccess.classList.add('active');
+                if (typeof gtag === 'function') { try { gtag('event', 'waitlist_submit', { location: 'waitlist-page' }); } catch (err) {} }
+            } catch (err) {
+                alert('Sorry, something went wrong. Please email Joel@leadershipinchange.com to join the waitlist.');
+                wlSubmitBtn.disabled = false;
+                wlSubmitBtn.textContent = 'Get on the waitlist';
+            }
+        });
+    </script>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <h3>Joel Salinas - Leadership in Change LLC</h3>
+                    <p>AI is everywhere. Judgment is scarce. I help nonprofit and SMB leaders adopt AI without outsourcing their judgment to it. One live workshop a month, one 90-day engagement.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/privacy.html">Privacy Policy</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <a href="mailto:Joel@LeadershipinChange.com">Joel@LeadershipinChange.com</a>
+                    <a href="https://www.linkedin.com/in/jsalinasf/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    &copy; 2026 Joel Salinas - Leadership in Change LLC. All rights reserved.
+                    <br>All client information is handled with strict confidentiality.
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/jsalinasf/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
