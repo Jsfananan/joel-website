@@ -1,5 +1,7 @@
 # jsalinas.org — Project Context
 
+> **Strategic source of truth:** `~/Documents/Claude/judgment-repositioning/JUDGMENT-STRATEGY.md` (and `EXECUTION-TRACKER.md`). Read it before building or repositioning anything here. The site is the interim *engagement-primary* state; the workshop stays a delisted waitlist bridge until "the flip." Flag conflicts with the strategy instead of executing them.
+
 ## Tech Stack
 - Static HTML/CSS site hosted on GitHub Pages
 - CNAME: jsalinas.org
