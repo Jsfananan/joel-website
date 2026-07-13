@@ -274,10 +274,8 @@
     </main>
 
     <script>
-        // === Inquiry form → Google Apps Script Web App (writes to Sheet + emails Joel) ===
-        // NOTE: currently points at the same endpoint as the workshop waitlist so leads flow immediately.
-        // Swap for a dedicated Inquiries Apps Script to capture the message field in its own tab.
-        const INQUIRY_ENDPOINT = "https://script.google.com/macros/s/AKfycbwg0HXcjN3xhEj-ZyqKVnwFHPGKPBHaCelhm86QeuvepyJJDNwujoTJIPBKAgC-vrlWeA/exec";
+        // === Inquiry form → dedicated Inquiries Apps Script (logs to the "Inquiries" tab + emails Joel; captures the message) ===
+        const INQUIRY_ENDPOINT = "https://script.google.com/macros/s/AKfycbxGZgYQuy-R72iR0PJDf3ySE_ZhDvTEu2yN2yf_z1LjUUjUnlDz56m9zQUuHiCSBAC3/exec";
 
         const iqForm = document.getElementById('inquiryForm');
         const iqBtn = document.getElementById('iqSubmitBtn');
