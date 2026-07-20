@@ -5400,11 +5400,29 @@ img.service-overview-icon {
     padding: 0.6rem 1.25rem;
     position: relative;
     text-align: center;
+    overflow: hidden;
+    cursor: pointer;
     transition: background 0.2s ease;
+}
+.launch-banner::after {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0; left: -40%;
+    width: 40%;
+    background: linear-gradient(100deg, transparent, rgba(244, 196, 176, 0.18), transparent);
+    transform: skewX(-18deg);
+    animation: bannerShimmer 5.5s ease-in-out infinite;
+    pointer-events: none;
+}
+@keyframes bannerShimmer {
+    0%, 100% { left: -40%; }
+    45%, 90% { left: 130%; }
 }
 .launch-banner:hover { background: var(--navy-light); }
 .launch-banner-text strong { color: var(--peach); font-weight: 700; }
-.launch-banner-arrow { color: var(--peach); font-weight: 700; }
+.launch-banner-arrow { color: var(--peach); font-weight: 700; display: inline-block; transition: transform 0.2s ease; }
+.launch-banner:hover .launch-banner-arrow { transform: translateX(5px); }
+@media (prefers-reduced-motion: reduce) { .launch-banner::after { animation: none; } }
 .launch-banner-close {
     position: absolute;
     right: 0.75rem;
