@@ -73,7 +73,7 @@
       "alternateName": "Joel Salinas (Leadership in Change)",
       "jobTitle": "AI Strategy Coach",
       "description": "Joel Salinas is an AI Strategy Coach for nonprofit and small business leaders, founder of Leadership in Change, and creator of the AI Leadership Triad (Adaptability, Innovation, Creativity). He helps leaders adopt AI without outsourcing their judgment to it, through the AI Judgment Workshop and the 90-Day Judgment Engagement.",
-      "disambiguatingDescription": "Joel Salinas, AI Strategy Coach and founder of Leadership in Change (an AI leadership newsletter read by 7,000+ leaders). Also founder of Cozora (AI education) and Newsletter Compass. Bilingual English/Spanish. Distinct from the Boston-based neurologist of the same name.",
+      "disambiguatingDescription": "Joel Salinas, AI Strategy Coach and founder of Leadership in Change (an AI leadership newsletter read by 7,500+ leaders, CEOs, and executives). Also founder of Cozora (AI education) and Newsletter Compass. Bilingual English/Spanish. Distinct from the Boston-based neurologist of the same name.",
       "url": "https://jsalinas.org",
       "image": "https://jsalinas.org/headshot.webp",
       "sameAs": [
@@ -164,7 +164,7 @@
       "@type": "Organization",
       "name": "Leadership in Change",
       "url": "https://leadershipinchange.com",
-      "description": "AI leadership newsletter read by 7,000+ leaders focused on AI adoption, the AI Leadership Triad, strategy before tech, and culture over code",
+      "description": "AI leadership newsletter read by 7,500+ leaders, CEOs, and executives focused on AI adoption, the AI Leadership Triad, strategy before tech, and culture over code",
       "publisher": "Joel Salinas"
     }
     </script>
@@ -196,7 +196,7 @@
           "name": "What's the AI Judgment Workshop?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "One live workshop a month for leaders and their teams. We work through where AI helps, where it doesn't, and how to adopt it without your team's skills going soft. Seats are limited and go to the waitlist first."
+            "text": "The AI Judgment Workshop runs live every other month, 90 minutes, and you leave with the foundation that makes AI actually work plus a 90-day plan. It's $99, and premium subscribers get in for $49."
           }
         },
         {
@@ -228,7 +228,7 @@
           "name": "How much does it cost?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The 90-Day Judgment Engagement starts with a $750 Strategy Intensive (credited toward any tier) and runs in three tiers from $4,500. Workshop dates and pricing go out through the waitlist. If you're not sure which fits, start a conversation and we'll figure it out together."
+            "text": "The 90-Day Judgment Engagement starts with a $750 Strategy Intensive (credited toward any tier) and runs in three tiers from $4,500. If you're not sure which fits, start a conversation and we'll figure it out together."
           }
         }
       ]
@@ -296,7 +296,7 @@
     <section class="trust-banner" aria-label="Trust indicators">
         <div class="trust-banner-container">
             <div class="trust-banner-content">
-                <span class="trust-banner-item">Read by 7,000+ leaders</span>
+                <span class="trust-banner-item">Read by 7,500+ leaders, CEOs, and executives</span>
                 <span class="trust-banner-divider">|</span>
                 <span class="trust-banner-item">Founder of <a href="https://cozora.org" target="_blank" rel="noopener noreferrer">Cozora</a></span>
                 <span class="trust-banner-divider">|</span>
@@ -566,7 +566,7 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <div class="faq-answer-content">One live workshop a month for leaders and their teams. We work through where AI helps, where it doesn't, and how to adopt it without your team's skills going soft. Seats are limited and go to the waitlist first. <a href="/workshop-waitlist.html" onclick="openWaitlist(event)">Join the waitlist &rarr;</a></div>
+                        <div class="faq-answer-content">The AI Judgment Workshop runs live every other month, 90 minutes, and you leave with the foundation that makes AI actually work plus a 90-day plan. It's $99, and premium subscribers get in for $49. <a href="/services/ai-judgment-workshop.html">Save your seat &rarr;</a></div>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -602,7 +602,7 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <div class="faq-answer-content">The 90-Day Judgment Engagement starts with a $750 Strategy Intensive (credited toward any tier) and runs in three tiers from $4,500. Workshop dates and pricing go out through the waitlist. If you're not sure which fits, start a conversation and we'll figure it out together.</div>
+                        <div class="faq-answer-content">The 90-Day Judgment Engagement starts with a $750 Strategy Intensive (credited toward any tier) and runs in three tiers from $4,500. If you're not sure which fits, start a conversation and we'll figure it out together.</div>
                     </div>
                 </div>
             </div>
@@ -686,7 +686,7 @@
     <section class="newsletter-signup newsletter-signup--light" aria-label="Newsletter signup">
         <div class="newsletter-signup-container">
             <h2>Prefer the weekly read?</h2>
-            <p>Join 7,000+ CEOs, execs, and founders reading Leadership in Change. Weekly insights on leading through AI transformation.</p>
+            <p>Read by 7,500+ leaders, CEOs, and executives. Weekly insights on leading through AI transformation.</p>
             <a href="https://leadershipinchange.com/subscribe" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Subscribe Free</a>
         </div>
     </section>
@@ -792,100 +792,5 @@
             </div>
         </div>
     </footer>
-    <!-- Workshop Waitlist Modal -->
-    <div class="contact-modal-overlay" id="waitlistModal" aria-hidden="true">
-        <div class="contact-modal" role="dialog" aria-modal="true" aria-labelledby="wlModalTitle">
-            <div class="contact-modal-header">
-                <h2 id="wlModalTitle">Get on the workshop waitlist</h2>
-                <button class="contact-modal-close" onclick="closeWaitlist()" aria-label="Close">&times;</button>
-            </div>
-            <div class="wl-modal-body">
-                <p class="wl-modal-intro">The AI Judgment Workshop for nonprofit and SMB leaders putting AI to work without handing over their team's judgment. Seats go to the waitlist first. Tell me where you are and I'll send the next date.</p>
-                <form class="wl-form" id="wlModalForm">
-                    <div class="wl-field">
-                        <label for="wlm-name">Name <span class="req">*</span></label>
-                        <input type="text" id="wlm-name" name="name" autocomplete="name" required>
-                        <div class="wl-error" id="wlm-name-error">Please enter your name</div>
-                    </div>
-                    <div class="wl-field">
-                        <label for="wlm-email">Email address <span class="req">*</span></label>
-                        <input type="email" id="wlm-email" name="email" autocomplete="email" required>
-                        <div class="wl-error" id="wlm-email-error">Please enter a valid email address</div>
-                    </div>
-                    <div class="wl-field">
-                        <label for="wlm-stage">Where are you in your AI journey? <span class="req">*</span></label>
-                        <select id="wlm-stage" name="stage" required>
-                            <option value="" disabled selected>Choose one...</option>
-                            <option value="Just getting started">Just getting started</option>
-                            <option value="Using AI ad hoc, want a real strategy">Using AI ad hoc, want a real strategy</option>
-                            <option value="Leading my team through adoption">Leading my team through adoption</option>
-                            <option value="Have specific projects to build">Have specific projects to build</option>
-                        </select>
-                        <div class="wl-error" id="wlm-stage-error">Please pick where you are</div>
-                    </div>
-                    <input type="hidden" name="source" value="jsalinas.org (homepage popup)">
-                    <button type="submit" class="wl-submit" id="wlmSubmitBtn">Get on the waitlist</button>
-                </form>
-                <div class="wl-success" id="wlModalSuccess">
-                    <div class="wl-success-icon">&#10003;</div>
-                    <h3>You're on the list.</h3>
-                    <p>Thanks. I'll email you the next workshop date and details soon.</p>
-                </div>
-                <p class="wl-help">Have a question? Email <a href="mailto:Joel@LeadershipinChange.com">Joel@leadershipinchange.com</a></p>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        (function () {
-            var WAITLIST_ENDPOINT = "https://script.google.com/macros/s/AKfycbwg0HXcjN3xhEj-ZyqKVnwFHPGKPBHaCelhm86QeuvepyJJDNwujoTJIPBKAgC-vrlWeA/exec";
-            var modal = document.getElementById('waitlistModal');
-            var form = document.getElementById('wlModalForm');
-            var btn = document.getElementById('wlmSubmitBtn');
-            var ok = document.getElementById('wlModalSuccess');
-
-            window.openWaitlist = function (e) {
-                if (e) e.preventDefault();
-                modal.classList.add('active');
-                modal.setAttribute('aria-hidden', 'false');
-                document.body.style.overflow = 'hidden';
-                var n = document.getElementById('wlm-name'); if (n) setTimeout(function () { n.focus(); }, 150);
-            };
-            window.closeWaitlist = function () {
-                modal.classList.remove('active');
-                modal.setAttribute('aria-hidden', 'true');
-                document.body.style.overflow = '';
-                setTimeout(function () {
-                    form.reset(); form.style.display = 'block';
-                    ok.classList.remove('active');
-                    btn.disabled = false; btn.textContent = 'Get on the waitlist';
-                }, 300);
-            };
-            modal.addEventListener('click', function (e) { if (e.target === modal) closeWaitlist(); });
-            document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modal.classList.contains('active')) closeWaitlist(); });
-
-            form.addEventListener('submit', async function (e) {
-                e.preventDefault();
-                document.querySelectorAll('#wlModalForm .wl-error').forEach(function (el) { el.classList.remove('active'); });
-                var name = document.getElementById('wlm-name').value.trim();
-                var email = document.getElementById('wlm-email').value.trim();
-                var stage = document.getElementById('wlm-stage').value;
-                var valid = true;
-                if (!name) { document.getElementById('wlm-name-error').classList.add('active'); valid = false; }
-                if (!email || email.indexOf('@') < 1) { document.getElementById('wlm-email-error').classList.add('active'); valid = false; }
-                if (!stage) { document.getElementById('wlm-stage-error').classList.add('active'); valid = false; }
-                if (!valid) return;
-                btn.disabled = true; btn.textContent = 'Adding you...';
-                try {
-                    await fetch(WAITLIST_ENDPOINT, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(new FormData(form)) });
-                    form.style.display = 'none'; ok.classList.add('active');
-                    if (typeof gtag === 'function') { try { gtag('event', 'waitlist_submit', { location: 'homepage-modal' }); } catch (x) {} }
-                } catch (err) {
-                    alert('Sorry, something went wrong. Please email Joel@leadershipinchange.com to join the waitlist.');
-                    btn.disabled = false; btn.textContent = 'Get on the waitlist';
-                }
-            });
-        })();
-    </script>
-</body>
+    </body>
 </html>
