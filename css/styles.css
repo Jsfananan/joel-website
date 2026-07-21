@@ -5785,3 +5785,45 @@ img.service-overview-icon {
     .waitlist-card { padding: 1.75rem 1.5rem; }
     .wl-modal-body { padding: 1.25rem 1.25rem 1.5rem; }
 }
+
+
+/* ===== Legal pages (Privacy / Terms) ===== */
+.privacy-container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 140px 2rem 96px;
+}
+.privacy-container h1 {
+    font-size: 2.5rem;
+    line-height: 1.15;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+}
+.privacy-container > p:first-of-type {
+    color: var(--navy);
+    opacity: 0.65;
+    margin-bottom: 2.5rem;
+}
+.privacy-container h2 {
+    font-size: 1.35rem;
+    color: var(--navy);
+    margin-top: 2.5rem;
+    margin-bottom: 0.7rem;
+}
+.privacy-container p {
+    color: #3c4256;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+.privacy-container ul {
+    margin: 0 0 1.15rem 1.5rem;
+    color: #3c4256;
+    line-height: 1.7;
+}
+.privacy-container li { margin-bottom: 0.4rem; }
+.privacy-container a { color: var(--navy); text-decoration: underline; }
+.privacy-container strong { color: var(--navy); }
+@media (max-width: 640px) {
+    .privacy-container { padding: 118px 1.25rem 72px; }
+    .privacy-container h1 { font-size: 2rem; }
+}
