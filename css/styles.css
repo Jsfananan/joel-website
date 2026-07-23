@@ -5628,6 +5628,18 @@ img.service-overview-icon {
     line-height: 1.45;
 }
 @media (max-width: 768px) {
+    /* The proof card sits below the photo (static) on mobile. Safari clamps an
+       aspect-ratio box to its ratio, so the extra card child overflows down onto
+       the eyebrow + H1 (Chrome grows the box, which is why it only showed on iOS).
+       Drop the ratio here and let the image carry its own 1/1 ratio: photo stays
+       round, wrapper grows to fit the card, no overlap in any browser. */
+    .hero-image-wrapper {
+        aspect-ratio: auto;
+    }
+    .hero-image img {
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
     .hero-stat-card {
         position: static;
         transform: none;
