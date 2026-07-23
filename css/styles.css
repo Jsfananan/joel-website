@@ -3331,8 +3331,10 @@ section {
 }
 
 .trust-banner a {
-    color: var(--peach);
-    text-decoration: none;
+    color: var(--navy);
+    text-decoration: underline;
+    text-decoration-color: var(--peach-dark);
+    text-underline-offset: 2px;
     font-weight: 600;
     transition: var(--transition);
 }
@@ -5629,6 +5631,7 @@ img.service-overview-icon {
     .hero-stat-card {
         position: static;
         transform: none;
+        animation: none;
         margin: 1.25rem auto 0;
         max-width: 320px;
         align-items: center;
