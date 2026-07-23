@@ -888,14 +888,13 @@
         }
         root.addEventListener('click',function(e){if(e.target.hasAttribute('data-ajw-close')){close();}});
         function onScroll(){
-          var h=document.documentElement;
-          var pct=(h.scrollTop||document.body.scrollTop)/((h.scrollHeight-h.clientHeight)||1);
-          if(pct>0.4){open();}
+          var y=window.scrollY||window.pageYOffset||document.documentElement.scrollTop||0;
+          if(y>(window.innerHeight*0.5)){open();}
         }
         function onExit(e){if(e.clientY<=0){open();}}
         function cleanup(){clearTimeout(timer);window.removeEventListener('scroll',onScroll);document.removeEventListener('mouseout',onExit);}
         if(seen()){return;}
-        var timer=setTimeout(open,25000);
+        var timer=setTimeout(open,12000);
         window.addEventListener('scroll',onScroll,{passive:true});
         document.addEventListener('mouseout',onExit);
       })();
