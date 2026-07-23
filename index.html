@@ -348,7 +348,7 @@
         }
     </style>
 
-    <section class="problem-section" aria-label="The challenge leaders face">
+    <section class="problem-section problem-section--light" aria-label="The challenge leaders face">
         <div class="problem-section-container">
             <div class="services-header" style="margin-bottom: 2.25rem;">
                 <h2>Your team doesn't have an AI problem. It has a judgment problem.</h2>
@@ -364,8 +364,8 @@
                             <circle cx="38" cy="10" r="2.5" fill="currentColor"/>
                         </svg>
                     </div>
-                    <h3 class="problem-title">Your Board Expects AI Leadership</h3>
-                    <p class="problem-description">Your board assumes you have an AI strategy. Your team is already using ChatGPT, just not strategically. You're expected to lead adoption, but nobody handed you a roadmap.</p>
+                    <h3 class="problem-title">Everyone Assumes You Have an AI Plan</h3>
+                    <p class="problem-description">Your team's already using AI, just not strategically, and you're the one expected to lead it.</p>
                 </div>
                 <div class="problem-card">
                     <div class="problem-icon">
@@ -379,8 +379,8 @@
                             <line x1="38" y1="24" x2="42" y2="24"/>
                         </svg>
                     </div>
-                    <h3 class="problem-title">You're Not a Technologist, And Shouldn't Have to Be</h3>
-                    <p class="problem-description">You hired strategists and managers, not data scientists. Yet you're drowning in AI tool comparisons and architecture debates. Strategy is your lane. Let's get out of the weeds.</p>
+                    <h3 class="problem-title">You're Not a Technologist, and Shouldn't Have to Be</h3>
+                    <p class="problem-description">You hired strategists, not data scientists. Strategy's your lane, so let's get out of the weeds.</p>
                 </div>
                 <div class="problem-card">
                     <div class="problem-icon">
@@ -389,8 +389,8 @@
                             <path d="M32 18h6a2 2 0 012 2v12a2 2 0 01-2 2h-2v5l-6-5H20a2 2 0 01-2-2v-3"/>
                         </svg>
                     </div>
-                    <h3 class="problem-title">You Need a Sounding Board, Not Another Tool</h3>
-                    <p class="problem-description">There are 10,000 AI tools. You don't need more tools. You need someone who understands your business to help you choose right and implement with confidence.</p>
+                    <h3 class="problem-title">You're Making the AI Calls Alone</h3>
+                    <p class="problem-description">There are 10,000 AI tools. You don't need another one, you need someone who gets your business.</p>
                 </div>
             </div>
         </div>
@@ -812,5 +812,93 @@
             </div>
         </div>
     </footer>
+
+    <!-- Next-cohort workshop popup (homepage only). Shows once per 7 days, on 40% scroll / 25s / exit-intent. -->
+    <div id="ajwPromo" class="ajw-promo" role="dialog" aria-modal="true" aria-labelledby="ajwPromoTitle" hidden>
+        <div class="ajw-promo-backdrop" data-ajw-close></div>
+        <div class="ajw-promo-card">
+            <button type="button" class="ajw-promo-close" aria-label="Close" data-ajw-close>&times;</button>
+            <p class="ajw-promo-eyebrow">Next cohort</p>
+            <h2 id="ajwPromoTitle" class="ajw-promo-title">The AI Judgment Workshop</h2>
+            <p class="ajw-promo-when"><strong class="js-cohort-long">Tuesday, September 15, 2026</strong><br>5:00&ndash;6:30pm ET &middot; 90 minutes, live &middot; 20 seats</p>
+            <p class="ajw-promo-copy">Build the foundation that makes AI actually work: what to hand to AI, what to keep in human hands, and a 90-day plan you write in the room.</p>
+            <p class="ajw-promo-price">$99</p>
+            <p class="ajw-promo-tiers">Premium subscribers $49 &middot; Executive members free</p>
+            <a href="/services/ai-judgment-workshop.html" class="ajw-promo-cta" data-cta="popup-workshop">Save your seat &rarr;</a>
+            <button type="button" class="ajw-promo-later" data-ajw-close>Maybe later</button>
+        </div>
+    </div>
+    <style>
+      .ajw-promo{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:1.25rem;}
+      .ajw-promo[hidden]{display:none;}
+      .ajw-promo-backdrop{position:absolute;inset:0;background:rgba(26,43,91,0.55);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);}
+      .ajw-promo-card{position:relative;z-index:1;background:var(--white);border-radius:18px;max-width:440px;width:100%;padding:2.25rem 2rem 1.75rem;box-shadow:0 24px 60px rgba(26,43,91,0.30);border-top:4px solid var(--peach);text-align:center;animation:ajwPromoIn .28s ease-out;}
+      @keyframes ajwPromoIn{from{opacity:0;transform:translateY(12px) scale(.98);}to{opacity:1;transform:none;}}
+      @media (prefers-reduced-motion: reduce){.ajw-promo-card{animation:none;}}
+      .ajw-promo-close{position:absolute;top:.5rem;right:.8rem;background:none;border:none;font-size:1.7rem;line-height:1;color:var(--text-light);cursor:pointer;padding:.2rem .35rem;}
+      .ajw-promo-close:hover{color:var(--navy);}
+      .ajw-promo-eyebrow{font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;font-weight:700;color:var(--peach-dark);margin:0 0 .4rem;}
+      .ajw-promo-title{font-size:1.55rem;line-height:1.2;color:var(--navy);margin:0 0 .55rem;}
+      .ajw-promo-when{font-size:.92rem;color:var(--text-light);margin:0 0 1rem;line-height:1.55;}
+      .ajw-promo-when strong{color:var(--navy);}
+      .ajw-promo-copy{font-size:.97rem;color:var(--text-light);line-height:1.6;margin:0 0 1.05rem;}
+      .ajw-promo-price{font-size:1.2rem;font-weight:700;color:var(--navy);margin:0 0 .15rem;}
+      .ajw-promo-tiers{font-size:.88rem;color:var(--text-light);margin:0 0 1.2rem;}
+      .ajw-promo-cta{display:block;background:var(--peach);color:var(--navy);font-weight:700;padding:.9rem 1.25rem;border-radius:999px;text-decoration:none;transition:var(--transition);}
+      .ajw-promo-cta:hover{background:var(--peach-dark);transform:translateY(-1px);}
+      .ajw-promo-later{display:block;margin:.8rem auto 0;background:none;border:none;color:#94A3B8;font-size:.87rem;cursor:pointer;text-decoration:none;}
+      .ajw-promo-later:hover{color:var(--navy);}
+    </style>
+    <script>
+      (function(){
+        var KEY='ajwPromoSeen', DAYS=7, root=document.getElementById('ajwPromo');
+        if(!root){return;}
+        var COHORTS=[
+          {iso:'2026-09-15',long:'Tuesday, September 15, 2026',short:'Sep 15'},
+          {iso:'2026-11-17',long:'Tuesday, November 17, 2026',short:'Nov 17'},
+          {iso:'2027-01-19',long:'Tuesday, January 19, 2027',short:'Jan 19'},
+          {iso:'2027-03-16',long:'Tuesday, March 16, 2027',short:'Mar 16'},
+          {iso:'2027-05-18',long:'Tuesday, May 18, 2027',short:'May 18'},
+          {iso:'2027-07-20',long:'Tuesday, July 20, 2027',short:'Jul 20'},
+          {iso:'2027-09-21',long:'Tuesday, September 21, 2027',short:'Sep 21'},
+          {iso:'2027-11-16',long:'Tuesday, November 16, 2027',short:'Nov 16'}
+        ];
+        try{
+          var t=new Date();t.setHours(0,0,0,0);
+          var n=COHORTS.find(function(c){return new Date(c.iso+'T00:00:00')>=t;})||COHORTS[COHORTS.length-1];
+          root.querySelectorAll('.js-cohort-long').forEach(function(e){e.textContent=n.long;});
+          root.querySelectorAll('.js-cohort-short').forEach(function(e){e.textContent=n.short;});
+        }catch(e){}
+        function seen(){try{var v=localStorage.getItem(KEY);return v&&(Date.now()-parseInt(v,10))<DAYS*864e5;}catch(e){return false;}}
+        function mark(){try{localStorage.setItem(KEY,String(Date.now()));}catch(e){}}
+        var opened=false,lastFocus=null;
+        function onKey(e){if(e.key==='Escape'){close();}}
+        function open(){
+          if(opened||seen()){return;}
+          opened=true;mark();cleanup();
+          lastFocus=document.activeElement;
+          root.hidden=false;document.body.style.overflow='hidden';
+          var cta=root.querySelector('.ajw-promo-cta');if(cta){cta.focus();}
+          document.addEventListener('keydown',onKey);
+        }
+        function close(){
+          root.hidden=true;document.body.style.overflow='';
+          document.removeEventListener('keydown',onKey);
+          if(lastFocus&&lastFocus.focus){lastFocus.focus();}
+        }
+        root.addEventListener('click',function(e){if(e.target.hasAttribute('data-ajw-close')){close();}});
+        function onScroll(){
+          var h=document.documentElement;
+          var pct=(h.scrollTop||document.body.scrollTop)/((h.scrollHeight-h.clientHeight)||1);
+          if(pct>0.4){open();}
+        }
+        function onExit(e){if(e.clientY<=0){open();}}
+        function cleanup(){clearTimeout(timer);window.removeEventListener('scroll',onScroll);document.removeEventListener('mouseout',onExit);}
+        if(seen()){return;}
+        var timer=setTimeout(open,25000);
+        window.addEventListener('scroll',onScroll,{passive:true});
+        document.addEventListener('mouseout',onExit);
+      })();
+    </script>
     </body>
 </html>

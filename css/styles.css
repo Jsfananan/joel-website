@@ -3405,6 +3405,45 @@ section {
     line-height: 1.7;
 }
 
+/* Homepage "who this is for" strip — light + compact variant (2026-07-23).
+   Scoped to .problem-section--light so service-page problem cards are unaffected. */
+.problem-section--light {
+    background: var(--white);
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+.problem-section--light .services-header h2 {
+    color: var(--navy);
+}
+.problem-section--light .problem-grid {
+    gap: 2rem;
+}
+.problem-section--light .problem-card,
+.problem-section--light .problem-card:hover {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    transform: none;
+    padding: 0.5rem 1rem;
+}
+.problem-section--light .problem-icon {
+    width: 54px;
+    height: 54px;
+    margin-bottom: 1rem;
+    color: var(--peach-dark);
+}
+.problem-section--light .problem-title {
+    color: var(--navy);
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
+}
+.problem-section--light .problem-description {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 20rem;
+}
+
 /* 3. Services Grid New Layout */
 .services-grid-new {
     display: grid;
