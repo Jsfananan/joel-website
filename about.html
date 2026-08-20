@@ -356,8 +356,15 @@
             }
         }
     </style>
+    <style>
+    .a-hero{display:grid;grid-template-columns:1fr auto;gap:clamp(2rem,5vw,4rem);align-items:center}
+    .a-portrait{border-radius:50%;box-shadow:0 24px 54px rgba(0,0,0,.34);
+      border:3px solid rgba(244,196,176,.35)}
+    @media(max-width:820px){.a-hero{grid-template-columns:1fr}
+      .a-portrait{order:2;max-width:200px;margin:1rem auto 0}}
+    </style>
 </head>
-<body>
+<body class="c-page">
     <header class="header">
         <div class="header-accent"></div>
         <div class="header-container">
@@ -370,7 +377,7 @@
             <nav class="header-nav">
                 <a href="/about.html" class="header-nav-link">About</a>
                 <a href="/#services" class="header-nav-link">Work With Me</a>
-                <a href="/call" class="header-nav-link">Work With Me</a>
+                <a href="/call" class="header-nav-link">Book a Call</a>
                 <a href="/articles/" class="header-nav-link">Articles</a>
                 <a href="https://compass.jsalinas.org" target="_blank" rel="noopener noreferrer" class="header-nav-link">Free Assessment</a>
                 <a href="/faq.html" class="header-nav-link">FAQ</a>
@@ -383,19 +390,26 @@
     </header>
 
     <main>
-    <section class="about-page-hero">
-        <div class="about-page-hero-container">
-            <div class="about-page-hero-image">
-                <img src="headshot.webp" alt="Joel Salinas, AI Strategy Coach" width="260" height="260" loading="eager">
-            </div>
-            <div class="about-page-hero-content">
-                <h1>Hi, I'm Joel Salinas.</h1>
-                <p class="about-page-tagline">I help leaders and founders, whether you run a team or a company of one, adopt AI without outsourcing their judgment to it.</p>
-                <p class="about-page-credits">AI Strategy Coach<span>·</span>Creator of the AI Leadership Triad<span>·</span>Founder of Leadership in Change</p>
-                <div class="about-page-hero-cta">
-                    <a href="/#services" class="btn btn-primary">See how we work together</a>
-                    <a href="/#services" class="about-page-hero-cta-link">See how to work together →</a>
+    <section class="c-sec c-hero">
+        <svg class="c-compass" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+            <circle cx="100" cy="100" r="78" fill="none" stroke="currentColor" stroke-width="2"/>
+            <circle cx="100" cy="100" r="62" fill="none" stroke="currentColor" stroke-width="1" opacity=".55"/>
+            <path d="M100 6 L112 88 L194 100 L112 112 L100 194 L88 112 L6 100 L88 88 Z" fill="currentColor" opacity=".55"/>
+            <path d="M100 40 L106 94 L160 100 L106 106 L100 160 L94 106 L40 100 L94 94 Z" fill="currentColor"/>
+        </svg>
+        <div class="c-wrap">
+            <div class="a-hero">
+                <div>
+                    <span class="c-eyebrow">About</span>
+                    <div class="c-rule"></div>
+                    <h1>Most AI advice comes from technologists.</h1>
+                    <p>Mine comes from an operator. I run growth marketing for a global humanitarian organization by day, and I have spent a decade moving teams through change, managing budgets, and answering for the number at the end of the quarter. That is the lens I bring to AI.</p>
+                    <div class="c-hero-cta">
+                        <a href="/call" class="c-btn" data-cta="about-hero-call">Book a diagnostic call</a>
+                        <span class="c-hero-note">Free &middot; 30 minutes</span>
+                    </div>
                 </div>
+                <img src="/headshot.webp" alt="Joel Salinas, AI Strategy Coach" width="240" height="240" class="a-portrait">
             </div>
         </div>
     </section>
@@ -537,6 +551,8 @@
     </section>
     </main>
 
+    <div class="c-sticky" id="cSticky"><a href="/call" data-cta="about-sticky">Book a diagnostic call</a></div>
+
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-main">
@@ -567,5 +583,10 @@
         </div>
     </footer>
 
+    <script>
+      (function(){var b=document.getElementById('cSticky'),h=document.querySelector('.c-hero');
+        if(b&&h&&'IntersectionObserver' in window){new IntersectionObserver(function(e){
+          b.classList.toggle('show',!e[0].isIntersecting);},{threshold:0}).observe(h);}})();
+    </script>
 </body>
 </html>
