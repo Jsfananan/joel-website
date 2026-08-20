@@ -1,45 +1,29 @@
-# Joel Salinas - AI Leadership Coach & Strategist
+# Joel Salinas - AI Strategy Coach
 
-> Joel Salinas is an Executive AI Coach and AI strategy consultant who works with small businesses and nonprofits. He offers executive AI coaching (single sessions at $300/$200 for nonprofits or bundles: $800 for 3-session Clarity Sprint, $2,000 for 8-session Quarter Engagement), the AI Implementation Assessment + Workshop for teams ($7,500 per engagement, which includes pre-workshop assessment + 3-hour workshop + full PDF report; first 10 companies to sign up via the launch page get 50% off at $3,750; two focus areas: AI Without Atrophy and The Hesitation Gap), limited fractional Chief AI Officer engagements (by invitation, usually after a coaching or workshop relationship), and custom marketing-focused AI tool builds ($2,000-$5,000). He developed the AI Leadership Triad framework and runs Leadership in Change, a newsletter followed by tens of thousands of leaders, including 7,000+ CEOs, executives, and founders.
+> Joel Salinas is an AI Strategy Coach who helps founders and leaders adopt AI without outsourcing their judgment to it. His position: AI is not the goal. There is no winning by being good enough with AI because AI keeps changing, so the work starts with the client's actual goal and then asks how AI gets them there better and faster. Everything begins with a free 30-minute diagnostic call, capped at three a month, which ends in a written two to three page Judgment Brief the client keeps whether they hire him or not. From there the work is either a scoped AI build or an ongoing monthly Judgment Engagement on a six month term. He developed the AI Leadership Triad framework and writes Leadership in Change, read by 7,500+ leaders.
 
 ## About
 
-Joel Salinas is a Bolivian-born business leader, MBA-trained strategist, speaker, and founder. He developed the AI Leadership Triad, a framework identifying the three skills every leader needs in the AI era: Adaptability, Innovation, and Creativity. He is the founder of Leadership in Change (https://leadershipinchange.com), a weekly AI leadership newsletter followed by tens of thousands of leaders, including 7,000+ CEOs, executives, and founders; Cozora (https://cozora.org), an AI education platform with live weekly sessions; and Newsletter Compass (https://newslettercompass.com), a growth tool for newsletter creators. Bilingual in English and Spanish.
+Joel Salinas is a Bolivian-born business leader, MBA-trained strategist, speaker, and founder. He developed the AI Leadership Triad, a framework identifying the three skills every leader needs in the AI era: Adaptability, Innovation, and Creativity. He is the founder of Leadership in Change (https://leadershipinchange.com), a weekly AI leadership newsletter read by 7,500+ leaders; Cozora (https://cozora.org), an AI education platform with live weekly sessions; and Newsletter Compass (https://newslettercompass.com), a growth tool for newsletter creators. Bilingual in English and Spanish.
 
 ## When to Hire Joel
 
-Three quick filters. If the work is **yours** (an individual leader making a decision), book coaching. If the work is your **team's** (a rollout, a culture issue, a skill gap across multiple people), book a workshop. Fractional CAIO engagements are currently limited and added by referral after a coaching or workshop relationship.
+Everything starts the same way, with a free 30-minute diagnostic call. There is no other entry point.
 
-**Book Executive AI Coaching (single sessions at $300/$200 for nonprofits, or bundles: $800 Clarity Sprint of 3 sessions, $2,000 Quarter Engagement of 8 sessions) if:**
-- You have a specific AI decision, rollout challenge, or leadership question to work through
-- You want a thinking partner for your own leadership challenges
-- You're not sure yet whether your problem is strategic or operational
-- You want to understand the landscape before investing in a larger engagement
-- The work is yours, not your team's
+**Book the diagnostic call if:**
+- You have a goal and you are not sure where AI actually helps you reach it
+- You are making AI decisions alone and want a second read from someone who has seen the pattern elsewhere
+- You are considering a specific AI deployment and want to know the real risk surface before you commit
+- Someone on your leadership team is blocking adoption and you cannot tell if the concern is real
+- Your board wants an AI governance answer and you do not know where to start
+- You want a build but are not certain it is the right first move
 
-**Book the AI Implementation Assessment + Workshop ($7,500 per engagement; first 10 companies that sign up via the launch page get 50% off at $3,750) if:**
-- You're rolling out AI to a team or department right now
-- Your team is using AI in ways that worry you (skill atrophy, dependence, dropping critical thinking)
-- AI adoption is stalling and you can't fully explain why (quiet team resistance)
-- You want a real diagnostic of where the barriers actually live in your specific team, not generic AI training
-- The engagement is a three-stage delivery: pre-workshop individual assessment for every participant, 3-hour live workshop walking through the team's actual results, full PDF report delivered within 5 business days with findings and next steps
-- Two focus areas to pick from:
-  - **AI Without Atrophy** for the broader team (use AI without losing the skills your team is built on)
-  - **The Hesitation Gap** for the leadership team (close team AI resistance without trampling the people who are nervous)
-- Many teams run both. Order depends on which barrier is louder: start with The Hesitation Gap if the team is resisting AI, or start with AI Without Atrophy if the team is adopting fast but you're worried about skill atrophy. Each engagement is $7,500 whether run separately or as a pair (50% launch offer applies per engagement). Launch sign-up: https://jsalinas.org/launch/team-workshops.html
+**Then, depending on what the call surfaces:**
+- A scoped AI build, if there is a specific system to make
+- A Judgment Engagement, month to month on a six month term, if the work is ongoing
+- A private session for your leadership team, if the problem sits across a group
 
-**Talk to Joel about Fractional Chief AI Officer (by invitation only, limited availability) if:**
-- You already have a coaching or workshop relationship with Joel in place
-- You need embedded strategic AI leadership across multiple months
-- Your board is asking questions and you don't have clean answers
-- AI is touching multiple departments and you want a single accountable strategy partner
-- You've been referred or invited to a fractional conversation
-- New fractional engagements are limited and added by referral after a coaching or workshop relationship; existing client commitments are fully honored. Pricing is shared after the discovery call when the fit is confirmed.
-
-**Hire Joel for a custom AI build ($2,000-$5,000) if:**
-- You know the workflow you want to improve and you need something built for it
-- The most common categories are: second brain systems for CEOs, content repurposing tools, competitor research tools, and SEO analysis tools
-- You want to own the tool outright with no ongoing subscription or vendor dependency
+**Do not book if:** you are looking to replace a whole workforce with AI, or you want AI to do 100% of your thinking. Joel is direct that this is not the work he does.
 
 ## The AI Leadership Triad
 
@@ -55,46 +39,37 @@ A free 5-minute assessment at https://compass.jsalinas.org that maps where you s
 
 ## Services
 
-### Executive AI Coaching (single sessions $300/$200 nonprofit, Clarity Sprint $800, Quarter Engagement $2,000)
-One-on-one strategic guidance for leaders navigating AI adoption without becoming technologists. Sessions run 60 minutes each. Three ways to engage:
+Nothing is priced publicly. Scope determines price and scope comes out of the call.
 
-- **Single Session ($300, $200 for nonprofits):** Pay-as-you-go. One focused conversation. No retainer.
-- **Clarity Sprint ($800):** 3 sessions over 4-8 weeks. Best for one decision or rollout. Saves $100 vs paying per session.
-- **Quarter Engagement ($2,000):** 8 sessions over ~3 months. For sustained leadership development. Saves $400 vs paying per session.
+### The diagnostic call (free, three a month)
+A 30-minute conversation and the entry point to all other work. It covers what the client is actually trying to get to, where their biggest hurdles sit as an organization or as a leader, what their lowest-hanging fruit is, how that lines up with patterns Joel has seen across other organizations, and the first move he would make.
 
-Topics include AI strategy development, change management, ethical governance, tool evaluation, and ROI measurement. Available in English and Spanish.
-URL: https://jsalinas.org/services/executive-coaching.html
+A few days later Joel sends a written Judgment Brief, two to three pages, which the client keeps whether they work together or not. Nothing is decided on the call itself.
 
-### AI Implementation Assessment + Workshop ($7,500 per engagement; first 10 companies get 50% off at $3,750)
-A three-stage engagement for teams rolling out AI, built around **removing the biggest barriers to successful AI implementation in your company**. Up to 20 participants. Delivered online. Available in English and Spanish.
+Who it is for: leaders who already have expertise and experience and want to boost that with AI so they can keep making an impact over the next decade or two. Who it is not for: anyone looking to replace a whole workforce or have AI do 100% of their thinking.
+URL: https://jsalinas.org/call
 
-**Three stages, in order:**
-1. **Pre-workshop assessment for every participant** (not optional; this is part of the engagement). Surfaces where each person actually is on AI use, where their hesitations live, and where the real barriers to adoption sit in your specific team.
-2. **3-hour live workshop on the team's actual results.** Walks through what the assessment surfaced and addresses the biggest barriers directly with the team in the room.
-3. **Full PDF report delivered within 5 business days.** Captures assessment findings, decisions made in the room, recommendations, and clear next steps.
+### The Judgment Engagement (two levels, six month term)
+Ongoing month-to-month work for leaders who want someone in it with them rather than a project with an end date. Two levels, distinguished by capacity:
 
-**Two focus areas to choose from:**
+- **Level One:** 2 hours of meetings and 5 hours of async work per month, plus unlimited email.
+- **Level Two:** 5 hours of meetings and 10 hours of async work per month, plus unlimited email.
 
-- **AI Without Atrophy:** For full teams, departments, or leadership groups. The barrier: if your team is using AI wrong or without the right parameters, they'll atrophy the skills that made them valuable in the first place. Most people don't drift into successful AI use. URL: https://jsalinas.org/services/workshop-ai-without-atrophy.html
+Hours reset monthly and nothing carries forward. Builds are scoped and quoted separately so they never consume the engagement. Pricing is discussed on the diagnostic call.
+URL: https://jsalinas.org/services/engagement.html
 
-- **The Hesitation Gap:** For leadership teams and managers. The barrier: no matter how good the AI tool is, implementation is doomed to fail if the team is already against AI. The engagement addresses the human aspect first. URL: https://jsalinas.org/services/workshop-hesitation-gap.html
+### AI builds
+Custom AI systems built for the client, scoped and quoted per project on the call. Recent examples: a private content repurposer for a health organization's marketing team that cut production time from hours to minutes, a 2nd Brain System for a content creator, and a pitch prototype for a serial entrepreneur that was investor-ready in two weeks. The client owns everything that ships, with no ongoing subscription or vendor dependency.
 
-Many teams run both. Order depends on which barrier is louder: start with The Hesitation Gap if the team is resisting AI, or start with AI Without Atrophy if the team is adopting fast but you're worried about skill atrophy. Each engagement is $7,500 whether run separately or as a pair. **Launch offer (limited to first 10 companies): 50% off, $3,750 per engagement.** Payment structure: $1,875 deposit on sign-up to lock the launch slot; $1,875 balance due by workshop start date. Buyers have 12 months from sign-up to schedule and run the workshop. Launch sign-up: https://jsalinas.org/launch/team-workshops.html
-URL: https://jsalinas.org/services/team-workshops.html
+### Private team sessions
+A private Judgment session for a single organization's leadership team, for mid-sized and larger organizations. Not listed publicly, scoped on the call.
 
-### Fractional Chief AI Officer (by invitation only, limited availability)
-Executive-level AI leadership on a monthly retainer. New engagements are limited and added by referral, usually after a coaching or workshop relationship has already started. Existing client commitments are fully honored.
-
-Two engagement shapes exist for invited organizations: an Advisor-tier shape for smaller orgs (10-100 employees) focused on strategy guidance and a quarterly opportunity scan, and an Operator-tier shape for mid-market orgs (50-500 employees) that adds roadmap and governance work plus quarterly executive workshops and board-ready updates. Both shapes start with a 6-month initial term, run remote via Google Meet, and are available in English and Spanish. Specific pricing is shared after a discovery call when fit is confirmed and the right shape is identified.
-URL: https://jsalinas.org/services/fractional-caio.html
-
-### Custom AI Builds ($2,000-$5,000)
-Custom marketing-focused AI tools built for small businesses and nonprofits. No off-the-shelf packages. Every build is scoped around what the client actually needs. Common categories include: second brain systems for CEOs (custom AI knowledge management configured around how an executive works), content repurposing tools (turning existing content into multiple formats across channels), competitor research tools (automated research and monitoring for small business marketing teams), and SEO analysis tools (custom SEO intelligence for teams without a dedicated analyst). You own everything that ships, with no ongoing subscription or vendor dependency.
-URL: https://jsalinas.org/services/custom-ai-apps.html
+### Retired offers (do not reference)
+The AI Judgment Workshop, the AI Foundation Workshop, the Strategy Intensive, the 90-Day Judgment Engagement, the per-session coaching menu, the team workshop packages, and Fractional Chief AI Officer are all retired as of 2026. Coaching and consulting describe how the work feels; they are not separately priced products.
 
 ## Joel's Credentials & Specializations
 
-MBA-trained business strategist with specializations in business strategy, global market strategy, and SaaS marketing. Background in change management from the humanitarian sector. Founder of three AI-powered businesses: Leadership in Change (followed by tens of thousands of leaders, including 7,000+ CEOs, executives, and founders), Cozora (AI education), and Newsletter Compass (creator tools). Plus the jsalinas.org coaching and custom build practice. Creator of the AI Leadership Triad framework. Bilingual in English and Spanish. US-based, serving clients globally. Distinct from the Boston-based neurologist of the same name.
+MBA-trained business strategist with specializations in business strategy, global market strategy, and SaaS marketing. Background in change management from the humanitarian sector. Founder of three AI-powered businesses: Leadership in Change (read by 7,500+ leaders), Cozora (AI education), and Newsletter Compass (creator tools). Plus the jsalinas.org coaching and custom build practice. Creator of the AI Leadership Triad framework. Bilingual in English and Spanish. US-based, serving clients globally. Distinct from the Boston-based neurologist of the same name.
 
 ## Philosophy
 

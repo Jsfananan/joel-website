@@ -12,3 +12,7 @@ Screenshot*.png
 *.swp
 *.swo
 *~
+
+# local backups (2026-08-19 front-door rebuild)
+.bak-*/
+*.bak*

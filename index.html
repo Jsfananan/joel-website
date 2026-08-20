@@ -29,7 +29,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jsalinas.org/">
     <meta property="og:title" content="Joel Salinas | AI Strategy Coach for Founders &amp; Leaders">
-    <meta property="og:description" content="AI consulting and executive AI coaching for founders and leaders, from solo to team. Adopt AI without outsourcing your judgment: the AI Judgment Workshop every other month and the 90-Day Judgment Engagement.">
+    <meta property="og:description" content="AI consulting and executive AI coaching for founders and leaders, from solo to team. Adopt AI without outsourcing your judgment. It starts with a free thirty minute diagnostic call.">
     <meta property="og:image" content="https://jsalinas.org/headshot.webp">
     <meta property="og:site_name" content="Joel Salinas - AI Strategy Coach">
 
@@ -37,7 +37,7 @@
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://jsalinas.org/">
     <meta property="twitter:title" content="Joel Salinas | AI Strategy Coach for Founders &amp; Leaders">
-    <meta property="twitter:description" content="AI consulting and executive AI coaching for founders and leaders, from solo to team. Adopt AI without outsourcing your judgment: the AI Judgment Workshop every other month and the 90-Day Judgment Engagement.">
+    <meta property="twitter:description" content="AI consulting and executive AI coaching for founders and leaders, from solo to team. Adopt AI without outsourcing your judgment. It starts with a free thirty minute diagnostic call.">
     <meta property="twitter:image" content="https://jsalinas.org/headshot.webp">
 
     <!-- Additional SEO Meta Tags -->
@@ -72,8 +72,8 @@
       "name": "Joel Salinas",
       "alternateName": "Joel Salinas (Leadership in Change)",
       "jobTitle": "AI Strategy Coach",
-      "description": "Joel Salinas is an AI Strategy Coach for founders and leaders, from solo to team, founder of Leadership in Change, and creator of the AI Leadership Triad (Adaptability, Innovation, Creativity). He helps leaders adopt AI without outsourcing their judgment to it, through the AI Judgment Workshop and the 90-Day Judgment Engagement.",
-      "disambiguatingDescription": "Joel Salinas, AI Strategy Coach and founder of Leadership in Change (an AI leadership newsletter read by 7,500+ leaders, CEOs, and executives). Also founder of Cozora (AI education) and Newsletter Compass. Bilingual English/Spanish. Distinct from the Boston-based neurologist of the same name.",
+      "description": "Joel Salinas is an AI Strategy Coach for founders and leaders, from solo to team, founder of Leadership in Change, and creator of the AI Leadership Triad (Adaptability, Innovation, Creativity). He helps leaders adopt AI without outsourcing their judgment to it, and he builds the systems too. It starts with a free diagnostic call.",
+      "disambiguatingDescription": "Joel Salinas, AI Strategy Coach and founder of Leadership in Change (an AI leadership newsletter read by 7,500+ leaders). Also founder of Cozora (AI education) and Newsletter Compass. Bilingual English/Spanish. Distinct from the Boston-based neurologist of the same name.",
       "url": "https://jsalinas.org",
       "image": "https://jsalinas.org/headshot.webp",
       "sameAs": [
@@ -131,12 +131,7 @@
         {"@type": "Country", "name": "United States"},
         {"@type": "AdministrativeArea", "name": "Worldwide (remote)"}
       ],
-      "serviceType": [
-        "AI Consulting",
-        "Executive AI Coaching",
-        "AI Judgment Workshop",
-        "90-Day Judgment Engagement"
-      ],
+      "serviceType": [ "AI Consulting", "Executive AI Coaching", "The Judgment Engagement", "AI Builds" ],
       "provider": {
         "@type": "Person",
         "name": "Joel Salinas"
@@ -164,7 +159,7 @@
       "@type": "Organization",
       "name": "Leadership in Change",
       "url": "https://leadershipinchange.com",
-      "description": "AI leadership newsletter read by 7,500+ leaders, CEOs, and executives focused on AI adoption, the AI Leadership Triad, strategy before tech, and culture over code",
+      "description": "AI leadership newsletter read by 7,500+ leaders focused on AI adoption, the AI Leadership Triad, strategy before tech, and culture over code",
       "publisher": "Joel Salinas"
     }
     </script>
@@ -193,18 +188,18 @@
         },
         {
           "@type": "Question",
-          "name": "What's the AI Judgment Workshop?",
+          "name": "What is the diagnostic call?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The AI Judgment Workshop runs live every other month, 90 minutes, and you leave with the foundation that makes AI actually work plus a 90-day plan. It's $99, and premium subscribers get in for $49."
+            "text": "Thirty minutes, free. We work out what you're trying to get to, where the real hurdles are, and the first move I'd make. A few days later I send you the Judgment Brief, two or three pages in writing, yours whether we ever work together or not."
           }
         },
         {
           "@type": "Question",
-          "name": "What's the 90-Day Judgment Engagement?",
+          "name": "What does working together look like?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A hands-on, 1-on-1 consulting engagement. Over 90 days we turn scattered AI experiments into your first real working systems, with your team still making the calls that matter. It starts with a $750 Strategy Intensive (90 minutes, credited toward any tier), then runs in three tiers from $4,500. I keep it to three clients at a time so the work stays personal."
+            "text": "It starts with a free thirty minute diagnostic call and a written Judgment Brief. From there it is either a scoped build or ongoing month to month work, and we sort out which one on the call. I take three of these a month, so the work stays personal."
           }
         },
         {
@@ -228,24 +223,48 @@
           "name": "How much does it cost?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The 90-Day Judgment Engagement starts with a $750 Strategy Intensive (credited toward any tier) and runs in three tiers from $4,500. If you're not sure which fits, start a conversation and we'll figure it out together."
+            "text": "The diagnostic call is free and so is the Judgment Brief you get afterward. Anything beyond that is paid work, and we talk about what it costs on the call, once I know what you actually need. If you're not sure which fits, start a conversation and we'll figure it out together."
           }
         }
       ]
     }
     </script>
+    <style>
+    /* Homepage hero, revised 2026-08-20. Peach on #F8F8FD measured 1.48:1;
+       the identical button on navy measures 8.68:1. Grounding the hero in navy
+       lets the primary CTA be the highest-contrast element on the screen,
+       matching /call and /services/engagement.html. */
+    .hero--navy{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+    .hero--navy:before{content:"";position:absolute;inset:0;pointer-events:none;
+      background:radial-gradient(120% 90% at 12% -4%,rgba(244,196,176,.15),transparent 62%)}
+    .hero--navy .hero-container{position:relative}
+    .hero--navy .hero-eyebrow{color:var(--peach)}
+    .hero--navy h1{color:#fff;font-family:'Crimson Text',Georgia,serif;font-weight:700;
+      letter-spacing:-.022em;line-height:1.04}
+    .hero--navy h1 .highlight,.hero--navy h1 em,.hero--navy h1 span{color:var(--peach);font-style:normal}
+    .hero--navy .hero-subheadline{color:rgba(255,255,255,.82)}
+    .hero--navy .hero-trustline{color:rgba(255,255,255,.6)}
+    .hero--navy .btn-primary{background:var(--peach);color:var(--navy);border-color:var(--peach)}
+    .hero--navy .btn-primary:hover{background:var(--peach-light);border-color:var(--peach-light)}
+    .hero--navy .btn-secondary{color:#fff;border-color:rgba(255,255,255,.42);background:transparent}
+    .hero--navy .btn-secondary:hover{border-color:var(--peach);color:var(--peach)}
+    .hero--navy .hero-stat-card{background:#fff;color:var(--navy)}
+    .hero--navy .hero-image-wrapper{filter:drop-shadow(0 24px 54px rgba(0,0,0,.34))}
+    /* Mobile: headline and CTA above the fold, portrait below. */
+    @media (max-width: 860px){
+      .hero--navy .hero-container{display:flex;flex-direction:column}
+      .hero--navy .hero-content{order:1}
+      .hero--navy .hero-image{order:2;max-width:230px;margin:2rem auto 0}
+    }
+    </style>
 </head>
-<body>
+<body class="c-page">
     <a id="top"></a>
     <header class="header">
-        <a href="/services/ai-judgment-workshop.html" class="launch-banner" data-cta="banner-workshop">
-            <span class="launch-banner-text"><strong>The AI Judgment Workshop is here.</strong> &middot; 90 minutes, live &middot; Save your seat</span>
-            <span class="launch-banner-arrow" aria-hidden="true">&rarr;</span>
-        </a>
         <div class="header-accent"></div>
         <div class="header-container">
             <a href="#top" class="header-logo">Joel Salinas</a>
-            <a href="/services/ai-judgment-workshop.html" class="header-cta-mobile" data-cta="header-mobile">Save your seat</a>
+            <a href="/call" class="header-cta-mobile" data-cta="header-mobile-call">Book a call</a>
             <button class="mobile-nav-toggle" aria-label="Toggle navigation" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
                 <span></span>
                 <span></span>
@@ -254,31 +273,31 @@
             <nav class="header-nav">
                 <a href="#about" class="header-nav-link">About</a>
                 <a href="#services" class="header-nav-link">Work With Me</a>
-                <a href="/services/ai-judgment-workshop.html" class="header-nav-link">The Workshop</a>
+                <a href="/call" class="header-nav-link">Book a Call</a>
                 <a href="/articles/" class="header-nav-link">Articles</a>
                 <a href="https://compass.jsalinas.org" target="_blank" rel="noopener noreferrer" class="header-nav-link">Free Assessment</a>
                 <a href="/faq.html" class="header-nav-link">FAQ</a>
                 <a href="mailto:Joel@LeadershipinChange.com" class="header-nav-link">Contact</a>
             </nav>
             <div class="header-actions">
-                <a href="/services/ai-judgment-workshop.html" class="header-subscribe-btn" data-cta="header-desktop">Save your seat</a>
+                <a href="/call" class="header-subscribe-btn" data-cta="header-desktop-call">Book a call</a>
             </div>
         </div>
     </header>
 
     <main>
-    <section class="hero" aria-label="Hero section">
+    <section class="hero hero--navy" aria-label="Hero section">
         <div class="hero-container">
             <div class="hero-content">
                 <p class="hero-eyebrow">AI Strategy Coach</p>
                 <h1>AI is everywhere. <span class="accent">Judgment is scarce.</span></h1>
-                <p class="hero-subheadline">I help leaders and founders, whether you run a team or a company of one, adopt AI without outsourcing their judgment to it. The AI Judgment Workshop every other month. One 90-day engagement. That's the whole menu.</p>
+                <p class="hero-subheadline">I help leaders and founders, whether you run a team or a company of one, adopt AI without outsourcing their judgment to it. It starts with one thirty minute call, and you leave with a Judgment Brief in writing.</p>
                 <div class="hero-cta-wrap">
                     <div class="cta-buttons">
-                        <a href="/services/ai-judgment-workshop.html" class="btn btn-primary" data-cta="hero-primary">Join the next AI Judgment Workshop &rarr;</a>
+                        <a href="/call" class="btn btn-primary" data-cta="hero-primary">Book a diagnostic call &rarr;</a>
                         <a href="https://compass.jsalinas.org" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" data-cta="hero-assessment">Take the free 5-min assessment</a>
                     </div>
-                    <p class="hero-trustline">One working AI system and a board-ready roadmap in 90 days. I run three at a time.</p>
+                    <p class="hero-trustline">Four clients at a time. Three diagnostic calls a month.</p>
                 </div>
             </div>
             <div class="hero-image">
@@ -296,29 +315,18 @@
     <section class="trust-banner" aria-label="Trust indicators">
         <div class="trust-banner-container">
             <div class="trust-banner-content">
-                <span class="trust-banner-item">Read by 7,500+ leaders, CEOs, and executives</span>
+                <span class="trust-banner-item">Read by 7,500+ leaders</span>
                 <span class="trust-banner-divider">|</span>
                 <span class="trust-banner-item">Founder of <a href="https://cozora.org" target="_blank" rel="noopener noreferrer">Cozora</a></span>
                 <span class="trust-banner-divider">|</span>
                 <span class="trust-banner-item">Published weekly in <a href="https://leadershipinchange.com" target="_blank" rel="noopener noreferrer">Leadership in Change</a></span>
-            </div>
-            <div class="trust-clients">
-                <p class="trust-clients-label">Read by leaders at</p>
-                <ul class="trust-clients-list" aria-label="Organizations whose leaders Joel has worked with">
-                    <li>Pixar</li>
-                    <li>JPMorgan</li>
-                    <li>Visa</li>
-                    <li>Merck</li>
-                    <li>Harvard</li>
-                </ul>
-                <p class="trust-clients-meta">and hundreds of nonprofits and universities</p>
             </div>
         </div>
     </section>
 
     <section class="direct-answer-section" aria-label="Who Joel Salinas is and what he offers">
         <div class="direct-answer-container">
-            <p class="direct-answer-text">Joel Salinas helps leaders and founders, whether you run a team or a company of one, adopt AI without outsourcing their judgment to it. Not another pile of tools to evaluate, and not a strategy deck nobody opens again. The AI Judgment Workshop every other month and one 90-day engagement, built so <strong>you keep making the calls that matter</strong> while AI handles the rest.</p>
+            <p class="direct-answer-text">AI is not the goal. There is no winning by being good enough with AI, because AI keeps changing. Joel Salinas starts with the goal you are actually trying to reach, then works out where AI gets you there faster. It begins with a free thirty minute diagnostic call and a written Judgment Brief, built so <strong>you keep making the calls that matter</strong>. He works with four clients at a time.</p>
         </div>
     </section>
 
@@ -401,62 +409,28 @@
             <div class="services-header">
                 <span class="section-eyebrow">Work With Me</span>
                 <h2>Start where you are</h2>
-                <p style="text-align:center; color:var(--text-light); font-size:1rem; max-width:660px; margin:0.5rem auto 0;">AI is everywhere. Judgment is scarce. Whether you start with a live workshop or go straight to hands-on consulting, every step credits toward going further.</p>
+                <p style="text-align:center; color:var(--text-light); font-size:1rem; max-width:660px; margin:0.5rem auto 0;">AI is everywhere. Judgment is scarce. It starts with a thirty minute diagnostic call, and you leave with a Judgment Brief in writing.</p>
             </div>
 
             <div class="services-category">
                 <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.75rem; align-items: stretch; max-width: 1180px; margin: 0 auto;">
 
-                    <!-- Offer 1 (primary): The AI Judgment Workshop -->
-                    <div class="service-card service-card-featured" style="border: 2px solid var(--peach); background: linear-gradient(135deg, rgba(244, 196, 176, 0.12) 0%, rgba(26, 43, 91, 0.04) 100%); display: flex; flex-direction: column;">
-                        <div class="service-badge" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--peach-dark); font-weight: 600; margin-bottom: 0.75rem;">Start here</div>
-                        <svg class="card-icon" viewBox="0 0 48 48" width="60" height="60" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--navy); margin-bottom: 1rem;" aria-label="Live workshop icon" role="img">
-                            <path d="M8 12h32a2 2 0 0 1 2 2v18a2 2 0 0 1-2 2H20l-8 7v-7H8a2 2 0 0 1-2-2V14a2 2 0 0 1 2-2z" fill="currentColor" fill-opacity="0.08"/>
-                            <path d="M16 20h16M16 26h10"/>
-                        </svg>
-                        <h3 class="service-card-title">The AI Judgment Workshop</h3>
-                        <p class="service-card-tagline" style="color: var(--peach-dark);">Get your team using AI without outsourcing their judgment.</p>
-                        <p class="service-card-description" style="margin-bottom: 0.85rem;">Ninety minutes, live, every other month, for leaders and their teams. You leave with:</p>
-                        <ul class="card-leavelist" style="list-style: none; padding: 0; margin: 0 0 0.85rem; display: flex; flex-direction: column; gap: 0.55rem;">
-                            <li style="display: flex; gap: 0.55rem; align-items: flex-start; font-size: 0.95rem; line-height: 1.45;"><span aria-hidden="true" style="color: var(--peach-dark); font-weight: 700; flex-shrink: 0;">&#10003;</span> The foundation that makes AI actually work</li>
-                            <li style="display: flex; gap: 0.55rem; align-items: flex-start; font-size: 0.95rem; line-height: 1.45;"><span aria-hidden="true" style="color: var(--peach-dark); font-weight: 700; flex-shrink: 0;">&#10003;</span> What to hand to AI, and what to keep in human hands</li>
-                            <li style="display: flex; gap: 0.55rem; align-items: flex-start; font-size: 0.95rem; line-height: 1.45;"><span aria-hidden="true" style="color: var(--peach-dark); font-weight: 700; flex-shrink: 0;">&#10003;</span> A 90-day plan you write in the room</li>
-                        </ul>
-                        <p class="service-card-description" style="flex-grow: 1; margin-bottom: 0;">It stands on its own, and the $99 credits toward an engagement if you go further.</p>
-                        <p class="service-card-price" style="margin-bottom: 0.6rem;">$99<span> &middot; premium subscribers $49 &middot; Executive members free</span></p>
-                        <a href="/services/ai-judgment-workshop.html" class="btn btn-primary" data-cta="services-workshop" style="margin-top: 1.5rem;">Save your seat &mdash; $99 &rarr;</a>
+                    <!-- The diagnostic call: the single entry point -->
+                    <div class="service-card" style="display:flex; flex-direction:column;">
+                        <h3 class="service-card-title">The diagnostic call</h3>
+                        <p class="service-card-description" style="flex-grow:1;">Thirty minutes. We work out where your biggest hurdles sit, what your lowest-hanging fruit is, and how that lines up with what I have been seeing elsewhere. Then I tell you the first move I would make. A few days later I send you the Judgment Brief, two or three pages in writing, yours whether we ever work together or not.</p>
+                        <p class="service-card-price" style="margin-bottom:0.6rem;">Free<span> &middot; three Judgment Briefs a month, that is the capacity</span></p>
+                        <a href="/call" class="btn btn-primary" data-cta="services-call" style="margin-top:1.5rem;">Book a call &rarr;</a>
                     </div>
 
-                    <!-- Offer 2 (bridge): The Strategy Intensive -->
-                    <div class="service-card" style="border: 1.5px solid var(--border); background: var(--white); display: flex; flex-direction: column;">
-                        <div class="service-badge" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-light); font-weight: 600; margin-bottom: 0.75rem;">Go 1-on-1</div>
-                        <svg class="card-icon" viewBox="0 0 48 48" width="60" height="60" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--navy); margin-bottom: 1rem;" aria-label="Strategy Intensive map pin icon" role="img">
-                            <path d="M24 6c-6.4 0-11.5 5.1-11.5 11.5C12.5 26 24 42 24 42s11.5-16 11.5-24.5C35.5 11.1 30.4 6 24 6z" fill="currentColor" fill-opacity="0.10"/>
-                            <circle cx="24" cy="17.5" r="4.2"/>
-                        </svg>
-                        <h3 class="service-card-title">The Strategy Intensive</h3>
-                        <p class="service-card-tagline" style="color: var(--navy);">Can't wait for the next cohort? Get private time with me on the exact AI call in front of you.</p>
-                        <p class="service-card-description" style="flex-grow: 1; margin-bottom: 0;">Private and one-on-one, on the exact decision your organization is facing, on an evening that works for you. In ninety focused minutes you leave with your map: where AI actually helps, where it doesn't, and what to build first. Then you keep thirty days of access to work it through with me as you put the plan in motion.</p>
-                        <p class="service-card-price" style="margin-bottom: 0.6rem;">$750<span> &middot; members $500 &middot; 100% credited toward an engagement</span></p>
-                        <a href="/services/engagement.html#start" class="btn btn-secondary" data-cta="services-intensive" style="margin-top: 1.5rem;">Book the Intensive &rarr;</a>
+                    <!-- What is behind it -->
+                    <div class="service-card" style="display:flex; flex-direction:column;">
+                        <h3 class="service-card-title">What happens next</h3>
+                        <p class="service-card-description" style="flex-grow:1;">Usually one of two things. Either there is something specific to build, or it is ongoing work and you want me in it month to month. Recent builds: a private content repurposer for a health organization's marketing team, hours down to minutes. A 2nd Brain System for a content creator. A pitch prototype for a serial entrepreneur, investor-ready in two weeks.</p>
+                        <p class="service-card-price" style="margin-bottom:0.6rem;">Paid work<span> &middot; we sort out which one, and what it costs, on the call</span></p>
+                        <a href="/services/engagement.html" class="btn btn-secondary" data-cta="services-engagement" style="margin-top:1.5rem;">How the engagement works &rarr;</a>
                     </div>
 
-                    <!-- Offer 3 (deeper): The 90-Day Judgment Engagement -->
-                    <div class="service-card" style="border: 1.5px solid var(--border); background: var(--white); display: flex; flex-direction: column;">
-                        <div class="service-badge" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-light); font-weight: 600; margin-bottom: 0.75rem;">Go deeper</div>
-                        <svg class="card-icon" viewBox="0 0 48 48" width="60" height="60" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--navy); margin-bottom: 1rem;" aria-label="90-day engagement icon" role="img">
-                            <circle cx="18" cy="17" r="5.5" fill="currentColor" fill-opacity="0.15"/>
-                            <path d="M8 37c0-5.5 4.5-10 10-10s10 4.5 10 10"/>
-                            <circle cx="34" cy="19" r="4.5" fill="currentColor" fill-opacity="0.15"/>
-                            <path d="M31 28.4c4 0.6 7.5 4.4 7.5 8.6"/>
-                        </svg>
-                        <h3 class="service-card-title">The 90-Day Judgment Engagement</h3>
-                        <p class="service-card-tagline" style="color: var(--navy);">Hands-on AI consulting for you and your team. Your first working AI systems in 90 days, without outsourcing the decisions that should stay human.</p>
-                        <p class="service-card-description" style="flex-grow: 1; margin-bottom: 0;">Ninety days turning AI from scattered experiments into real workflows your team owns, with strategy, implementation, and coaching built around the AI Leadership Triad. Custom builds when it makes sense, not just advice.</p>
-                        <p class="service-card-price" style="margin-bottom: 0.6rem;">From $4,500<span> &middot; three tiers &middot; maximum 3 concurrent clients</span></p>
-                        <p class="reveal-note" style="margin: 0 0 0.25rem; font-size: 0.9rem;">Delivered 1-on-1, your organization only. It begins with the Strategy Intensive above, fully credited.</p>
-                        <a href="/services/engagement.html" class="btn btn-secondary" data-cta="services-engagement" style="margin-top: 1.5rem;">See the engagement &rarr;</a>
-                    </div>
 
                 </div>
             </div>
@@ -469,7 +443,7 @@
                 <div class="about-text">
                     <span class="section-eyebrow">The Person Behind It</span>
                     <h2 class="about-headline">About Joel</h2>
-                    <p class="about-paragraph">I'm Joel Salinas, an AI Strategy Coach who helps leaders and founders, whether you run a team or a company of one, adopt AI without outsourcing their judgment to it. I work with leaders 1-on-1 through 90-day engagements, built around the AI Leadership Triad, a framework on the three judgment skills for the AI era: Adaptability, Innovation, and Creativity.</p>
+                    <p class="about-paragraph">I'm Joel Salinas, an AI Strategy Coach who helps leaders and founders, whether you run a team or a company of one, adopt AI without outsourcing their judgment to it. I work with a small number of leaders month to month., built around the AI Leadership Triad, a framework on the three judgment skills for the AI era: Adaptability, Innovation, and Creativity.</p>
                     <p class="about-paragraph">The leaders I work with are tired of hype. They want clarity. They want results. They want to move fast without breaking things. That's what we do together.</p>
                     <a href="/about.html" class="about-link">Learn more about me →</a>
                 </div>
@@ -500,40 +474,7 @@
         </div>
     </section>
 
-    <section class="testimonials-section" aria-label="Peer recommendations">
-        <div class="testimonials-container">
-            <div class="testimonials-header">
-                <h2>What AI Leaders Say About My Work</h2>
-                <p class="testimonials-subhead">Peer recommendations from other creators and operators in the AI leadership space. Named sources, verifiable on Substack.</p>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <blockquote>
-                        <p>&ldquo;Joel consistently shares thoughtful, practical insights on AI and leadership. His posts break down complex ideas into actionable, clear steps. If you're curious about how to harness AI without losing your voice, values, or sanity, his content is a must-read.&rdquo;</p>
-                        <cite>Mandy Morris<span class="testimonial-source"> · Substack creator</span></cite>
-                    </blockquote>
-                </div>
-                <div class="testimonial-card">
-                    <blockquote>
-                        <p>&ldquo;Joel Salinas delivers practical AI leadership insights for mission-driven leaders who want to embrace technology without compromising their values. Strategic, grounded, and refreshingly human-centered.&rdquo;</p>
-                        <cite>Natural Intelligence<span class="testimonial-source"> · AI leadership publication</span></cite>
-                    </blockquote>
-                </div>
-                <div class="testimonial-card">
-                    <blockquote>
-                        <p>&ldquo;Joel tackles the questions every leader is quietly asking about AI without the hype. I love how he bridges AI innovation with real-world leadership. If you're leading a team through AI transformation, Joel delivers frameworks you can use Monday morning.&rdquo;</p>
-                        <cite>Jenny Ouyang<span class="testimonial-source"> · Build to Launch</span></cite>
-                    </blockquote>
-                </div>
-                <div class="testimonial-card">
-                    <blockquote>
-                        <p>&ldquo;If you are interested in how leadership and AI intersect, I recommend Joel Salinas's Leadership in Change. He brings clarity and useful guardrails to help people lead thoughtfully in the age of AI.&rdquo;</p>
-                        <cite>Slow AI<span class="testimonial-source"> · AI strategy publication</span></cite>
-                    </blockquote>
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
     <style>
         .testimonials-subhead {
@@ -581,20 +522,20 @@
                 </div>
                 <div class="faq-item">
                     <button class="faq-question" onclick="toggleFaq(this)">
-                        What's the AI Judgment Workshop?
+                        What is the diagnostic call?
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <div class="faq-answer-content">The AI Judgment Workshop runs live every other month, 90 minutes, and you leave with the foundation that makes AI actually work plus a 90-day plan. It's $99, and premium subscribers get in for $49. <a href="/services/ai-judgment-workshop.html">Save your seat &rarr;</a></div>
+                        <div class="faq-answer-content">Thirty minutes, free. We work out what you're trying to get to, where the real hurdles are, and the first move I'd make. A few days later I send you the Judgment Brief, two or three pages in writing, yours whether we ever work together or not. <a href="/call">Book a call &rarr;</a></div>
                     </div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question" onclick="toggleFaq(this)">
-                        What's the 90-Day Judgment Engagement?
+                        What does working together look like?
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <div class="faq-answer-content">A hands-on, 1-on-1 consulting engagement. Over 90 days we turn scattered AI experiments into your first real working systems, with your team still making the calls that matter. It starts with a $750 Strategy Intensive (90 minutes, credited toward any tier), then runs in three tiers from $4,500. I keep it to three clients at a time so the work stays personal. <a href="mailto:Joel@LeadershipinChange.com?subject=90-Day%20Judgment%20Engagement%20inquiry">Start a conversation &rarr;</a></div>
+                        <div class="faq-answer-content">It starts with a free thirty minute diagnostic call and a written Judgment Brief. From there it is either a scoped build or ongoing month to month work, and we sort out which one on the call. I work with four clients at a time and take three of these calls a month, so the work stays personal. <a href="/call">Book a diagnostic call &rarr;</a></div>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -621,7 +562,7 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <div class="faq-answer-content">The 90-Day Judgment Engagement starts with a $750 Strategy Intensive (credited toward any tier) and runs in three tiers from $4,500. If you're not sure which fits, start a conversation and we'll figure it out together.</div>
+                        <div class="faq-answer-content">The diagnostic call is free and so is the Judgment Brief you get afterward. Anything beyond that is paid work, and we talk about what it costs on the call, once I know what you actually need. If you're not sure which fits, start a conversation and we'll figure it out together.</div>
                     </div>
                 </div>
             </div>
@@ -631,8 +572,8 @@
     <section class="final-cta" aria-label="Final call to action">
         <div class="final-cta-container">
             <h2 class="final-cta-headline">Ready to adopt AI without outsourcing your judgment?</h2>
-            <p class="final-cta-subheadline">One working AI system and a board-ready roadmap in 90 days. I run three engagements at a time.</p>
-            <a href="/services/engagement.html" class="btn btn-primary btn-large" data-cta="final-primary">See the 90-Day Engagement &rarr;</a>
+            <p class="final-cta-subheadline">Three Judgment Briefs a month. I take them myself, so that's the capacity.</p>
+            <a href="/call" class="btn btn-primary btn-large" data-cta="final-primary">Book a diagnostic call &rarr;</a>
             <p style="margin-top: 1.25rem; font-size: 0.95rem;"><a href="https://compass.jsalinas.org" target="_blank" rel="noopener noreferrer" data-cta="final-assessment" style="color: rgba(255,255,255,0.85); text-decoration: underline; text-underline-offset: 3px;">Not ready? Take the free 5-min assessment &rarr;</a></p>
         </div>
     </section>
@@ -650,7 +591,7 @@
             item.classList.toggle('active');
         }
 
-        // Scroll reveal — progressive enhancement. Content is visible by default;
+        // Scroll reveal, progressive enhancement. Content is visible by default;
         // hidden state is only applied by JS, never to the hero, and is skipped
         // entirely when the visitor prefers reduced motion.
         (function () {
@@ -686,7 +627,7 @@
                 else if (href.indexOf('compass.jsalinas.org') > -1) { fire('assessment_click', loc); }
                 else if (href.indexOf('/launch/team-workshops') > -1) { fire('launch_offer_click', loc); }
                 else if (href.indexOf('/workshop-waitlist') > -1) { fire('waitlist_click', loc); }
-                else if (href.indexOf('/services/ai-judgment-workshop') > -1) { fire('workshop_click', loc); }
+                else if (href.indexOf('/call') > -1) { fire('call_click', loc); }
                 else if (href.indexOf('/services/engagement') > -1) { fire('engagement_click', loc); }
             }, true);
         })();
@@ -706,7 +647,7 @@
     <section class="newsletter-signup newsletter-signup--light" aria-label="Newsletter signup">
         <div class="newsletter-signup-container">
             <h2>Prefer the weekly read?</h2>
-            <p>Read by 7,500+ leaders, CEOs, and executives. Weekly insights on leading through AI transformation.</p>
+            <p>Read by 7,500+ leaders. Weekly insights on leading through AI transformation.</p>
             <a href="https://leadershipinchange.com/subscribe" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Subscribe Free</a>
         </div>
     </section>
@@ -716,14 +657,14 @@
       .partners{ background:#F4F6FB; padding:54px 24px 58px; font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; }
       .partners *{ box-sizing:border-box; }
       .partners .partners-container{ max-width:1080px; margin:0 auto; }
-      .partners .partners-eyebrow{ text-align:center; font-size:13px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#3B82F6; }
+      .partners .partners-eyebrow{ text-align:center; font-size:13px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--peach-dark); }
       .partners .partners-title{ text-align:center; font-size:34px; font-weight:800; color:#1A2B5B; letter-spacing:-0.5px; margin:10px 0 0; }
       .partners .partners-rule{ width:54px; height:3px; background:#F4C4B0; border-radius:2px; margin:14px auto 0; }
       .partners .partners-intro{ text-align:center; font-size:15.5px; line-height:1.55; color:#4A5568; max-width:680px; margin:18px auto 0; }
       .partners .partners-grid{ display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:38px; }
       .partners .pcard{ background:#fff; border:1px solid #E5E8F0; border-radius:14px; padding:26px 26px 24px; box-shadow:0 6px 22px rgba(26,43,91,0.06); display:flex; flex-direction:column; }
       .partners .pname{ font-size:21px; font-weight:800; color:#1A2B5B; letter-spacing:-0.2px; }
-      .partners .ptag{ font-size:13.5px; font-weight:700; color:#3B82F6; margin-top:5px; }
+      .partners .ptag{ font-size:13.5px; font-weight:700; color:var(--peach-dark); margin-top:5px; }
       .partners .pdesc{ font-size:14px; line-height:1.5; color:#4A5568; margin-top:13px; }
       .partners .plabel{ font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:#1A2B5B; margin-top:18px; }
       .partners .pchips{ display:flex; flex-wrap:wrap; gap:7px; margin-top:9px; }
@@ -734,61 +675,18 @@
       .partners .pcta.alt{ background:#F4C4B0; color:#1A2B5B; }
       @media (max-width:720px){ .partners .partners-grid{ grid-template-columns:1fr; } }
     </style>
-    <section class="partners" aria-label="Recommended partners">
-      <div class="partners-container">
-        <div class="partners-eyebrow">Trusted Referrals</div>
-        <h2 class="partners-title">Our Partners</h2>
-        <div class="partners-rule"></div>
-        <p class="partners-intro">My focus is AI strategy, leadership, and adoption. When a client needs work outside that lane, these are the teams I trust to do it right.</p>
-        <div class="partners-grid">
-
-          <!-- ElephantScale -->
-          <div class="pcard">
-            <div class="pname">ElephantScale</div>
-            <div class="ptag">Professional AI upskilling for teams &amp; enterprise</div>
-            <div class="pdesc">Hands-on, instructor-led AI training tailored to your stack and your team's level. 15+ years in, with 50,000+ professionals upskilled across 200+ organizations in 30+ countries.</div>
-            <div class="plabel">Main Services</div>
-            <div class="pchips">
-              <span class="pchip">Agentic AI Development</span>
-              <span class="pchip">LLM Engineering &amp; RAG</span>
-              <span class="pchip">MLOps &amp; DevOps for AI</span>
-              <span class="pchip">Generative AI for Teams</span>
-            </div>
-            <div class="pcontact">
-              <a href="https://elephantscale.com" target="_blank" rel="noopener noreferrer">elephantscale.com</a> &nbsp;·&nbsp; <a href="mailto:ashish@elephantscale.com">ashish@elephantscale.com</a>
-            </div>
-            <a class="pcta" href="https://calendly.com/ashish-elephantscale/30min" target="_blank" rel="noopener noreferrer">Book a 30-min call &rarr;</a>
-          </div>
-
-          <!-- Chronicle Labs -->
-          <div class="pcard">
-            <div class="pname">Chronicle Labs</div>
-            <div class="ptag">Staging environments for enterprise AI agents (YC P26)</div>
-            <div class="pdesc">Turn your production data into a safe testing ground for AI agents. Chronicle captures every event your agents see in production and replays it, so your team can test new behaviors, catch failures before launch, and deploy with confidence. Built for teams putting large-scale AI into production.</div>
-            <div class="plabel">Main Services</div>
-            <div class="pchips">
-              <span class="pchip">AI Agent Staging Environments</span>
-              <span class="pchip">Production Replay &amp; Backtesting</span>
-              <span class="pchip">Pre-Launch Testing &amp; Validation</span>
-            </div>
-            <div class="pcontact">
-              <a href="https://chronicle-labs.com" target="_blank" rel="noopener noreferrer">chronicle-labs.com</a> &nbsp;·&nbsp; Ayman Saleh, CEO
-            </div>
-            <a class="pcta alt" href="https://cal.com/ayman-chronicle/15min?utm_source=joel&utm_medium=substack&utm_campaign=ycp26launch&overlayCalendar=true" target="_blank" rel="noopener noreferrer">Book a call with the CEO &rarr;</a>
-          </div>
-
-        </div>
-      </div>
-    </section>
+    
     <!-- ============ END OUR PARTNERS SECTION ============ -->
     </main>
+
+    <div class="c-sticky" id="cSticky"><a href="/call" data-cta="home-sticky-call">Book a diagnostic call</a></div>
 
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-main">
                 <div class="footer-brand">
                     <h3>Joel Salinas - Leadership in Change LLC</h3>
-                    <p>AI is everywhere. Judgment is scarce. I help leaders and founders, whether you run a team or a company of one, adopt AI without outsourcing their judgment to it. The <a href="/services/ai-judgment-workshop.html">AI Judgment Workshop</a> every other month, and the <a href="/services/engagement.html">90-Day Judgment Engagement</a>.</p>
+                    <p>AI is everywhere. Judgment is scarce. I help founders and leaders adopt AI without outsourcing their judgment to it, and I build the systems too. It starts with a <a href="/call">diagnostic call</a>.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Legal</h4>
@@ -814,90 +712,14 @@
     </footer>
 
     <!-- Next-cohort workshop popup (homepage only). Shows once per 7 days, on 40% scroll / 25s / exit-intent. -->
-    <div id="ajwPromo" class="ajw-promo" role="dialog" aria-modal="true" aria-labelledby="ajwPromoTitle" hidden>
-        <div class="ajw-promo-backdrop" data-ajw-close></div>
-        <div class="ajw-promo-card">
-            <button type="button" class="ajw-promo-close" aria-label="Close" data-ajw-close>&times;</button>
-            <p class="ajw-promo-eyebrow">Next cohort</p>
-            <h2 id="ajwPromoTitle" class="ajw-promo-title">The AI Judgment Workshop</h2>
-            <p class="ajw-promo-when"><strong class="js-cohort-long">Tuesday, September 15, 2026</strong><br>5:00&ndash;6:30pm ET &middot; 90 minutes, live &middot; 20 seats</p>
-            <p class="ajw-promo-copy">Build the foundation that makes AI actually work: what to hand to AI, what to keep in human hands, and a 90-day plan you write in the room.</p>
-            <p class="ajw-promo-price">$99</p>
-            <p class="ajw-promo-tiers">Premium subscribers $49 &middot; Executive members free</p>
-            <a href="/services/ai-judgment-workshop.html" class="ajw-promo-cta" data-cta="popup-workshop">Save your seat &rarr;</a>
-            <button type="button" class="ajw-promo-later" data-ajw-close>Maybe later</button>
-        </div>
-    </div>
-    <style>
-      .ajw-promo{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:1.25rem;}
-      .ajw-promo[hidden]{display:none;}
-      .ajw-promo-backdrop{position:absolute;inset:0;background:rgba(26,43,91,0.55);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);}
-      .ajw-promo-card{position:relative;z-index:1;background:var(--white);border-radius:18px;max-width:440px;width:100%;padding:2.25rem 2rem 1.75rem;box-shadow:0 24px 60px rgba(26,43,91,0.30);border-top:4px solid var(--peach);text-align:center;animation:ajwPromoIn .28s ease-out;}
-      @keyframes ajwPromoIn{from{opacity:0;transform:translateY(12px) scale(.98);}to{opacity:1;transform:none;}}
-      @media (prefers-reduced-motion: reduce){.ajw-promo-card{animation:none;}}
-      .ajw-promo-close{position:absolute;top:.5rem;right:.8rem;background:none;border:none;font-size:1.7rem;line-height:1;color:var(--text-light);cursor:pointer;padding:.2rem .35rem;}
-      .ajw-promo-close:hover{color:var(--navy);}
-      .ajw-promo-eyebrow{font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;font-weight:700;color:var(--peach-dark);margin:0 0 .4rem;}
-      .ajw-promo-title{font-size:1.55rem;line-height:1.2;color:var(--navy);margin:0 0 .55rem;}
-      .ajw-promo-when{font-size:.92rem;color:var(--text-light);margin:0 0 1rem;line-height:1.55;}
-      .ajw-promo-when strong{color:var(--navy);}
-      .ajw-promo-copy{font-size:.97rem;color:var(--text-light);line-height:1.6;margin:0 0 1.05rem;}
-      .ajw-promo-price{font-size:1.2rem;font-weight:700;color:var(--navy);margin:0 0 .15rem;}
-      .ajw-promo-tiers{font-size:.88rem;color:var(--text-light);margin:0 0 1.2rem;}
-      .ajw-promo-cta{display:block;background:var(--peach);color:var(--navy);font-weight:700;padding:.9rem 1.25rem;border-radius:999px;text-decoration:none;transition:var(--transition);}
-      .ajw-promo-cta:hover{background:var(--peach-dark);transform:translateY(-1px);}
-      .ajw-promo-later{display:block;margin:.8rem auto 0;background:none;border:none;color:#94A3B8;font-size:.87rem;cursor:pointer;text-decoration:none;}
-      .ajw-promo-later:hover{color:var(--navy);}
-    </style>
-    <script>
+        <script>
       (function(){
-        var KEY='ajwPromoSeen', DAYS=7, root=document.getElementById('ajwPromo');
-        if(!root){return;}
-        var COHORTS=[
-          {iso:'2026-09-15',long:'Tuesday, September 15, 2026',short:'Sep 15'},
-          {iso:'2026-11-17',long:'Tuesday, November 17, 2026',short:'Nov 17'},
-          {iso:'2027-01-19',long:'Tuesday, January 19, 2027',short:'Jan 19'},
-          {iso:'2027-03-16',long:'Tuesday, March 16, 2027',short:'Mar 16'},
-          {iso:'2027-05-18',long:'Tuesday, May 18, 2027',short:'May 18'},
-          {iso:'2027-07-20',long:'Tuesday, July 20, 2027',short:'Jul 20'},
-          {iso:'2027-09-21',long:'Tuesday, September 21, 2027',short:'Sep 21'},
-          {iso:'2027-11-16',long:'Tuesday, November 16, 2027',short:'Nov 16'}
-        ];
-        try{
-          var t=new Date();t.setHours(0,0,0,0);
-          var n=COHORTS.find(function(c){return new Date(c.iso+'T00:00:00')>=t;})||COHORTS[COHORTS.length-1];
-          root.querySelectorAll('.js-cohort-long').forEach(function(e){e.textContent=n.long;});
-          root.querySelectorAll('.js-cohort-short').forEach(function(e){e.textContent=n.short;});
-        }catch(e){}
-        function seen(){try{var v=localStorage.getItem(KEY);return v&&(Date.now()-parseInt(v,10))<DAYS*864e5;}catch(e){return false;}}
-        function mark(){try{localStorage.setItem(KEY,String(Date.now()));}catch(e){}}
-        var opened=false,lastFocus=null;
-        function onKey(e){if(e.key==='Escape'){close();}}
-        function open(){
-          if(opened||seen()){return;}
-          opened=true;mark();cleanup();
-          lastFocus=document.activeElement;
-          root.hidden=false;document.body.style.overflow='hidden';
-          var cta=root.querySelector('.ajw-promo-cta');if(cta){cta.focus();}
-          document.addEventListener('keydown',onKey);
+        var bar=document.getElementById('cSticky'),hero=document.querySelector('.hero');
+        if(bar&&hero&&'IntersectionObserver' in window){
+          new IntersectionObserver(function(e){bar.classList.toggle('show',!e[0].isIntersecting);},
+            {threshold:0}).observe(hero);
         }
-        function close(){
-          root.hidden=true;document.body.style.overflow='';
-          document.removeEventListener('keydown',onKey);
-          if(lastFocus&&lastFocus.focus){lastFocus.focus();}
-        }
-        root.addEventListener('click',function(e){if(e.target.hasAttribute('data-ajw-close')){close();}});
-        function onScroll(){
-          var y=window.scrollY||window.pageYOffset||document.documentElement.scrollTop||0;
-          if(y>(window.innerHeight*0.5)){open();}
-        }
-        function onExit(e){if(e.clientY<=0){open();}}
-        function cleanup(){clearTimeout(timer);window.removeEventListener('scroll',onScroll);document.removeEventListener('mouseout',onExit);}
-        if(seen()){return;}
-        var timer=setTimeout(open,12000);
-        window.addEventListener('scroll',onScroll,{passive:true});
-        document.addEventListener('mouseout',onExit);
       })();
     </script>
-    </body>
+</body>
 </html>
