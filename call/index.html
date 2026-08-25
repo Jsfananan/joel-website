@@ -222,22 +222,19 @@
     .c-proof-item p:last-child{margin:0;color:var(--text-light);line-height:1.65;font-size:.97rem}
 
     /* BOOK */
-    .c-book{background:var(--navy);color:#fff;scroll-margin-top:96px}
+    .c-book{background:var(--navy);color:#fff;scroll-margin-top:96px;padding-top:clamp(3rem,6vw,4.75rem);padding-bottom:clamp(3rem,6vw,4.75rem)}
     .c-book h2{font-family:'Crimson Text',Georgia,serif;font-weight:700;
       font-size:clamp(1.9rem,3.8vw,2.7rem);margin:0 0 .6rem;text-align:center;letter-spacing:-.018em}
     .c-cap{text-align:center;color:var(--peach);font-family:'Inter',sans-serif;font-size:.8rem;
       letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin:0 0 var(--s5)}
-    .c-booknow{max-width:660px;margin:0 auto;text-align:center;background:rgba(255,255,255,.055);
-      border:1px solid rgba(244,196,176,.28);border-radius:var(--r-md);padding:var(--s5) var(--s4)}
+    .c-booknow{max-width:660px;margin:0 auto;text-align:center;background:none;border:0;padding:0}
     .c-booknow-lead{color:rgba(255,255,255,.82);margin:0 0 var(--s4);font-size:1.06rem;line-height:1.65}
     .c-btn-lg{font-size:1.08rem;padding:1.2rem 2.4rem}
     .c-booknow-meta{list-style:none;margin:var(--s4) 0 0;padding:0;display:flex;gap:var(--s3);
       justify-content:center;flex-wrap:wrap}
     .c-booknow-meta li{color:rgba(255,255,255,.62);font-family:'Inter',sans-serif;font-size:.78rem;
       letter-spacing:.08em;text-transform:uppercase;font-weight:600}
-    @media(max-width:640px){.c-booknow{padding:var(--s4) var(--s3)}
-      .c-booknow-meta{flex-direction:column;gap:.7rem}}
-    .c-trust{max-width:700px;margin:var(--s5) auto 0;display:flex;gap:var(--s2);align-items:flex-start;
+        .c-trust{max-width:700px;margin:var(--s5) auto 0;display:flex;gap:var(--s2);align-items:flex-start;
       padding-top:var(--s4);border-top:1px solid var(--line-dark)}
     .c-trust img{border-radius:50%;flex-shrink:0}
     .c-trust p{margin:0;color:rgba(255,255,255,.76);font-size:.94rem;line-height:1.65}
@@ -321,7 +318,7 @@
                 <a href="mailto:Joel@LeadershipinChange.com" class="header-nav-link">Contact</a>
             </nav>
             <div class="header-actions">
-                <a href="#book" class="header-subscribe-btn" data-cta="header-call">Book a call</a>
+                <a href="https://calendar.app.google/tQfQz2ioV9CC3rJA7" target="_blank" rel="noopener noreferrer" class="header-subscribe-btn" data-cta="header-call" onclick="if(window.gtag){gtag('event','booking_scheduler_opened',{page_path:'/call',cta_location:'header'});}">Book a call</a>
             </div>
         </div>
     </header>
@@ -340,7 +337,7 @@
                 <h1>Where should you actually start with AI?</h1>
                 <p>That's what we work out together in 30 minutes. We're not going to fix your problems in that time, so let's be accurate about what this is. It's a diagnostic. I'll tell you where I'd start, and a few days later I send you the Judgment Brief, two or three pages in writing, yours whether we ever work together or not.</p>
                 <div class="c-hero-cta">
-                    <a href="#book" class="c-btn" data-cta="hero-book">Book your diagnostic call</a>
+                    <a href="https://calendar.app.google/tQfQz2ioV9CC3rJA7" target="_blank" rel="noopener noreferrer" class="c-btn" data-cta="hero-book" onclick="if(window.gtag){gtag('event','booking_scheduler_opened',{page_path:'/call',cta_location:'hero'});}">Book your diagnostic call</a>
                     <span class="c-hero-note">Free &middot; 30 minutes &middot; three a month</span>
                 </div>
             </div>
@@ -445,16 +442,10 @@
                 <p class="c-cap">Three a month. Four clients at a time.</p>
                 <p class="c-cap-why">I work with four clients at a time. That is the whole business, not a marketing number, and three diagnostic calls a month is what feeds it. Every Brief is written by hand, not generated.</p>
                 <div class="c-booknow rv">
-                    <p class="c-booknow-lead">Pick a time that works for you. The calendar opens in a new tab.</p>
                     <a href="https://calendar.app.google/tQfQz2ioV9CC3rJA7"
                        target="_blank" rel="noopener noreferrer"
                        class="c-btn c-btn-lg" data-cta="scheduler-open"
-                       onclick="if(window.gtag){gtag('event','booking_scheduler_opened',{page_path:'/call'});}">See available times</a>
-                    <ul class="c-booknow-meta">
-                        <li>30 minutes, free</li>
-                        <li>A Judgment Brief in writing afterward</li>
-                        <li>Nothing decided on the call</li>
-                    </ul>
+                       onclick="if(window.gtag){gtag('event','booking_scheduler_opened',{page_path:'/call',cta_location:'section'});}">See available times</a>
                 </div>
                 <div class="c-diff">
                     <p class="c-diff-lead">AI is the greatest opportunity businesses have. It is also the most easily misunderstood.</p>
@@ -471,7 +462,7 @@
     </main>
 
     <div class="c-sticky" id="cSticky" aria-hidden="false">
-        <a href="#book" data-cta="sticky-book">Book your diagnostic call</a>
+        <a href="https://calendar.app.google/tQfQz2ioV9CC3rJA7" target="_blank" rel="noopener noreferrer" data-cta="sticky-book" onclick="if(window.gtag){gtag('event','booking_scheduler_opened',{page_path:'/call',cta_location:'sticky'});}">Book your diagnostic call</a>
     </div>
 
     <script>
