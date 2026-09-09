@@ -6151,3 +6151,39 @@ img.service-overview-icon {
 @media (max-width: 860px) {
     body.c-page { padding-bottom: 5.5rem; }
 }
+
+
+/* ---------- Client Login (added 2026-09-09) ----------
+   Sits in .header-actions beside the primary CTA, which is where people look for
+   an account control. Deliberately a text link rather than a second button: the
+   navy pill next to it is what the page is selling, and two buttons side by side
+   split the one glance the header gets. */
+.header-client-link {
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    color: var(--text-light);
+    text-decoration: none;
+    white-space: nowrap;
+    padding: 0.5rem 0.25rem;
+    transition: var(--transition);
+}
+.header-client-link:hover {
+    color: var(--navy);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* ⚠ Two copies of this link exist, and exactly one is visible at any width.
+   .header-actions is display:none below 968px (it stays hidden even when the
+   menu is open, which is what header-cta-mobile exists for), so the copy beside
+   the CTA is desktop-only and a second copy lives in the nav list for the mobile
+   menu. Changing the .header-actions mobile rule instead would also reveal the
+   Book a call button inside the open menu, which is a change to the conversion
+   UI and not something a login link should decide. */
+.header-client-link--nav { display: none; }
+
+@media (max-width: 968px) {
+    .header-client-link--nav { display: block; opacity: 0.75; }
+    .header-client-link--nav:hover { opacity: 1; }
+}
