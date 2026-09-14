@@ -134,8 +134,8 @@ URL: https://jsalinas.org/articles/custom-ai-tools-vs-saas.html
 Adaptability is the first pillar of the AI Leadership Triad. Key insight: adaptive leaders outperform technically skilled ones because they maintain mission clarity while evolving their methods. Adaptability is a discipline, not a personality trait, and it can be deliberately developed.
 URL: https://jsalinas.org/articles/why-adaptability-matters-for-ai-leaders.html
 
-### How to Assess Your AI Leadership Readiness
-A practical self-assessment guide based on the AI Leadership Triad. Covers all three dimensions (Adaptability, Innovation, Creativity) with behavioral indicators for each level and a roadmap for what to develop next.
+### Employees Afraid of AI? How to Assess Your Team's AI Mindset
+Why employee fear, hesitance, and misconceptions about AI stall implementations regardless of how good the tool is. Separates AI mindset (attitudes, trust, fears, beliefs about what AI can do) from AI adoption (actual frequency and depth of use), describes the four AI Leadership Compass types (Skeptic, Eager Newcomer, Reluctant Operator, Champion) and how to lead each, and explains how to use the free five-minute AI Leadership Compass (https://compass.jsalinas.org) with a team before a rollout. Includes a 15-question FAQ.
 URL: https://jsalinas.org/articles/how-to-assess-ai-leadership-readiness.html
 
 ### Why Creative Leaders Outperform Technical Ones in AI Adoption

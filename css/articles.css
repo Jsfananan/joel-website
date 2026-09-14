@@ -544,3 +544,39 @@
 .article-cta .btn-primary:hover {
     color: var(--white);
 }
+
+/* Author bio box at the end of an article */
+.article-author {
+    margin-top: 3rem;
+    padding: 1.5rem 2rem;
+    border-top: 1px solid rgba(26, 39, 68, 0.12);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text);
+}
+
+/* Compass-primary article CTAs (how-to-assess-ai-leadership-readiness) */
+.article-content .btn-primary,
+.article-hero .btn-primary,
+.article-sticky-cta .btn-primary,
+.article-content .btn-primary:hover { color: var(--navy); }
+.article-hero-cta { margin-top: 1.75rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.25rem; }
+.article-hero-cta span { font-size: 0.85rem; color: var(--text-light); }
+.mid-article-cta .btn-primary { font-size: 0.95rem; padding: 0.85rem 1.6rem; box-shadow: 0 6px 18px rgba(26, 43, 91, 0.18); }
+.faq-block .faq-item { padding: 0 0.25rem; margin: 0; border: 0; border-bottom: 1px solid rgba(26, 39, 68, 0.12); border-radius: 0; box-shadow: none; background: none; }
+.faq-block summary { cursor: pointer; list-style: none; position: relative; padding-right: 2.25rem; }
+.faq-block summary::-webkit-details-marker { display: none; }
+.faq-block summary::after { content: "+"; position: absolute; right: 0.25rem; top: 50%; transform: translateY(-50%); font-size: 1.5rem; line-height: 1; color: var(--peach-dark); }
+.faq-block .faq-item[open] summary::after { content: "\2212"; }
+.faq-block summary h3 { margin: 1.1rem 0; }
+.faq-block .faq-item p { margin-top: 0; }
+.article-author-cta { margin-top: 0.75rem; }
+.article-author-cta a { font-weight: 700; }
+.article-sticky-cta { display: none; }
+@media (max-width: 768px) {
+    .article-sticky-cta { display: flex; justify-content: center; position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; padding: 0.6rem 1rem calc(0.6rem + env(safe-area-inset-bottom)); background: rgba(255, 255, 255, 0.96); box-shadow: 0 -4px 16px rgba(26, 43, 91, 0.12); }
+    .article-sticky-cta .btn { width: 100%; text-align: center; }
+    body:has(.article-sticky-cta) { padding-bottom: 4.75rem; }
+}
+
+.article-sticky-cta.is-hidden { display: none; }
