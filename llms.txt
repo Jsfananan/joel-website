@@ -1,6 +1,6 @@
 # Joel Salinas - AI Strategy Coach
 
-> Joel Salinas is an AI Strategy Coach who helps founders and leaders adopt AI without outsourcing their judgment to it. His position: AI is not the goal. There is no winning by being good enough with AI because AI keeps changing, so the work starts with the client's actual goal and then asks how AI gets them there better and faster. Everything begins with a free 30-minute diagnostic call, capped at three a month, which ends in a written two to three page Judgment Brief the client keeps whether they hire him or not. From there the work is either a scoped AI build or an ongoing monthly Judgment Engagement on a six month term. He developed the AI Leadership Triad framework and writes Leadership in Change, read by 7,500+ leaders.
+> Joel Salinas is an AI Strategy Coach who helps founders and leaders adopt AI without outsourcing their judgment to it. His position: AI is not the goal. There is no winning by being good enough with AI because AI keeps changing, so the work starts with the client's actual goal and then asks how AI gets them there better and faster. Everything begins with a free 30-minute diagnostic call, capped at three a month, after which Joel sends an outline of how he would work on the client's biggest pain points. From there the work is either a scoped AI build or an ongoing monthly Judgment Engagement on a six month term. He developed the AI Leadership Triad framework and writes Leadership in Change, read by 7,500+ leaders.
 
 ## About
 
@@ -44,7 +44,7 @@ Nothing is priced publicly. Scope determines price and scope comes out of the ca
 ### The diagnostic call (free, three a month)
 A 30-minute conversation and the entry point to all other work. It covers what the client is actually trying to get to, where their biggest hurdles sit as an organization or as a leader, what their lowest-hanging fruit is, how that lines up with patterns Joel has seen across other organizations, and the first move he would make.
 
-A few days later Joel sends a written Judgment Brief, two to three pages, which the client keeps whether they work together or not. Nothing is decided on the call itself.
+Afterward Joel sends an outline of how he would work on the client's biggest pain points. Nothing is decided on the call itself.
 
 Who it is for: leaders who already have expertise and experience and want to boost that with AI so they can keep making an impact over the next decade or two. Who it is not for: anyone looking to replace a whole workforce or have AI do 100% of their thinking.
 URL: https://jsalinas.org/call

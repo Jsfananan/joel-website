@@ -4,7 +4,9 @@
 
 > ## ⛔ THE FRONT DOOR REBUILD IS LIVE (2026-08-19). This supersedes the 2026-07-20 "flip."
 >
-> **The site has ONE public offer: a free 30-minute diagnostic call at `/call`.** It is the single CTA on every page. It ends with a written two to three page **Judgment Brief**, which the visitor keeps whether they hire Joel or not.
+> **The site has ONE public offer: a free 30-minute diagnostic call at `/call`.** It is the single CTA on every page. After the call Joel sends an outline of how he'd work on the visitor's biggest pain points, along with the agreement.
+>
+> ⚠ **There is NO Judgment Brief (removed sitewide 2026-09-15).** The calls never produced one, so every promise of a written two to three page Brief was taken out. Never reintroduce it in copy, schema, meta descriptions, or llms.txt.
 >
 > **RETIRED, and every reference has been removed from the site:** the AI Judgment Workshop ($99), the AI Foundation Workshop ($397), the Strategy Intensive ($750), the 90-Day Judgment Engagement ($4,500/$7,500/$12,500), the per-session coaching menu, the team workshop packages, and Fractional CAIO. All their pages are now 301 stubs pointing at `/call`. **Do not reintroduce any of them.** They were tested and they failed: the $99 workshop sold zero seats across four promotions, the $397 cohort produced three buyers and no pipeline, the $750 Intensive sold zero. One free call produced the entire consulting business.
 >
@@ -27,7 +29,7 @@
 `css/styles.css` carries a reusable section/type/motion system, prefix `.c-`. Any page opts in with `class="c-page"` on `<body>`. Built on `/call`, now also used by `services/engagement.html`.
 
 - Tokens: `--s1`..`--s6` spacing, `--r-sm`/`--r-md` radius, `--line`, `--ease`, `--shadow-1`/`--shadow-2`/`--shadow-doc`
-- Sections: `.c-hero` (navy, compass motif), `.c-thesis` (peach statement), `.c-beats` (numbered spine), `.c-fit` (two-column split), `.c-brief`, `.c-proof`, `.c-book`
+- Sections: `.c-hero` (navy, compass motif), `.c-thesis` (peach statement), `.c-beats` (numbered spine), `.c-fit` (two-column split), `.c-brief` (navy section; on /call it now holds "After the call", which replaced the Judgment Brief section 2026-09-15), `.c-proof`, `.c-book`
 - Components: `.c-btn`, `.c-sticky` (mobile CTA bar), `.c-punch` with `<mark>` highlight
 - Motion: `.rv` reveal + staggered children; **`prefers-reduced-motion` kills every transform including hovers**
 - `--navy-deep: #121D3E` is the footer ground, so the footer separates from navy content sections
@@ -51,7 +53,7 @@
 - Sign-off bio: *Joel Salinas is an AI Strategy Coach and entrepreneur. AI is everywhere; judgment is scarce. Joel helps founders and leaders adopt AI without outsourcing their judgment to it, and he builds the systems too. Creator of the AI Leadership Triad.*
 
 ## Product naming
-Product names contain "Judgment": The Judgment Engagement, the Judgment Brief, the Team Judgment Audit. "Consulting" and "coaching" are category words for SEO and body copy, never product names.
+Product names contain "Judgment": The Judgment Engagement, the Team Judgment Audit. "Consulting" and "coaching" are category words for SEO and body copy, never product names.
 
 ## Current priorities
 1. Structural design pass on `index.html`, `about.html`, `faq.html` using the shared system
