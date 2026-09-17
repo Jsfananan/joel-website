@@ -6187,3 +6187,30 @@ img.service-overview-icon {
     .header-client-link--nav { display: block; opacity: 0.75; }
     .header-client-link--nav:hover { opacity: 1; }
 }
+
+/* ============ Homepage: what an AI strategy ends up needing (2026-09-17) ============ */
+.competencies { padding: var(--section-padding); background: var(--white); }
+.competencies-container { max-width: 1180px; margin: 0 auto; }
+.competencies-header { text-align: center; max-width: 760px; margin: 0 auto 3.5rem; }
+.competencies-header h2 { font-size: clamp(2.1rem, 5vw, 3.5rem); font-weight: 800; color: var(--navy); letter-spacing: -0.02em; line-height: 1.15; margin: 0 0 1.25rem; }
+.competencies-header p { color: var(--text-light); font-size: 1.05rem; line-height: 1.7; margin: 0 0 0.9rem; }
+.competencies-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid rgba(26, 43, 91, 0.12); }
+.competency { padding: 2rem 1.75rem 2.1rem; border-bottom: 1px solid rgba(26, 43, 91, 0.12); position: relative; transition: background 0.35s ease; }
+.competency:not(:nth-child(3n)) { border-right: 1px solid rgba(26, 43, 91, 0.12); }
+.competency:hover { background: rgba(244, 196, 176, 0.13); }
+.competency-num { display: block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; color: #9A5A3F; margin-bottom: 0.7rem; }
+.competency h3 { font-size: 1.2rem; font-weight: 700; color: var(--navy); margin: 0 0 0.55rem; }
+.competency p { font-size: 0.95rem; line-height: 1.65; color: var(--text-light); margin: 0; }
+.competencies-cta { text-align: center; margin-top: 3rem; }
+.competencies-cta p { color: var(--text-light); font-weight: 500; font-size: 1.05rem; margin: 0 0 1.25rem; }
+@media (max-width: 900px) {
+    .competencies-grid { grid-template-columns: repeat(2, 1fr); }
+    .competency:not(:nth-child(3n)) { border-right: 0; }
+    .competency:nth-child(odd) { border-right: 1px solid rgba(26, 43, 91, 0.12); }
+}
+@media (max-width: 600px) {
+    .competencies-grid { grid-template-columns: 1fr; }
+    .competency:nth-child(odd) { border-right: 0; }
+    .competency { padding: 1.6rem 0.25rem; }
+}
+@media (prefers-reduced-motion: reduce) { .competency { transition: none; } }
