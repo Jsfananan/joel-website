@@ -56,7 +56,7 @@ Ongoing month-to-month work for leaders who want someone in it with them rather 
 - **Level Two:** 5 hours of meetings and 10 hours of async work per month, plus unlimited email.
 
 Hours reset monthly and nothing carries forward. Builds are scoped and quoted separately so they never consume the engagement. Pricing is discussed on the diagnostic call.
-URL: https://jsalinas.org/services/engagement.html
+URL: https://jsalinas.org/services/fractional-caio.html
 
 ### AI builds
 Custom AI systems built for the client, scoped and quoted per project on the call. Recent examples: a private content repurposer for a health organization's marketing team that cut production time from hours to minutes, a 2nd Brain System for a content creator, and a pitch prototype for a serial entrepreneur that was investor-ready in two weeks. The client owns everything that ships, with no ongoing subscription or vendor dependency.

@@ -39,7 +39,8 @@
 ## Structure
 - `index.html` — homepage. Services section is now two cards: the diagnostic call, and what happens next.
 - `call/index.html` — **the conversion page.** Hero CTA, sticky mobile bar, embedded scheduler.
-- `services/engagement.html` — the only live page in `services/`. Everything else there is a 301 stub.
+- `services/fractional-caio.html` — **the canonical engagement page** (moved back 2026-10-01 to recover the Google rankings it held at ~position 9.5 before the 2026-07-11 cleanup turned it into a stub). Everything else in `services/` is a redirect stub.
+- `services/engagement.html` — **an identical MIRROR, kept live so old links never break (Joel, 2026-10-01).** Its canonical points at `fractional-caio.html`. ⚠ **Edit both files in the same change, or `cp services/fractional-caio.html services/engagement.html` after editing.** All internal links, the sitemap and llms.txt point at `fractional-caio.html`.
 - `articles/` — 24 SEO articles, ~68,000 words. All CTAs route to `/call`. This is the acquisition engine.
 - `about.html`, `faq.html`, `toolkit/`, `claude-guide/`, `sponsor.html`
 - SEO: `sitemap.xml`, `robots.txt`, `llms.txt` (rewritten 2026-08-19 — it feeds AI answer engines, keep it current)
