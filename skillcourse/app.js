@@ -742,6 +742,34 @@
   $('btn-menu').addEventListener('click', function () { var o = document.body.classList.toggle('nav-open'); this.setAttribute('aria-expanded', o ? 'true' : 'false'); });
   $('scrim').addEventListener('click', function () { document.body.classList.remove('nav-open'); $('btn-menu').setAttribute('aria-expanded', 'false'); });
 
+  /* ---------- coming soon gate ---------- */
+  function soonScreen() {
+    var host = $('soon'); host.hidden = false; $('app').hidden = true; document.body.classList.add('soon-on');
+    host.innerHTML = '<svg class="soon-circ" id="soon-circ" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>' +
+      '<div class="soon-in"><img class="soon-logo" alt="Leadership in Change" src="' + (window.LOGO_B64 || '') + '">' +
+      '<p class="soon-kick">Coming November 5</p>' +
+      '<h1>The Leader&rsquo;s <em>AI Skills</em> Course</h1>' +
+      '<p class="soon-stats"><b>25</b> skills <i></i><b>6</b> modules <i></i><b>1</b> Capstone <i></i><b>1</b> Certificate of Completion</p>' +
+      '<div class="soon-count" id="soon-count" aria-live="off"></div>' +
+      '<div class="soon-only"><span>Only on</span><img alt="Leadership in Change" src="' + (window.LOGO_B64 || '') + '"><b>Premium</b></div>' +
+      '<p class="soon-lead">Make sure you&rsquo;re a Premium subscriber before it opens. The Course and all 25 skills live in Leadership in Change Premium.</p>' +
+      '<div class="soon-cta"><a class="btn primary big" href="' + C.subscribeUrl + '" target="_blank" rel="noopener">Subscribe to Premium</a></div>' +
+      '<p class="soon-member">Already a Premium member? You&rsquo;re all set. The Course opens right here on November 5.</p>' +
+      '<p class="soon-tools">Works in Claude, ChatGPT and Gemini</p>' +
+      '<div class="soon-shot"><img src="soon-map.jpg" alt="A preview of the Course map inside the app" loading="lazy"></div></div>';
+    buildCircuits($('soon-circ'));
+    var end = new Date(C.launchAt).getTime(), box = $('soon-count');
+    function tick() {
+      var ms = end - Date.now(); if (ms <= 0) { location.reload(); return; }
+      var d = Math.floor(ms / 864e5), h = Math.floor(ms / 36e5) % 24, m = Math.floor(ms / 6e4) % 60, sec = Math.floor(ms / 1e3) % 60;
+      box.innerHTML = [[d, 'days'], [h, 'hours'], [m, 'minutes'], [sec, 'seconds']].map(function (x) { return '<div><b>' + String(x[0]).padStart(2, '0') + '</b><span>' + x[1] + '</span></div>'; }).join('');
+      box.setAttribute('aria-label', d + ' days, ' + h + ' hours until the Course opens');
+    }
+    tick(); setInterval(tick, 1000);
+  }
+  var preview = false; try { preview = /[?&]preview\b/.test(location.search); } catch (e) {}
+  if (!preview && C.launchAt && Date.now() < new Date(C.launchAt).getTime()) { soonScreen(); return; }
+
   /* ---------- init ---------- */
   $('logo').src = window.LOGO_B64 || '';
   afterChange();

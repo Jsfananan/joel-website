@@ -41,6 +41,10 @@
     name: "The Leader's AI Skills Course",
     org: 'Leadership in Change',
     libraryUrl: 'https://leadershipinchange.com/p/skill-library',
+    /* The Course opens on its own at this moment. Before it, visitors see the Coming Nov 5 screen.
+       Joel can preview the full Course any time with ?preview at the end of the URL. */
+    launchAt: '2026-11-05T05:00:00Z',
+    subscribeUrl: 'https://leadershipinchange.com/subscribe',
     installUrl: 'https://jsalinas.org/claude-guide/#install',
 
     hero: {
