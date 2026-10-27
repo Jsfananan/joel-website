@@ -63,6 +63,7 @@
     },
 
     stepsCopy: {
+    backLine: 'Each skill opens in your Premium library in a new tab. Copy the skill block, then come back here to run it.',
       why: 'Why this section',
       pick: 'Pick your skill',
       run: 'Run it on real work this week',

@@ -398,7 +398,7 @@
     card.appendChild(el('div', { class: 'gwrap', html: glyph(skill.id) }));
     var pick = el('button', { class: 'pick', type: 'button', id: 'pick-' + scope + '-' + skill.id, 'aria-pressed': isOn ? 'true' : 'false', text: skill.name });
     pick.addEventListener('click', function () { onToggle(skill.id); });
-    var open = el('a', { class: 'open', href: skill.url, target: '_blank', rel: 'noopener', text: 'Open skill', 'aria-label': 'Open ' + skill.name + ' in the library' });
+    var open = el('a', { class: 'open', href: skill.url, target: '_blank', rel: 'noopener', text: 'Open the skill in your library (Premium) \u2197', 'aria-label': 'Open ' + skill.name + ' in your Premium library, in a new tab' });
     var tick = el('span', { class: 'tick' }, [el('i'), el('span', { text: isOn ? 'Picked' : 'Pick' })]);
     card.appendChild(pick); if (skill.does) { var dp = el('p', { class: 'does' }, [el('b', { text: 'Use it when: ' })]); dp.appendChild(document.createTextNode(skill.does)); card.appendChild(dp); } card.appendChild(el('div', { class: 'row' }, [tick, open]));
     card.addEventListener('pointermove', function (e) { var r = card.getBoundingClientRect(); card.style.setProperty('--mx', (e.clientX - r.left) + 'px'); card.style.setProperty('--my', (e.clientY - r.top) + 'px'); });
@@ -414,8 +414,8 @@
     ta.addEventListener('input', function () { onInput(ta.value); paint(); touch(false); });
     paint(); return el('label', { class: 'f', 'for': id }, [el('span', { text: label }), ta, cnt]);
   }
-  function pickedLine(ids, prefix) {
-    var w = el('div', { class: 'picked' }, [el('p', { class: 'eyebrow', text: prefix })]), pc = el('div', { class: 'pickchips big' }); ids.forEach(function (id) { var sk = skillById(id); pc.appendChild(el('a', { href: sk.url, target: '_blank', rel: 'noopener', html: '<span class="gw">' + glyph(sk.id) + '</span>' + sk.name + ' <span aria-hidden="true">\u2197</span>' })); }); w.appendChild(pc); return w;
+  function pickedLine(ids, prefix, note) {
+    var w = el('div', { class: 'picked' }, [el('p', { class: 'eyebrow', text: prefix })]), pc = el('div', { class: 'pickchips big' }); ids.forEach(function (id) { var sk = skillById(id); pc.appendChild(el('a', { href: sk.url, target: '_blank', rel: 'noopener', html: '<span class="gw">' + glyph(sk.id) + '</span>' + sk.name + ' <span aria-hidden="true">\u2197</span>' })); }); w.appendChild(pc); if (note) w.appendChild(el('p', { class: 'hint backline', text: note })); return w;
   }
   function skipBtn(label, fn) { var b = el('button', { class: 'btn ghost', type: 'button', text: label }); b.addEventListener('click', fn); return b; }
 
@@ -574,7 +574,7 @@
       { label: 'Run it', done: function () { return !!M(m.id).run; }, body: function (st) {
         st.appendChild(el('h2', { text: C.stepsCopy.run })); st.appendChild(el('p', { class: 'read', text: C.stepsCopy.runBody }));
         var picks = M(m.id).picks;
-        if (picks.length) st.appendChild(pickedLine(picks, 'Your picks: ')); else st.appendChild(el('p', { class: 'hint', text: 'Pick a skill in step 2 first, then open it here.' }));
+        if (picks.length) st.appendChild(pickedLine(picks, 'Your picks: ', C.stepsCopy.backLine)); else st.appendChild(el('p', { class: 'hint', text: 'Pick a skill in step 2 first, then open it here.' }));
         var ih = el('p', { class: 'hint' }); var ib = el('button', { class: 'linkbtn', type: 'button', text: 'Need to install it first? Open the install walkthrough' }); ib.addEventListener('click', function () { goTo('install', 0); }); ih.appendChild(ib); st.appendChild(ih);
         st.appendChild(checkRow('run-' + m.id, C.stepsCopy.runCheck, M(m.id).run, function (v) { M(m.id).run = v; touch(true); }));
       } },
@@ -609,7 +609,7 @@
       } },
       { label: 'Run them', done: function () { return !!S.cap.ran; }, body: function (st) {
         st.appendChild(el('h2', { text: 'Run them in the same week' })); st.appendChild(el('p', { class: 'read', text: 'Use real work for each one. Keep the outputs next to each other so you can compare them in the log.' }));
-        if (S.cap.picks.length) st.appendChild(pickedLine(S.cap.picks, 'Your picks: '));
+        if (S.cap.picks.length) st.appendChild(pickedLine(S.cap.picks, 'Your picks: ', C.stepsCopy.backLine));
         st.appendChild(checkRow('cap-ran', 'I ran them on real work in the same week.', S.cap.ran, function (v) { S.cap.ran = v; touch(true); }));
       } },
       { label: 'Judgment log', done: function () { return capSteps()[3]; }, body: function (st) {
