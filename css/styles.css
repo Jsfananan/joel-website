@@ -6205,3 +6205,38 @@ img.service-overview-icon {
 .competencies-cta { text-align: center; margin-top: clamp(2.5rem, 5vw, 3.25rem); }
 .competencies-cta p { color: var(--text-light); font-size: 1.02rem; margin: 0 0 1.25rem; }
 @media (max-width: 860px) { .pillars { grid-template-columns: 1fr; gap: 2.25rem; } }
+
+/* ===========================================
+   Homepage motion pass (body.home-motion): framed hero, floating nav pill,
+   slower section reveals. Reduced-motion rules above still win.
+   =========================================== */
+.home-motion .hero--navy {
+    margin: 12px 16px 0;
+    border-radius: 32px;
+}
+
+.home-motion .fade-in-on-scroll {
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (min-width: 901px) {
+    .home-motion .header {
+        top: 12px;
+        left: 16px;
+        right: 16px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.88);
+        -webkit-backdrop-filter: blur(14px);
+        backdrop-filter: blur(14px);
+        box-shadow: 0 8px 30px rgba(18, 29, 62, 0.14);
+        overflow: hidden;
+    }
+    .home-motion .header-accent { display: none; }
+    .home-motion .header-container { padding: 0.75rem 1.75rem; }
+    .home-motion .header-subscribe-btn { box-shadow: 0 6px 16px rgba(26, 43, 91, 0.22); }
+}
+
+@media (max-width: 900px) {
+    .home-motion .hero--navy { margin: 8px 10px 0; border-radius: 22px; }
+}
