@@ -35,7 +35,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="/call/reel.css">
+    <link rel="preload" as="image" href="/call/call-motion-poster.jpg">
 
     <style>
     /* ============ /call scoped page system ============ */
@@ -80,6 +80,13 @@
     .c-hero .c-hero-proof{margin:var(--s4) 0 0;padding-left:1rem;border-left:2px solid rgba(244,196,176,.5);font-size:.95rem;line-height:1.55;color:rgba(255,255,255,.75);max-width:52ch;font-style:italic}
     .c-hero .c-hero-proof span{display:block;font-style:normal;font-weight:600;color:rgba(255,255,255,.6);font-size:.82rem;margin-top:.3rem}
     @media(max-width:980px){.c-hero-grid{grid-template-columns:1fr}.c-reel{margin:var(--s2) 0 0}}
+    .c-motion{position:relative;margin:0;border-radius:14px;overflow:hidden;border:1px solid rgba(244,196,176,.24);box-shadow:0 2px 6px rgba(0,0,0,.18),0 30px 64px rgba(0,0,0,.34);background:#FDF5F0;aspect-ratio:16/9}
+    .c-motion-v{display:block;width:100%;height:100%;object-fit:cover}
+    .c-motion-btn{position:absolute;right:10px;bottom:10px;width:34px;height:34px;border-radius:50%;border:0;background:rgba(26,43,91,.55);cursor:pointer;opacity:0;transition:opacity .2s}
+    .c-motion:hover .c-motion-btn,.c-motion-btn:focus-visible,.c-motion.paused .c-motion-btn{opacity:1}
+    .c-motion-btn span{display:block;margin:auto;width:10px;height:12px;border-left:3px solid #fff;border-right:3px solid #fff}
+    .c-motion.paused .c-motion-btn span{width:0;height:0;border:0;border-left:11px solid #fff;border-top:7px solid transparent;border-bottom:7px solid transparent;margin-left:13px}
+    @media(max-width:980px){.c-motion{margin-top:var(--s2)}}
     .c-hero .c-eyebrow{color:var(--peach);margin-bottom:var(--s2)}
     .c-hero .c-rule{width:64px;height:3px;background:var(--peach);margin:0 0 var(--s4);border-radius:2px;
       transform-origin:left;animation:ruleIn 1s var(--ease) both .1s}
@@ -355,34 +362,10 @@
                 </div>
                 <p class="c-hero-proof">&ldquo;I didn't know where to start with AI. Now we've completed 3 big customized builds, saving me personally 10 hours per week.&rdquo; <span>Nathan, CEO</span></p>
                 </div>
-                <div class="c-reel" aria-label="What the diagnostic call gives you">
-                    <div class="c-reel-top"><span class="c-reel-label">Your 30 minutes</span><span class="c-reel-clock">Free</span></div>
-                    <div class="c-reel-bar" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-                    <ol class="c-reel-stage">
-                        <li class="c-reel-slide">
-                            <svg class="c-reel-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="26" r="16"/><path d="M24 17v9l6 4M19 5h10"/></svg>
-                            <span class="c-reel-n">01</span>
-                            <p class="c-reel-line">Free. 30 minutes. You pick the time.</p>
-                        </li>
-                        <li class="c-reel-slide">
-                            <svg class="c-reel-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="24" cy="24" r="17"/><circle cx="24" cy="24" r="10"/><circle cx="24" cy="24" r="3" fill="currentColor"/></svg>
-                            <span class="c-reel-n">02</span>
-                            <p class="c-reel-line">We work out what you're actually trying to get to.</p>
-                            <p class="c-reel-sub">Your biggest hurdles, and your low-hanging fruit.</p>
-                        </li>
-                        <li class="c-reel-slide">
-                            <svg class="c-reel-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 24h28M28 14l10 10-10 10"/></svg>
-                            <span class="c-reel-n">03</span>
-                            <p class="c-reel-line">I tell you the first move I'd make.</p>
-                        </li>
-                        <li class="c-reel-slide">
-                            <svg class="c-reel-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 5h16l8 8v30H13z"/><path d="M29 5v8h8M19 23h12M19 30h12M19 37h7"/></svg>
-                            <span class="c-reel-n">04</span>
-                            <p class="c-reel-line">Afterward, an outline for your biggest pain points.</p>
-                            <p class="c-reel-sub">Nothing gets decided on the call. You decide on your own time.</p>
-                        </li>
-                    </ol>
-                </div>
+                <figure class="c-motion">
+                    <video class="c-motion-v" src="/call/call-motion.mp4" poster="/call/call-motion-poster.jpg" width="1200" height="675" muted playsinline preload="metadata" aria-label="What the free diagnostic call gives you: you pick a time, we work out where you're trying to get to, I tell you the first move I'd make, and afterward you get an outline for your biggest pain points."></video>
+                    <button class="c-motion-btn" type="button" aria-label="Pause animation"><span aria-hidden="true"></span></button>
+                </figure>
             </div>
         </section>
 
@@ -570,6 +553,13 @@
         });
       })();
     </script>
-<script>(function(){var r=document.querySelector('.c-reel');if(!r)return;setTimeout(function(){r.classList.add('done')},42000);})();</script>
+<script>(function(){var f=document.querySelector('.c-motion');if(!f)return;var v=f.querySelector('video'),b=f.querySelector('button'),n=0,MAX=3;
+function set(p){f.classList.toggle('paused',p);b.setAttribute('aria-label',p?'Play animation':'Pause animation');}
+function play(){var q=v.play();if(q&&q.catch)q.catch(function(){set(true);});set(false);}
+v.addEventListener('ended',function(){n++;if(n<MAX){v.currentTime=0;play();}else{set(true);}});
+b.addEventListener('click',function(){if(v.paused){if(v.ended){n=0;v.currentTime=0;}play();}else{v.pause();set(true);}});
+if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){set(true);return;}
+if('IntersectionObserver'in window){var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting&&n<MAX&&!f.dataset.user){play();}else if(!x.isIntersecting&&!v.paused){v.pause();}});},{threshold:.4});io.observe(f);b.addEventListener('click',function(){f.dataset.user=v.paused?'paused':'';});}else{play();}
+})();</script>
 </body>
 </html>
