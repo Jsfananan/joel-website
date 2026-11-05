@@ -69,6 +69,17 @@ h1{font-family:var(--display);color:var(--navy);font-weight:800;font-size:clamp(
 .bub.in:hover{transform:translate(-50%,-50%) scale(1.07)}
 .bub.out{opacity:0;transform:translate(-50%,-50%) scale(.6)}
 
+/* mini map: the bubble field shrinks into a corner while a topic is open */
+#field.fly{position:fixed;margin:0;z-index:30;transform-origin:0 0;transition:transform .6s var(--ease),background .4s,box-shadow .4s,border-radius .4s;border-radius:40px}
+#field.mini{background:rgba(255,255,255,.92);box-shadow:0 18px 60px rgba(27,42,74,.22);border-radius:70px;cursor:pointer}
+#field.mini .bub{pointer-events:none;box-shadow:none}
+#field.mini .bub .f{animation:none}
+#field.mini.hasOn .bub:not(.on){opacity:.32}
+#field.mini:hover{box-shadow:0 18px 60px rgba(27,42,74,.3),0 0 0 14px rgba(60,158,231,.45)}
+#field .grow{position:absolute;right:28px;top:28px;width:96px;height:96px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s;pointer-events:none}
+#field .grow svg{width:52px;height:52px}
+#field.mini .grow{opacity:1}
+
 .alt{margin-top:22px;display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--navy);font-size:15px;padding:12px 20px;border-radius:999px;border:1.5px solid var(--line);background:rgba(255,255,255,.65);transition:background .2s,border-color .2s}
 .alt:hover{background:#fff;border-color:var(--electric)}
 .alt b{color:var(--terra)}
@@ -124,6 +135,7 @@ body.inside .dot{transform:scale(1)}
   .inner{padding-left:4px}
   .rh .date{width:44px}
   .dot{display:none}
+  #topic{padding-bottom:170px}
   .bub .n{font-size:11px}
 }
 @media (prefers-reduced-motion:reduce){
@@ -148,7 +160,7 @@ body.inside .dot{transform:scale(1)}
 </main>
 
 <section id="topic" aria-live="polite">
-  <div class="thead"><div class="dot" id="tdot"></div><div><h2 id="ttitle"></h2><p id="tsub"></p></div></div>
+  <div class="thead"><div><h2 id="ttitle"></h2><p id="tsub"></p></div></div>
   <ul class="list" id="list"></ul>
   <div class="end" id="end">
     <h3>Want 2027 as it happens?</h3>
@@ -236,7 +248,6 @@ function renderTopic(key){
   }
   document.getElementById('ttitle').textContent=title;
   document.getElementById('tsub').textContent=sub;
-  document.getElementById('tdot').className='dot '+color;
   const showCat=key==='top-10';
   list.innerHTML=items.map(s=>{
     const img=IMAGES[s.id]?`<img src="${esc(IMAGES[s.id])}" alt="" loading="lazy">`:'';
@@ -260,22 +271,72 @@ function renderTopic(key){
   return true;
 }
 
+/* mini map: FLIP the field out of the home layout into a fixed corner card, and back */
+const ph=document.createElement('div');ph.id='fieldph';
+let mini=false,flyRect=null;
+const growIcon='<span class="grow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>';
+function cornerT(r){
+  const m=innerWidth<600, w=m?100:210, sc=w/r.width, h=r.height*sc, pad=m?14:20;
+  const x=innerWidth-pad-w, y=m?innerHeight-pad-h:pad;
+  return `translate(${x-r.left}px,${y-r.top}px) scale(${sc})`;
+}
+function toMini(animate){
+  if(!mini){
+    const r=field.getBoundingClientRect();flyRect=r;
+    ph.style.height=r.height+'px';ph.style.width=r.width+'px';ph.style.margin='24px auto 0';
+    field.parentNode.insertBefore(ph,field);document.body.appendChild(field);
+    if(!field.querySelector('.grow'))field.insertAdjacentHTML('beforeend',growIcon);
+    Object.assign(field.style,{left:r.left+'px',top:r.top+'px',width:r.width+'px',transform:'none'});
+    field.classList.add('fly');
+    if(!animate)field.style.transition='none';
+    field.getBoundingClientRect();
+    mini=true;
+  }
+  field.classList.add('mini');
+  field.style.transform=cornerT(flyRect);
+  if(!animate){field.getBoundingClientRect();field.style.transition=''}
+  field.setAttribute('role','button');field.setAttribute('tabindex','0');field.setAttribute('aria-label','Show all topics');
+}
+function fromMini(){
+  if(!mini)return;
+  mini=false;
+  const r=ph.getBoundingClientRect();
+  field.style.transition='none';
+  const cur=cornerT(flyRect);
+  Object.assign(field.style,{left:r.left+'px',top:r.top+'px'});
+  flyRect=r;field.style.transform=cornerT(r);
+  field.getBoundingClientRect();
+  field.style.transition='';field.classList.remove('mini','hasOn');
+  field.style.transform='none';
+  field.removeAttribute('role');field.removeAttribute('tabindex');field.removeAttribute('aria-label');
+  const done=()=>{if(mini)return;field.classList.remove('fly');field.removeAttribute('style');ph.replaceWith(field);
+    field.style.height=ph.style.height;if(field.clientWidth!==Math.round(r.width))drawField(false)};
+  matchMedia('(prefers-reduced-motion:reduce)').matches?done():setTimeout(done,620);
+}
+field.addEventListener('click',e=>{if(mini&&!e.target.closest('.bub'))home()});
+field.addEventListener('keydown',e=>{if(mini&&(e.key==='Enter'||e.key===' ')){e.preventDefault();home()}});
+
 /* routing: #topic-slug, so a topic view can be shared and the back button works */
 let current='';
 function go(key){if(location.hash!=='#'+key)location.hash=key;else show()}
 function home(){if(location.hash)history.pushState(null,'',location.pathname+location.search);show()}
-function show(){
+function show(first){
   const key=location.hash.slice(1);
   if(key&&renderTopic(key)){
     if(current!==key)track('open_topic',{topic:key});
     current=key;
-    bubs.forEach(b=>b.classList.add('out'));
-    document.body.classList.add('inside');
+    const c=CATS.find(c=>c.slug===key);
+    bubs.forEach((b,i)=>b.classList.toggle('on',!!c&&CATS[i]===c));
+    field.classList.toggle('hasOn',!!c);
     window.scrollTo(0,0);
+    toMini(!first);
+    document.body.classList.add('inside');
   }else{
     current='';
+    window.scrollTo(0,0);
     document.body.classList.remove('inside');
-    bubs.forEach(b=>{b.classList.remove('out');b.classList.add('in')});
+    fromMini();
+    bubs.forEach(b=>{b.classList.remove('on');b.classList.add('in')});
   }
 }
 document.getElementById('back').addEventListener('click',home);
@@ -283,9 +344,9 @@ document.getElementById('top10').addEventListener('click',()=>go('top-10'));
 window.addEventListener('hashchange',show);
 window.addEventListener('popstate',show);
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&current)home()});
-let rt,lw=innerWidth;window.addEventListener('resize',()=>{if(innerWidth===lw)return;lw=innerWidth;clearTimeout(rt);rt=setTimeout(()=>drawField(false),150)});
+let rt,lw=innerWidth;window.addEventListener('resize',()=>{if(innerWidth===lw)return;lw=innerWidth;clearTimeout(rt);rt=setTimeout(()=>{if(mini)field.style.transform=cornerT(flyRect);else drawField(false)},150)});
 drawField(!location.hash);
-show();
+show(true);
 </script>
 </body>
 </html>
