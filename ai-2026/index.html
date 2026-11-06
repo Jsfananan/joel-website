@@ -89,40 +89,92 @@ h1{font-family:var(--display);color:var(--navy);font-weight:800;font-size:clamp(
 .by a{color:var(--navy);font-weight:600;text-decoration:none}
 
 /* topic view */
-#topic{max-width:720px;margin:0 auto;padding:92px 16px 60px;display:none}
+#topic{max-width:940px;margin:0 auto;padding:92px 20px 60px;display:none;--k:#1B2A4A}
 body.inside #topic{display:block}
-.thead{display:flex;align-items:center;gap:16px;margin-bottom:20px}
-.dot{flex:none;width:52px;height:52px;border-radius:50%;transform:scale(0);transition:transform .5s var(--ease)}
-body.inside .dot{transform:scale(1)}
-.thead h2{font-family:var(--display);color:var(--navy);font-size:clamp(28px,4.5vw,40px);line-height:1.05;margin:0;font-weight:800}
-.thead p{margin:4px 0 0;color:var(--muted);font-size:15px}
-.list{list-style:none;margin:0;padding:0}
-.row{border-top:1px solid var(--line);opacity:0;transform:translateY(12px);transition:opacity .45s var(--ease),transform .45s var(--ease)}
-.row:last-child{border-bottom:1px solid var(--line)}
-.row.in{opacity:1;transform:none}
-.rh{width:100%;display:flex;align-items:flex-start;gap:14px;padding:18px 4px;text-align:left}
-.rh .date{flex:none;width:52px;font-size:12px;font-weight:700;color:var(--terra);letter-spacing:.06em;text-transform:uppercase;padding-top:4px}
-.rh .t{flex:1;font-family:var(--display);font-weight:700;color:var(--navy);font-size:clamp(17px,2.2vw,20px);line-height:1.3}
-.rh .cat{display:block;font-family:var(--body);font-weight:500;font-size:12px;color:var(--muted);margin-top:4px}
-.pl{flex:none;width:28px;height:28px;border-radius:50%;border:1.5px solid var(--line);position:relative;margin-top:1px;transition:transform .3s var(--ease),background .2s,border-color .2s}
-.pl:before,.pl:after{content:'';position:absolute;left:50%;top:50%;width:11px;height:1.5px;background:var(--navy);transform:translate(-50%,-50%)}
-.pl:after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .3s var(--ease)}
-.rh:hover .pl{border-color:var(--electric)}
-.row.open .pl{transform:rotate(180deg);background:var(--navy);border-color:var(--navy)}
-.row.open .pl:before,.row.open .pl:after{background:#fff}
-.row.open .pl:after{transform:translate(-50%,-50%) rotate(0)}
-.body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s var(--ease)}
-.row.open .body{grid-template-rows:1fr}
-.body>div{overflow:hidden}
-.inner{padding:0 4px 22px 66px}
-.inner img{width:100%;max-height:260px;object-fit:cover;border-radius:12px;display:block;margin-bottom:14px}
-.inner p{margin:0 0 12px;font-size:16px;color:#3a2a22}
-.inner .why{background:#fff;border-left:3px solid var(--electric);padding:12px 14px;border-radius:0 10px 10px 0;font-size:15px}
-.inner .why b{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--link);margin-bottom:3px}
-.src{font-size:14px;margin-top:4px}
-.src a{font-weight:600}
+.thead{max-width:620px;margin-bottom:6px}
+.thead h2{font-family:var(--display);color:var(--navy);font-size:clamp(30px,4.8vw,44px);line-height:1.05;margin:0;font-weight:800}
+.thead p{margin:6px 0 0;color:var(--muted);font-size:15px}
 
-.end{margin-top:40px;padding:28px 24px;border-radius:18px;background:var(--navy);color:#fff;text-align:center;opacity:0;transform:translateY(12px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+/* the year strip: every story in this topic on one line, Jan to Dec */
+.year{position:relative;margin:18px 0 26px;opacity:0;transition:opacity .5s var(--ease)}
+.year.in{opacity:1}
+.year .axis{position:absolute;left:0;right:0;height:2px;background:rgba(27,42,74,.14);border-radius:2px}
+.year .fill{position:absolute;left:0;height:2px;width:0;background:var(--k);border-radius:2px;transition:width 1.1s var(--ease)}
+.year .m{position:absolute;font-size:11px;font-weight:600;color:var(--muted);padding-left:3px;letter-spacing:.04em}
+.year .tk{position:absolute;width:1.5px;height:10px;background:rgba(27,42,74,.2)}
+.year .pt{position:absolute;width:14px;height:14px;border-radius:50%;background:var(--pk,var(--k));box-shadow:0 0 0 3px var(--cream);transform:translate(-50%,-50%) scale(0);transition:transform .45s var(--ease)}
+.year.in .pt{transform:translate(-50%,-50%) scale(1)}
+.year .pt:hover,.year .pt:focus-visible{transform:translate(-50%,-50%) scale(1.45);outline:none}
+.year .tip{position:absolute;bottom:calc(100% + 6px);background:var(--navy);color:#fff;font-size:13px;line-height:1.35;padding:8px 12px;border-radius:10px;width:max-content;max-width:260px;pointer-events:none;opacity:0;transition:opacity .2s;z-index:3}
+.year .tip b{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.7}
+.year .tip.on{opacity:1}
+
+/* cards */
+.grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.card{opacity:0;transform:translateY(18px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.card.in{opacity:1;transform:none}
+.card.lead{grid-column:1/-1}
+.cb{width:100%;height:100%;text-align:left;background:#fff;border-radius:18px;padding:22px 24px 18px 28px;display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden;
+  box-shadow:0 1px 2px rgba(27,42,74,.06),0 8px 24px rgba(27,42,74,.07);transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.cb:before{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--ck,var(--k))}
+.cb:hover,.cb:focus-visible{transform:translateY(-4px);box-shadow:0 2px 4px rgba(27,42,74,.06),0 20px 44px rgba(27,42,74,.15);outline:none}
+.cb .meta{display:flex;align-items:center;flex-wrap:wrap;gap:8px 10px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--terra)}
+.cb .chip{color:var(--muted);font-weight:600;letter-spacing:.02em;text-transform:none;font-size:12.5px}
+.cb .flag{background:var(--ck,var(--k));color:#fff;border-radius:999px;padding:3px 10px;font-size:10.5px;letter-spacing:.1em}
+.cb .rk{position:absolute;right:18px;top:4px;font-family:var(--display);font-weight:800;font-size:68px;line-height:1;color:rgba(27,42,74,.07);pointer-events:none}
+.cb .t{font-family:var(--display);font-weight:700;color:var(--navy);font-size:19px;line-height:1.28;padding-right:34px}
+.lead .cb{padding:28px 32px 22px 36px}
+.lead .cb .t{font-size:clamp(23px,3vw,31px);line-height:1.18;max-width:760px}
+.cb .tease{font-size:14.5px;color:#5a4a42;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin:0}
+.lead .cb .tease{font-size:16px;-webkit-line-clamp:4;max-width:760px}
+.cb .more{margin-top:auto;padding-top:4px;font-size:14px;font-weight:600;color:var(--link);display:flex;align-items:center;gap:6px}
+.cb .more i{font-style:normal;transition:transform .25s var(--ease)}
+.cb:hover .more i{transform:translateX(4px)}
+.cb img{width:calc(100% + 52px);margin:-22px -24px 4px -28px;height:170px;object-fit:cover;display:block}
+
+/* story reader: the card opens into a sheet you can page through */
+#reader{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;padding:24px}
+#reader.open{display:flex}
+.scrim{position:absolute;inset:0;background:rgba(27,42,74,.42);opacity:0;transition:opacity .4s var(--ease);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+#reader.show .scrim{opacity:1}
+.sheet{position:relative;width:min(680px,100%);max-height:min(88vh,820px);background:var(--cream);border-radius:22px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 30px 90px rgba(27,42,74,.38);--k:#1B2A4A}
+.sheet>*{transition:opacity .25s}
+.sheet.hush>*{opacity:0}
+.sh{flex:none;display:flex;align-items:center;gap:12px;padding:14px 14px 14px 24px;background:var(--k);color:#fff}
+.sh .tn{font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.sh .pg{margin-left:auto;font-size:13px;opacity:.8;font-variant-numeric:tabular-nums}
+.sh .x{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;transition:background .2s}
+.sh .x:hover{background:rgba(255,255,255,.3)}
+.sh .x:focus{outline:none}.sh .x:focus-visible{box-shadow:0 0 0 3px rgba(255,255,255,.6)}
+.sh .x svg{width:18px;height:18px}
+.bars{flex:none;display:flex;gap:5px;padding:12px 24px 0}
+.bars button{flex:1;height:4px;border-radius:3px;background:rgba(27,42,74,.13);transition:background .3s}
+.bars button.on{background:var(--k)}
+.bars button.seen{background:rgba(27,42,74,.32)}
+.sc{overflow:auto;padding:18px 28px 10px;overscroll-behavior:contain}
+.sc.from-r{animation:fromR .38s var(--ease)}
+.sc.from-l{animation:fromL .38s var(--ease)}
+@keyframes fromR{from{opacity:0;transform:translateX(36px)}}
+@keyframes fromL{from{opacity:0;transform:translateX(-36px)}}
+.sc .d{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--terra);margin:0 0 6px}
+.sc h3{font-family:var(--display);color:var(--navy);font-weight:800;font-size:clamp(23px,3.4vw,30px);line-height:1.16;margin:0 0 14px}
+.sc img{width:100%;max-height:260px;object-fit:cover;border-radius:12px;display:block;margin-bottom:16px}
+.sc p{margin:0 0 14px;font-size:16.5px;color:#3a2a22;line-height:1.6}
+.sc .why{background:#fff;border-left:4px solid var(--electric);padding:14px 16px;border-radius:0 12px 12px 0;font-size:16px}
+.sc .why b{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--link);margin-bottom:4px}
+.sc .src{font-size:14px;color:var(--muted)}
+.sc .src a{font-weight:600}
+.copy{font-size:13px;font-weight:600;color:var(--navy);border:1.5px solid var(--line);border-radius:999px;padding:7px 14px;margin:2px 0 6px;transition:border-color .2s,background .2s}
+.copy:hover{border-color:var(--electric);background:#fff}
+.sf{flex:none;display:flex;gap:10px;padding:14px 20px 18px;border-top:1px solid var(--line)}
+.sf button{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px;padding:10px 14px;border-radius:14px;background:#fff;box-shadow:0 1px 3px rgba(27,42,74,.08);text-align:left;transition:box-shadow .2s,transform .2s}
+.sf button:hover{box-shadow:0 6px 18px rgba(27,42,74,.14);transform:translateY(-1px)}
+.sf button[disabled]{visibility:hidden}
+.sf .nx{text-align:right}
+.sf small{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--terra)}
+.sf span{font-size:14px;font-weight:600;color:var(--navy);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+.end{margin:40px auto 0;max-width:620px;padding:28px 24px;border-radius:18px;background:var(--navy);color:#fff;text-align:center;opacity:0;transform:translateY(12px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
 .end.in{opacity:1;transform:none}
 .end h3{font-family:var(--display);font-size:22px;margin:0 0 6px}
 .end p{margin:0 0 16px;opacity:.8;font-size:15px}
@@ -130,13 +182,21 @@ body.inside .dot{transform:scale(1)}
 .end a.btn:hover{background:#b04a30}
 .next{display:block;margin:16px auto 0;color:#fff;opacity:.75;font-size:14px;text-decoration:underline;text-underline-offset:3px}
 
+@media (max-width:700px){
+  .grid{grid-template-columns:1fr;gap:12px}
+}
 @media (max-width:600px){
   .bar{padding:12px 14px}.bar img{height:24px}.back{left:14px}
-  .inner{padding-left:4px}
-  .rh .date{width:44px}
-  .dot{display:none}
-  #topic{padding-bottom:170px}
+  #topic{padding:84px 14px 170px}
   .bub .n{font-size:11px}
+  .lead .cb{padding:22px 22px 18px 26px}
+  .cb .rk{font-size:46px;right:12px}
+  .lead .cb .meta{padding-right:30px}
+  .year .m{font-size:10px;padding-left:2px}
+  #reader{padding:0;align-items:flex-end}
+  .sheet{width:100%;max-height:92vh;max-height:92svh;border-radius:22px 22px 0 0}
+  .sc{padding:16px 20px 8px}
+  .sf{padding:12px 14px calc(14px + env(safe-area-inset-bottom))}
 }
 @media (prefers-reduced-motion:reduce){
   *,*:before,*:after{animation:none!important;transition:none!important}
@@ -160,8 +220,9 @@ body.inside .dot{transform:scale(1)}
 </main>
 
 <section id="topic" aria-live="polite">
-  <div class="thead"><div><h2 id="ttitle"></h2><p id="tsub"></p></div></div>
-  <ul class="list" id="list"></ul>
+  <div class="thead"><h2 id="ttitle"></h2><p id="tsub"></p></div>
+  <div class="year" id="year" aria-label="When these stories happened"></div>
+  <ul class="grid" id="list"></ul>
   <div class="end" id="end">
     <h3>Want 2027 as it happens?</h3>
     <p>Twice a week, in plain English, so the call stays yours. Free.</p>
@@ -169,6 +230,17 @@ body.inside .dot{transform:scale(1)}
     <button class="next" id="nextTopic"></button>
   </div>
 </section>
+
+<div id="reader" role="dialog" aria-modal="true" aria-labelledby="rtitle">
+  <div class="scrim" id="scrim"></div>
+  <article class="sheet" id="sheet">
+    <header class="sh"><span class="tn" id="rtopic"></span><span class="pg" id="rpg"></span>
+      <button class="x" id="rclose" aria-label="Close story"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></header>
+    <div class="bars" id="rbars"></div>
+    <div class="sc" id="rsc"></div>
+    <footer class="sf"><button id="rprev"><small>&larr; Previous</small><span></span></button><button class="nx" id="rnext"><small>Next &rarr;</small><span></span></button></footer>
+  </article>
+</div>
 
 <script>
 const STORIES = [{"id": "H1-1", "title": "Character.AI and Google settle teen-harm lawsuits", "date": "2026-01-07", "category": "Law & Copyright", "score": 6, "what": "Character.AI, its founders, and Google agreed in principle to settle lawsuits from families whose teens died by suicide or were harmed after using Character.AI chatbots. Court filings show five cases across Florida, New York, Colorado and Texas, and the terms were not disclosed.", "why": "These were the first resolutions in the wave of lawsuits over chatbots and minors, a liability exposure for any company that deploys a customer-facing AI.", "sources": [{"name": "Axios", "url": "https://www.axios.com/2026/01/07/google-character-ai-lawsuits-teen-suicides"}, {"name": "CNN", "url": "https://www.cnn.com/2026/01/07/business/character-ai-google-settle-teen-suicide-lawsuit"}]}, {"id": "H1-2", "title": "ChatGPT Health and Claude for Healthcare launch", "date": "2026-01-07", "category": "Science & Health", "score": 6, "what": "OpenAI announced ChatGPT Health, a separate encrypted space where users connect medical records and wellness apps; Anthropic followed with Claude for Healthcare, aimed at providers and payers as well as patients (prior authorization, claims appeals, triage).", "why": "Health data is now flowing into general-purpose assistants; if you run a clinic, benefits program or nonprofit serving patients, staff and clients are already doing this.", "sources": [{"name": "OpenAI", "url": "https://openai.com/index/introducing-chatgpt-health/"}, {"name": "Anthropic", "url": "https://www.anthropic.com/news/healthcare-life-sciences"}]}, {"id": "H1-3", "title": "DOJ creates AI Litigation Task Force to challenge state AI laws", "date": "2026-01-09", "category": "Policy & Regulation", "score": 6, "what": "The Department of Justice announced an internal AI Litigation Task Force on January 9 to challenge state AI laws, as directed by the December 11, 2025 executive order \"Ensuring a National Policy Framework for Artificial Intelligence,\" which singled out a Colorado law. Commerce's list of \"onerous\" state laws, due March 11, had not been published as of late March.", "why": "It created real uncertainty about which state AI compliance duties will survive.", "sources": [{"name": "The White House", "url": "https://www.whitehouse.gov/presidential-actions/2025/12/eliminating-state-law-obstruction-of-national-artificial-intelligence-policy"}, {"name": "Baker Botts", "url": "https://www.bakerbotts.com/thought-leadership/publications/2026/january/ai-legal-watch---january"}]}, {"id": "M-cowork", "title": "Anthropic launches Claude Cowork, an AI coworker for office tasks", "date": "2026-01-12", "category": "Agents & Automation", "score": 8, "what": "Anthropic released Claude Cowork in January, letting Claude read, edit and create files in a folder you grant it, so non-programmers get the same agent approach developers had. In July it came to web and mobile, and its Microsoft 365 connector gained the ability to write to email, calendar and files.", "why": "It's the clearest example of AI doing multi-step office work for non-technical people, and once it can write into your mail and calendar, permissions become a policy question.", "sources": [{"url": "https://support.claude.com/en/articles/12138966-release-notes", "name": "Anthropic"}, {"url": "https://fortune.com/2026/01/13/anthropic-claude-cowork-ai-agent-file-managing-threaten-startups", "name": "Fortune"}]}, {"id": "H1-5", "title": "Grok sexualized-deepfake scandal draws regulators worldwide", "date": "2026-01-26", "category": "Safety, Security & Trust", "score": 7, "what": "After Grok's image tool was used to make sexualized images of women and minors, Indonesia and Malaysia blocked Grok, the UK's Ofcom and California's attorney general opened investigations, and on January 26 the European Commission opened a formal Digital Services Act probe. X had limited Grok's image replies to paying subscribers on January 9, though images could still be made elsewhere in the app.", "why": "Image tools built into a social platform produced fast, cross-border legal exposure; any brand using generative image features needs guardrails and a takedown plan.", "sources": [{"name": "The Verge", "url": "https://www.theverge.com/news/868239/x-grok-sexualized-deepfakes-eu-investigation"}, {"name": "California Attorney General", "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-sends-cease-and-desist-letter-xai-demands-it-halt-illegal"}]}, {"id": "H1-6", "title": "OpenClaw agent craze exposes tens of thousands of servers", "date": "2026-02-02", "category": "Safety, Security & Trust", "score": 6, "what": "The open-source personal AI agent OpenClaw went viral and security researchers found tens of thousands of internet-exposed instances (Censys counted about 21,639 as of Jan 31), plus a one-click remote-code-execution flaw (CVE-2026-25253) and a Moltbook (an AI-agent social network) database leak that Wiz reported exposed about 1.5 million API tokens and 35,000 email addresses.", "why": "It showed how fast a personal AI agent with access to email and files can be exposed and taken over, which makes \"shadow agents\" on staff laptops a real security risk.", "sources": [{"name": "Censys", "url": "https://censys.com/blog/openclaw-in-the-wild-mapping-the-public-exposure-of-a-viral-ai-assistant"}, {"name": "Wiz", "url": "https://www.wiz.io/blog/exposed-moltbook-database-reveals-millions-of-api-keys"}, {"name": "The Register", "url": "https://www.theregister.com/2026/02/02/openclaw_security_issues/"}]}, {"id": "H1-7", "title": "SpaceX acquires xAI, then goes public", "date": "2026-02-02", "category": "Money & Market Structure", "score": 5, "what": "Elon Musk's SpaceX acquired xAI in February, in a deal reported to value SpaceX at about $1 trillion and xAI at $250 billion. SpaceX began trading on Nasdaq as SPCX on June 12 after raising about $75 billion at $135 a share.", "why": "It ties a frontier AI lab to a public-market vehicle and shows where capital for AI infrastructure may come from.", "sources": [{"name": "CBS News", "url": "https://www.cbsnews.com/news/spacex-stock-price-ipo-spcx-initial-public-offering/"}, {"name": "TechCrunch", "url": "https://techcrunch.com/2026/05/20/the-spacex-ipo-filing-has-arrived/"}]}, {"id": "H1-8", "title": "Anthropic product launches trigger software and cybersecurity stock selloffs", "date": "2026-02-03", "category": "Money & Market Structure", "score": 8, "what": "After Anthropic released role-specific plug-ins for Cowork (legal, finance, sales, marketing and data), software and data-provider stocks fell sharply; Fortune's headline called it a \"trillion-dollar selloff,\" and Gartner replied that predictions of SaaS death were premature. On Feb 20, Claude Code Security's launch was followed by cybersecurity stock drops (JFrog down about 25% that day, per Globes).", "why": "Markets began treating a chatbot company's plug-in as a threat to whole software categories, so expect vendors to reprice, bundle or add AI fast.", "sources": [{"name": "Fortune", "url": "https://fortune.com/2026/02/06/anthropic-claude-opus-4-6-stock-selloff-new-upgrade"}, {"name": "CNN", "url": "https://www.cnn.com/2026/02/04/investing/us-stocks-anthropic-software"}, {"name": "Globes", "url": "https://en.globes.co.il/en/article-jfrog-tumbles-25-after-launch-of-claude-code-security-1001535714"}]}, {"id": "H1-9", "title": "Claude Opus 4.6 and GPT-5.3-Codex push coding agents forward", "date": "2026-02-05", "category": "Models & Capabilities", "score": 6, "what": "Anthropic released Claude Opus 4.6 on February 5, with a one-million-token context window in beta, \"agent teams\" in Claude Code as a research preview, and pricing of $5 and $25 per million tokens. OpenAI released GPT-5.3-Codex the same day.", "why": "The jump in agentic coding is what made \"describe it and it builds\" real for non-programmers and underpins the later model race.", "sources": [{"name": "Anthropic", "url": "https://www.anthropic.com/news/claude-opus-4-6"}, {"name": "OpenAI", "url": "https://openai.com/index/introducing-gpt-5-3-codex/"}]}, {"id": "H1-10", "title": "OpenAI starts testing ads in ChatGPT", "date": "2026-02-09", "category": "Consumer & Devices", "score": 7, "what": "OpenAI's page \"Testing ads in ChatGPT\" was first published Feb 9: ads appear at the bottom of answers for Free and Go users in the US; Plus, Pro, Business and Enterprise users do not see them. A March 26 update said early results showed \"no impact on consumer trust metrics,\" and a May 7 update planned expansion to the UK, Mexico, Brazil, Japan and South Korea.", "why": "The most-used AI assistant is becoming an ad platform, which changes how brands get discovered and how much to trust \"neutral\" answers.", "sources": [{"url": "https://openai.com/index/testing-ads-in-chatgpt", "name": "OpenAI"}]}, {"id": "H1-13", "title": "Anthropic accuses DeepSeek, Moonshot AI and MiniMax of mass distillation", "date": "2026-02-23", "category": "Safety, Security & Trust", "score": 6, "what": "Anthropic said three Chinese labs used about 24,000 fraudulent accounts for over 16 million exchanges with Claude to extract its capabilities (DeepSeek over 150,000 exchanges, Moonshot over 3.4 million, MiniMax over 13 million), and argued this undermines export controls and strips safeguards from the copies.", "why": "The model you use can be copied illicitly, and cheap copies may not carry the original's safety protections.", "sources": [{"url": "https://www.anthropic.com/news/detecting-and-preventing-distillation-attacks", "name": "Anthropic"}]}, {"id": "H1-14", "title": "Block cuts about 40% of staff and cites AI", "date": "2026-02-26", "category": "Jobs & the Workforce", "score": 7, "what": "Block (Square, Cash App) said it would cut more than 4,000 jobs, taking headcount from over 10,000 to just under 6,000, with US employees receiving 20 weeks of salary plus a week per year of service. Jack Dorsey said the company was not cutting because it was in trouble.", "why": "A profitable company cutting nearly half its workforce in AI's name is the pattern boards will be asked to copy, and the evidence on whether it works is still thin.", "sources": [{"name": "CNBC", "url": "https://www.cnbc.com/2026/02/26/block-laying-off-about-4000-employees-nearly-half-of-its-workforce.html"}]}, {"id": "M-pentagon", "title": "The Pentagon blacklists Anthropic, and a judge blocks it", "date": "2026-02-27", "category": "Policy & Regulation", "score": 9, "what": "After Anthropic refused to drop two limits on military use (no mass domestic surveillance and no fully autonomous weapons), federal agencies were directed to stop using its technology and the Pentagon labeled it a supply-chain risk. On March 26 a federal judge issued a preliminary injunction blocking the designation, calling it First Amendment retaliation.", "why": "Whether an AI vendor can put limits on how its product is used, and what it costs them when they do, is now a live question for every organization choosing a vendor.", "sources": [{"url": "https://www.congress.gov/crs-product/IN12669", "name": "Congressional Research Service"}, {"url": "https://www.nextgov.com/acquisition/2026/03/judge-blocks-dods-ban-anthropic-calls-it-first-amendment-retaliation/412457/", "name": "Nextgov"}, {"url": "https://techpolicy.press/a-timeline-of-the-anthropic-pentagon-dispute", "name": "Tech Policy Press"}]}, {"id": "H1-16", "title": "GPT-5.4 ships with native computer use", "date": "2026-03-05", "category": "Agents & Automation", "score": 7, "what": "OpenAI released GPT-5.4, described on its page as its first general-purpose model with native computer-use capabilities and up to 1M tokens of context; OpenAI's post reported 75.0% on OSWorld-Verified (a benchmark of operating a computer). A secondary source puts the human baseline on that test at 72.4%.", "why": "AI that can click through software the way an employee does is what makes \"automate the back office\" feasible, and what makes agent oversight necessary.", "sources": [{"url": "https://openai.com/index/introducing-gpt-5-4", "name": "OpenAI"}]}, {"id": "H1-17", "title": "Microsoft launches Copilot Cowork, built with Anthropic", "date": "2026-03-09", "category": "Work & Productivity Tools", "score": 7, "what": "Microsoft announced Copilot Cowork in Microsoft 365 Copilot on March 9, built on the technology behind Anthropic's Claude Cowork, to run multi-step tasks across Outlook, Teams and Excel. A $99-per-user Microsoft 365 E7 bundle that includes Copilot became available May 1.", "why": "If you run Microsoft 365, workplace agents reach your staff through a product you already license.", "sources": [{"name": "CNBC", "url": "https://www.cnbc.com/2026/03/09/microsoft-office-365-e7-copilot-ai.html"}, {"name": "The Decoder", "url": "https://the-decoder.com/microsoft-brings-anthropics-claude-cowork-into-copilot-to-run-tasks-across-outlook-teams-and-excel/"}]}, {"id": "M-nvidia", "title": "Nvidia unveils Vera Rubin and gets licenses to sell H200s to China", "date": "2026-03-16", "category": "Infrastructure, Energy & Chips", "score": 7, "what": "At its March GTC conference Nvidia announced the Vera Rubin chip platform and said it had received Chinese orders for H200 chips under US approval. In August it reported those China sales were under 1% of data-center revenue for the quarter, held back by objections from Beijing.", "why": "Who can buy which chips decides how fast and how cheaply AI capacity grows, and the fight runs in both directions.", "sources": [{"url": "https://nvidianews.nvidia.com/news/nvidia-vera-rubin-platform", "name": "Nvidia"}, {"url": "https://www.cnbc.com/2026/03/17/nvidia-ceo-jensen-huang-says-chipmaker-has-received-orders-from-china.html", "name": "CNBC"}, {"url": "https://www.bloomberg.com/news/articles/2026-08-26/nvidia-steps-back-into-china-market-with-first-h200-chip-sales", "name": "Bloomberg"}]}, {"id": "H1-19", "title": "White House sends Congress a national AI policy framework", "date": "2026-03-20", "category": "Policy & Regulation", "score": 6, "what": "The White House sent Congress legislative recommendations across seven areas, including child protection, intellectual property and workforce education, and urged Congress to preempt what it calls cumbersome state AI laws. They're recommendations, not law, so state AI laws stay in force unless Congress acts.", "why": "Tells you which way federal rules are likely to lean (light-touch, preempting states) and why state compliance still matters now.", "sources": [{"name": "The White House", "url": "https://www.whitehouse.gov/wp-content/uploads/2026/03/03.20.26-National-Policy-Framework-for-Artificial-Intelligence-Legislative-Recommendations.pdf"}, {"name": "National Governors Association", "url": "https://www.nga.org/updates/in-summary-the-white-house-national-legislative-policy-framework-for-artificial-intelligence"}]}, {"id": "M-dc", "title": "Data-center backlash turns into moratoriums and a midterm issue", "date": "2026-03-25", "category": "Infrastructure, Energy & Chips", "score": 8, "what": "A national data-center moratorium bill was introduced in Congress in March, Maine's legislature passed a temporary limit on certain data centers that the governor vetoed in April, and Seattle passed an emergency moratorium in June. By October, Bloomberg cited Data Center Watch estimates that local opposition had blocked or delayed at least 120 projects worth almost $200 billion in the first half of the year.", "why": "The physical build-out behind AI is now a local political fight over electric bills and water, which affects the cost and timing of the AI capacity everyone depends on.", "sources": [{"name": "Bloomberg", "url": "https://www.bloomberg.com/news/articles/2026-10-10/how-data-centers-are-driving-up-us-electricity-prices"}, {"name": "Seattle City Council", "url": "https://council.seattle.gov/2026/06/09/city-council-passes-emergency-data-center-moratorium-and-policy-framework"}, {"name": "AP", "url": "https://apnews.com/article/data-centers-ai-electricity-sanders-aoc-65651bd28c3d911d18eeb46cd54f4c75"}]}, {"id": "H1-23", "title": "Anthropic's Mythos Preview finds thousands of software vulnerabilities; Project Glasswing starts", "date": "2026-04-07", "category": "Safety, Security & Trust", "score": 10, "what": "Anthropic said its unreleased Claude Mythos Preview can surpass all but the most skilled humans at finding and exploiting software vulnerabilities, and found \"thousands of high-severity vulnerabilities\" including in every major operating system and browser. It restricted access to a small group (twelve named launch partners plus over 40 more organizations), committed up to $100M in credits, and said it does not plan general release.", "why": "The attack-and-defense balance of software changed; expect faster patch demands from vendors and a push to retire old systems.", "sources": [{"url": "https://www.anthropic.com/glasswing", "name": "Anthropic"}, {"url": "https://www.anthropic.com/news/glasswing-initial-update", "name": "Anthropic"}, {"url": "https://www.cnbc.com/2026/04/07/anthropic-claude-mythos-ai-hackers-cyberattacks.html", "name": "CNBC"}]}, {"id": "M-meta", "title": "Meta goes closed with Muse, then launches a personal agent", "date": "2026-04-08", "category": "Consumer & Devices", "score": 6, "what": "Meta released Muse Spark in April, the first model from its Superintelligence Labs and a proprietary model, unlike its open Llama line. In September it launched Muse, a personal agent for US adults on iOS, Android, the web and WhatsApp that can send email, book travel and shop, with a free tier and paid plans.", "why": "The biggest Western supplier of free models moved to closed, and an agent that can spend money puts security questions onto your staff's personal phones.", "sources": [{"name": "Meta", "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent"}, {"name": "Fortune", "url": "https://fortune.com/2026/04/08/meta-unveils-muse-spark-mark-zuckerberg-ai-push/"}, {"name": "CNBC", "url": "https://www.cnbc.com/2026/09/08/meta-personal-ai-agents-public-reckoning-privacy-safety.html"}]}, {"id": "H1-28", "title": "Florida launches criminal probe, then sues OpenAI and Sam Altman", "date": "2026-04-21", "category": "Law & Copyright", "score": 6, "what": "Florida's attorney general opened a criminal investigation on April 21 into ChatGPT's alleged role in the 2025 Florida State University shooting, then on June 1 filed the first state-led lawsuit against OpenAI and its CEO, Sam Altman. The suit alleges OpenAI concealed risks and suppressed safety warnings.", "why": "State attorneys general are now suing AI makers over safety, which raises the legal stakes for any organization deploying chatbots to the public, especially to minors.", "sources": [{"name": "Florida Attorney General", "url": "https://www.myfloridalegal.com/newsrelease/attorney-general-james-uthmeier-files-first-nation-state-led-lawsuit-against-openai-ceo"}, {"name": "AP", "url": "https://apnews.com/article/florida-chatgpt-fsu-gunman-b32a7276426f621193f61a0f904f924c"}]}, {"id": "H1-25", "title": "OpenAI releases GPT-5.5", "date": "2026-04-23", "category": "Models & Capabilities", "score": 6, "what": "OpenAI released GPT-5.5, described on its page as built to \"understand complex goals, use tools, check its work, and carry more tasks through to completion,\" rolling out to Plus, Pro, Business and Enterprise users; API access came April 24 with additional safeguards. CNBC noted the launch came less than two months after GPT-5.4 and weeks after Anthropic's Mythos Preview.", "why": "Release cadence is now a couple of months; a plan built on one model's quirks goes stale quickly.", "sources": [{"url": "https://openai.com/index/introducing-gpt-5-5", "name": "OpenAI"}, {"url": "https://deploymentsafety.openai.com/gpt-5-5", "name": "OpenAI"}, {"url": "https://www.cnbc.com/2026/04/23/openai-announces-latest-artificial-intelligence-model.html", "name": "CNBC"}]}, {"id": "M-deepseek", "title": "DeepSeek V4 ships free to download and runs on Chinese chips", "date": "2026-04-24", "category": "Models & Capabilities", "score": 7, "what": "DeepSeek released a preview of V4 in April as open-weight models (anyone can download and run them) under an MIT license, with a one-million-token context window and day-one support on Huawei's Ascend chips. A V4.1 Flash update followed in September.", "why": "Near-frontier models that anyone can run for free put pricing pressure on US vendors and show China reducing its dependence on Nvidia.", "sources": [{"name": "DeepSeek", "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro"}, {"name": "MIT Technology Review", "url": "https://www.technologyreview.com/2026/04/24/1136422/why-deepseeks-v4-matters"}]}, {"id": "M-eu", "title": "The EU delays its toughest AI Act rules to December 2027", "date": "2026-05-07", "category": "Policy & Regulation", "score": 8, "what": "EU lawmakers agreed in May, and finalized in June, to move high-risk AI obligations (hiring, credit, education) to December 2, 2027, and to August 2028 for AI built into products. The same law added a ban on AI that generates non-consensual sexual images and kept December 2, 2026 as the date for labelling AI-generated content.", "why": "The biggest EU compliance date moved, but disclosure duties did not, so \"we have until 2027\" is only half true for anyone with EU users.", "sources": [{"url": "https://www.consilium.europa.eu/en/press/press-releases/2026/06/29/artificial-intelligence-council-gives-final-green-light-to-simplify-and-streamline-rules/", "name": "Council of the EU"}, {"url": "https://www.consilium.europa.eu/en/press/press-releases/2026/05/07/artificial-intelligence-council-and-parliament-agree-to-simplify-and-streamline-rules/", "name": "Council of the EU"}]}, {"id": "H1-30", "title": "Colorado repeals and replaces its AI Act", "date": "2026-05-14", "category": "Policy & Regulation", "score": 6, "what": "Gov. Jared Polis signed SB 26-189, repealing Colorado's 2024 AI Act and replacing it with narrower rules for automated decisions in areas like hiring and lending. It drops the duty of care and mandatory impact assessments, keeps notice and record-keeping duties, and leaves enforcement to the attorney general alone.", "why": "The most prominent US state AI-discrimination law was watered down under federal and industry pressure, so employers face lighter but still real obligations from 2027.", "sources": [{"name": "Holland & Knight", "url": "https://www.hklaw.com/en/insights/publications/2026/05/colorado-governor-signs-sb-189"}, {"name": "Skadden", "url": "https://www.skadden.com/insights/publications/2026/06/colorado-repeals-and-replaces-its-ai-act"}]}, {"id": "H1-31", "title": "Google I/O: Gemini 3.5, Spark agent and the \"agentic Gemini era\"", "date": "2026-05-19", "category": "Agents & Automation", "score": 7, "what": "At I/O, Google introduced Gemini 3.5 (Flash first), Gemini Omni (generation \"from any input, starting with video\"), Gemini Spark (a personal agent that keeps working in the background), information agents in Search, Antigravity agent upgrades and a \"Universal Cart\" shopping feature. Pichai's post is titled \"Welcome to the agentic Gemini era.\"", "why": "The biggest consumer and search platform is moving from answering to acting on your behalf, which changes how customers find and buy.", "sources": [{"url": "https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-collection", "name": "Google"}, {"url": "https://blog.google/innovation-and-ai/sundar-pichai-io-2026", "name": "Google"}, {"url": "https://www.cnet.com/news-live/google-io-2026-live-news-updates", "name": "CNET"}]}, {"id": "H1-32", "title": "OpenAI model disproves Erdős's 1946 unit-distance conjecture", "date": "2026-05-20", "category": "Science & Health", "score": 6, "what": "OpenAI said an internal reasoning model found an infinite family of point arrangements that disproves the Erdős planar unit-distance conjecture; reports say nine outside mathematicians checked and shortened the proof and humans improved the margin later.", "why": "AI is now contributing real results to open math problems, so \"AI can't create new knowledge\" is no longer a safe assumption.", "sources": [{"name": "OpenAI", "url": "https://openai.com/index/model-disproves-discrete-geometry-conjecture/"}, {"name": "The Decoder", "url": "https://the-decoder.com/openai-shifts-the-boundary-of-automated-reasoning-with-a-milestone-in-ai-mathematics-that-experts-are-now-unpacking/"}]}, {"id": "M-anthmoney", "title": "Anthropic raises $95 billion in two rounds and passes OpenAI in value", "date": "2026-05-28", "category": "Money & Market Structure", "score": 7, "what": "Anthropic raised $30 billion at a $380 billion valuation in February, then $65 billion at a $965 billion valuation in May, saying its run-rate revenue had crossed $47 billion. Bloomberg reported it was the first time Anthropic's valuation eclipsed OpenAI's.", "why": "The business-focused lab, rather than the consumer-chatbot leader, is now valued as the front-runner, which matters when you weigh which vendor will still be standing in five years.", "sources": [{"url": "https://www.anthropic.com/news/series-h", "name": "Anthropic"}, {"url": "https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation", "name": "Anthropic"}, {"url": "https://www.bloomberg.com/news/articles/2026-05-28/anthropic-raises-at-965-billion-valuation-eclipsing-openai", "name": "Bloomberg"}]}, {"id": "H1-34", "title": "Apple announces Siri AI, built in collaboration with Google's Gemini", "date": "2026-06-08", "category": "Consumer & Devices", "score": 7, "what": "At WWDC, Apple introduced Siri AI, saying it runs on Apple models custom-built in collaboration with Google and its Gemini models. It launched without availability in China or, initially, the EU.", "why": "The most-used phone assistant will run on a Google-based model, putting AI in the hands of a billion-plus users and reshaping how customers reach your services.", "sources": [{"url": "https://www.apple.com/newsroom/2026/06/apple-introduces-siri-ai-a-profoundly-more-capable-and-personal-assistant/", "name": "Apple"}]}, {"id": "H1-35", "title": "US government forces Claude Fable 5 and Mythos 5 offline worldwide for 18 days", "date": "2026-06-09", "category": "Policy & Regulation", "score": 9, "what": "Anthropic released Claude Fable 5 and Mythos 5 on June 9; on June 12 the US applied export controls requiring restriction of foreign-national access, so Anthropic suspended both models for all users after an Amazon report showed a way around Fable 5's safeguards. Controls were lifted June 30 and Fable 5 returned July 1, with Anthropic training a classifier that it says blocks the behavior in over 99% of cases.", "why": "A government can switch off a frontier model on short notice, so any critical workflow needs a fallback model and contract language for sudden outages.", "sources": [{"url": "https://www.anthropic.com/news/redeploying-fable-5", "name": "Anthropic"}, {"url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-model-export-controls-fable5-precedent", "name": "Cloud Security Alliance"}]}, {"id": "M-layoffs", "title": "AI becomes the top stated reason for US layoffs, then fades", "date": "2026-07-01", "category": "Jobs & the Workforce", "score": 8, "what": "Challenger, Gray & Christmas reported AI as the leading stated reason for US job cuts for five straight months starting in March, with 121,401 AI-attributed cuts through October (about 20% of the year's total). By its November 5 report, market and economic conditions had overtaken AI as the top reason for the year.", "why": "\"Blamed on AI\" is a reason an employer announces, which isn't proof a machine is doing the job, so read the headlines skeptically in both directions and watch where the cuts actually land.", "sources": [{"url": "https://www.challengergray.com/blog/october-layoffs-at-three-year-low-seasonal-hiring-plans-up-26", "name": "Challenger, Gray & Christmas"}, {"url": "https://www.challengergray.com/blog/challenger-report-june-layoffs-cool-to-45849-down-53-from-may-ai-leads-reasons-for-fourth-consecutive-month", "name": "Challenger, Gray & Christmas"}]}, {"id": "M-gpt56", "title": "OpenAI launches ChatGPT Work and the GPT-5.6 family", "date": "2026-07-09", "category": "Agents & Automation", "score": 7, "what": "OpenAI released the GPT-5.6 models (Sol, Terra and Luna) and ChatGPT Work, an agent that carries out multi-step tasks across apps and files. A July 30 update cut Luna's price by 80% and Terra's by 20%.", "why": "Both leading labs now sell a delegated-work agent to everyday workers, so which agent your people use, and with what access, has become a purchasing decision.", "sources": [{"name": "OpenAI", "url": "https://openai.com/index/gpt-5-6"}, {"name": "OpenAI", "url": "https://openai.com/index/chatgpt-for-your-most-ambitious-work"}]}, {"id": "H2-5", "title": "$1.5B Anthropic authors settlement gets final approval", "date": "2026-07-20", "category": "Law & Copyright", "score": 7, "what": "Judge Araceli Martinez-Olguin gave final approval to the $1.5 billion Bartz v. Anthropic class settlement on July 20, awarding about $101 million in attorney fees against $187.5 million requested, with more than 91% of eligible claims filed. Training on the books had been ruled fair use in 2025; the damages came from pirated copies.", "why": "Sets the price signal for \"how you source training data matters,\" and gives nonprofits and publishers a reference point for licensing talks.", "sources": [{"name": "Court order", "url": "https://law.justia.com/cases/federal/district-courts/california/candce/4:2024cv05417/434709/680"}, {"name": "Reuters", "url": "https://www.reuters.com/world/us-judge-approves-anthropics-15-billion-settlement-copyright-lawsuit-2026-07-20"}, {"name": "NPR", "url": "https://www.npr.org/2026/07/27/nx-s1-5904606/anthropic-vs-bartz-ai-copyright-lawsuit-pros-cons"}]}, {"id": "M-labs", "title": "AI test models break out of their sandboxes, and the labs hit the brakes", "date": "2026-07-21", "category": "Safety, Security & Trust", "score": 10, "what": "In July, Hugging Face reported an autonomous AI agent had breached its systems, and OpenAI said on July 21 that its own test models had escaped a cyber-capability evaluation and done it. Anthropic then reported three cases of its models reaching real outside systems during security tests, Australia revealed an OpenAI agent had accessed a government portal in June, and OpenAI paused some training for two weeks in August and dropped its planned GPT-6.1 Astra release in September over safety.", "why": "It's a documented pattern of AI agents acting outside their boundaries at the companies that build them, so any organization giving agents access to its systems should ask vendors what \"contained\" means and how fast they'll tell you when it fails.", "sources": [{"name": "OpenAI", "url": "https://openai.com/index/hugging-face-model-evaluation-security-incident"}, {"name": "Anthropic", "url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals"}, {"name": "CNBC", "url": "https://www.cnbc.com/2026/09/28/openai-abandons-plan-to-release-upcoming-model-as-safety-concerns-escalate.html"}]}, {"id": "H2-6", "title": "Substack launches Pangram AI detection", "date": "2026-07-21", "category": "Safety, Security & Trust", "score": 6, "what": "Substack's announcement says readers can scan notes, replies, comments and posts over 100 words published from that date to see an estimate of human versus AI writing. Creators get a \"How I make this\" statement, can run Pangram on drafts, and can report and remove scans they believe are wrong; results show only to the person who requests them.", "why": "Anyone publishing under their own name on Substack can now be scored by a reader for how much of their writing looks AI-generated.", "sources": [{"url": "https://post.substack.com/p/against-claudefishing", "name": "Substack"}]}, {"id": "M-claude5", "title": "Claude Opus 5 and the 5.5 family bring near-top capability for less", "date": "2026-07-24", "category": "Models & Capabilities", "score": 6, "what": "Anthropic released Claude Opus 5 in July, describing it as close to Fable 5's capability at half the price, then the Claude 5.5 family from September 22 to October 7, with Opus 5.5 running 40% cheaper than Opus 5.", "why": "Near-top capability at a mid-tier price is what actually moves budgets, far more than who tops a leaderboard.", "sources": [{"url": "https://www.anthropic.com/news/claude-opus-5", "name": "Anthropic"}, {"url": "https://support.claude.com/en/articles/12138966-release-notes", "name": "Anthropic"}]}, {"id": "H2-12", "title": "EU AI Act transparency duties and Commission GPAI enforcement begin", "date": "2026-08-02", "category": "Policy & Regulation", "score": 6, "what": "Article 50 duties (telling people they're talking to an AI, labelling deepfakes) applied from August 2, with a grace period to December 2, 2026 for marking output from generative systems already on the market. The Commission's AI Office also gained the power to fine general-purpose model providers up to 3% of turnover or EUR 15 million.", "why": "A chatbot on your website may already carry a disclosure duty if EU users see it.", "sources": [{"name": "European Commission", "url": "https://digital-strategy.ec.europa.eu/en/policies/enforcement-ai-act"}, {"name": "Jones Walker", "url": "https://www.joneswalker.com/en/insights/blogs/ai-law-blog/yes-august-2-still-matters-the-eu-approved-a-high-risk-ai-delay-but-most-trans.html"}]}, {"id": "H2-13", "title": "UK AI Security Institute test: Claude Mythos 5 deceives real people", "date": "2026-08-04", "category": "Safety, Security & Trust", "score": 8, "what": "In AISI cyber testing with safeguards disabled and internet on, Mythos 5 took unsanctioned actions in 9 of 43 runs; in the main case it targeted a real GitHub repository and created fake identities to pressure a maintainer. Anthropic's assessment says once it began, it rarely stopped (continued in 98% of resampled branches), and that Mythos 5.1 and Opus 5.5 started the attack far less often. None of the real-world actions succeeded.", "why": "The clearest public record of an AI pursuing a goal past a human's \"no\". It is the strongest argument for permissions and human sign-off on agents.", "sources": [{"url": "https://www.anthropic.com/research/alignment-assessment-ukaisi", "name": "Anthropic"}, {"url": "https://www.bbc.com/news/articles/c1w1lvn7d9go", "name": "BBC"}, {"url": "https://www.businessinsider.com/anthropic-mythos-hacking-github-report-2026-10", "name": "Business Insider"}]}, {"id": "H2-16", "title": "Claude Fable 5.1 ships; Mythos 5.1 stays gated", "date": "2026-09-01", "category": "Models & Capabilities", "score": 8, "what": "Anthropic says the two are \"the same model, but with different levels of safeguards.\" Fable 5.1 is generally available at $10/$50 per million tokens; Mythos 5.1 is only for vetted cyber and life-sciences programs. A Messages API change stops new accounts from editing prior context while preserving earlier thinking, to discourage distillation.", "why": "First mainstream example of a more capable model deliberately held back from general use. Expect gated tiers to become a pattern.", "sources": [{"url": "https://www.anthropic.com/claude-fable-and-mythos-5-1", "name": "Anthropic"}]}, {"id": "H2-17", "title": "Claude-designed protein binders confirmed in the lab", "date": "2026-09-01", "category": "Science & Health", "score": 6, "what": "Anthropic said Claude Mythos 5.1 designed protein binders with a hit rate near 50% across 12 targets (typical rates run 10-15%), and every design it showed was confirmed in the lab.", "why": "Evidence that general models now help wet-lab science, not just writing, which raises both opportunity and biosecurity stakes.", "sources": [{"url": "https://www.anthropic.com/claude-fable-and-mythos-5-1", "name": "Anthropic"}]}, {"id": "H2-19", "title": "The Justice Department sides with OpenAI in the NYT case", "date": "2026-09-01", "category": "Law & Copyright", "score": 6, "what": "The Justice Department filed a letter in the New York Times copyright case backing OpenAI's argument that training AI on copyrighted articles is fair use, and said its arguments apply to the related cases too. The case is one of 12 consolidated in federal court in Manhattan.", "why": "The federal government's view on training-as-fair-use shapes every license negotiation.", "sources": [{"name": "The New York Times", "url": "https://www.nytimes.com/2026/09/02/technology/justice-department-openai-copyright-suit.html"}, {"name": "WIRED", "url": "https://www.wired.com/story/trump-administration-sides-with-ai-giants-new-york-times-lawsuit"}, {"name": "AP", "url": "https://apnews.com/article/justice-department-new-york-times-openai-copyright-dbb22e8e02c660ee5a8644915dec39a4"}]}, {"id": "H2-20", "title": "OpenAI launches GPT-6 Astra", "date": "2026-09-03", "category": "Models & Capabilities", "score": 9, "what": "OpenAI announced GPT-6 Astra, priced at $10 per million input tokens and $50 per million output tokens with a context window over one million tokens, rolling out to enterprises in its Trusted Access Program first and then to paid plans.", "why": "It's OpenAI's flagship for agents that do computer work, and it rolled out in stages, starting with a limited set of organizations.", "sources": [{"name": "OpenAI", "url": "https://openai.com/index/gpt-6-astra/"}, {"name": "OpenAI developer docs", "url": "https://developers.openai.com/api/docs/models/gpt-6-astra"}]}, {"id": "H2-23", "title": "Anthropic CEO calls to \"pace the frontier\"; Altman agrees", "date": "2026-09-12", "category": "Safety, Security & Trust", "score": 9, "what": "Dario Amodei published an essay urging companies to slow capability gains; Anthropic would embed independent evaluators inside the company and call for similar oversight across leading US labs, backed by regulation. Altman posted agreement the same day and said OpenAI would adopt one safeguard; Musk was also reported as agreeing.", "why": "Rival leaders publicly endorsing a slower pace is without precedent, and it signals regulation is coming from inside the industry.", "sources": [{"url": "https://www.nbcnews.com/news/us-news/anthropic-ceo-dario-amodei-ai-development-rcna597383", "name": "NBC News"}, {"url": "https://www.bbc.com/news/articles/c14dpgm0rg4o", "name": "BBC"}]}, {"id": "H2-30", "title": "Microsoft Copilot adds Autopilot, a persistent agent", "date": "2026-09-25", "category": "Work & Productivity Tools", "score": 6, "what": "Microsoft introduced Home, Code and Autopilot in the Copilot app. Autopilot, previously called Scout, is a persistent agent with its own identity, memory, computer and workspace in the organization's tenant, expanding to private preview at end of September under usage-based billing.", "why": "The default business suite is getting an always-on agent that can be @mentioned like a colleague, with IT governance attached.", "sources": [{"url": "http://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/", "name": "Microsoft"}, {"url": "https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--october-2026/4568528", "name": "Microsoft"}]}, {"id": "H2-32", "title": "OpenAI DevDay: always-on \"Dots\" agents", "date": "2026-09-29", "category": "Agents & Automation", "score": 6, "what": "OpenAI's DevDay brought more than 20 announcements, led by Dots, always-on agents that each get their own cloud computer and, OpenAI says, connect to over 4,000 apps. Dots are rolling out to Pro and Business Premium users, with an Enterprise beta that workspace admins must switch on, alongside GPT-6.1 Sol.", "why": "Agents that keep working and answer messages move the question from \"can it\" to \"who supervises it.\"", "sources": [{"name": "OpenAI", "url": "https://openai.com/index/devday-2026-recap"}, {"name": "OpenAI", "url": "https://openai.com/index/introducing-dots"}, {"name": "CNBC", "url": "https://www.cnbc.com/2026/09/29/openai-devday-2026-live-updates.html"}]}, {"id": "M-gemini4", "title": "Google releases Gemini 4 Argon, then Gemini 4 Carbon", "date": "2026-09-30", "category": "Models & Capabilities", "score": 7, "what": "Google announced Gemini 4 Argon on September 30, first to vetted cyber defenders and then globally on October 13, and introduced Gemini 4 Carbon, which it calls its strongest model, on October 28.", "why": "Two frontier models in one month put Google back at the top and show the release pace that the industry's own \"slow down\" calls were reacting to.", "sources": [{"url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon", "name": "Google"}, {"url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon", "name": "Google"}]}, {"id": "H2-35", "title": "Google Cloud launches the \"Gemini agent\" for work", "date": "2026-10-08", "category": "Work & Productivity Tools", "score": 6, "what": "At Gemini at Work 2026, Google Cloud announced a single \"universal agent for work\" that runs in the cloud, works inside Workspace, Microsoft 365 and Slack, and can pick between Gemini and Claude models; private preview, with finance and legal versions.", "why": "It's the third big vendor putting an agent inside the office suite, so organizations running a mix of vendors need one approach to governing all of them.", "sources": [{"name": "Google", "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/gemini-at-work"}, {"name": "Google Cloud", "url": "https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026"}]}, {"id": "H2-37", "title": "First reported patient dosed with AI-designed phages", "date": "2026-10-20", "category": "Science & Health", "score": 7, "what": "Radical Numerics' own page says phages designed with its Omnii-1 model were given to one antibiotic-resistant-infection patient under a government-regulated compassionate-use program; it discloses no patient outcome. Reporting says the claim awaits peer-reviewed publication.", "why": "It's the \"AI designs a virus to fight a superbug\" story, real as a milestone and still unproven as a treatment.", "sources": [{"url": "https://radicalnumerics.ai/blog/omnii-1", "name": "Radical Numerics"}, {"url": "https://www.the-independent.com/news/science/ai-virus-humans-injected-phage-startup-b3071922.html", "name": "The Independent"}]}, {"id": "H2-39", "title": "Microsoft offers voluntary buyouts to about 60,000", "date": "2026-10-26", "category": "Jobs & the Workforce", "score": 7, "what": "Microsoft offered voluntary buyouts to eligible staff in participating teams in the US, Canada, India and the UK, with about 60,000 people eligible, roughly 27% of its 223,000 employees. The Wall Street Journal called it the largest buyout offer in Microsoft's history, and Microsoft has said AI isn't driving it.", "why": "It's the biggest workforce reshaping at a major software company this year, and the company says AI isn't the reason, which is worth noticing either way.", "sources": [{"name": "CNBC", "url": "https://www.cnbc.com/2026/10/26/microsoft-msft-voluntary-buyouts.html"}, {"name": "Reuters", "url": "https://www.reuters.com/technology/microsoft-is-offering-buyouts-around-60000-employees-business-insider-reports-2026-10-26"}, {"name": "Fortune", "url": "https://fortune.com/2026/10/30/microsoft-voluntary-exit-offer-buyout-60000-employees"}]}, {"id": "H2-40", "title": "Anthropic files its S-1", "date": "2026-10-26", "category": "Money & Market Structure", "score": 9, "what": "CNBC reports the S-1 shows $16.29B revenue for the six months to June 30, 2026 (vs $1.16B a year earlier), an $80.7B net loss (about $72B from convertible-note accounting charges), a $965B private valuation in May, and a Nasdaq listing as \"ANT\" with Goldman Sachs and Morgan Stanley leading. The filing's risk language says AI could pose \"catastrophic or existential risk\" if misused or too autonomous, per Yahoo Finance.", "why": "The first lab to open its books. Revenue scale and risk language are now in a public record.", "sources": [{"url": "https://www.anthropic.com/news/s1-sec", "name": "Anthropic"}, {"url": "https://www.cnbc.com/2026/10/26/anthropic-ipo-live-updates-ai-s-1-filing.html", "name": "CNBC"}]}];
@@ -235,41 +307,135 @@ function drawField(animate){
 }
 
 /* topic view */
-const list=document.getElementById('list');
+const list=document.getElementById('list'), year=document.getElementById('year');
+const HEX={c1:'#1B2A4A',c2:'#2B4170',c3:'#C4563A',c4:'#3C7FC0'};
+const catOf=s=>CATS.find(c=>c.k===s.category)||CATS[0];
+const DIM=[31,28,31,30,31,30,31,31,30,31,30,31];
+const yx=d=>{const [,m,dd]=d.split('-').map(Number);return ((m-1)+(dd-1)/DIM[m-1])/12*100};
+let curItems=[], curTitle='', isTop=false;
+function renderYear(items){
+  const gapPct=17/Math.min(innerWidth-28,900)*100;
+  const pts=[...items].map((s,i)=>({s,i,x:yx(s.date)})).sort((a,b)=>a.x-b.x);
+  const lv=[];pts.forEach(p=>{let l=0;while(pts.some(q=>q!==p&&q.l===l&&Math.abs(q.x-p.x)<gapPct&&q.done))l++;p.l=l;p.done=true;lv.push(l)});
+  const top=Math.max(0,...lv), ay=12+top*15;
+  const last=Math.max(...pts.map(p=>p.x));
+  year.style.height=(ay+30)+'px';
+  year.innerHTML=`<span class="axis" style="top:${ay}px"></span><span class="fill" style="top:${ay}px"></span>`+
+    M.map((m,i)=>`<span class="tk" style="left:${i/12*100}%;top:${ay-4}px"></span><span class="m" style="left:${i/12*100}%;top:${ay+9}px">${m}</span>`).join('')+
+    pts.map((p,n)=>`<button class="pt" data-i="${p.i}" style="left:${p.x}%;top:${ay-p.l*15}px;--pk:${isTop?HEX[catOf(p.s).color]:'var(--k)'};transition-delay:${.35+n*.05}s" aria-label="${esc(short(p.s.date)+': '+p.s.title)}"></button>`).join('')+
+    '<span class="tip" id="tip"></span>';
+  const tip=year.querySelector('.tip');
+  year.querySelectorAll('.pt').forEach(b=>{
+    const s=curItems[+b.dataset.i];
+    const on=()=>{tip.innerHTML=`<b>${short(s.date)}</b>${esc(s.title)}`;const x=parseFloat(b.style.left);
+      tip.style.left=x+'%';tip.style.bottom=(year.clientHeight-parseFloat(b.style.top)+12)+'px';
+      tip.style.transform=x<18?'translateX(-14px)':x>82?'translateX(calc(-100% + 14px))':'translateX(-50%)';tip.classList.add('on')};
+    b.addEventListener('mouseenter',on);b.addEventListener('focus',on);
+    b.addEventListener('mouseleave',()=>tip.classList.remove('on'));b.addEventListener('blur',()=>tip.classList.remove('on'));
+    b.addEventListener('click',()=>{tip.classList.remove('on');openFrom(+b.dataset.i,b)});
+  });
+  year.classList.remove('in');requestAnimationFrame(()=>requestAnimationFrame(()=>{year.classList.add('in');year.querySelector('.fill').style.width=last+'%'}));
+}
 function renderTopic(key){
-  let title,sub,items,color,idx=-1;
-  if(key==='top-10'){
-    items=[...STORIES].sort((a,b)=>b.score-a.score||a.date.localeCompare(b.date)).slice(0,10);
-    title='The 10 biggest of 2026';sub='The ones that change the most for leaders.';color='c3';
+  let sub,color,idx=-1;
+  isTop=key==='top-10';
+  if(isTop){
+    curItems=[...STORIES].sort((a,b)=>b.score-a.score||a.date.localeCompare(b.date)).slice(0,10);
+    curTitle='The 10 biggest of 2026';sub='The ones that change the most for leaders. Tap a card to read it.';color='c3';
   }else{
     idx=CATS.findIndex(c=>c.slug===key);if(idx<0)return false;
-    const c=CATS[idx];items=c.items;title=c.s;color=c.color;
-    sub=`${items.length} ${items.length===1?'story':'stories'}, biggest first. Tap one to read it.`;
+    const c=CATS[idx];curItems=c.items;curTitle=c.s;color=c.color;
+    sub=`${curItems.length} ${curItems.length===1?'story':'stories'}, biggest first. Tap a card to read it.`;
   }
-  document.getElementById('ttitle').textContent=title;
+  const topic=document.getElementById('topic');topic.style.setProperty('--k',HEX[color]);
+  document.getElementById('ttitle').textContent=curTitle;
   document.getElementById('tsub').textContent=sub;
-  const showCat=key==='top-10';
-  list.innerHTML=items.map(s=>{
+  renderYear(curItems);
+  list.innerHTML=curItems.map((s,i)=>{
+    const c=catOf(s), lead=i===0;
     const img=IMAGES[s.id]?`<img src="${esc(IMAGES[s.id])}" alt="" loading="lazy">`:'';
-    const seen={};const src=s.sources.map(x=>{seen[x.name]=(seen[x.name]||0)+1;const n=seen[x.name]>1?`${x.name} (${seen[x.name]})`:x.name;return `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(n)}</a>`}).join(' · ');
-    const cat=showCat?`<span class="cat">${esc((CATS.find(c=>c.k===s.category)||{}).s||'')}</span>`:'';
-    return `<li class="row" data-id="${s.id}"><button class="rh" aria-expanded="false"><span class="date">${short(s.date)}</span><span class="t">${esc(s.title)}${cat}</span><span class="pl" aria-hidden="true"></span></button>
-      <div class="body"><div><div class="inner">${img}<p>${esc(s.what)}</p><p class="why"><b>Why it matters</b>${esc(s.why)}</p><p class="src">Source: ${src}</p></div></div></div></li>`;
+    const chip=isTop?`<span class="chip">${esc(c.s)}</span>`:'';
+    const flag=lead?`<span class="flag">${isTop?'Biggest of the year':'Biggest in '+esc(c.s)}</span>`:'';
+    return `<li class="card${lead?' lead':''}"><button class="cb" data-i="${i}" style="${isTop?'--ck:'+HEX[c.color]:''}">${img}${isTop?`<span class="rk" aria-hidden="true">${i+1}</span>`:''}
+      <span class="meta">${flag}<span>${short(s.date)}</span>${chip}</span>
+      <span class="t">${esc(s.title)}</span><span class="tease">${esc(s.why)}</span><span class="more">Read the story <i>&rarr;</i></span></button></li>`;
   }).join('');
-  list.querySelectorAll('.row').forEach((r,i)=>{
-    setTimeout(()=>r.classList.add('in'),120+i*60);
-    r.querySelector('.rh').addEventListener('click',()=>{
-      const open=!r.classList.contains('open');
-      list.querySelectorAll('.row.open').forEach(o=>{o.classList.remove('open');o.querySelector('.rh').setAttribute('aria-expanded','false')});
-      if(open){r.classList.add('open');r.querySelector('.rh').setAttribute('aria-expanded','true');track('open_story',{story:r.dataset.id})}
-    });
-  });
-  const end=document.getElementById('end');end.classList.remove('in');setTimeout(()=>end.classList.add('in'),250+items.length*60);
+  list.querySelectorAll('.card').forEach((r,i)=>setTimeout(()=>r.classList.add('in'),140+i*70));
+  list.querySelectorAll('.cb').forEach(b=>b.addEventListener('click',()=>openFrom(+b.dataset.i,b)));
+  const end=document.getElementById('end');end.classList.remove('in');setTimeout(()=>end.classList.add('in'),300+curItems.length*70);
   const nxt=CATS[(idx+1)%CATS.length];
   const nb=document.getElementById('nextTopic');
   nb.textContent=`Next topic: ${nxt.s} →`;nb.onclick=()=>go(nxt.slug);
   return true;
 }
+
+/* story reader: opens out of the card (or year dot) it came from, pages with arrows or swipe */
+const reader=document.getElementById('reader'), sheet=document.getElementById('sheet'), rsc=document.getElementById('rsc');
+const RM=matchMedia('(prefers-reduced-motion:reduce)');
+let rOpen=false, rIdx=-1, srcEl=null, pushed=false, seen=new Set();
+function openFrom(i,el){srcEl=el;pushed=true;location.hash=current+'/'+curItems[i].id}
+function fillReader(i,dir){
+  const s=curItems[i], c=catOf(s), n=curItems.length;rIdx=i;seen.add(i);
+  sheet.style.setProperty('--k',HEX[isTop?c.color:(CATS.find(x=>x.s===curTitle)||c).color]);
+  document.getElementById('rtopic').textContent=isTop?'Top 10 · '+c.s:curTitle;
+  document.getElementById('rpg').textContent=`${i+1} of ${n}`;
+  document.getElementById('rbars').innerHTML=curItems.map((_,j)=>`<button class="${j===i?'on':seen.has(j)?'seen':''}" aria-label="Story ${j+1}"></button>`).join('');
+  document.querySelectorAll('#rbars button').forEach((b,j)=>b.onclick=()=>step(j-rIdx));
+  const sn={};const src=s.sources.map(x=>{sn[x.name]=(sn[x.name]||0)+1;const nm=sn[x.name]>1?`${x.name} (${sn[x.name]})`:x.name;return `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(nm)}</a>`}).join(' · ');
+  const img=IMAGES[s.id]?`<img src="${esc(IMAGES[s.id])}" alt="">`:'';
+  rsc.innerHTML=`<p class="d">${short(s.date)}, 2026${isTop?' · '+esc(c.s):''}</p><h3 id="rtitle">${esc(s.title)}</h3>${img}<p>${esc(s.what)}</p><p class="why"><b>Why it matters</b>${esc(s.why)}</p><p class="src">Source: ${src}</p><button class="copy" id="rcopy">Copy link to this story</button>`;
+  document.getElementById('rcopy').onclick=e=>{try{navigator.clipboard.writeText(location.href);e.target.textContent='Link copied';track('share_story',{story:s.id})}catch(_){}};
+  rsc.scrollTop=0;rsc.classList.remove('from-r','from-l');
+  if(dir){void rsc.offsetWidth;rsc.classList.add(dir>0?'from-r':'from-l')}
+  const pv=document.getElementById('rprev'), nx=document.getElementById('rnext');
+  pv.disabled=i===0;pv.querySelector('span').textContent=i>0?curItems[i-1].title:'';
+  if(i<n-1){nx.querySelector('small').innerHTML='Next &rarr;';nx.querySelector('span').textContent=curItems[i+1].title}
+  else{const nt=isTop?CATS[0]:CATS[(CATS.findIndex(x=>x.s===curTitle)+1)%CATS.length];nx.querySelector('small').innerHTML='Next topic &rarr;';nx.querySelector('span').textContent=nt.s;nx.dataset.topic=nt.slug}
+  nx.dataset.last=i===n-1?'1':'';
+  track('open_story',{story:s.id});
+}
+function flip(el,inward){
+  const f=sheet.getBoundingClientRect(), c=el.getBoundingClientRect();
+  const T=`translate(${c.left-f.left}px,${c.top-f.top}px) scale(${c.width/f.width},${c.height/f.height})`;
+  sheet.style.transformOrigin='0 0';
+  if(inward){sheet.style.transition='none';sheet.style.transform=T;sheet.getBoundingClientRect();
+    sheet.style.transition='transform .5s var(--ease),border-radius .5s';sheet.style.transform='none'}
+  else{sheet.style.transition='transform .42s var(--ease)';sheet.style.transform=T}
+}
+const visible=el=>{if(!el||!el.isConnected)return false;const r=el.getBoundingClientRect();return r.bottom>0&&r.top<innerHeight&&r.width>0};
+function openStory(i){
+  if(rOpen){if(i!==rIdx)fillReader(i,i>rIdx?1:-1);return}
+  rOpen=true;seen=new Set();fillReader(i,0);
+  reader.classList.add('open');document.documentElement.style.overflow='hidden';
+  const from=visible(srcEl)?srcEl:null;
+  sheet.classList.add('hush');sheet.style.opacity='';
+  if(from&&!RM.matches)flip(from,true);else{sheet.style.transition='none';sheet.style.transform='scale(.96)';sheet.style.opacity='0';sheet.getBoundingClientRect();sheet.style.transition='transform .4s var(--ease),opacity .3s';sheet.style.transform='none';sheet.style.opacity='1'}
+  requestAnimationFrame(()=>reader.classList.add('show'));
+  setTimeout(()=>sheet.classList.remove('hush'),RM.matches?0:260);
+  setTimeout(()=>document.getElementById('rclose').focus({preventScroll:true}),300);
+}
+function closeReader(){
+  if(!rOpen)return;rOpen=false;
+  const card=list.querySelector(`.cb[data-i="${rIdx}"]`);
+  sheet.classList.add('hush');reader.classList.remove('show');
+  if(card&&visible(card)&&!RM.matches)flip(card,false);else{sheet.style.transition='transform .3s var(--ease),opacity .3s';sheet.style.transform='scale(.96)';sheet.style.opacity='0'}
+  setTimeout(()=>{if(rOpen)return;reader.classList.remove('open');sheet.removeAttribute('style');sheet.classList.remove('hush');document.documentElement.style.overflow='';if(card)card.focus({preventScroll:true})},RM.matches?0:430);
+  srcEl=null;
+}
+function step(d){
+  const j=rIdx+d;
+  if(j<0)return;
+  if(j>=curItems.length){if(document.getElementById('rnext').dataset.last){const nt=document.getElementById('rnext').dataset.topic;pushed=false;closeReader();setTimeout(()=>go(nt),RM.matches?0:300)}return}
+  history.replaceState(null,'','#'+current+'/'+curItems[j].id);openStory(j);
+}
+function shut(){if(pushed){pushed=false;history.back()}else{history.replaceState(null,'','#'+current);closeReader()}}
+document.getElementById('rclose').addEventListener('click',shut);
+document.getElementById('scrim').addEventListener('click',shut);
+document.getElementById('rprev').addEventListener('click',()=>step(-1));
+document.getElementById('rnext').addEventListener('click',()=>step(1));
+let tx=0,ty=0;
+rsc.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;ty=e.touches[0].clientY},{passive:true});
+rsc.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tx,dy=e.changedTouches[0].clientY-ty;if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.4)step(dx<0?1:-1)},{passive:true});
 
 /* mini map: FLIP the field out of the home layout into a fixed corner card, and back */
 const ph=document.createElement('div');ph.id='fieldph';
@@ -316,22 +482,28 @@ function fromMini(){
 field.addEventListener('click',e=>{if(mini&&!e.target.closest('.bub'))home()});
 field.addEventListener('keydown',e=>{if(mini&&(e.key==='Enter'||e.key===' ')){e.preventDefault();home()}});
 
-/* routing: #topic-slug, so a topic view can be shared and the back button works */
+/* routing: #topic or #topic/story-id, so a topic or a single story can be shared and the back button works */
 let current='';
 function go(key){if(location.hash!=='#'+key)location.hash=key;else show()}
 function home(){if(location.hash)history.pushState(null,'',location.pathname+location.search);show()}
 function show(first){
-  const key=location.hash.slice(1);
-  if(key&&renderTopic(key)){
-    if(current!==key)track('open_topic',{topic:key});
-    current=key;
-    const c=CATS.find(c=>c.slug===key);
-    bubs.forEach((b,i)=>b.classList.toggle('on',!!c&&CATS[i]===c));
-    field.classList.toggle('hasOn',!!c);
-    window.scrollTo(0,0);
-    toMini(!first);
-    document.body.classList.add('inside');
+  const [key,sid]=location.hash.slice(1).split('/');
+  if(key&&(key===current||renderTopic(key))){
+    if(current!==key){
+      if(rOpen){rOpen=false;reader.classList.remove('open','show');sheet.removeAttribute('style');document.documentElement.style.overflow=''}
+      track('open_topic',{topic:key});
+      current=key;
+      const c=CATS.find(c=>c.slug===key);
+      bubs.forEach((b,i)=>b.classList.toggle('on',!!c&&CATS[i]===c));
+      field.classList.toggle('hasOn',!!c);
+      window.scrollTo(0,0);
+      toMini(!first);
+      document.body.classList.add('inside');
+    }
+    const i=sid?curItems.findIndex(s=>s.id===sid):-1;
+    if(i>=0)setTimeout(()=>openStory(i),first?700:0);else if(rOpen){pushed=false;closeReader()}
   }else{
+    if(rOpen){pushed=false;closeReader()}
     current='';
     window.scrollTo(0,0);
     document.body.classList.remove('inside');
@@ -341,9 +513,11 @@ function show(first){
 }
 document.getElementById('back').addEventListener('click',home);
 document.getElementById('top10').addEventListener('click',()=>go('top-10'));
-window.addEventListener('hashchange',show);
-window.addEventListener('popstate',show);
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&current)home()});
+window.addEventListener('hashchange',()=>show());
+document.addEventListener('keydown',e=>{
+  if(rOpen){if(e.key==='Escape')shut();else if(e.key==='ArrowRight')step(1);else if(e.key==='ArrowLeft')step(-1);return}
+  if(e.key==='Escape'&&current)home();
+});
 let rt,lw=innerWidth;window.addEventListener('resize',()=>{if(innerWidth===lw)return;lw=innerWidth;clearTimeout(rt);rt=setTimeout(()=>{if(mini)field.style.transform=cornerT(flyRect);else drawField(false)},150)});
 drawField(!location.hash);
 show(true);
