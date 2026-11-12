@@ -63,24 +63,24 @@
     },
 
     stepsCopy: {
-    backLine: 'Each skill opens in your Premium library in a new tab. Copy the skill block, then come back here to run it.',
+    paywall: 'The Skill Library is for Premium members. If a post looks locked, sign in to Substack with the email on your Premium account.',
       why: 'Why this section',
       pick: 'Pick your skill',
-      run: 'Run it on real work this week',
+      run: 'Run it on real work',
       show: 'Show your work',
       runBody: 'Use a real task from your own week, not a sample. Open the skill, run it, and keep the output next to the work it was for.',
       runCheck: 'I ran it on real work.',
-      pickBody: 'Pick one or more. Open any skill to read it in the library first.',
+      pickBody: 'Add the skills you want to try to your list. You set them up in the next step.',
       showQs: [
         { id: 'ask', label: 'What did you ask, and what did it give you?' },
         { id: 'kept', label: 'What did you keep, and what did you change?' },
-        { id: 'refused', label: 'What did you refuse, and why?' }
+        { id: 'refused', label: 'What did you refuse, and why?', help: 'Something it suggested that you rejected. Rejected nothing? Say what you double-checked.' }
       ],
-      showHint: 'Three short answers. Nothing is saved, so copy anything you want to keep.'
+      showHint: 'Three short answers, a sentence or two each. This page forgets everything when you close the tab, so use Copy my answers to keep them.'
     },
 
     capstone: {
-      body: 'Run three or more skills in the same week. Then write a one-page judgment log: where AI helped, where you overrode it, and what you will keep doing.',
+      body: 'Run three or more skills in the same week. Then write a short judgment log, a few sentences each on where AI helped, where you overrode it, and what you will keep doing.',
       logQs: [
         { id: 'helped', label: 'Where did AI help?' },
         { id: 'overrode', label: 'Where did you override it?' },
@@ -158,39 +158,55 @@
     }
   };
 
-  /* Install walkthrough: six steps, copied from Joel's own guide at jsalinas.org/claude-guide/#install */
-  window.COURSE.guideUrl = 'https://jsalinas.org/claude-guide/#install';
-  /* ChatGPT and Gemini steps quote each vendor's own help page (checked 2026-10-23):
-     help.openai.com/en/articles/10169521 (Projects in ChatGPT) and support.google.com/gemini/answer/15146780 (Use Gems). */
-  window.COURSE.installSteps = function (tool, surface) {
-    var copy = { label: 'Copy the prompt', title: 'Copy the skill prompt', body: 'Open the post with the skill and copy the whole prompt block, every line, top to bottom.', tip: 'Grab all of it, including the very first lines. The questions at the top are what make the skill yours.', next: 'Copied it, next', scene: 'copy' };
-    var finished = 'When it has your answers, send this: "Give me the finished instructions with my answers filled in. Keep every line of the original. One block I can paste." Copy what it gives you.';
+  /* Install walkthrough. Every path installs ONE named skill, the Anti-Sycophancy Skill, so a first-timer never has to choose.
+     Claude steps checked against support.claude.com (Settings > Capabilities for code execution; Customize > Skills).
+     ChatGPT steps: help.openai.com/en/articles/10169521 (Projects). Skills in ChatGPT are only on Business, Enterprise, Healthcare and Edu plans (help.openai.com/en/articles/20001066).
+     Gemini steps: support.google.com/gemini/answer/17094296 (create a skill from a chat; Customize > Skills).
+     Gems on personal accounts become read-only on 2026-11-17 (support.google.com/gemini/answer/18560919), so the Gemini path uses skills, not Gems. All checked 2026-11-11. */
+  window.COURSE.firstSkill = { name: 'Anti-Sycophancy Skill', url: 'https://leadershipinchange.com/i/210243063/anti-sycophancy-skill', firstLine: 'Create a skill with the information below.' };
+  window.COURSE.testPrompt = "Here is a decision I'm leaning toward: [describe it in a sentence or two]. Tell me what's weak about it.";
+  window.COURSE.toolNames = { claude: 'Claude', chatgpt: 'ChatGPT', gemini: 'Gemini' };
+  window.COURSE.installSteps = function (tool) {
+    var F = window.COURSE.firstSkill, T = window.COURSE.toolNames[tool];
+    var copy = {
+      label: 'Copy the skill', title: 'Copy the ' + F.name,
+      lines: [
+        'Click the orange button below. The ' + F.name + ' opens in the Skill Library, in a new tab.',
+        'Under the skill’s name is a grey box of text. Its first line is “' + F.firstLine + '”',
+        'Copy everything in that grey box, from the first line to the last.',
+        'Come back to this tab.'
+      ],
+      action: { text: 'Open the ' + F.name + ' ↗', url: F.url },
+      note: 'The Skill Library is for Premium members. If the post looks locked, sign in to Substack with the email on your Premium account.' + (tool === 'claude' ? '' : ' The post mentions Claude in a few places. Ignore that, the same text works in ' + T + '.'),
+      next: 'I copied it, next'
+    };
+    var test = function (where) { return {
+      label: 'Test it', title: 'Test it',
+      lines: [where, 'Send the message below, with your own decision in place of the brackets.', 'If ' + T + ' points out weak spots instead of cheering you on, the skill is working.'],
+      copyText: window.COURSE.testPrompt,
+      done: 'That’s it. Your first skill is set up. Every other skill installs the same way' + (tool === 'chatgpt' ? ', each in its own project.' : '.'),
+      next: 'Done, go to Module 1'
+    }; };
     if (tool === 'chatgpt') return [
       copy,
-      { label: 'Paste and answer', title: 'Paste it into a new ChatGPT chat', body: 'Open ChatGPT and start a new chat. Paste the whole prompt and send it. It asks you a few questions first. Answer them in plain language.', tip: 'Specific answers make a specific skill. Vague answers make a vague one.', next: 'Answered, next', scene: 'paste' },
-      { label: 'Get the finished version', title: 'Ask for the finished instructions', body: finished, tip: 'If anything got shortened, ask it to put the missing lines back. You want the whole thing.', next: 'Copied it, next', scene: 'answer' },
-      { label: 'Create a project', title: 'Create a project', body: 'Select New project in the sidebar. Enter a project name, then select an icon and color.', tip: 'Name the project after the skill, like "Hard Conversation Skill", so it is easy to find.', next: 'Created it, next', scene: 'save' },
-      { label: 'Add the instructions', title: 'Paste them into Project settings', body: 'Select the more options menu (•••), then select Project settings, and paste the finished instructions there.', tip: 'OpenAI notes that project instructions apply only within that project and override your global custom instructions.', next: 'Added them, next', scene: 'paste' },
-      { label: 'Put it to work', title: 'Put it to work', body: 'Start a new chat inside that project whenever you need the skill, and describe the real situation.', tip: 'One project per skill keeps each one clean.', next: 'Continue to Module 1', scene: 'chat' }
+      { label: 'Paste it in', title: 'Paste it into ChatGPT', lines: ['Go to chatgpt.com and start a new chat.', 'Paste the text into the message box and press Enter.', 'If ChatGPT asks you questions, answer them in plain words. If it doesn’t, that’s fine.'], note: 'On a ChatGPT work plan (Business or Enterprise), it may offer to install it as a skill. If it does, accept and skip to the last step.', next: 'Done, next' },
+      { label: 'Ask for the final text', title: 'Ask for the final text', lines: ['Send the message below.', 'ChatGPT replies with one block of text. Click the copy icon under its reply to copy all of it.'], note: 'Got it in several pieces? Reply: Put it all in one block.', copyText: 'Give me the finished instructions with my answers filled in. Keep every line of the original. One block I can paste.', next: 'I copied it, next' },
+      { label: 'Make a project', title: 'Make a project', lines: ['In the ChatGPT sidebar, select New project.', 'Name it “' + F.name + '” and create it.'], next: 'Done, next' },
+      { label: 'Put it in the project', title: 'Put it in the project', lines: ['Inside the project, select the ••• menu, then Project settings.', 'Paste the block into the instructions box and save.'], note: 'Instructions you put here apply only inside this project.', next: 'Done, next' },
+      test('Inside the project, start a new chat.')
     ];
     if (tool === 'gemini') return [
       copy,
-      { label: 'Paste and answer', title: 'Paste it into a new Gemini chat', body: 'Go to gemini.google.com and start a new chat. Paste the whole prompt and send it. It asks you a few questions first. Answer them in plain language.', tip: 'Specific answers make a specific skill. Vague answers make a vague one.', next: 'Answered, next', scene: 'paste' },
-      { label: 'Get the finished version', title: 'Ask for the finished instructions', body: finished, tip: 'If anything got shortened, ask it to put the missing lines back. You want the whole thing.', next: 'Copied it, next', scene: 'answer' },
-      { label: 'Create a Gem', title: 'Create a Gem', body: 'Click Open Sidebar, then Gems, then New Gem. If you have never made a Gem before, first click Settings and help, then Gems.', tip: 'Name the Gem after the skill, like "Hard Conversation Skill", so it is easy to find.', next: 'Created it, next', scene: 'save' },
-      { label: 'Add the instructions', title: 'Paste them in and save', body: 'Enter a name and instructions for your Gem: paste the finished instructions into the instructions field. Then click Save.', tip: 'Google says that starting in November 2026, Gems on personal Google accounts move over to skills automatically.', next: 'Saved it, next', scene: 'paste' },
-      { label: 'Put it to work', title: 'Put it to work', body: 'Open the sidebar, click Gems, and under "My Gems" select your skill. Then type the real situation in the text box.', tip: 'A Gem you make on the web also shows up in the Gemini mobile app.', next: 'Continue to Module 1', scene: 'chat' }
+      { label: 'Paste it in', title: 'Paste it into Gemini', lines: ['Go to gemini.google.com and start a new chat.', 'Paste the text into the message box and press Enter.', 'Gemini builds the skill and saves it for you. If it asks you questions, answer them in plain words.'], next: 'Done, next' },
+      { label: 'Check it saved', title: 'Check that it saved', lines: ['In the Gemini sidebar, click Customize, then Skills. If you don’t see Customize, click More first.', 'You should see your new skill in the list.'], note: 'Not there? Go back to the chat and type: Save this as a skill.', next: 'I see it, next' },
+      test('Start a new Gemini chat.')
     ];
-    var name = surface === 'desktop' ? 'Cowork' : 'a new Claude chat';
-    var openWhere = surface === 'desktop' ? 'Open the Claude desktop app and start a Cowork chat.' : 'Open claude.ai and start a new chat.';
-    var settingsWhere = surface === 'web' ? 'Click the gear (Settings) at the bottom-left, then open Capabilities.' : 'Open Settings from the sidebar, then go to Capabilities.';
     return [
       copy,
-      { label: 'Turn on Code execution', title: 'Turn on Code execution', body: 'One setting has to be on so Claude can build and save the skill. ' + settingsWhere + ' Turn on "Code execution and file creation."', tip: "It's a one-time switch. Leave it on and every future skill builds cleanly.", next: "It's on, next", scene: 'toggle' },
-      { label: 'Paste it in', title: 'Paste it into ' + name, body: openWhere + ' Paste the whole prompt into the message box and send it. Claude reads it and starts building your skill.', tip: surface === 'desktop' ? 'On the desktop app this build chat is called Cowork. On the web it’s just a regular chat, either works.' : 'On the web it’s a normal Claude chat. In the desktop app the same thing is called Cowork.', next: 'Sent it, next', scene: 'paste' },
-      { label: 'Answer its questions', title: 'Answer its questions', body: 'Some skills ask a few quick questions first, to learn your voice, your brand, or how you like things done. Answer them in plain language. If it doesn’t ask anything, it just builds, skip ahead.', tip: 'The more honestly you answer, the better the skill fits you. There are no wrong answers.', next: 'Answered, next', scene: 'answer' },
-      { label: 'Click Save', title: 'Click "Save"', body: 'When Claude finishes, it shows your skill on a card. Click Save. That’s the moment it becomes a real, reusable skill in your account.', tip: 'Saved skills live in Customize → Skills. If one ever seems to do nothing, check that its switch is on there.', next: 'Saved it, next', scene: 'save' },
-      { label: 'Put it to work', title: 'Put it to work', body: 'Done. Just ask Claude in plain language and the skill fires when it fits. Want it on purpose? Mention it by name in your request.', tip: 'You never rebuild it. It’s saved for good, ready every time you open Claude.', next: 'Continue to Module 1', scene: 'chat' }
+      { label: 'Turn on one setting', title: 'Turn on one setting', lines: ['Go to claude.ai, or open the Claude desktop app.', 'Click your initials at the bottom left, then Settings, then Capabilities.', 'Turn on Code execution, which lets Claude build and save skills. It may be called “Code execution and file creation.”'], note: 'You only do this once.', next: 'It’s on, next' },
+      { label: 'Paste it in', title: 'Paste it into a new chat', lines: ['Start a new chat in Claude.', 'Paste the text into the message box and press Enter.', 'If Claude asks you questions, answer them in plain words. This skill usually goes straight to building, which is fine.'], next: 'Done, next' },
+      { label: 'Click Save', title: 'Click Save', lines: ['When Claude finishes, it shows the skill on a card with a Save button.', 'Click Save. Now the skill is part of your Claude account.'], note: 'No Save button? Type: Save this as a skill. You can find your skills any time under Customize, then Skills.', next: 'Saved it, next' },
+      test('Start a new chat in Claude.')
     ];
   };
 

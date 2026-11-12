@@ -739,3 +739,25 @@ body.soon-on { overflow: auto; height: auto; }
 .soon-circ { display: none; }
 .soon-only span { white-space: nowrap; }
 @media (max-width: 560px) { .soon-only { gap: 8px; padding: 9px 12px; } .soon-only span { font-size: 11px; letter-spacing: .12em; } .soon-only img { height: 24px; } .soon-only b { font-size: 12px; letter-spacing: .16em; } }
+
+/* 2026-11 sweep: plain step lists, copy boxes, blocked Next */
+.howto { margin: 14px 0 6px; padding-left: 1.4em; display: grid; gap: 8px; color: var(--ink); line-height: 1.5; }
+.howto.big { font-size: 18px; gap: 12px; }
+.howto li::marker { color: var(--blue-deep); font-weight: 700; }
+.actionrow { margin: 18px 0 6px; }
+.hint.note { margin-top: 14px; }
+.copybox { margin: 16px 0 6px; padding: 14px 16px; border: 1px solid rgba(60,158,231,.35); border-radius: 12px; background: rgba(60,158,231,.06); display: grid; gap: 10px; justify-items: start; }
+.copybox p { margin: 0; font-size: 16px; line-height: 1.5; user-select: all; }
+.needline { margin: 8px 0 0; text-align: right; font-size: 14px; color: var(--terra-deep); }
+.needline[hidden] { display: none; }
+.stepnav .btn[disabled] { opacity: .45; cursor: not-allowed; box-shadow: none; }
+.fhelp { display: block; font-size: 13px; color: var(--ink-soft); margin: 2px 0 6px; font-weight: 400; }
+.toolask h2 { margin-bottom: 4px; }
+.toolbtns { display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0 14px; }
+.toolbtns .btn { min-width: 150px; justify-content: center; }
+.toolline { margin: 4px 0 12px; font-size: 15px; }
+.pickcount.sticky { position: sticky; top: 8px; z-index: 3; display: inline-block; padding: 6px 12px; border-radius: 999px; background: var(--paper); border: 1px solid rgba(60,158,231,.35); font-weight: 600; }
+@media (max-width: 640px) { .howto.big { font-size: 16px; } .toolbtns .btn { flex: 1 1 100%; } .needline { text-align: left; } }
+.stage.has-action .stepnav .btn.primary { background: var(--paper); color: var(--terra-deep); border: 1.5px solid var(--terra); box-shadow: none; }
+@media (max-width: 899px) { .nav-open .side { z-index: 30; } .nav-open .scrim { z-index: 28; } }
+.card .tick span { white-space: nowrap; }

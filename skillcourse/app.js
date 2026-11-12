@@ -4,9 +4,12 @@
   var MIN_SHOW = 10, MIN_LOG = 40;
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* Nothing is stored. State lives in memory and resets on refresh. */
-  function fresh() { return { start: { read: false, install: false }, mods: {}, cap: { why: false, picks: [], ran: false, log: {} }, cert: { name: '', date: '', id: '' }, step: {}, marked: {} }; }
-  var S = fresh();
+  /* Kept for this tab only (sessionStorage), so a reload, like a phone reopening the tab after a trip to the library, does not wipe it.
+     Closing the tab clears it. Nothing is sent anywhere. */
+  function fresh() { return { start: { read: false, install: false }, tool: null, mods: {}, cap: { why: false, picks: [], ran: false, log: {} }, cert: { name: '', date: '', id: '' }, step: {}, marked: {} }; }
+  var S = fresh(), SKEY = 'licSkillsCourse.v1';
+  try { var saved = sessionStorage.getItem(SKEY); if (saved) S = Object.assign(fresh(), JSON.parse(saved)); } catch (e) {}
+  function save() { try { sessionStorage.setItem(SKEY, JSON.stringify(S)); } catch (e) {} }
   function M(id) { if (!S.mods[id]) S.mods[id] = { why: false, picks: [], run: false, show: {} }; return S.mods[id]; }
   function len(s) { return (s || '').trim().length; }
 
@@ -30,7 +33,9 @@
   function validRoute(k) { return k === 'home' || k === 'install' || ORDER.indexOf(k) >= 0; }
   function routeTitle(k) { if (k === 'install') return 'Install a skill'; if (k === 'start') return 'Start Here'; if (k === 'capstone') return 'Capstone'; if (k === 'certificate') return 'Certificate of Completion'; var m = modById(k.slice(2)); return 'Module ' + (C.modules.indexOf(m) + 1) + ': ' + m.name; }
   function stepList(k) { if (k === 'start') return [S.start.install]; if (k === 'capstone') return capSteps(); if (k === 'certificate') return [allDone()]; return modSteps(modById(k.slice(2))); }
+  function anyProgress() { return C.modules.some(function (m) { return modSteps(m).some(Boolean); }) || capSteps().some(Boolean) || Object.keys(S.marked).length > 0; }
   function nextUp() {
+    if (!startDone() && !anyProgress()) return { route: 'start', step: 0 };
     for (var i = 1; i < ORDER.length - 1; i++) if (!routeDone(ORDER[i])) { var st = stepList(ORDER[i]); var si = st.indexOf(false); if (si === 0 && ORDER[i] !== 'start' && st.length > 2) si = 1; return { route: ORDER[i], step: si < 0 ? 0 : si }; }
     return { route: 'certificate', step: 0 };
   }
@@ -112,7 +117,7 @@
     item('home', '⌂', 'Course home', '', false, false);
     var sk = el('button', { class: 'sy', type: 'button' }); sk.innerHTML = '<span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span><span class="t">All 25 skills<span class="sub">Find any skill, any time</span></span>'; sk.addEventListener('click', function () { document.body.classList.remove('nav-open'); openSkills(); }); nav.appendChild(sk);
     nav.appendChild(el('div', { class: 'sy-label', text: 'Suggested order' }));
-    item('start', 'S', 'Start Here', startDone() ? 'Done' : 'Optional', startDone(), false);
+    item('start', 'S', 'Start Here', startDone() ? 'Done' : 'Install a skill, 5 min', startDone(), false);
     C.modules.forEach(function (m, i) { var n = modSteps(m).filter(Boolean).length; item('m-' + m.id, String(i + 1), m.name, modDone(m) ? 'Done' : n + ' of 4 steps', modDone(m), n > 0); });
     item('capstone', 'C', 'Capstone', capDone() ? 'Done' : capSteps().filter(Boolean).length + ' of 4 steps', capDone(), capSteps().some(Boolean));
     item('certificate', '★', 'Certificate', allDone() ? 'Ready' : 'After all 7 parts', false, false, !allDone());
@@ -135,6 +140,8 @@
       var ix = ORDER.indexOf(current), nx = ORDER[ix + 1];
       if (nx) { var al = textBtn(routeTitle(nx) + ' \u2192', function () { go(nx, true); }); after.appendChild(al); }
       rail.appendChild(after);
+    } else if (current === 'start' && nu.route === 'start') {
+      rail.appendChild(el('div', { class: 'blk' }, [el('h3', { text: 'After this' }), el('p', { class: 'tiny', text: 'Module 1: Decide. You run the skill you just set up on a real decision.' })]));
     } else {
       var card = el('div', { class: 'next-card', html: '<span class="eyebrow">' + (allDone() ? 'All done' : 'Next up') + '</span><b>' + routeTitle(nu.route) + '</b>' });
       var cb = el('button', { class: 'btn textlink light', type: 'button', text: (allDone() ? 'Open my certificate' : 'Go to it') + ' \u2192' }); cb.addEventListener('click', function () { goTo(nu.route, nu.step); }); card.appendChild(cb);
@@ -271,7 +278,7 @@
     document.querySelectorAll('#quest .md').forEach(function (c, i) { c.classList.toggle('on', doneIx[i]); c.classList.toggle('here', i === hi); });
     var hiDone = 0; doneIx.forEach(function (d, i) { if (d) hiDone = i; });
     $('qml').setAttribute('x2', String(6 + hiDone * 188 / 8)); $('qmpin').setAttribute('cx', String(6 + hi * 188 / 8));
-    $('qwhere').innerHTML = '<b>' + dc + ' of 7</b> · You are at ' + QN[hi].l;
+    $('qwhere').innerHTML = '<b>' + dc + ' of 7</b> · ' + (!startDone() && !anyProgress() && current === 'home' ? 'Not started yet' : 'You are at ' + QN[hi].l);
     if (W.open) { setLit(litTarget(), true); walkTo(W.lenAt[hi]); }
   }
 
@@ -326,14 +333,16 @@
       b.addEventListener('keydown', function (e) { var n = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0; if (n) { e.preventDefault(); var j = (i + n + steps.length) % steps.length; setIdx(j, false); btns[j].focus(); } });
       tabs.appendChild(b); return b;
     });
-    function paintTabs() { btns.forEach(function (b, i) { var ok = !!steps[i].done(); b.classList.toggle('ok', ok); b.setAttribute('aria-label', steps[i].label + (ok ? ', done' : '')); b.setAttribute('aria-controls', 'stage-' + key); b.setAttribute('aria-selected', i === idx ? 'true' : 'false'); b.tabIndex = i === idx ? 0 : -1; }); if (hooks.onIdx) hooks.onIdx(idx); }
+    var nx = null, need = null;
+    function paintNav() { if (!nx) return; var blocked = !steps[idx].skippable && !steps[idx].done() && !!steps[idx].need; nx.disabled = blocked; nx.setAttribute('aria-disabled', blocked ? 'true' : 'false'); need.textContent = blocked ? steps[idx].need : ''; need.hidden = !blocked; }
+    function paintTabs() { paintNav(); btns.forEach(function (b, i) { var ok = !!steps[i].done(); b.classList.toggle('ok', ok); b.setAttribute('aria-label', steps[i].label + (ok ? ', done' : '')); b.setAttribute('aria-controls', 'stage-' + key); b.setAttribute('aria-selected', i === idx ? 'true' : 'false'); b.tabIndex = i === idx ? 0 : -1; }); try { btns[idx].scrollIntoView({ block: 'nearest', inline: 'nearest' }); } catch (e) {} if (hooks.onIdx) hooks.onIdx(idx); }
     function paintStage() {
       var f = document.activeElement && document.activeElement.id, top = $('main').scrollTop;
       stage.innerHTML = ''; stage.setAttribute('aria-labelledby', 'tab-' + key + '-' + idx);
       steps[idx].body(stage, function (i) { setIdx(i, true); });
       var nav = el('div', { class: 'stepnav' });
       if (idx > 0) { var bk = el('button', { class: 'btn textlink', type: 'button', text: '\u2190 Back' }); bk.addEventListener('click', function () { setIdx(idx - 1, true); }); nav.appendChild(bk); } else nav.appendChild(el('span'));
-      var last = idx === steps.length - 1, nx = el('button', { class: 'btn primary', type: 'button', text: steps[idx].nextLabel || (last ? (key === 'start' ? 'Continue to Module 1' : 'Finish and continue') : 'Next: ' + steps[idx + 1].label) });
+      var last = idx === steps.length - 1; nx = el('button', { class: 'btn primary', type: 'button', text: steps[idx].nextLabel || (last ? (key === 'start' ? 'Continue to Module 1' : 'Finish and continue') : 'Next: ' + steps[idx + 1].label) });
       nx.addEventListener('click', function () {
         if (steps[idx].onNext) steps[idx].onNext();
         if (!last) { setIdx(idx + 1, true); return; }
@@ -342,7 +351,8 @@
         if (hooks.finish) { hooks.finish(stage); return; }
         var n = nextUp(); goTo(n.route, n.step);
       });
-      nav.appendChild(nx); stage.appendChild(nav);
+      need = el('p', { class: 'needline', role: 'status' }); stage.appendChild(need);
+      nav.appendChild(nx); stage.appendChild(nav); paintNav();
       if (f) { var t = document.getElementById(f); if (t && t.focus) t.focus({ preventScroll: true }); }
       $('main').scrollTop = top;
     }
@@ -353,9 +363,9 @@
   }
 
   var wasDone = false, booted = false, celebrated = false;
-  function touchSoft() { chrome(); if (screenLive) screenLive(); }
+  function touchSoft() { save(); chrome(); if (screenLive) screenLive(); }
   function touch(hard) {
-    afterChange(); chrome();
+    afterChange(); save(); chrome();
     if (cur) { cur.paintTabs(); if (hard) cur.paintStage(); }
     if (screenLive) screenLive();
   }
@@ -398,8 +408,8 @@
     card.appendChild(el('div', { class: 'gwrap', html: glyph(skill.id) }));
     var pick = el('button', { class: 'pick', type: 'button', id: 'pick-' + scope + '-' + skill.id, 'aria-pressed': isOn ? 'true' : 'false', text: skill.name });
     pick.addEventListener('click', function () { onToggle(skill.id); });
-    var open = el('a', { class: 'open', href: skill.url, target: '_blank', rel: 'noopener', text: 'Open the skill in your library (Premium) \u2197', 'aria-label': 'Open ' + skill.name + ' in your Premium library, in a new tab' });
-    var tick = el('span', { class: 'tick' }, [el('i'), el('span', { text: isOn ? 'Picked' : 'Pick' })]);
+    var open = el('a', { class: 'open', href: skill.url, target: '_blank', rel: 'noopener', text: 'Preview in your library (Premium) \u2197', 'aria-label': 'Preview ' + skill.name + ' in your Premium library, in a new tab' });
+    var tick = el('span', { class: 'tick' }, [el('i'), el('span', { text: isOn ? 'On my list' : 'Add to my list' })]);
     card.appendChild(pick); if (skill.does) { var dp = el('p', { class: 'does' }, [el('b', { text: 'Use it when: ' })]); dp.appendChild(document.createTextNode(skill.does)); card.appendChild(dp); } card.appendChild(el('div', { class: 'row' }, [tick, open]));
     card.addEventListener('pointermove', function (e) { var r = card.getBoundingClientRect(); card.style.setProperty('--mx', (e.clientX - r.left) + 'px'); card.style.setProperty('--my', (e.clientY - r.top) + 'px'); });
     li.appendChild(card); return li;
@@ -408,14 +418,25 @@
     var cb = el('input', { type: 'checkbox', id: id }); cb.checked = !!checked; cb.addEventListener('change', function () { onChange(cb.checked); });
     return el('label', { class: 'checkrow', 'for': id }, [cb, el('span', { text: text })]);
   }
-  function field(id, label, value, min, onInput) {
+  function field(id, label, value, min, onInput, help) {
     var ta = el('textarea', { id: id, rows: '4', 'aria-describedby': id + '-c' }); ta.value = value || ''; var cnt = el('span', { class: 'count', id: id + '-c' });
-    function paint() { var l = len(ta.value); cnt.textContent = l >= min ? 'Done' : (min - l) + ' more characters to count this answer'; cnt.classList.toggle('ok', l >= min); }
+    function paint() { var l = len(ta.value); cnt.textContent = l >= min ? 'Done' : l === 0 ? (min > MIN_SHOW ? 'A few sentences' : 'A sentence or two is enough') : 'Write a little more (' + (min - l) + ' more characters)'; cnt.classList.toggle('ok', l >= min); }
     ta.addEventListener('input', function () { onInput(ta.value); paint(); touch(false); });
-    paint(); return el('label', { class: 'f', 'for': id }, [el('span', { text: label }), ta, cnt]);
+    paint(); return el('label', { class: 'f', 'for': id }, [el('span', { text: label }), help ? el('small', { class: 'fhelp', text: help }) : null, ta, cnt]);
   }
   function pickedLine(ids, prefix, note) {
     var w = el('div', { class: 'picked' }, [el('p', { class: 'eyebrow', text: prefix })]), pc = el('div', { class: 'pickchips big' }); ids.forEach(function (id) { var sk = skillById(id); pc.appendChild(el('a', { href: sk.url, target: '_blank', rel: 'noopener', html: '<span class="gw">' + glyph(sk.id) + '</span>' + sk.name + ' <span aria-hidden="true">\u2197</span>' })); }); w.appendChild(pc); if (note) w.appendChild(el('p', { class: 'hint backline', text: note })); return w;
+  }
+  function runSteps(st, picks, plural) {
+    if (!picks.length) { st.appendChild(el('p', { class: 'hint', text: 'Go back one step and add a skill to your list first.' })); return; }
+    st.appendChild(pickedLine(picks, plural ? 'Your list:' : 'Your list:'));
+    var ol = el('ol', { class: 'howto' });
+    var how = el('button', { class: 'linkbtn', type: 'button', text: 'Show me how again (your progress here is kept)' }); how.addEventListener('click', function () { goTo('start', 0); });
+    [el('li', { text: 'Click a skill above. It opens in the Skill Library, in a new tab.' }),
+     el('li', {}, [document.createTextNode('Copy the whole grey box, top to bottom. Many skills start with questions for you, so copy those too. Then set it up in your AI tool the same way you did in Start Here. '), how]),
+     el('li', { text: 'Start a new chat' + (S.tool === 'chatgpt' ? ' inside that skill\u2019s project' : '') + ' and begin with \u201cUse my [skill name]\u201d, then describe a real task from your week, not a sample.' }),
+     el('li', { text: 'Come back to this tab and tick the box below.' })].forEach(function (li) { ol.appendChild(li); });
+    st.appendChild(ol); st.appendChild(el('p', { class: 'hint', text: C.stepsCopy.paywall }));
   }
   function skipBtn(label, fn) { var b = el('button', { class: 'btn ghost', type: 'button', text: label }); b.addEventListener('click', fn); return b; }
 
@@ -436,24 +457,24 @@
     banner.appendChild(el('span', { class: 'eyebrow', text: 'Leadership in Change · Premium' }));
     banner.appendChild(el('h1', { html: 'The Leader&rsquo;s AI <em>Skills</em> Course', tabindex: '-1' }));
     banner.appendChild(el('p', { class: 'lead', text: C.hero.lead }));
-    var cta = el('div', { class: 'cta-row' }), nu = nextUp(), started = startDone() || S.start.read || C.modules.some(function (m) { return modSteps(m).some(Boolean); }) || capSteps().some(Boolean);
-    var go1 = el('button', { class: 'btn primary big', type: 'button', text: allDone() ? 'Open my certificate' : started ? 'Continue: ' + routeTitle(nu.route) : 'Start Here: install your first skill' }); go1.addEventListener('click', function () { if (!started && !allDone()) goTo('start', 0); else goTo(nu.route, nu.step); });
+    var cta = el('div', { class: 'cta-row' }), nu = nextUp(), started = startDone() || anyProgress();
+    var go1 = el('button', { class: 'btn primary big', type: 'button', text: allDone() ? 'Open my certificate' : started ? 'Continue: ' + routeTitle(nu.route) : 'Start here: install your first skill (5 min)' }); go1.addEventListener('click', function () { if (!started && !allDone()) goTo('start', 0); else goTo(nu.route, nu.step); });
     cta.appendChild(go1);
-    if (!started) cta.appendChild(textBtn('Or skip to Module 1 \u2192', function () { goTo('m-' + C.modules[0].id, 0); }));
+    if (!started) cta.appendChild(textBtn('Already have a skill set up? Go to Module 1 \u2192', function () { S.start.install = true; touch(false); goTo('m-' + C.modules[0].id, 1); }));
     banner.appendChild(cta); banner.appendChild(el('p', { class: 'hint', text: C.hero.note }));
     host.appendChild(banner);
     var cards = el('div', { class: 'strip' }); host.appendChild(cards);
-    var mk = el('section', { class: 'panel resume', style: 'margin-top:22px' }); host.appendChild(mk);
+    var mk = el('section', { class: 'panel resume', style: 'margin-top:22px' });
     var how = el('section', { class: 'panel', style: 'margin-top:22px' });
     how.innerHTML = '<h2 style="font-size:22px">Four steps in every module</h2><div class="four">' +
-      '<div><b>1. Intro</b>A short read on what the section is for. Skip it any time.</div><div><b>2. ' + C.stepsCopy.pick + '</b>Choose as many skills as you want, at least one.</div><div><b>3. ' + C.stepsCopy.run + '</b>Use it on a real task, not a sample.</div><div><b>4. ' + C.stepsCopy.show + '</b>Three short answers about what you kept, changed and refused.</div></div>';
-    host.appendChild(how);
+      '<div><b>1. Intro</b>A short read on what the section is for. Skip it any time.</div><div><b>2. ' + C.stepsCopy.pick + '</b>Choose as many skills as you want, at least one.</div><div><b>3. ' + C.stepsCopy.run + '</b>Set the skill up in your AI tool and use it on a real task, not a sample.</div><div><b>4. ' + C.stepsCopy.show + '</b>Three short answers about what you kept, changed and refused.</div></div>';
+    host.appendChild(how); host.appendChild(mk);
     function paintMark() {
-      mk.innerHTML = '<h2 style="font-size:22px">Already finished a section?</h2><p class="hint">Tick what you have already done and jump straight to what is next. This is on your word, so mark only what you really finished.</p>';
+      mk.innerHTML = '<h2 style="font-size:22px">Coming back? Tick what you finished</h2><p class="hint">This page forgets your progress when you close the tab. Tick the modules you already finished and jump to what is next. Mark only what you really did.</p>';
       var row = el('div', { class: 'markrow' });
-      var items = [['start', 'Start Here']].concat(C.modules.map(function (m, i) { return ['m-' + m.id, (i + 1) + '. ' + m.name]; }), [['capstone', 'Capstone']]);
+      var items = [].concat(C.modules.map(function (m, i) { return ['m-' + m.id, (i + 1) + '. ' + m.name]; }), [['capstone', 'Capstone']]);
       items.forEach(function (it) {
-        var real = !S.marked[it[0]] && (it[0] === 'start' ? !!S.start.install : routeDone(it[0])), on = real || !!S.marked[it[0]];
+        var real = !S.marked[it[0]] && routeDone(it[0]), on = real || !!S.marked[it[0]];
         var b = el('button', { class: 'mk' + (on ? ' on' : '') + (real ? ' real' : ''), type: 'button', 'aria-pressed': on ? 'true' : 'false', id: 'mk-' + it[0] }, [el('i'), el('span', { text: it[1] + (real ? ' (done)' : '') })]);
         if (real) b.setAttribute('aria-disabled', 'true');
         b.addEventListener('click', function () { if (real) return; if (S.marked[it[0]]) delete S.marked[it[0]]; else S.marked[it[0]] = true; touch(false); paintMark(); var nb = document.getElementById('mk-' + it[0]); if (nb) nb.focus({ preventScroll: true }); });
@@ -466,69 +487,50 @@
     paintMark();
     function paint() {
       var dc = doneCount(), n = nextUp();
-      cards.innerHTML = '<div class="s-num"><b>' + dc + '</b><span>of 7 parts done</span></div><div class="s-bar"><div class="bigbar"><i style="width:' + Math.round(dc / 7 * 100) + '%"></i></div><p>' + (allDone() ? 'Every part is done. Your certificate is ready.' : 'Next up: <strong>' + routeTitle(n.route) + '</strong>') + '</p></div><p class="s-note">Your progress lasts while this tab is open. Use Copy my answers to keep what you write.</p>';
+      cards.innerHTML = '<div class="s-num"><b>' + dc + '</b><span>of 7 parts done</span></div><div class="s-bar"><div class="bigbar"><i style="width:' + Math.round(dc / 7 * 100) + '%"></i></div><p>' + (allDone() ? 'Every part is done. Your certificate is ready.' : 'Next up: <strong>' + routeTitle(n.route) + '</strong>') + '</p></div><p class="s-note">This page keeps your progress until you close the tab. Use Copy my answers to keep what you write.</p>';
     }
     paint(); screenLive = function () { paint(); };
   }
 
+  /* Start Here = the install walkthrough. Tool first, then one short step at a time, for one named skill. */
+  function copyBox(text) {
+    var pre = el('div', { class: 'copybox' }, [el('p', { text: text })]), b = el('button', { class: 'btn ghost small', type: 'button', text: 'Copy this message' });
+    b.addEventListener('click', function () { function ok() { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy this message'; }, 2000); } try { navigator.clipboard.writeText(text).then(ok, function () { toast('Select the text and copy it by hand.'); }); } catch (e) { toast('Select the text and copy it by hand.'); } });
+    pre.appendChild(b); return pre;
+  }
   function screenStart(host) {
-    var hs = screenHead('Start Here \u00b7 optional', 'How the Course works', [el('div', { class: 'numbig', html: icon('book'), 'aria-hidden': 'true' })], 'Install one skill and you are ready. Every module works on its own.');
-    
-    host.appendChild(hs);
-    Lesson(host, 'start', [
-      { label: 'Install a skill', skippable: true, done: function () { return !!S.start.install; }, body: function (st) {
-        st.appendChild(el('h2', { text: 'Install a skill, then start' }));
-        st.appendChild(el('div', { html: tiles([['doc', 'A saved set of instructions', 'Your AI tool follows it when you ask for that job.'], ['download', 'Set it up once', 'Works in Claude, ChatGPT and Gemini. The walkthrough shows each one.'], ['bolt', 'Run it on real work', 'Each module asks you to use a skill on a real task.']]) }));
-        st.appendChild(el('p', { style: 'margin-top:16px' }, [skipBtn('Start the install walkthrough', function () { goTo('install', 0); })])); st.lastChild.firstChild.className = 'btn primary';
-        st.appendChild(el('div', { class: 'flow', html: '<span>Start Here</span><i></i><span>6 modules</span><i></i><span>Capstone</span><i></i><span class="end">Certificate</span>' }));
-        st.appendChild(el('p', { class: 'hint', text: C.startHere.orderBody }));
-        st.appendChild(checkRow('start-install', C.startHere.steps[1].text, S.start.install, function (v) { S.start.install = v; touch(true); }));
-      } }
-    ]);
-  }
-
-  var surface = 'web', tool = 'claude';
-  function scene(kind) {
-    var url = tool === 'chatgpt' ? 'chatgpt.com' : tool === 'gemini' ? 'gemini.google.com' : surface === 'web' ? 'claude.ai' : 'Claude desktop app';
-    var inner = {
-      copy: '<div class="sc-card"><i class="ln w100 hot"></i><i class="ln w88"></i><i class="ln w70"></i><i class="ln w80"></i><span class="sc-btn sc-copy"><b class="a">Copy prompt</b><b class="b">\u2713 Copied</b></span></div>',
-      toggle: '<div class="sc-set"><div class="sc-row"><span>Code execution and file creation</span><span class="sw"><i></i></span></div><div class="sc-row dim"><span>Other setting</span><span class="sw off"><i></i></span></div></div>',
-      paste: '<div class="sc-chat"><div class="sc-input"><i class="ln w100"></i><i class="ln w88"></i><i class="ln w60"></i></div><span class="sc-btn sc-send">Send</span></div>',
-      answer: '<div class="sc-chat"><div class="bub l"><i class="ln w88"></i><i class="ln w60"></i></div><div class="bub r"><i class="ln w70"></i></div></div>',
-      save: '<div class="sc-card"><div class="sk-h"><span class="sk-i"></span><i class="ln w60"></i></div><i class="ln w88"></i><span class="sc-btn sc-save"><b class="a">Save</b><b class="b">\u2713 Saved</b></span></div>',
-      chat: '<div class="sc-chat"><div class="bub r"><i class="ln w88"></i></div><div class="bub l"><span class="chip fire">Skill used</span><i class="ln w100"></i><i class="ln w80"></i></div></div>'
-    }[kind];
-    return '<div class="mock scn-' + kind + '" aria-hidden="true"><div class="bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="url">' + (kind === 'copy' ? 'leadershipinchange.com' : url) + '</span></div><div class="stg">' + inner + '<svg class="cur" viewBox="0 0 24 24"><path d="M5 3l14 8-6 1.5L11 19 5 3z" fill="#fff" stroke="#2D1810" stroke-width="1.4" stroke-linejoin="round"/></svg></div></div><p class="tiny" style="margin-top:8px">Illustration</p>';
-  }
-  function screenInstall(host) {
-    var seen = [];
-    var ih = screenHead('Walkthrough · 6 steps', 'Install a skill', [el('div', { class: 'numbig', html: icon('download'), 'aria-hidden': 'true' })], 'Set it up once in the tool you use.'); ih.classList.add('compact'); host.appendChild(ih);
-    var picker = el('div', { class: 'toolpick' }, [el('span', { class: 'eyebrow', text: 'Which AI tool do you use?' })]);
-    var seg = el('div', { class: 'seg big', role: 'group', 'aria-label': 'Which AI tool do you use?' });
-    [['claude', 'Claude'], ['chatgpt', 'ChatGPT'], ['gemini', 'Gemini']].forEach(function (o) {
-      var b = el('button', { type: 'button', text: o[1], 'aria-pressed': tool === o[0] ? 'true' : 'false' }); b.addEventListener('click', function () { if (tool === o[0]) return; tool = o[0]; S.step.install = 0; go('install', false); var nb = document.querySelector('.toolpick .seg button[aria-pressed="true"]'); if (nb) nb.focus(); }); seg.appendChild(b);
-    });
-    picker.appendChild(seg); host.appendChild(picker);
-    var steps = C.installSteps(tool, surface);
-    function mk(i) {
-      return { label: steps[i].label, skippable: true, done: function () { return !!seen[i]; },
-        nextLabel: steps[i].next, onNext: i === steps.length - 1 ? function () { S.start.install = true; touch(false); } : null,
-        body: function (st) {
-          var d = C.installSteps(tool, surface)[i]; seen[i] = true;
-          if (tool === 'claude') {
-            var sub = el('div', { class: 'seg', role: 'group', 'aria-label': 'Claude on the web or the desktop app?' });
-            [['web', 'Web (claude.ai)'], ['desktop', 'Desktop app']].forEach(function (o) { var b = el('button', { type: 'button', text: o[1], 'aria-pressed': surface === o[0] ? 'true' : 'false' }); b.addEventListener('click', function () { surface = o[0]; cur.paintStage(); }); sub.appendChild(b); });
-            st.appendChild(sub);
-          }
-          st.appendChild(el('p', { class: 'eyebrow', style: 'margin-top:18px', text: 'Step ' + (i + 1) + ' of ' + steps.length + ' · ' + (tool === 'chatgpt' ? 'ChatGPT' : tool === 'gemini' ? 'Gemini' : 'Claude') }));
-          st.appendChild(el('h2', { text: d.title }));
-          st.appendChild(el('div', { class: 'inst' }, [el('div', { html: scene(d.scene) }), el('div', {}, [el('p', { class: 'read', text: d.body }), el('div', { class: 'tipbox', html: '<b>Tip</b> ' }), i === 0 ? el('p', { style: 'margin-top:14px' }, [el('a', { class: 'btn ghost small', href: C.libraryUrl, target: '_blank', rel: 'noopener', text: 'Open the Skill Library' })]) : null])]));
-          st.querySelector('.tipbox').appendChild(document.createTextNode(d.tip));
-          if (i === steps.length - 1) st.appendChild(el('div', { class: 'onerule', style: 'margin-top:18px' }, [el('strong', { text: 'That’s it. Your skill is set up.' }), el('p', { text: 'From here, every new skill takes a few minutes.' })]));
-          if (tool === 'claude') st.appendChild(el('p', { class: 'hint', style: 'margin-top:14px' }, [el('a', { href: C.guideUrl, target: '_blank', rel: 'noopener', text: 'Prefer the full Claude guide? Open it on jsalinas.org' })]));
-        } };
+    var head = screenHead('Start Here · about 5 minutes', 'Install your first skill', [el('div', { class: 'numbig', html: icon('download'), 'aria-hidden': 'true' })], C.startHere.what);
+    host.appendChild(head);
+    if (!S.tool) {
+      var box = el('section', { class: 'panel toolask' });
+      box.appendChild(el('h2', { text: 'Which AI tool do you use?' }));
+      box.appendChild(el('p', { class: 'hint', text: 'Pick the one you already open most. You can change it later.' }));
+      var row = el('div', { class: 'toolbtns' });
+      ['claude', 'chatgpt', 'gemini'].forEach(function (t) { var b = el('button', { class: 'btn ghost big', type: 'button', id: 'tool-' + t, text: C.toolNames[t] }); b.addEventListener('click', function () { S.tool = t; S.step.start = 0; touch(false); go('start', true); }); row.appendChild(b); });
+      box.appendChild(row);
+      box.appendChild(textBtn('I already have a skill set up. Go to Module 1 →', function () { S.start.install = true; touch(false); goTo('m-' + C.modules[0].id, 1); }));
+      host.appendChild(box); return;
     }
-    Lesson(host, 'install', steps.map(function (s2, i) { return mk(i); }), S.step.install || 0);
+    head.classList.add('compact');
+    var chg = el('p', { class: 'toolline' }, [document.createTextNode('Setting up in ' + C.toolNames[S.tool] + '. ')]);
+    chg.appendChild(textBtn('Use a different tool', function () { S.tool = null; S.step.start = 0; touch(false); go('start', true); }));
+    host.appendChild(chg);
+    var steps = C.installSteps(S.tool), seen = [];
+    Lesson(host, 'start', steps.map(function (d, i) {
+      return { label: d.label, skippable: true, done: function () { return !!seen[i] || (i === steps.length - 1 && startDone()); }, nextLabel: d.next,
+        onNext: i === steps.length - 1 ? function () { S.start.install = true; touch(false); } : null,
+        body: function (st) {
+          seen[i] = true;
+          st.appendChild(el('p', { class: 'eyebrow', text: 'Step ' + (i + 1) + ' of ' + steps.length }));
+          st.appendChild(el('h2', { text: d.title }));
+          var ol = el('ol', { class: 'howto big' }); d.lines.forEach(function (l) { ol.appendChild(el('li', { text: l })); }); st.appendChild(ol);
+          st.classList.toggle('has-action', !!d.action);
+          if (d.action) st.appendChild(el('p', { class: 'actionrow' }, [el('a', { class: 'btn primary big', href: d.action.url, target: '_blank', rel: 'noopener', text: d.action.text })]));
+          if (d.copyText) st.appendChild(copyBox(d.copyText));
+          if (d.note) st.appendChild(el('p', { class: 'hint note', text: d.note }));
+          if (d.done) st.appendChild(el('div', { class: 'onerule', style: 'margin-top:18px' }, [el('strong', { text: d.done })]));
+        } };
+    }), S.step.start || 0, { finish: function () { var n = nextUp(); goTo(n.route, n.step); } });
   }
 
   function markBtn(key) {
@@ -559,61 +561,61 @@
     var modHooks = { onIdx: function (ix) { head.classList.toggle('compact', ix > 0); }, finish: function (stage) { doneCard(stage, 'm-' + m.id); } };
     Lesson(host, 'm-' + m.id, [
       { label: 'Intro', skippable: true, done: function () { return !!M(m.id).why; }, onNext: function () { M(m.id).why = true; touch(false); }, body: function (st, setIdx) {
+        if (!M(m.id).why) { M(m.id).why = true; setTimeout(function () { touch(false); }, 0); }
         st.appendChild(el('h2', { text: C.stepsCopy.why }));
         st.appendChild(el('div', { class: 'why-text' }, [el('p', { text: m.why })]));
         st.appendChild(el('p', { class: 'eyebrow', style: 'margin-top:22px', text: 'What comes next' }));
         st.appendChild(el('div', { html: tiles([['target', 'Pick your skill', 'Choose as many as you want, at least one.'], ['bolt', 'Run it', 'Use a real task from your week, not a sample.'], ['pencil', 'Show your work', 'Three short answers about what you kept, changed and refused.']]) }));
-        st.appendChild(el('div', { class: 'cta-row', style: 'margin-top:18px' }, [skipBtn('Skip intro', function () { M(m.id).why = true; touch(false); setIdx(1); })]));
       } },
-      { label: C.stepsCopy.pick, done: function () { return M(m.id).picks.length > 0; }, body: function (st) {
+      { label: C.stepsCopy.pick, need: 'Add at least one skill to your list to continue.', done: function () { return M(m.id).picks.length > 0; }, body: function (st) {
         st.appendChild(el('h2', { text: C.stepsCopy.pick })); st.appendChild(el('p', { class: 'read', text: C.stepsCopy.pickBody })); st.appendChild(textBtn('Browse all 25 skills', openSkills));
         var ul = el('ul', { class: 'cards' }); var d = M(m.id);
         m.skills.forEach(function (sk) { ul.appendChild(skillCard(sk, m.id, d.picks.indexOf(sk.id) >= 0, function (id) { var k = d.picks.indexOf(id); if (k >= 0) d.picks.splice(k, 1); else d.picks.push(id); touch(true); })); });
         st.appendChild(ul);
       } },
-      { label: 'Run it', done: function () { return !!M(m.id).run; }, body: function (st) {
-        st.appendChild(el('h2', { text: C.stepsCopy.run })); st.appendChild(el('p', { class: 'read', text: C.stepsCopy.runBody }));
-        var picks = M(m.id).picks;
-        if (picks.length) st.appendChild(pickedLine(picks, 'Your picks: ', C.stepsCopy.backLine)); else st.appendChild(el('p', { class: 'hint', text: 'Pick a skill in step 2 first, then open it here.' }));
-        var ih = el('p', { class: 'hint' }); var ib = el('button', { class: 'linkbtn', type: 'button', text: 'Need to install it first? Open the install walkthrough' }); ib.addEventListener('click', function () { goTo('install', 0); }); ih.appendChild(ib); st.appendChild(ih);
+      { label: 'Run it', need: 'Tick the box once you have run it, to continue.', done: function () { return !!M(m.id).run; }, body: function (st) {
+        st.appendChild(el('h2', { text: C.stepsCopy.run }));
+        runSteps(st, M(m.id).picks, false);
         st.appendChild(checkRow('run-' + m.id, C.stepsCopy.runCheck, M(m.id).run, function (v) { M(m.id).run = v; touch(true); }));
       } },
-      { label: C.stepsCopy.show, done: function () { return showDone(m); }, body: function (st) {
+      { label: C.stepsCopy.show, need: 'Write a sentence or two in each box to finish this module.', done: function () { return showDone(m); }, body: function (st) {
         st.appendChild(el('h2', { text: C.stepsCopy.show })); st.appendChild(el('p', { class: 'hint', text: C.stepsCopy.showHint }));
-        var f = el('div', { class: 'fields' }); C.stepsCopy.showQs.forEach(function (q) { f.appendChild(field('show-' + m.id + '-' + q.id, q.label, M(m.id).show[q.id], MIN_SHOW, function (v) { M(m.id).show[q.id] = v; })); }); st.appendChild(f);
+        var f = el('div', { class: 'fields' }); C.stepsCopy.showQs.forEach(function (q) { f.appendChild(field('show-' + m.id + '-' + q.id, q.label, M(m.id).show[q.id], MIN_SHOW, function (v) { M(m.id).show[q.id] = v; }, q.help)); }); st.appendChild(f);
         st.appendChild(el('div', { class: 'cta-row' }, [copyBtn()]));
       } }
     ], null, modHooks);
   }
 
   function screenCapstone(host) {
-    var ch = screenHead('Capstone', 'Three skills, one week, one judgment log', [el('div', { class: 'numbig', text: 'C', 'aria-hidden': 'true' })], 'The last step before your certificate.'); var cc = el('div', { class: 'chips' }, [markBtn('capstone')]); ch.querySelector('.meta').appendChild(cc); host.appendChild(ch);
+    var ch = screenHead('Capstone', 'Three or more skills, one week, one log', [el('div', { class: 'numbig', text: 'C', 'aria-hidden': 'true' })], 'The last step before your certificate.'); var cc = el('div', { class: 'chips' }, [markBtn('capstone')]); ch.querySelector('.meta').appendChild(cc); host.appendChild(ch);
     var capHooks = { onIdx: function (ix) { ch.classList.toggle('compact', ix > 0); }, finish: function (stage) { doneCard(stage, 'capstone'); } };
     Lesson(host, 'capstone', [
       { label: 'Intro', skippable: true, done: function () { return !!S.cap.why; }, onNext: function () { S.cap.why = true; touch(false); }, body: function (st, setIdx) {
+        if (!S.cap.why) { S.cap.why = true; setTimeout(function () { touch(false); }, 0); }
         st.appendChild(el('h2', { text: 'About the Capstone' }));
+        st.appendChild(el('p', { class: 'hint note', text: 'This takes a week. Keep this tab open until you finish, or when you come back, tick what you finished under \u201cComing back?\u201d on Course home.' }));
         st.appendChild(el('div', { class: 'why-text' }, [el('p', { text: C.capstone.body })]));
         st.appendChild(el('p', { class: 'eyebrow', style: 'margin-top:22px', text: 'What comes next' }));
         st.appendChild(el('div', { html: tiles([['target', 'Pick three or more', 'From any sections.'], ['bolt', 'Run them', 'In the same week, on real work.'], ['log', 'Write the log', 'Where AI helped, where you overrode it, what you will keep doing.']]) }));
-        st.appendChild(el('div', { class: 'cta-row', style: 'margin-top:18px' }, [skipBtn('Skip intro', function () { S.cap.why = true; touch(false); setIdx(1); })]));
       } },
-      { label: 'Pick three or more', done: function () { return S.cap.picks.length >= 3; }, body: function (st) {
-        st.appendChild(el('h2', { text: 'Pick at least three skills' })); st.appendChild(el('p', { class: 'hint', text: 'Choose from any section. Pick as many as you plan to run.' }));
+      { label: 'Pick three or more', need: 'Add at least three skills to your list to continue.', done: function () { return S.cap.picks.length >= 3; }, body: function (st) {
+        st.appendChild(el('h2', { text: 'Pick at least three skills' })); st.appendChild(el('p', { class: 'hint', text: 'Choose from any section. Add as many as you plan to run this week.' }));
+        st.appendChild(el('p', { class: 'pickcount sticky', text: S.cap.picks.length + ' of 3 picked' + (S.cap.picks.length >= 3 ? ', ready' : '') }));
         var groups = el('div', { class: 'cap-groups' });
         C.modules.forEach(function (m) {
           var ul = el('ul', { class: 'cards' });
           m.skills.forEach(function (sk) { ul.appendChild(skillCard(sk, 'cap', S.cap.picks.indexOf(sk.id) >= 0, function (id) { var p = S.cap.picks, k = p.indexOf(id); if (k >= 0) p.splice(k, 1); else p.push(id); touch(true); })); });
           groups.appendChild(el('div', {}, [el('h4', { text: m.name }), ul]));
         });
-        st.appendChild(groups); st.appendChild(el('p', { class: 'pickcount', text: S.cap.picks.length + ' picked' + (S.cap.picks.length < 3 ? ' (at least 3)' : '') }));
+        st.appendChild(groups);
       } },
-      { label: 'Run them', done: function () { return !!S.cap.ran; }, body: function (st) {
-        st.appendChild(el('h2', { text: 'Run them in the same week' })); st.appendChild(el('p', { class: 'read', text: 'Use real work for each one. Keep the outputs next to each other so you can compare them in the log.' }));
-        if (S.cap.picks.length) st.appendChild(pickedLine(S.cap.picks, 'Your picks: ', C.stepsCopy.backLine));
+      { label: 'Run them', need: 'Tick the box once you have run them, to continue.', done: function () { return !!S.cap.ran; }, body: function (st) {
+        st.appendChild(el('h2', { text: 'Run them in the same week' })); st.appendChild(el('p', { class: 'read', text: 'Keep the outputs next to each other so you can compare them in the log.' }));
+        runSteps(st, S.cap.picks, true);
         st.appendChild(checkRow('cap-ran', 'I ran them on real work in the same week.', S.cap.ran, function (v) { S.cap.ran = v; touch(true); }));
       } },
-      { label: 'Judgment log', done: function () { return capSteps()[3]; }, body: function (st) {
-        st.appendChild(el('h2', { text: 'Write your one-page judgment log' }));
+      { label: 'Judgment log', need: 'Write a few sentences in each box to finish the Capstone.', done: function () { return capSteps()[3]; }, body: function (st) {
+        st.appendChild(el('h2', { text: 'Write your judgment log' })); st.appendChild(el('p', { class: 'hint', text: 'A few sentences each on where you went with the AI and where you overruled it.' }));
         var f = el('div', { class: 'fields' }); C.capstone.logQs.forEach(function (q) { f.appendChild(field('cap-' + q.id, q.label, S.cap.log[q.id], MIN_LOG, function (v) { S.cap.log[q.id] = v; })); }); st.appendChild(f);
         st.appendChild(el('div', { class: 'cta-row' }, [copyBtn()]));
       } }
@@ -628,7 +630,7 @@
   function screenCert(host) {
     host.appendChild(screenHead('Certificate of Completion', allDone() ? 'Your Certificate of Completion' : 'Finish all six modules and the Capstone', [el('div', { class: 'numbig' + (allDone() ? ' done' : ''), text: '\u2605', 'aria-hidden': 'true' })], allDone() ? 'Add your name, then screenshot it or download the image.' : 'Your certificate appears here when every part is done.'));
     if (!allDone()) {
-      var box = el('div', { class: 'locked-box' }); box.appendChild(el('p', { html: '<strong>Your certificate appears when every part is done.</strong>' }));
+      var box = el('div', { class: 'locked-box' }); box.appendChild(el('p', { html: '<strong>Your certificate appears when every part is done.</strong> Still to finish (select one to open it):' }));
       var ul = el('ul'); C.modules.forEach(function (m) { var d = modDone(m); var a = el('a', { href: '#m-' + m.id, text: (d ? 'Done: ' : 'To do: ') + m.name }); a.addEventListener('click', function (e) { e.preventDefault(); go('m-' + m.id, true); }); ul.appendChild(el('li', { class: d ? 'ok' : '' }, [a])); });
       var ca = el('a', { href: '#capstone', text: (capDone() ? 'Done: ' : 'To do: ') + 'Capstone' }); ca.addEventListener('click', function (e) { e.preventDefault(); go('capstone', true); }); ul.appendChild(el('li', { class: capDone() ? 'ok' : '' }, [ca]));
       box.appendChild(ul); host.appendChild(box); return;
@@ -712,11 +714,12 @@
   /* ---------- router ---------- */
   function go(key, user) {
     if (!validRoute(key)) key = 'home';
+    if (key === 'install') key = 'start';
     current = key; cur = null; screenLive = null;
     var host = $('screen'); host.innerHTML = ''; host.style.animation = 'none'; void host.offsetWidth; host.style.animation = '';
     $('app').classList.toggle('has-rail', key !== 'home');
     document.body.classList.remove('nav-open'); $('btn-menu').setAttribute('aria-expanded', 'false');
-    if (key === 'home') screenHome(host); else if (key === 'start') screenStart(host); else if (key === 'capstone') screenCapstone(host); else if (key === 'certificate') screenCert(host); else if (key === 'install') screenInstall(host); else screenModule(host, modById(key.slice(2)));
+    if (key === 'home') screenHome(host); else if (key === 'start') screenStart(host); else if (key === 'capstone') screenCapstone(host); else if (key === 'certificate') screenCert(host); else screenModule(host, modById(key.slice(2)));
     chrome(); $('main').scrollTop = 0;
     try { if (location.hash.slice(1) !== key) location.hash = key; } catch (e) {}
     if (user) { var h = host.querySelector('h1'); if (h) { h.tabIndex = -1; h.focus({ preventScroll: true }); } }
@@ -734,7 +737,7 @@
   /* ---------- tools ---------- */
   $('btn-reset').addEventListener('click', function () {
     openModal('<h2 id="modal-title">Start over?</h2><p>This clears everything you entered on this page.</p>', [
-      { label: 'Yes, start over', cls: 'primary', fn: function () { S = fresh(); wasDone = false; celebrated = false; go('home', true); toast('Cleared.'); } }, { label: 'Keep going' }]);
+      { label: 'Yes, start over', cls: 'primary', fn: function () { S = fresh(); save(); wasDone = false; celebrated = false; go('home', true); toast('Cleared.'); } }, { label: 'Keep going' }]);
   });
   $('btn-copy').addEventListener('click', copyAnswers);
   $('btn-skills').addEventListener('click', openSkills);
