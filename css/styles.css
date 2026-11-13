@@ -6340,3 +6340,8 @@ img.service-overview-icon {
 @media (max-width:560px){.sp-form-row{grid-template-columns:1fr}}
 #spForm .form-submit{background:#3C9EE7;color:#fff;border-radius:10px}
 #spForm .form-submit:hover{background:#2F8BD0}
+/* Contrast rule (Joel, 2026-11-12): no light blue or grey text on apricot/peach. Navy only. */
+.sp-band-apricot .sp-eyebrow,.sp-band-apricot .sp-text,.sp-band-apricot .sp-cap-note{color:#1B264F}
+.sp-eyebrow{color:#1F6FB2}
+.sp-band-navy .sp-eyebrow,.sp-eyebrow-light{color:#FFE5D9}
+.sp-text,.sp-sub,.sp-asof,.sp-price p,.sp-faq p{color:#3D4566}
