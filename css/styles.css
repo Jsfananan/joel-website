@@ -6345,3 +6345,11 @@ img.service-overview-icon {
 .sp-eyebrow{color:#1F6FB2}
 .sp-band-navy .sp-eyebrow,.sp-eyebrow-light{color:#FFE5D9}
 .sp-text,.sp-sub,.sp-asof,.sp-price p,.sp-faq p{color:#3D4566}
+/* Buttons: darker blue so white text passes contrast (5.3:1) */
+.sp-btn-blue,#spForm .form-submit{background:#1F6FB2}
+.sp-btn-blue:hover,#spForm .form-submit:hover{background:#185A92}
+/* Stats sit below the hero with a gap, no overlap (Joel, 2026-11-13) */
+.sp-hero{padding-bottom:72px}
+.sp-stats{padding-top:48px}
+.sp-tiles{margin-top:0}
+@media (max-width:760px){.sp-hero{padding-bottom:48px}.sp-stats{padding-top:32px}}
