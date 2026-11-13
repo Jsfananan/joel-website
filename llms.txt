@@ -162,6 +162,18 @@ URL: https://jsalinas.org/articles/three-questions-before-adopting-ai.html
 Key argument: AI training programs teach tools when they should be developing thinking. The AI Leadership Triad suggests developing Adaptability, Innovation, and Creativity as the foundation. Once the thinking is right, the tools become easier to learn and apply.
 URL: https://jsalinas.org/articles/what-ai-training-programs-get-wrong.html
 
+## Sponsor the Leadership in Change Newsletter
+
+Leadership in Change (leadershipinchange.com) is Joel Salinas' newsletter on AI for CEOs, senior executives and founders, plus leaders of mission-driven organizations. It accepts one sponsor per issue, twice a week. Details: https://jsalinas.org/sponsor.html
+
+- Audience (Substack dashboard, November 12, 2026): 9,187 email subscribers, 39% in the US (3,614), 52% across the US, UK, Canada and Australia
+- Social audience: 24,000 Substack followers plus 2,000 on LinkedIn
+- Engagement: 26% average open rate across 37 issues, about 49,000 views a month
+- Rates: sponsored mention $200 an issue ($175 on 3 months, $150 on 6), featured article $800, featured article plus three mentions $1,000
+- Past sponsors: Chronicle Labs, Cardboard, Fotor, Jotform, Otio
+- Placements are written by Joel as a personal recommendation, approved by the sponsor, labeled as sponsored, and followed by a results recap
+- Contact: Joel@LeadershipinChange.com
+
 ## Related Projects
 
 - Cozora: https://cozora.org - Live, weekly AI education sessions with practitioners building AI now
