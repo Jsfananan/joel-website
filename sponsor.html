@@ -136,7 +136,7 @@
         <div class="header-accent"></div>
         <div class="header-container">
             <a href="/" class="header-logo">Joel Salinas</a>
-            <a href="mailto:Joel@LeadershipinChange.com?subject=Sponsoring%20Leadership%20in%20Change" class="header-cta-mobile" data-cta="sponsor-header-mobile">Email me</a>
+            <a href="mailto:Joel@LeadershipinChange.com?subject=Sponsoring%20Leadership%20in%20Change" class="header-cta-mobile" data-sp-form data-cta="sponsor-header-mobile">Inquire</a>
             <button class="mobile-nav-toggle" aria-label="Toggle navigation" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
                 <span></span>
                 <span></span>
@@ -153,7 +153,7 @@
             </nav>
             <div class="header-actions">
                 <a href="https://clients.jsalinas.org" class="header-client-link" rel="nofollow noopener">Client Login</a>
-                <a href="mailto:Joel@LeadershipinChange.com?subject=Sponsoring%20Leadership%20in%20Change" class="header-subscribe-btn" data-cta="sponsor-header">Email me</a>
+                <a href="mailto:Joel@LeadershipinChange.com?subject=Sponsoring%20Leadership%20in%20Change" class="header-subscribe-btn" data-sp-form data-cta="sponsor-header">Sponsor inquiry</a>
             </div>
         </div>
     </header>
@@ -174,7 +174,7 @@
                 <h1>Reach 9,000+ readers of the AI newsletter for CEOs, executives and founders</h1>
                 <p class="sp-lede">One sponsor per issue, written in my voice as a personal recommendation, and you approve every word before it goes out.</p>
                 <div class="sp-hero-actions">
-                    <a class="sp-btn sp-btn-blue" href="mailto:Joel@LeadershipinChange.com?subject=Sponsoring%20Leadership%20in%20Change" data-cta="sponsor-hero">Email me about sponsoring</a>
+                    <a class="sp-btn sp-btn-blue" href="mailto:Joel@LeadershipinChange.com?subject=Sponsoring%20Leadership%20in%20Change" data-sp-form data-cta="sponsor-hero">Request sponsor info</a>
                     <a class="sp-link-light" href="#options">See options and rates &rarr;</a>
                 </div>
             </div>
@@ -229,7 +229,7 @@
                     <li>Results recap sent after it runs</li>
                     <li>Payment due before the issue ships</li>
                 </ul>
-                <a class="sp-btn sp-btn-blue" href="mailto:Joel@LeadershipinChange.com?subject=Sponsoring%20Leadership%20in%20Change" data-cta="sponsor-prices">Email me about an option</a>
+                <a class="sp-btn sp-btn-blue" href="mailto:Joel@LeadershipinChange.com?subject=Sponsoring%20Leadership%20in%20Change" data-sp-form data-cta="sponsor-prices">Ask about an option</a>
             </div>
         </section>
 
@@ -269,12 +269,57 @@
             <div class="sp-in sp-cta-in">
                 <div>
                     <h2 class="sp-h2 sp-h2-light">Interested in a slot?</h2>
-                    <p>Email me about your product and I'll reply within 24 hours.</p>
+                    <p>Tell me about your product and I'll reply within 24 hours.</p>
                 </div>
-                <a class="sp-btn sp-btn-blue sp-btn-lg" href="mailto:Joel@LeadershipinChange.com?subject=Sponsoring%20Leadership%20in%20Change" data-cta="sponsor-email">Email me</a>
+                <a class="sp-btn sp-btn-blue sp-btn-lg" href="mailto:Joel@LeadershipinChange.com?subject=Sponsoring%20Leadership%20in%20Change" data-sp-form data-cta="sponsor-email">Request info</a>
             </div>
         </section>
     </main>
+
+    <div class="contact-modal-overlay" id="spModal" role="dialog" aria-modal="true" aria-labelledby="spModalTitle">
+        <div class="contact-modal">
+            <div class="contact-modal-header">
+                <h2 id="spModalTitle">Sponsor inquiry</h2>
+                <button type="button" class="contact-modal-close" id="spClose" aria-label="Close">&times;</button>
+            </div>
+            <div class="contact-form-container">
+                <form class="contact-form sp-form" id="spForm" action="https://formspree.io/f/xaqqwrpk" method="POST">
+                    <input type="hidden" name="_subject" value="Sponsor inquiry from jsalinas.org/sponsor">
+                    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="sp-hp" aria-hidden="true">
+                    <div class="form-group"><label for="sp-name">Name</label><input type="text" id="sp-name" name="name" required autocomplete="name"></div>
+                    <div class="form-group"><label for="sp-email">Email</label><input type="email" id="sp-email" name="email" required autocomplete="email"></div>
+                    <div class="form-group"><label for="sp-message">Message</label><textarea id="sp-message" name="message" rows="4" required></textarea></div>
+                    <button type="submit" class="form-submit" id="spSubmit">Send inquiry</button>
+                    <p class="sp-form-alt">Prefer email? <a href="mailto:Joel@LeadershipinChange.com">Joel@LeadershipinChange.com</a></p>
+                </form>
+                <div class="form-success" id="spSuccess">
+                    <div class="form-success-icon">&#10003;</div>
+                    <h3>Thanks, it's in my inbox.</h3>
+                    <p>I'll reply within 24 hours with open dates.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    (function(){
+        var modal=document.getElementById('spModal'),form=document.getElementById('spForm'),btn=document.getElementById('spSubmit'),ok=document.getElementById('spSuccess'),last=null;
+        function open(e){if(e)e.preventDefault();last=document.activeElement;modal.classList.add('active');document.body.style.overflow='hidden';setTimeout(function(){document.getElementById('sp-name').focus();},50);}
+        function close(){modal.classList.remove('active');document.body.style.overflow='';if(last)last.focus();}
+        document.querySelectorAll('[data-sp-form]').forEach(function(a){a.addEventListener('click',open);});
+        document.getElementById('spClose').addEventListener('click',close);
+        modal.addEventListener('click',function(e){if(e.target===modal)close();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('active'))close();});
+        form.addEventListener('submit',async function(e){
+            e.preventDefault();if(!form.reportValidity())return;
+            btn.disabled=true;btn.textContent='Sending...';
+            try{var r=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+                if(!r.ok)throw new Error();
+                form.style.display='none';ok.classList.add('active');
+                if(window.gtag)gtag('event','generate_lead',{form:'sponsor_inquiry'});
+            }catch(err){btn.disabled=false;btn.textContent='Send inquiry';alert('Sorry, that didn\'t send. Please email Joel@LeadershipinChange.com');}
+        });
+    })();
+    </script>
 
 
     <footer class="footer">

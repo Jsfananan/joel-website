@@ -6330,3 +6330,13 @@ img.service-overview-icon {
   .sp-cta-in{flex-direction:column;align-items:flex-start}
 }
 @media (prefers-reduced-motion:reduce){.sp-btn{transition:none}}
+/* sponsor inquiry form */
+.sp-form-row{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+.sp-form select{width:100%;padding:12px 14px;border:1px solid #D9D3CF;border-radius:8px;font:inherit;font-size:15px;background:#fff;color:#1B264F}
+.sp-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.sp-form-alt{margin:12px 0 0;font-size:13px;color:#5B6383;text-align:center}
+.sp-form-alt a{color:#3C9EE7}
+#spModal .contact-modal{max-width:620px;max-height:92vh;overflow:auto}
+@media (max-width:560px){.sp-form-row{grid-template-columns:1fr}}
+#spForm .form-submit{background:#3C9EE7;color:#fff;border-radius:10px}
+#spForm .form-submit:hover{background:#2F8BD0}
