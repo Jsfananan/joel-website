@@ -48,7 +48,7 @@
     installUrl: 'https://jsalinas.org/claude-guide/#install',
 
     hero: {
-      lead: 'Judgment is the scarce part of leadership. This Course puts the 25 skills in the Skill Library for Leaders to work on your own real work, so AI carries more of your expertise and none of your judgment.',
+      lead: 'Judgment is the scarce part of leadership. This Course puts the 25 skills in the AI Skill Library for Leaders to work on your own real work, so AI carries more of your expertise and none of your judgment.',
       note: 'For Premium members. Every skill works in Claude, ChatGPT and Gemini, and each link opens it in the Premium library.'
     },
 
