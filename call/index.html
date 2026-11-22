@@ -11,6 +11,8 @@
       gtag('js', new Date());
       gtag('config', 'G-VWWDV2L12H');
     </script>
+    <!-- ChatGPT Ads pixel (OpenAI), added 2026-11-21 -->
+    <script>!function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f);}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("init",{pixelId:"PT285yb55adpG3nuUjNnej",debug:true});</script>
 
     <title>Where to start with AI | Joel Salinas, AI Strategy Coach</title>
     <meta name="description" content="Working through an AI decision? Book a free thirty minute diagnostic call and work out where to start. Joel Salinas, AI Strategy Coach for founders and leaders, from solo to team.">
@@ -550,6 +552,20 @@
             fired = true;
             gtag('event', 'call_page_engaged', { 'page_path': '/call' });
           }
+        });
+      })();
+
+      // ChatGPT Ads conversion: fires "appointment_scheduled" once per page view
+      // when a visitor clicks any button that opens the Google booking calendar.
+      // Proxy only: it counts scheduler opens, not confirmed bookings.
+      (function () {
+        var sent = false;
+        document.addEventListener('click', function (e) {
+          if (sent || !window.oaiq) return;
+          var a = e.target.closest && e.target.closest('a[href*="calendar.app.google"]');
+          if (!a) return;
+          sent = true;
+          oaiq('measure', 'appointment_scheduled', { type: 'customer_action' });
         });
       })();
     </script>
